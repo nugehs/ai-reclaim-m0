@@ -101,7 +101,7 @@ graph TB
         WEB[Web Application<br/>React/Next.js]
     end
 
-    subgraph "AWS UK Region"
+    subgraph "AWS UK Region (eu-west-2)"
         subgraph "Edge & Security"
             CF[CloudFront CDN]
             WAF[AWS WAF]
@@ -109,23 +109,26 @@ graph TB
 
         subgraph "Application Layer"
             ALB[Application Load Balancer]
-            API[API Service<br/>Node.js/Express]
             AUTH[Auth Service<br/>Cognito]
         end
 
-        subgraph "Business Services"
-            ASSET[Asset Service]
-            AUDIT[Audit Service]
-            CERT[Certificate Service]
-            ESG[ESG Reporting Service]
+        subgraph "ECS Fargate Cluster"
+            subgraph "Containers (Docker Hardened Images)"
+                API[api-gateway<br/>Node.js DHI]
+                ASSET[asset-service<br/>Node.js DHI]
+                AUDIT[audit-service<br/>Node.js DHI]
+                CERT[certificate-service<br/>Node.js DHI]
+                ESG[esg-service<br/>Node.js DHI]
+                AIID[ai-identification<br/>Python DHI]
+            end
         end
 
         subgraph "AI/ML Layer"
-            AIID[AI Identification Service]
             REKOGNITION[AWS Rekognition<br/>Image Analysis]
         end
 
         subgraph "Data Layer"
+            ECR[ECR Registry<br/>Private, eu-west-2]
             RDS[(PostgreSQL<br/>RDS Multi-AZ)]
             REDIS[(ElastiCache<br/>Redis)]
             S3[S3 Bucket<br/>Asset Images]
@@ -151,6 +154,7 @@ graph TB
     CERT --> RDS
     ESG --> RDS
     API --> REDIS
+    ECR -.->|pulls| API
 ```
 
 ### 2.2 Architecture Narrative
@@ -163,11 +167,14 @@ The architecture follows a layered approach where each layer has distinct respon
 
 **Application Layer**: The API service acts as the single entry point for all client requests. It handles request routing, input validation, and orchestration of business services. Authentication is delegated to AWS Cognito, which manages user identities, JWT token issuance, and supports MFA for compliance requirements.
 
-**Business Services Layer**: Four domain-specific services handle core platform functionality:
-- **Asset Service** manages the lifecycle of IT assets from registration through disposition
-- **Audit Service** creates immutable audit log entries for all significant actions
-- **Certificate Service** generates destruction and recycling certificates
-- **ESG Reporting Service** calculates environmental impact metrics and produces reports
+**Container Platform (ECS Fargate)**: All application services run as containerised microservices on AWS ECS Fargate, using **Docker Hardened Images (DHI)** as base images. DHI provides near-zero CVE posture, SLSA Level 3 provenance, and FIPS/STIG-compliant variants for NHS and government clients. Container images are stored in a private ECR registry within eu-west-2.
+
+**Business Services Layer**: Five domain-specific containerised services handle core platform functionality:
+- **api-gateway** — Request routing, rate limiting, JWT validation
+- **asset-service** — Asset lifecycle management from registration through disposition
+- **audit-service** — Immutable audit log entries for all significant actions
+- **certificate-service** — Destruction and recycling certificate generation
+- **esg-service** — Environmental impact calculations and reporting
 
 **AI/ML Layer**: The AI Identification Service enables users to identify IT assets by uploading photographs or scanning barcodes/serial numbers. Image analysis is performed by AWS Rekognition, with results matched against a device database. This accelerates asset registration and reduces data entry errors.
 
@@ -180,14 +187,15 @@ The architecture follows a layered approach where each layer has distinct respon
 | Component | Purpose | AWS Service | Justification |
 |-----------|---------|-------------|---------------|
 | Web Application | User interface for all user types | S3 + CloudFront | Static hosting reduces attack surface; CDN improves performance |
-| API Service | REST API gateway, request routing | ECS Fargate / Lambda | Serverless reduces ops overhead; auto-scaling handles variable load |
+| Container Registry | Private image storage | ECR (eu-west-2) | UK data residency; integrated scanning; immutable tags |
+| api-gateway | REST API gateway, request routing | ECS Fargate (Node.js DHI) | Serverless containers; Docker Hardened base for compliance |
 | Auth Service | Authentication, JWT tokens, MFA | Cognito | Managed auth with built-in MFA, federation support, compliance certifications |
-| Asset Service | Asset lifecycle management | ECS Fargate | Stateless containers enable horizontal scaling |
-| Audit Service | Immutable audit log creation | ECS Fargate | Dedicated service ensures audit writes are never blocked by other operations |
-| Certificate Service | Destruction/recycling certificate generation | ECS Fargate + Lambda | PDF generation offloaded to Lambda for burst capacity |
-| ESG Reporting Service | Environmental impact calculations | ECS Fargate | Complex calculations benefit from dedicated compute |
-| AI Identification | Image recognition + barcode lookup | Lambda + Rekognition | Event-driven invocation; pay-per-use for variable workload |
-| Primary Database | Transactional data, tenant isolation | RDS PostgreSQL | ACID compliance, RLS for tenant isolation, JSON support for flexible schemas |
+| asset-service | Asset lifecycle management | ECS Fargate (Node.js DHI) | Stateless containers; independent scaling |
+| audit-service | Immutable audit log creation | ECS Fargate (Node.js DHI) | Dedicated service ensures audit writes are never blocked |
+| certificate-service | Certificate generation, PDF | ECS Fargate (Node.js DHI) | PDF generation with Lambda burst capacity |
+| esg-service | Environmental impact calculations | ECS Fargate (Node.js DHI) | Complex calculations benefit from dedicated compute |
+| ai-identification | Image recognition + barcode lookup | ECS Fargate (Python DHI) | Rekognition integration; scale-to-zero capable |
+| Primary Database | Transactional data, tenant isolation | RDS PostgreSQL | ACID compliance, RLS for tenant isolation, JSON support |
 | Cache | Session data, frequent queries | ElastiCache Redis | Sub-millisecond latency; reduces database load |
 | Object Storage | Asset images, PDFs, audit archives | S3 | Unlimited scale; lifecycle policies for cost optimisation |
 
@@ -395,6 +403,8 @@ AWS eu-west-2 maintains certifications relevant to target customers:
 | D3 | Multi-tenant shared infrastructure | Cost efficiency for pilot; isolation via RLS | Single-tenant (higher cost, simpler isolation) |
 | D4 | Web-only MVP | Faster time-to-market; responsive design covers tablets | Native mobile apps (better offline support) |
 | D5 | Mermaid for diagrams | Version-controllable, renders in GitHub/IDEs | Draw.io (richer visuals), Lucidchart (collaboration) |
+| D6 | Docker Hardened Images (DHI) | Near-zero CVE posture; FIPS/STIG compliance for NHS/Gov | Standard Docker images (higher CVE risk) |
+| D7 | Microservices on ECS Fargate | Independent scaling; fault isolation; serverless ops | Monolith (simpler), EKS (more complex) |
 
 ---
 

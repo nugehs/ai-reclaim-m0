@@ -43,7 +43,7 @@
 | 6. Scalability Considerations | Pilot → Growth → Scale phases |
 | 7. Security Architecture | Network, data, application, access |
 | 8. UK Data Residency | Compliance controls |
-| 9. Decision Log | 5 architectural decisions |
+| 9. Decision Log | 7 architectural decisions |
 | 10. Open Questions | 5 items for resolution |
 
 ---
@@ -166,15 +166,17 @@
 | D1 | Architecture | AWS as cloud provider |
 | D2 | Architecture | PostgreSQL with RLS for multi-tenancy |
 | D3 | Architecture | Web-only MVP |
-| D4 | Data Model | Simple 4-stage asset lifecycle |
-| D5 | Data Model | Individual + batch tracking |
-| D6 | Data Model | Four certificate types |
-| D7 | API | REST over GraphQL |
-| D8 | API | External integrations deferred |
-| D9 | Compliance | Target all major frameworks |
-| D10 | Compliance | Standard audit depth |
-| D11 | Roadmap | Core flow for MVP |
-| D12 | Roadmap | AI identification in Phase 1 |
+| D4 | Architecture | Docker Hardened Images (DHI) for containers |
+| D5 | Architecture | Microservices on ECS Fargate |
+| D6 | Data Model | Simple 4-stage asset lifecycle |
+| D7 | Data Model | Individual + batch tracking |
+| D8 | Data Model | Four certificate types |
+| D9 | API | REST over GraphQL |
+| D10 | API | External integrations deferred |
+| D11 | Compliance | Target all major frameworks |
+| D12 | Compliance | Standard audit depth |
+| D13 | Roadmap | Core flow for MVP |
+| D14 | Roadmap | AI identification in Phase 1 |
 
 ---
 
