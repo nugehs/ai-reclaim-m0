@@ -39,10 +39,10 @@
 ### 04 — Compliance, Security & Audit Logging
 | Task | Status | Due |
 |------|--------|-----|
-| Define audit logging approach | ⬜ | 20 Jan |
-| Document security requirements | ⬜ | 21 Jan |
-| Compliance considerations (GDPR, etc.) | ⬜ | 21 Jan |
-| Create security architecture diagram | ⬜ | 22 Jan |
+| Define audit logging approach | ✅ | 20 Jan |
+| Document security requirements | ✅ | 21 Jan |
+| Compliance considerations (GDPR, etc.) | ✅ | 21 Jan |
+| Create security architecture diagram | ✅ | 22 Jan |
 
 ### 05 — Delivery Roadmap (Phase 1)
 | Task | Status | Due |
@@ -77,6 +77,6 @@
 - [x] `01-system-architecture/README.md` — Architecture document with Mermaid diagrams
 - [x] `02-data-model/README.md` — Entity relationships with ER diagram
 - [x] `03-api-integration/README.md` — API structure and integration outline
-- [ ] `04-compliance-security/README.md` — Security & audit logging approach
+- [x] `04-compliance-security/README.md` — Security & audit logging approach
 - [ ] `05-delivery-roadmap/README.md` — Phase 1 milestones
 - [ ] `06-risks-register/README.md` — Risks and mitigations
