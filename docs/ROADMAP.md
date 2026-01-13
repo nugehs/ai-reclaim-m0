@@ -20,10 +20,10 @@
 ### 02 — Core Data Model
 | Task | Status | Due |
 |------|--------|-----|
-| Identify primary entities | ⬜ | 15 Jan |
-| Define entity relationships | ⬜ | 16 Jan |
-| Create ER diagram (Mermaid) | ⬜ | 16 Jan |
-| Document data model | ⬜ | 17 Jan |
+| Identify primary entities | ✅ | 15 Jan |
+| Define entity relationships | ✅ | 16 Jan |
+| Create ER diagram (Mermaid) | ✅ | 16 Jan |
+| Document data model | ✅ | 17 Jan |
 
 ### 03 — API & Integration Outline
 | Task | Status | Due |
@@ -75,7 +75,7 @@
 ## Deliverables Checklist
 
 - [x] `01-system-architecture/README.md` — Architecture document with Mermaid diagrams
-- [ ] `02-data-model/README.md` — Entity relationships with ER diagram
+- [x] `02-data-model/README.md` — Entity relationships with ER diagram
 - [ ] `03-api-integration/README.md` — API structure and integration outline
 - [ ] `04-compliance-security/README.md` — Security & audit logging approach
 - [ ] `05-delivery-roadmap/README.md` — Phase 1 milestones

@@ -232,10 +232,10 @@ These assumptions are based on explicit requirements or stakeholder decisions:
 
 | ID | Assumption | Source | Notes |
 |----|------------|--------|-------|
-| A1 | Platform will be web-only for MVP | Stakeholder decision (13 Jan) | Native mobile apps deferred to future phase |
-| A2 | AWS is the cloud provider | Stakeholder decision (13 Jan) | Selected over Azure/GCP |
+| A1 | Platform will be web-only for MVP | Stakeholder decision | Native mobile apps deferred to future phase |
+| A2 | AWS is the cloud provider | Stakeholder decision | Selected over Azure/GCP |
 | A3 | All data must reside in UK | Compliance requirement | NHS, financial services, public sector mandate |
-| A4 | Multi-tenant architecture | Stakeholder decision (13 Jan) | Cost efficiency prioritised; isolation via RLS |
+| A4 | Multi-tenant architecture | Stakeholder decision | Cost efficiency prioritised; isolation via RLS |
 
 ### 5.2 Technical Assumptions
 
@@ -388,13 +388,13 @@ AWS eu-west-2 maintains certifications relevant to target customers:
 
 ## 9. Decision Log
 
-| Date | Decision | Rationale | Alternatives Considered |
-|------|----------|-----------|------------------------|
-| 13 Jan 2025 | AWS as cloud provider | UK region availability, NHS compliance, managed services | Azure (strong NHS presence), GCP |
-| 13 Jan 2025 | PostgreSQL as primary database | RLS for multi-tenancy, ACID for audit, team familiarity | MongoDB (flexible schema), DynamoDB (serverless) |
-| 13 Jan 2025 | Multi-tenant shared infrastructure | Cost efficiency for pilot; isolation via RLS | Single-tenant (higher cost, simpler isolation) |
-| 13 Jan 2025 | Web-only MVP | Faster time-to-market; responsive design covers tablets | Native mobile apps (better offline support) |
-| 13 Jan 2025 | Mermaid for diagrams | Version-controllable, renders in GitHub/IDEs | Draw.io (richer visuals), Lucidchart (collaboration) |
+| ID | Decision | Rationale | Alternatives Considered |
+|----|----------|-----------|------------------------|
+| D1 | AWS as cloud provider | UK region availability, NHS compliance, managed services | Azure (strong NHS presence), GCP |
+| D2 | PostgreSQL as primary database | RLS for multi-tenancy, ACID for audit, team familiarity | MongoDB (flexible schema), DynamoDB (serverless) |
+| D3 | Multi-tenant shared infrastructure | Cost efficiency for pilot; isolation via RLS | Single-tenant (higher cost, simpler isolation) |
+| D4 | Web-only MVP | Faster time-to-market; responsive design covers tablets | Native mobile apps (better offline support) |
+| D5 | Mermaid for diagrams | Version-controllable, renders in GitHub/IDEs | Draw.io (richer visuals), Lucidchart (collaboration) |
 
 ---
 
