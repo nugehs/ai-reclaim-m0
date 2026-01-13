@@ -23,7 +23,7 @@ This document defines the technical architecture for AI-Reclaim™, a compliance
 
 1. **Regulatory compliance** — Immutable audit trails, secure chain of custody, and certified destruction documentation
 2. **Data sovereignty** — All data processing and storage within UK jurisdiction (AWS eu-west-2)
-3. **Scalability** — Cost-efficient pilot deployment that scales to national adoption without re-architecture
+3. **Scalability** — Pilot deployment that scales to national adoption without re-architecture
 
 The proposed solution is a multi-tenant web application hosted on AWS, using PostgreSQL with Row-Level Security for tenant isolation, AWS Rekognition for AI-powered asset identification, and S3 for secure document storage.
 
@@ -32,8 +32,6 @@ The proposed solution is a multi-tenant web application hosted on AWS, using Pos
 - Multi-tenant architecture with database-level isolation
 - Managed services (Cognito, RDS, S3) to reduce operational complexity
 - Web-only MVP with responsive design for tablet use
-
-**Estimated pilot infrastructure cost:** £130-295/month
 
 ---
 
@@ -81,7 +79,7 @@ The architecture is guided by the following principles:
 
 1. **Compliance-first design** — Every component is designed with audit logging, data residency, and regulatory requirements as primary concerns, not afterthoughts.
 
-2. **Multi-tenant isolation** — Client organisations share infrastructure for cost efficiency, but data is strictly isolated at the database and storage layers to prevent cross-tenant access.
+2. **Multi-tenant isolation** — Client organisations share infrastructure while data is strictly isolated at the database and storage layers to prevent cross-tenant access.
 
 3. **UK data sovereignty** — All data processing and storage occurs exclusively within AWS eu-west-2 (London) to meet UK data protection requirements for NHS, financial services, and public sector clients.
 
@@ -197,7 +195,7 @@ The architecture follows a layered approach where each layer has distinct respon
 | ai-identification | Image recognition + barcode lookup | ECS Fargate (Python DHI) | Rekognition integration; scale-to-zero capable |
 | Primary Database | Transactional data, tenant isolation | RDS PostgreSQL | ACID compliance, RLS for tenant isolation, JSON support |
 | Cache | Session data, frequent queries | ElastiCache Redis | Sub-millisecond latency; reduces database load |
-| Object Storage | Asset images, PDFs, audit archives | S3 | Unlimited scale; lifecycle policies for cost optimisation |
+| Object Storage | Asset images, PDFs, audit archives | S3 | Unlimited scale; lifecycle policies for retention management |
 
 ---
 
@@ -216,7 +214,7 @@ graph LR
 
 ### 4.2 Isolation Strategy
 
-Multi-tenancy is a core architectural decision that enables cost-efficient infrastructure sharing while maintaining strict data isolation between client organisations. The isolation strategy operates at multiple levels:
+Multi-tenancy is a core architectural decision that enables infrastructure sharing while maintaining strict data isolation between client organisations. The isolation strategy operates at multiple levels:
 
 **Authentication Level**: When a user authenticates via Cognito, their JWT token includes an `organisation_id` claim. This claim is extracted and validated on every API request, ensuring users can only access data belonging to their organisation.
 
@@ -243,7 +241,7 @@ These assumptions are based on explicit requirements or stakeholder decisions:
 | A1 | Platform will be web-only for MVP | Stakeholder decision | Native mobile apps deferred to future phase |
 | A2 | AWS is the cloud provider | Stakeholder decision | Selected over Azure/GCP |
 | A3 | All data must reside in UK | Compliance requirement | NHS, financial services, public sector mandate |
-| A4 | Multi-tenant architecture | Stakeholder decision | Cost efficiency prioritised; isolation via RLS |
+| A4 | Multi-tenant architecture | Stakeholder decision | Isolation via RLS |
 
 ### 5.2 Technical Assumptions
 
@@ -251,10 +249,10 @@ These assumptions are based on technical analysis and require validation:
 
 | ID | Assumption | Confidence | Validation Approach | Risk if Invalid |
 |----|------------|------------|---------------------|-----------------|
-| T1 | AWS Cognito meets authentication requirements including MFA and potential SSO | High | Review Cognito capabilities against NHS/enterprise SSO requirements | May need custom auth implementation (+2-4 weeks) |
-| T2 | PostgreSQL RLS provides sufficient tenant isolation | High | Security review during Phase 1 | May need schema-per-tenant approach (+complexity) |
+| T1 | AWS Cognito meets authentication requirements including MFA and potential SSO | High | Review Cognito capabilities against NHS/enterprise SSO requirements | May need custom auth implementation |
+| T2 | PostgreSQL RLS provides sufficient tenant isolation | High | Security review during Phase 1 | May need schema-per-tenant approach |
 | T3 | PostgreSQL handles audit write volume | Medium | Load testing with projected volumes | May need separate audit database or time-series DB |
-| T4 | AWS Rekognition recognises IT equipment (laptops, servers, monitors) | Low | **Requires PoC** with sample IT asset images | May need custom ML model training (+significant effort) |
+| T4 | AWS Rekognition recognises IT equipment (laptops, servers, monitors) | Low | **Requires PoC** with sample IT asset images | May need custom ML model training |
 | T5 | Synchronous AI identification completes within 5 seconds | Medium | Performance testing during Phase 1 | May need async pattern with webhooks/polling |
 | T6 | ECS Fargate provides adequate compute flexibility | High | Standard AWS pattern | Unlikely to be invalid |
 
@@ -264,9 +262,9 @@ These assumptions relate to user requirements and workflows:
 
 | ID | Assumption | Confidence | Validation Approach | Risk if Invalid |
 |----|------------|------------|---------------------|-----------------|
-| B1 | Recycling operators can use same portal as clients (with different permissions) | **Unknown** | User research / stakeholder interview | May need separate operator portal (+UI/UX effort) |
+| B1 | Recycling operators can use same portal as clients (with different permissions) | **Unknown** | User research / stakeholder interview | May need separate operator portal |
 | B2 | Responsive web design is acceptable for warehouse/field use | Medium | User testing with target devices | May need PWA with offline capability |
-| B3 | 99.9% availability SLA meets customer expectations | High | Confirm in sales process | Higher SLA requires multi-region (+cost, +complexity) |
+| B3 | 99.9% availability SLA meets customer expectations | High | Confirm in sales process | Higher SLA requires multi-region architecture |
 | B4 | English-only interface is acceptable for MVP | High | Confirm with stakeholders | Internationalisation adds complexity |
 
 ### 5.4 Assumptions Requiring Immediate Validation
@@ -301,14 +299,14 @@ graph LR
 
 **Pilot Phase (1-10 Organisations)**
 
-The pilot phase prioritises cost efficiency while establishing the foundation for growth. Infrastructure is sized for minimal viable capacity with auto-scaling headroom.
+The pilot phase establishes the foundation for growth. Infrastructure is sized for minimal viable capacity with auto-scaling headroom.
 
-| Resource | Sizing | Monthly Cost Est. |
-|----------|--------|-------------------|
-| API Compute | ECS Fargate 0.5 vCPU / 1GB, 1-4 tasks | ~£50-200 |
-| Database | RDS db.t3.medium, Single-AZ | ~£60 |
-| Cache | ElastiCache cache.t3.micro | ~£15 |
-| Storage | S3 Standard, pay per use | ~£5-20 |
+| Resource | Sizing |
+|----------|--------|
+| API Compute | ECS Fargate 0.5 vCPU / 1GB, 1-4 tasks |
+| Database | RDS db.t3.medium, Single-AZ |
+| Cache | ElastiCache cache.t3.micro |
+| Storage | S3 Standard |
 
 **Growth Phase (10-50 Organisations)**
 
@@ -400,7 +398,7 @@ AWS eu-west-2 maintains certifications relevant to target customers:
 |----|----------|-----------|------------------------|
 | D1 | AWS as cloud provider | UK region availability, NHS compliance, managed services | Azure (strong NHS presence), GCP |
 | D2 | PostgreSQL as primary database | RLS for multi-tenancy, ACID for audit, team familiarity | MongoDB (flexible schema), DynamoDB (serverless) |
-| D3 | Multi-tenant shared infrastructure | Cost efficiency for pilot; isolation via RLS | Single-tenant (higher cost, simpler isolation) |
+| D3 | Multi-tenant shared infrastructure | Shared infrastructure with isolation via RLS | Single-tenant (simpler isolation) |
 | D4 | Web-only MVP | Faster time-to-market; responsive design covers tablets | Native mobile apps (better offline support) |
 | D5 | Mermaid for diagrams | Version-controllable, renders in GitHub/IDEs | Draw.io (richer visuals), Lucidchart (collaboration) |
 | D6 | Docker Hardened Images (DHI) | Near-zero CVE posture; FIPS/STIG compliance for NHS/Gov | Standard Docker images (higher CVE risk) |
