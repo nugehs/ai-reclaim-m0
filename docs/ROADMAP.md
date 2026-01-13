@@ -28,9 +28,9 @@
 ### 03 — API & Integration Outline
 | Task | Status | Due |
 |------|--------|-----|
-| Define API structure/endpoints | ⬜ | 16 Jan |
-| Identify integration points | ⬜ | 17 Jan |
-| Document API assumptions | ⬜ | 17 Jan |
+| Define API structure/endpoints | ✅ | 16 Jan |
+| Identify integration points | ✅ | 17 Jan |
+| Document API assumptions | ✅ | 17 Jan |
 
 ---
 
@@ -76,7 +76,7 @@
 
 - [x] `01-system-architecture/README.md` — Architecture document with Mermaid diagrams
 - [x] `02-data-model/README.md` — Entity relationships with ER diagram
-- [ ] `03-api-integration/README.md` — API structure and integration outline
+- [x] `03-api-integration/README.md` — API structure and integration outline
 - [ ] `04-compliance-security/README.md` — Security & audit logging approach
 - [ ] `05-delivery-roadmap/README.md` — Phase 1 milestones
 - [ ] `06-risks-register/README.md` — Risks and mitigations
