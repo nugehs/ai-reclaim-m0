@@ -47,9 +47,9 @@
 ### 05 — Delivery Roadmap (Phase 1)
 | Task | Status | Due |
 |------|--------|-----|
-| Define Phase 1 scope | ⬜ | 22 Jan |
-| Break down into milestones | ⬜ | 23 Jan |
-| Estimate effort per milestone | ⬜ | 23 Jan |
+| Define Phase 1 scope | ✅ | 22 Jan |
+| Break down into milestones | ✅ | 23 Jan |
+| Document dependencies | ✅ | 23 Jan |
 
 ### 06 — Risks & Unknowns Register
 | Task | Status | Due |
@@ -78,5 +78,5 @@
 - [x] `02-data-model/README.md` — Entity relationships with ER diagram
 - [x] `03-api-integration/README.md` — API structure and integration outline
 - [x] `04-compliance-security/README.md` — Security & audit logging approach
-- [ ] `05-delivery-roadmap/README.md` — Phase 1 milestones
+- [x] `05-delivery-roadmap/README.md` — Phase 1 milestones
 - [ ] `06-risks-register/README.md` — Risks and mitigations
