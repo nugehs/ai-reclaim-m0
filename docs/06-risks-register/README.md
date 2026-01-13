@@ -50,7 +50,7 @@ This register consolidates all risks and unknowns identified across Milestone 0 
 | T6 | PDF generation fails at scale | Medium | Medium | Monitor | Evaluate PDF libraries; use Lambda for burst capacity | Roadmap |
 | T7 | S3 signed URL security concerns | Low | Medium | Accept | Security review during M3 | API |
 | T8 | Database connection pool exhaustion | Low | High | 🟡 Monitor | Configure appropriate pool size; implement connection management | Architecture |
-| T9 | Image storage costs exceed estimates | Low | Low | Accept | Implement lifecycle policies; review after pilot | Architecture |
+| T9 | Image storage capacity planning | Low | Low | Accept | Implement lifecycle policies; review after pilot | Architecture |
 | T10 | Third-party API dependencies unavailable | Medium | Medium | Monitor | Abstract integrations; implement circuit breakers | Architecture |
 | T11 | Barcode scanning accuracy issues | Low | Medium | Accept | Support manual entry fallback | Data Model |
 | T12 | Real-time updates needed (WebSocket) | Medium | Medium | Monitor | Review UX requirements; add if needed in Phase 2 | API |
@@ -78,7 +78,7 @@ This register consolidates all risks and unknowns identified across Milestone 0 
 | O2 | Key person dependency | Medium | Medium | Monitor | Documentation; knowledge sharing; cross-training | Roadmap |
 | O3 | Pilot client unavailable for UAT | Medium | Medium | Monitor | Identify backup client; internal UAT as fallback | Roadmap |
 | O4 | Team lacks React/Node experience | Low | Medium | Accept | Training time; hire if needed | Roadmap |
-| O5 | Infrastructure costs exceed estimates | Low | Low | Accept | Monitor usage; implement cost alerts | Roadmap |
+| O5 | Infrastructure capacity planning | Low | Low | Accept | Monitor usage; implement alerts | Roadmap |
 
 ---
 
@@ -91,9 +91,9 @@ Items requiring resolution before or during Phase 1:
 | U1 | Operator portal requirements | May need separate UI design | Interview 2-3 recycling operators | Product | Before M3 |
 | U2 | AI training data availability | May need custom model | Assess data sources; test Rekognition | Tech | Before M3 |
 | U3 | NHS specific security questionnaire | May delay NHS sales | Engage NHS trust prospect | Sales | Before M6 |
-| U4 | Legal retention period for certificates | Storage cost impact | Legal consultation | Legal | Before M5 |
+| U4 | Legal retention period for certificates | Storage capacity impact | Legal consultation | Legal | Before M5 |
 | U5 | Custom certificate templates needed | Additional design/dev | Confirm with pilot client | Product | Before M5 |
-| U6 | Penetration testing required | Timeline/cost impact | Stakeholder decision | PM | Before M6 |
+| U6 | Penetration testing required | Scope impact | Stakeholder decision | PM | Before M6 |
 | U7 | Offline capability requirement | Architecture impact | Confirm with field staff users | Product | Before M3 |
 | U8 | Integration requirements (ERP, etc.) | Phase 2 scope | Discovery with target clients | Sales | Before Phase 2 |
 | U9 | Bulk import file formats | Feature scope | Client consultation | Product | Before M3 |

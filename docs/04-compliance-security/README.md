@@ -570,10 +570,10 @@ For enhanced non-repudiation, audit log batches can be digitally signed using AW
 
 | ID | Question | Impact | Resolution |
 |----|----------|--------|------------|
-| Q1 | Is ISO 27001 certification required for Phase 1? | Cost, timeline | Client consultation |
+| Q1 | Is ISO 27001 certification required for Phase 1? | Scope | Client consultation |
 | Q2 | Specific NHS trust security questionnaire requirements? | Compliance scope | Engage with NHS clients |
 | Q3 | Should audit logs be cryptographically signed? | Implementation effort | Security review |
-| Q4 | Third-party penetration testing required before launch? | Timeline, cost | Stakeholder decision |
+| Q4 | Third-party penetration testing required before launch? | Scope | Stakeholder decision |
 
 ---
 

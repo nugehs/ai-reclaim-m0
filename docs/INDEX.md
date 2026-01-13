@@ -34,7 +34,7 @@
 
 | Section | Description |
 |---------|-------------|
-| Executive Summary | Key decisions, cost estimate |
+| Executive Summary | Key decisions |
 | 1. Introduction | Purpose, scope, audience |
 | 2. High-Level Architecture | Architecture diagram, layer narrative |
 | 3. Component Specifications | 11 components with AWS mapping |
@@ -140,7 +140,7 @@
 | M6 | QA & Launch Preparation |
 | 3. Dependencies & Critical Path | M1 → M2 → M3 → M4 → M5 → M6 |
 | 4. Technical Approach | Stack, practices |
-| 5. Resource Requirements | Team, infrastructure costs |
+| 5. Resource Requirements | Team composition |
 | 6. Assumptions | 5 items |
 | 7. Open Questions | 4 items |
 | 8. Decision Log | 4 roadmap decisions |

@@ -529,7 +529,7 @@ CREATE INDEX idx_assets_search ON assets
 |----|----------|--------|---------------------|
 | DM1 | Should assets support custom fields per organisation? | Schema flexibility | JSONB metadata field (implemented) |
 | DM2 | Is batch-level certificate sufficient or per-asset required? | Certificate workflow | Both supported (asset_id OR batch_id) |
-| DM3 | What is the legal retention period for certificates? | Storage costs | Research UK WEEE regulations |
+| DM3 | What is the legal retention period for certificates? | Storage capacity | Research UK WEEE regulations |
 | DM4 | Should audit logs be cryptographically signed? | Compliance | Assess NHS/financial requirements |
 
 ---

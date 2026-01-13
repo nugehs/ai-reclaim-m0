@@ -326,20 +326,6 @@ No milestone can start until the previous is complete due to technical dependenc
 | DevOps | Infrastructure, CI/CD, monitoring |
 | QA | Testing strategy, test execution |
 
-### 5.2 Infrastructure Costs (Estimated)
-
-| Resource | Monthly Estimate |
-|----------|------------------|
-| RDS (db.t3.medium) | £60-80 |
-| ECS Fargate | £50-150 |
-| S3 | £5-20 |
-| Cognito | £0-50 (usage based) |
-| CloudFront | £10-30 |
-| Other (monitoring, etc.) | £20-50 |
-| **Total** | **£150-400/month** |
-
-*Costs will vary based on usage and scaling.*
-
 ---
 
 ## 6. Assumptions
