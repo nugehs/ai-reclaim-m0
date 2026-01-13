@@ -54,10 +54,10 @@
 ### 06 — Risks & Unknowns Register
 | Task | Status | Due |
 |------|--------|-----|
-| Identify technical risks | ⬜ | 23 Jan |
-| Identify compliance risks | ⬜ | 23 Jan |
-| Define mitigation strategies | ⬜ | 24 Jan |
-| Final review & sign-off prep | ⬜ | 24 Jan |
+| Identify technical risks | ✅ | 23 Jan |
+| Identify compliance risks | ✅ | 23 Jan |
+| Define mitigation strategies | ✅ | 24 Jan |
+| Final review & sign-off prep | ✅ | 24 Jan |
 
 ---
 
@@ -79,4 +79,4 @@
 - [x] `03-api-integration/README.md` — API structure and integration outline
 - [x] `04-compliance-security/README.md` — Security & audit logging approach
 - [x] `05-delivery-roadmap/README.md` — Phase 1 milestones
-- [ ] `06-risks-register/README.md` — Risks and mitigations
+- [x] `06-risks-register/README.md` — Risks and mitigations
