@@ -1,0 +1,43 @@
+site_name: AI-Reclaim™ — Discovery Phase
+site_description: Milestone 0 Technical Documentation
+site_author: Oluwasegun Olumbe
+
+theme:
+  name: material
+  palette:
+    primary: indigo
+    accent: teal
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - toc.integrate
+    - search.highlight
+
+markdown_extensions:
+  - tables
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed
+  - admonition
+  - pymdownx.details
+  - attr_list
+  - md_in_html
+
+nav:
+  - Home: INDEX.md
+  - Executive Summary: EXECUTIVE-SUMMARY.md
+  - Deliverables:
+    - System Architecture: 01-system-architecture/README.md
+    - Core Data Model: 02-data-model/README.md
+    - API & Integration: 03-api-integration/README.md
+    - Compliance & Security: 04-compliance-security/README.md
+    - Delivery Roadmap: 05-delivery-roadmap/README.md
+    - Risks Register: 06-risks-register/README.md
+  - User Flows: USER-FLOWS.md
+  - Roadmap: ROADMAP.md
+
+copyright: "&copy; A to Z IT Recycling Ltd. All rights reserved."
