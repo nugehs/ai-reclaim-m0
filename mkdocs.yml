@@ -1,6 +1,7 @@
 site_name: AI-Reclaim™ — Discovery Phase
 site_description: Milestone 0 Technical Documentation
 site_author: Oluwasegun Olumbe
+use_directory_urls: true
 
 theme:
   name: material

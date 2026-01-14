@@ -11,7 +11,8 @@
       "Bash(gh repo edit:*)",
       "Bash(gh run list:*)",
       "Bash(mkdocs gh-deploy:*)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(grep:*)"
     ]
   }
 }
