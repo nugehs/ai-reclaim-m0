@@ -1,0 +1,2378 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Milestone 0 Technical Documentation">
+      
+      
+        <meta name="author" content="Oluwasegun Olumbe">
+      
+      
+      
+        <link rel="prev" href="../01-system-architecture/">
+      
+      
+        <link rel="next" href="../03-api-integration/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Core Data Model - AI-Reclaim™ — Discovery Phase</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#core-data-model" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="AI-Reclaim™ — Discovery Phase" class="md-header__button md-logo" aria-label="AI-Reclaim™ — Discovery Phase" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI-Reclaim™ — Discovery Phase
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Core Data Model
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../INDEX/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../EXECUTIVE-SUMMARY/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Executive Summary
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../01-system-architecture/" class="md-tabs__link">
+          
+  
+  
+  Deliverables
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../USER-FLOWS/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  User Flows
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ROADMAP/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Roadmap
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="AI-Reclaim™ — Discovery Phase" class="md-nav__button md-logo" aria-label="AI-Reclaim™ — Discovery Phase" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AI-Reclaim™ — Discovery Phase
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../INDEX/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../EXECUTIVE-SUMMARY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Executive Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deliverables
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Deliverables
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-system-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Core Data Model
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Core Data Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#executive-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Executive Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-entity-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Entity Overview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Entity Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-primary-entities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Primary Entities
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-supporting-entities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Supporting Entities
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-entity-relationship-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Entity Relationship Diagram
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Entity Relationship Diagram">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-core-relationships" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Core Relationships
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-detailed-schema-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Detailed Schema Diagram
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-entity-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Entity Specifications
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Entity Specifications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-organisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Organisation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 User
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-asset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Asset
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-batch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 Batch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-assettype" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5 AssetType
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36-certificate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.6 Certificate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#37-auditlog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.7 AuditLog
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#38-esgreport" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.8 ESGReport
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-multi-tenant-data-isolation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Multi-Tenant Data Isolation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Multi-Tenant Data Isolation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-isolation-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Isolation Strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-tenant-scoped-vs-shared-entities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Tenant-Scoped vs Shared Entities
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-indexing-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Indexing Strategy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Indexing Strategy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-primary-indexes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Primary Indexes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-full-text-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Full-Text Search
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-data-retention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Data Retention
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-open-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Open Questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-decision-log" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Decision Log
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-api-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API & Integration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-compliance-security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compliance & Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-delivery-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Delivery Roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-risks-register/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Risks Register
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../USER-FLOWS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Flows
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ROADMAP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="core-data-model">Core Data Model</h1>
+<p><strong>Document Version:</strong> 1.0
+<strong>Last Updated:</strong> 13 January 2025
+<strong>Status:</strong> Draft for Review</p>
+<hr />
+<blockquote>
+<p><strong>MILESTONE 0 — DISCOVERY PHASE</strong></p>
+<p>This document is a deliverable of Milestone 0, a paid discovery phase intended to define the technical, architectural, and compliance foundations of AI-Reclaim™ <strong>prior to any production build</strong>.</p>
+<p>This document does not constitute a commitment to build. Detailed scope, timelines, and commercials for development phases will be defined following successful completion and acceptance of Milestone 0.</p>
+<p>All intellectual property vests exclusively in A to Z IT Recycling Ltd.</p>
+</blockquote>
+<hr />
+<h2 id="executive-summary">Executive Summary</h2>
+<p>This document defines the core data model for AI-Reclaim™, establishing the primary entities, their attributes, and relationships required to support IT asset disposition tracking, compliance audit trails, and ESG reporting.</p>
+<p><strong>Key design decisions:</strong>
+- Assets tracked individually with optional batch grouping for efficient collection handling
+- Simple 4-stage lifecycle (Registered → Collected → Processing → Completed)
+- Four certificate types supporting destruction, recycling, data sanitisation, and WEEE compliance
+- Multi-tenant isolation via <code>organisation_id</code> foreign key on all tenant-scoped entities
+- Immutable audit log capturing all state changes with before/after values</p>
+<hr />
+<h2 id="1-entity-overview">1. Entity Overview</h2>
+<h3 id="11-primary-entities">1.1 Primary Entities</h3>
+<table>
+<thead>
+<tr>
+<th>Entity</th>
+<th>Description</th>
+<th>Tenant-Scoped</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Organisation</strong></td>
+<td>Client organisation (NHS trust, bank, local authority, etc.)</td>
+<td>No (is tenant)</td>
+</tr>
+<tr>
+<td><strong>User</strong></td>
+<td>System users with role-based access</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><strong>Asset</strong></td>
+<td>Individual IT equipment item tracked through disposal lifecycle</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><strong>Batch</strong></td>
+<td>Collection of assets grouped for efficient handling</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><strong>AssetType</strong></td>
+<td>Category/classification of IT equipment</td>
+<td>No (shared)</td>
+</tr>
+<tr>
+<td><strong>Certificate</strong></td>
+<td>Legal compliance document (destruction, recycling, etc.)</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><strong>AuditLog</strong></td>
+<td>Immutable record of all system actions</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><strong>ESGReport</strong></td>
+<td>Environmental impact report for an organisation</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="12-supporting-entities">1.2 Supporting Entities</h3>
+<table>
+<thead>
+<tr>
+<th>Entity</th>
+<th>Description</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Address</strong></td>
+<td>Physical location for collection/delivery</td>
+<td>Supports multiple addresses per organisation</td>
+</tr>
+<tr>
+<td><strong>Contact</strong></td>
+<td>Contact person within an organisation</td>
+<td>Communication and notifications</td>
+</tr>
+<tr>
+<td><strong>AssetImage</strong></td>
+<td>Photograph of asset for AI identification</td>
+<td>Links to S3 storage</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="2-entity-relationship-diagram">2. Entity Relationship Diagram</h2>
+<h3 id="21-core-relationships">2.1 Core Relationships</h3>
+<pre class="mermaid"><code>erDiagram
+    Organisation ||--o{ User : employs
+    Organisation ||--o{ Asset : owns
+    Organisation ||--o{ Batch : creates
+    Organisation ||--o{ Certificate : receives
+    Organisation ||--o{ ESGReport : generates
+    Organisation ||--o{ Address : has
+    Organisation ||--o{ Contact : has
+
+    Batch ||--o{ Asset : contains
+    Asset }o--|| AssetType : categorised_as
+    Asset ||--o{ Certificate : covered_by
+    Asset ||--o{ AuditLog : generates
+    Asset ||--o{ AssetImage : has
+
+    User ||--o{ AuditLog : creates
+    User }o--|| Role : has
+
+    Certificate }o--|| CertificateType : is_type</code></pre>
+<h3 id="22-detailed-schema-diagram">2.2 Detailed Schema Diagram</h3>
+<pre class="mermaid"><code>erDiagram
+    Organisation {
+        uuid id PK
+        string name
+        string type
+        string registration_number
+        boolean is_active
+        timestamp created_at
+        timestamp updated_at
+    }
+
+    User {
+        uuid id PK
+        uuid organisation_id FK
+        string email
+        string name
+        enum role
+        boolean is_active
+        timestamp created_at
+        timestamp last_login_at
+    }
+
+    Asset {
+        uuid id PK
+        uuid organisation_id FK
+        uuid batch_id FK "nullable"
+        uuid asset_type_id FK
+        string serial_number
+        string make
+        string model
+        enum status
+        decimal weight_kg
+        json ai_identification
+        json metadata
+        timestamp registered_at
+        timestamp collected_at
+        timestamp completed_at
+    }
+
+    Batch {
+        uuid id PK
+        uuid organisation_id FK
+        string reference
+        enum status
+        int asset_count
+        decimal total_weight_kg
+        timestamp created_at
+        timestamp collected_at
+    }
+
+    AssetType {
+        uuid id PK
+        string name
+        string category
+        decimal default_weight_kg
+        decimal co2_factor
+        boolean is_data_bearing
+    }
+
+    Certificate {
+        uuid id PK
+        uuid organisation_id FK
+        uuid asset_id FK "nullable"
+        uuid batch_id FK "nullable"
+        enum type
+        string reference_number
+        text description
+        string pdf_url
+        timestamp issued_at
+        uuid issued_by_user_id FK
+    }
+
+    AuditLog {
+        uuid id PK
+        uuid organisation_id FK
+        uuid user_id FK
+        uuid asset_id FK "nullable"
+        string entity_type
+        uuid entity_id
+        string action
+        json before_state
+        json after_state
+        string ip_address
+        timestamp created_at
+    }
+
+    ESGReport {
+        uuid id PK
+        uuid organisation_id FK
+        date period_start
+        date period_end
+        int total_assets
+        decimal total_weight_kg
+        decimal co2_avoided_kg
+        decimal landfill_diverted_kg
+        json breakdown
+        string pdf_url
+        timestamp generated_at
+    }
+
+    Organisation ||--o{ User : has
+    Organisation ||--o{ Asset : owns
+    Organisation ||--o{ Batch : creates
+    Batch ||--o{ Asset : contains
+    Asset }o--|| AssetType : type
+    Asset ||--o{ Certificate : has
+    Asset ||--o{ AuditLog : logs
+    User ||--o{ AuditLog : creates
+    Organisation ||--o{ ESGReport : generates</code></pre>
+<hr />
+<h2 id="3-entity-specifications">3. Entity Specifications</h2>
+<h3 id="31-organisation">3.1 Organisation</h3>
+<p>The Organisation entity represents a client company using the platform. All tenant-scoped data is isolated by <code>organisation_id</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Constraints</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>UUID</td>
+<td>PK</td>
+<td>Unique identifier</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>VARCHAR(255)</td>
+<td>NOT NULL</td>
+<td>Organisation display name</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>ENUM</td>
+<td>NOT NULL</td>
+<td><code>nhs_trust</code>, <code>bank</code>, <code>local_authority</code>, <code>enterprise</code>, <code>recycler</code></td>
+</tr>
+<tr>
+<td><code>registration_number</code></td>
+<td>VARCHAR(50)</td>
+<td>UNIQUE</td>
+<td>Companies House or charity number</td>
+</tr>
+<tr>
+<td><code>is_active</code></td>
+<td>BOOLEAN</td>
+<td>DEFAULT true</td>
+<td>Soft delete flag</td>
+</tr>
+<tr>
+<td><code>created_at</code></td>
+<td>TIMESTAMP</td>
+<td>NOT NULL</td>
+<td>Record creation time</td>
+</tr>
+<tr>
+<td><code>updated_at</code></td>
+<td>TIMESTAMP</td>
+<td>NOT NULL</td>
+<td>Last modification time</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Business Rules:</strong>
+- Organisation cannot be deleted if it has assets in processing
+- Type determines available features and compliance requirements</p>
+<hr />
+<h3 id="32-user">3.2 User</h3>
+<p>Users belong to an organisation and have role-based permissions.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Constraints</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>UUID</td>
+<td>PK</td>
+<td>Unique identifier</td>
+</tr>
+<tr>
+<td><code>organisation_id</code></td>
+<td>UUID</td>
+<td>FK, NOT NULL</td>
+<td>Parent organisation</td>
+</tr>
+<tr>
+<td><code>email</code></td>
+<td>VARCHAR(255)</td>
+<td>UNIQUE, NOT NULL</td>
+<td>Login identifier</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>VARCHAR(255)</td>
+<td>NOT NULL</td>
+<td>Display name</td>
+</tr>
+<tr>
+<td><code>role</code></td>
+<td>ENUM</td>
+<td>NOT NULL</td>
+<td>User role (see below)</td>
+</tr>
+<tr>
+<td><code>is_active</code></td>
+<td>BOOLEAN</td>
+<td>DEFAULT true</td>
+<td>Account active flag</td>
+</tr>
+<tr>
+<td><code>created_at</code></td>
+<td>TIMESTAMP</td>
+<td>NOT NULL</td>
+<td>Account creation time</td>
+</tr>
+<tr>
+<td><code>last_login_at</code></td>
+<td>TIMESTAMP</td>
+<td></td>
+<td>Last successful login</td>
+</tr>
+</tbody>
+</table>
+<p><strong>User Roles:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Description</th>
+<th>Permissions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>admin</code></td>
+<td>Organisation administrator</td>
+<td>Full access to organisation data, user management</td>
+</tr>
+<tr>
+<td><code>operator</code></td>
+<td>Recycling facility staff</td>
+<td>Asset processing, certificate generation</td>
+</tr>
+<tr>
+<td><code>client</code></td>
+<td>Client organisation staff</td>
+<td>Register assets, view status, download certificates</td>
+</tr>
+<tr>
+<td><code>auditor</code></td>
+<td>Compliance auditor</td>
+<td>Read-only access to all data and audit logs</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="33-asset">3.3 Asset</h3>
+<p>The Asset entity represents an individual IT equipment item tracked through the disposal lifecycle.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Constraints</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>UUID</td>
+<td>PK</td>
+<td>Unique identifier</td>
+</tr>
+<tr>
+<td><code>organisation_id</code></td>
+<td>UUID</td>
+<td>FK, NOT NULL</td>
+<td>Owning organisation</td>
+</tr>
+<tr>
+<td><code>batch_id</code></td>
+<td>UUID</td>
+<td>FK, NULL</td>
+<td>Optional batch grouping</td>
+</tr>
+<tr>
+<td><code>asset_type_id</code></td>
+<td>UUID</td>
+<td>FK, NOT NULL</td>
+<td>Equipment category</td>
+</tr>
+<tr>
+<td><code>serial_number</code></td>
+<td>VARCHAR(100)</td>
+<td></td>
+<td>Manufacturer serial number</td>
+</tr>
+<tr>
+<td><code>make</code></td>
+<td>VARCHAR(100)</td>
+<td></td>
+<td>Manufacturer name</td>
+</tr>
+<tr>
+<td><code>model</code></td>
+<td>VARCHAR(100)</td>
+<td></td>
+<td>Model name/number</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td>ENUM</td>
+<td>NOT NULL</td>
+<td>Current lifecycle stage</td>
+</tr>
+<tr>
+<td><code>weight_kg</code></td>
+<td>DECIMAL(10,3)</td>
+<td></td>
+<td>Actual weight in kilograms</td>
+</tr>
+<tr>
+<td><code>ai_identification</code></td>
+<td>JSONB</td>
+<td></td>
+<td>AI recognition results</td>
+</tr>
+<tr>
+<td><code>metadata</code></td>
+<td>JSONB</td>
+<td></td>
+<td>Additional custom fields</td>
+</tr>
+<tr>
+<td><code>registered_at</code></td>
+<td>TIMESTAMP</td>
+<td>NOT NULL</td>
+<td>When asset was registered</td>
+</tr>
+<tr>
+<td><code>collected_at</code></td>
+<td>TIMESTAMP</td>
+<td></td>
+<td>When asset was collected</td>
+</tr>
+<tr>
+<td><code>completed_at</code></td>
+<td>TIMESTAMP</td>
+<td></td>
+<td>When processing completed</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Asset Status Lifecycle:</strong></p>
+<pre class="mermaid"><code>stateDiagram-v2
+    [*] --&gt; Registered: Asset created
+    Registered --&gt; Collected: Picked up from client
+    Collected --&gt; Processing: Arrived at facility
+    Processing --&gt; Completed: Destruction/recycling done
+    Completed --&gt; [*]</code></pre>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Description</th>
+<th>Allowed Transitions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>registered</code></td>
+<td>Asset logged in system, awaiting collection</td>
+<td>→ <code>collected</code></td>
+</tr>
+<tr>
+<td><code>collected</code></td>
+<td>Asset picked up, in transit to facility</td>
+<td>→ <code>processing</code></td>
+</tr>
+<tr>
+<td><code>processing</code></td>
+<td>At facility, undergoing audit/sanitisation/recycling</td>
+<td>→ <code>completed</code></td>
+</tr>
+<tr>
+<td><code>completed</code></td>
+<td>Final disposition complete, certificate issued</td>
+<td>(terminal)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>AI Identification JSON Structure:</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;confidence&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.94</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;detected_make&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Dell&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;detected_model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Latitude 5520&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;detected_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;laptop&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;image_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;s3://bucket/org-id/assets/asset-id/photo.jpg&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;identified_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-01-13T10:30:00Z&quot;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<hr />
+<h3 id="34-batch">3.4 Batch</h3>
+<p>Batches allow grouping of assets for efficient collection and processing.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Constraints</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>UUID</td>
+<td>PK</td>
+<td>Unique identifier</td>
+</tr>
+<tr>
+<td><code>organisation_id</code></td>
+<td>UUID</td>
+<td>FK, NOT NULL</td>
+<td>Owning organisation</td>
+</tr>
+<tr>
+<td><code>reference</code></td>
+<td>VARCHAR(50)</td>
+<td>NOT NULL</td>
+<td>Human-readable batch ID</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td>ENUM</td>
+<td>NOT NULL</td>
+<td>Batch status</td>
+</tr>
+<tr>
+<td><code>asset_count</code></td>
+<td>INT</td>
+<td>DEFAULT 0</td>
+<td>Number of assets in batch</td>
+</tr>
+<tr>
+<td><code>total_weight_kg</code></td>
+<td>DECIMAL(10,3)</td>
+<td>DEFAULT 0</td>
+<td>Sum of asset weights</td>
+</tr>
+<tr>
+<td><code>created_at</code></td>
+<td>TIMESTAMP</td>
+<td>NOT NULL</td>
+<td>Batch creation time</td>
+</tr>
+<tr>
+<td><code>collected_at</code></td>
+<td>TIMESTAMP</td>
+<td></td>
+<td>When batch was collected</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Batch Status:</strong>
+- <code>open</code> — Accepting new assets
+- <code>closed</code> — No more assets, awaiting collection
+- <code>collected</code> — In transit
+- <code>processing</code> — At facility
+- <code>completed</code> — All assets processed</p>
+<hr />
+<h3 id="35-assettype">3.5 AssetType</h3>
+<p>Shared reference data for IT equipment categories.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Constraints</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>UUID</td>
+<td>PK</td>
+<td>Unique identifier</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>VARCHAR(100)</td>
+<td>NOT NULL</td>
+<td>Display name (e.g., "Laptop")</td>
+</tr>
+<tr>
+<td><code>category</code></td>
+<td>VARCHAR(50)</td>
+<td>NOT NULL</td>
+<td>High-level category</td>
+</tr>
+<tr>
+<td><code>default_weight_kg</code></td>
+<td>DECIMAL(10,3)</td>
+<td></td>
+<td>Estimated weight if not measured</td>
+</tr>
+<tr>
+<td><code>co2_factor</code></td>
+<td>DECIMAL(10,4)</td>
+<td></td>
+<td>kg CO2 avoided per kg recycled</td>
+</tr>
+<tr>
+<td><code>is_data_bearing</code></td>
+<td>BOOLEAN</td>
+<td>DEFAULT false</td>
+<td>Requires data sanitisation</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Standard Asset Types:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Category</th>
+<th>Data Bearing</th>
+<th>CO2 Factor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Laptop</td>
+<td>Computing</td>
+<td>Yes</td>
+<td>2.1</td>
+</tr>
+<tr>
+<td>Desktop PC</td>
+<td>Computing</td>
+<td>Yes</td>
+<td>1.8</td>
+</tr>
+<tr>
+<td>Server</td>
+<td>Computing</td>
+<td>Yes</td>
+<td>3.2</td>
+</tr>
+<tr>
+<td>Monitor</td>
+<td>Display</td>
+<td>No</td>
+<td>1.5</td>
+</tr>
+<tr>
+<td>Printer</td>
+<td>Peripheral</td>
+<td>No</td>
+<td>1.2</td>
+</tr>
+<tr>
+<td>Mobile Phone</td>
+<td>Mobile</td>
+<td>Yes</td>
+<td>0.8</td>
+</tr>
+<tr>
+<td>Tablet</td>
+<td>Mobile</td>
+<td>Yes</td>
+<td>0.9</td>
+</tr>
+<tr>
+<td>Network Switch</td>
+<td>Networking</td>
+<td>No</td>
+<td>1.4</td>
+</tr>
+<tr>
+<td>Hard Drive</td>
+<td>Storage</td>
+<td>Yes</td>
+<td>0.5</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="36-certificate">3.6 Certificate</h3>
+<p>Legal compliance documents issued upon completion of asset processing.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Constraints</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>UUID</td>
+<td>PK</td>
+<td>Unique identifier</td>
+</tr>
+<tr>
+<td><code>organisation_id</code></td>
+<td>UUID</td>
+<td>FK, NOT NULL</td>
+<td>Receiving organisation</td>
+</tr>
+<tr>
+<td><code>asset_id</code></td>
+<td>UUID</td>
+<td>FK, NULL</td>
+<td>Single asset (if individual)</td>
+</tr>
+<tr>
+<td><code>batch_id</code></td>
+<td>UUID</td>
+<td>FK, NULL</td>
+<td>Batch (if batch certificate)</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>ENUM</td>
+<td>NOT NULL</td>
+<td>Certificate type</td>
+</tr>
+<tr>
+<td><code>reference_number</code></td>
+<td>VARCHAR(50)</td>
+<td>UNIQUE, NOT NULL</td>
+<td>Official reference</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td>TEXT</td>
+<td></td>
+<td>Certificate details</td>
+</tr>
+<tr>
+<td><code>pdf_url</code></td>
+<td>VARCHAR(500)</td>
+<td></td>
+<td>S3 URL to PDF document</td>
+</tr>
+<tr>
+<td><code>issued_at</code></td>
+<td>TIMESTAMP</td>
+<td>NOT NULL</td>
+<td>Issue date/time</td>
+</tr>
+<tr>
+<td><code>issued_by_user_id</code></td>
+<td>UUID</td>
+<td>FK, NOT NULL</td>
+<td>Issuing operator</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Certificate Types:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Code</th>
+<th>Description</th>
+<th>Required For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Certificate of Destruction</td>
+<td><code>destruction</code></td>
+<td>Confirms secure physical destruction</td>
+<td>Data-bearing assets</td>
+</tr>
+<tr>
+<td>Certificate of Recycling</td>
+<td><code>recycling</code></td>
+<td>Confirms environmentally responsible recycling</td>
+<td>All assets</td>
+</tr>
+<tr>
+<td>Data Sanitisation Certificate</td>
+<td><code>sanitisation</code></td>
+<td>Confirms data wiped to NIST 800-88 standard</td>
+<td>Data-bearing assets</td>
+</tr>
+<tr>
+<td>WEEE Compliance Certificate</td>
+<td><code>weee</code></td>
+<td>EU/UK e-waste regulation compliance</td>
+<td>Batch/collection level</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Business Rules:</strong>
+- Data-bearing assets MUST have either <code>destruction</code> or <code>sanitisation</code> certificate
+- Certificates are immutable once issued
+- PDF generated and stored in S3 at issuance</p>
+<hr />
+<h3 id="37-auditlog">3.7 AuditLog</h3>
+<p>Immutable record of all significant system actions for compliance.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Constraints</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>UUID</td>
+<td>PK</td>
+<td>Unique identifier</td>
+</tr>
+<tr>
+<td><code>organisation_id</code></td>
+<td>UUID</td>
+<td>FK, NOT NULL</td>
+<td>Tenant scope</td>
+</tr>
+<tr>
+<td><code>user_id</code></td>
+<td>UUID</td>
+<td>FK, NOT NULL</td>
+<td>Acting user</td>
+</tr>
+<tr>
+<td><code>asset_id</code></td>
+<td>UUID</td>
+<td>FK, NULL</td>
+<td>Related asset (if applicable)</td>
+</tr>
+<tr>
+<td><code>entity_type</code></td>
+<td>VARCHAR(50)</td>
+<td>NOT NULL</td>
+<td>Entity being modified</td>
+</tr>
+<tr>
+<td><code>entity_id</code></td>
+<td>UUID</td>
+<td>NOT NULL</td>
+<td>ID of modified entity</td>
+</tr>
+<tr>
+<td><code>action</code></td>
+<td>VARCHAR(50)</td>
+<td>NOT NULL</td>
+<td>Action performed</td>
+</tr>
+<tr>
+<td><code>before_state</code></td>
+<td>JSONB</td>
+<td></td>
+<td>State before change</td>
+</tr>
+<tr>
+<td><code>after_state</code></td>
+<td>JSONB</td>
+<td></td>
+<td>State after change</td>
+</tr>
+<tr>
+<td><code>ip_address</code></td>
+<td>INET</td>
+<td></td>
+<td>Client IP address</td>
+</tr>
+<tr>
+<td><code>created_at</code></td>
+<td>TIMESTAMP</td>
+<td>NOT NULL</td>
+<td>Action timestamp</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Audit Actions:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Entity Types</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>created</code></td>
+<td>All</td>
+<td>New record created</td>
+</tr>
+<tr>
+<td><code>updated</code></td>
+<td>All</td>
+<td>Record modified</td>
+</tr>
+<tr>
+<td><code>status_changed</code></td>
+<td>Asset, Batch</td>
+<td>Lifecycle status transition</td>
+</tr>
+<tr>
+<td><code>certificate_issued</code></td>
+<td>Certificate</td>
+<td>Certificate generated</td>
+</tr>
+<tr>
+<td><code>login</code></td>
+<td>User</td>
+<td>User authentication</td>
+</tr>
+<tr>
+<td><code>login_failed</code></td>
+<td>User</td>
+<td>Failed authentication attempt</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Immutability:</strong>
+- Audit logs are append-only (no UPDATE or DELETE)
+- Enforced via PostgreSQL trigger and RLS policy
+- Archived to S3 after 90 days for long-term retention</p>
+<hr />
+<h3 id="38-esgreport">3.8 ESGReport</h3>
+<p>Environmental, Social, and Governance impact reports.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Constraints</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>UUID</td>
+<td>PK</td>
+<td>Unique identifier</td>
+</tr>
+<tr>
+<td><code>organisation_id</code></td>
+<td>UUID</td>
+<td>FK, NOT NULL</td>
+<td>Report owner</td>
+</tr>
+<tr>
+<td><code>period_start</code></td>
+<td>DATE</td>
+<td>NOT NULL</td>
+<td>Reporting period start</td>
+</tr>
+<tr>
+<td><code>period_end</code></td>
+<td>DATE</td>
+<td>NOT NULL</td>
+<td>Reporting period end</td>
+</tr>
+<tr>
+<td><code>total_assets</code></td>
+<td>INT</td>
+<td>NOT NULL</td>
+<td>Assets processed in period</td>
+</tr>
+<tr>
+<td><code>total_weight_kg</code></td>
+<td>DECIMAL(12,3)</td>
+<td>NOT NULL</td>
+<td>Total weight processed</td>
+</tr>
+<tr>
+<td><code>co2_avoided_kg</code></td>
+<td>DECIMAL(12,3)</td>
+<td>NOT NULL</td>
+<td>CO2 emissions avoided</td>
+</tr>
+<tr>
+<td><code>landfill_diverted_kg</code></td>
+<td>DECIMAL(12,3)</td>
+<td>NOT NULL</td>
+<td>Waste diverted from landfill</td>
+</tr>
+<tr>
+<td><code>breakdown</code></td>
+<td>JSONB</td>
+<td></td>
+<td>Detailed breakdown by type</td>
+</tr>
+<tr>
+<td><code>pdf_url</code></td>
+<td>VARCHAR(500)</td>
+<td></td>
+<td>S3 URL to PDF report</td>
+</tr>
+<tr>
+<td><code>generated_at</code></td>
+<td>TIMESTAMP</td>
+<td>NOT NULL</td>
+<td>Report generation time</td>
+</tr>
+</tbody>
+</table>
+<p><strong>ESG Breakdown JSON Structure:</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;by_asset_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Laptop&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;weight_kg&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">375.5</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;co2_avoided_kg&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">788.55</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;by_disposition&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;recycled&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">180</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;weight_kg&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">420.0</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;destroyed&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;weight_kg&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">35.5</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p><strong>ESG Calculations:</strong>
+- <code>co2_avoided_kg</code> = Σ (asset weight × asset_type.co2_factor)
+- <code>landfill_diverted_kg</code> = <code>total_weight_kg</code> (assumes 100% diversion)</p>
+<hr />
+<h2 id="4-multi-tenant-data-isolation">4. Multi-Tenant Data Isolation</h2>
+<h3 id="41-isolation-strategy">4.1 Isolation Strategy</h3>
+<p>All tenant-scoped entities include <code>organisation_id</code> as a foreign key. PostgreSQL Row-Level Security (RLS) policies enforce isolation at the database level.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">-- Example RLS policy for assets table</span>
+<span class="k">CREATE</span><span class="w"> </span><span class="n">POLICY</span><span class="w"> </span><span class="n">tenant_isolation</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">assets</span>
+<span class="w">    </span><span class="k">USING</span><span class="w"> </span><span class="p">(</span><span class="n">organisation_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">current_setting</span><span class="p">(</span><span class="s1">&#39;app.current_organisation_id&#39;</span><span class="p">)::</span><span class="n">uuid</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="42-tenant-scoped-vs-shared-entities">4.2 Tenant-Scoped vs Shared Entities</h3>
+<table>
+<thead>
+<tr>
+<th>Entity</th>
+<th>Scope</th>
+<th>Isolation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Organisation</td>
+<td>Global</td>
+<td>N/A (is the tenant)</td>
+</tr>
+<tr>
+<td>User</td>
+<td>Tenant</td>
+<td>RLS by organisation_id</td>
+</tr>
+<tr>
+<td>Asset</td>
+<td>Tenant</td>
+<td>RLS by organisation_id</td>
+</tr>
+<tr>
+<td>Batch</td>
+<td>Tenant</td>
+<td>RLS by organisation_id</td>
+</tr>
+<tr>
+<td>Certificate</td>
+<td>Tenant</td>
+<td>RLS by organisation_id</td>
+</tr>
+<tr>
+<td>AuditLog</td>
+<td>Tenant</td>
+<td>RLS by organisation_id</td>
+</tr>
+<tr>
+<td>ESGReport</td>
+<td>Tenant</td>
+<td>RLS by organisation_id</td>
+</tr>
+<tr>
+<td>AssetType</td>
+<td>Shared</td>
+<td>No RLS (read-only reference data)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5-indexing-strategy">5. Indexing Strategy</h2>
+<h3 id="51-primary-indexes">5.1 Primary Indexes</h3>
+<table>
+<thead>
+<tr>
+<th>Table</th>
+<th>Index</th>
+<th>Columns</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>assets</td>
+<td><code>idx_assets_org_status</code></td>
+<td>(organisation_id, status)</td>
+<td>Filter by org and status</td>
+</tr>
+<tr>
+<td>assets</td>
+<td><code>idx_assets_batch</code></td>
+<td>(batch_id)</td>
+<td>Batch lookups</td>
+</tr>
+<tr>
+<td>assets</td>
+<td><code>idx_assets_serial</code></td>
+<td>(serial_number)</td>
+<td>Serial number search</td>
+</tr>
+<tr>
+<td>audit_logs</td>
+<td><code>idx_audit_org_created</code></td>
+<td>(organisation_id, created_at DESC)</td>
+<td>Audit log queries</td>
+</tr>
+<tr>
+<td>audit_logs</td>
+<td><code>idx_audit_asset</code></td>
+<td>(asset_id, created_at DESC)</td>
+<td>Asset history</td>
+</tr>
+<tr>
+<td>certificates</td>
+<td><code>idx_certs_org_type</code></td>
+<td>(organisation_id, type)</td>
+<td>Certificate listing</td>
+</tr>
+</tbody>
+</table>
+<h3 id="52-full-text-search">5.2 Full-Text Search</h3>
+<div class="highlight"><pre><span></span><code><span class="c1">-- Asset search index</span>
+<span class="k">CREATE</span><span class="w"> </span><span class="k">INDEX</span><span class="w"> </span><span class="n">idx_assets_search</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">assets</span>
+<span class="w">    </span><span class="k">USING</span><span class="w"> </span><span class="n">gin</span><span class="p">(</span><span class="n">to_tsvector</span><span class="p">(</span><span class="s1">&#39;english&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">make</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s1">&#39; &#39;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">model</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s1">&#39; &#39;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">serial_number</span><span class="p">));</span>
+</code></pre></div>
+<hr />
+<h2 id="6-data-retention">6. Data Retention</h2>
+<table>
+<thead>
+<tr>
+<th>Data Type</th>
+<th>Retention Period</th>
+<th>Archive Strategy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Assets</td>
+<td>Indefinite</td>
+<td>Soft delete after 7 years</td>
+</tr>
+<tr>
+<td>Audit Logs</td>
+<td>7 years</td>
+<td>Archive to S3 after 90 days</td>
+</tr>
+<tr>
+<td>Certificates</td>
+<td>Indefinite</td>
+<td>Legal requirement</td>
+</tr>
+<tr>
+<td>ESG Reports</td>
+<td>7 years</td>
+<td>Archive to S3 after 2 years</td>
+</tr>
+<tr>
+<td>Asset Images</td>
+<td>1 year after completion</td>
+<td>Delete from S3</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="7-open-questions">7. Open Questions</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Question</th>
+<th>Impact</th>
+<th>Resolution Approach</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DM1</td>
+<td>Should assets support custom fields per organisation?</td>
+<td>Schema flexibility</td>
+<td>JSONB metadata field (implemented)</td>
+</tr>
+<tr>
+<td>DM2</td>
+<td>Is batch-level certificate sufficient or per-asset required?</td>
+<td>Certificate workflow</td>
+<td>Both supported (asset_id OR batch_id)</td>
+</tr>
+<tr>
+<td>DM3</td>
+<td>What is the legal retention period for certificates?</td>
+<td>Storage capacity</td>
+<td>Research UK WEEE regulations</td>
+</tr>
+<tr>
+<td>DM4</td>
+<td>Should audit logs be cryptographically signed?</td>
+<td>Compliance</td>
+<td>Assess NHS/financial requirements</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="8-decision-log">8. Decision Log</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Decision</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>D1</td>
+<td>Simple 4-stage asset lifecycle</td>
+<td>Reduces complexity; covers core workflow</td>
+</tr>
+<tr>
+<td>D2</td>
+<td>Individual + batch tracking</td>
+<td>Flexibility for different client workflows</td>
+</tr>
+<tr>
+<td>D3</td>
+<td>Four certificate types</td>
+<td>Covers destruction, recycling, sanitisation, WEEE</td>
+</tr>
+<tr>
+<td>D4</td>
+<td>JSONB for AI identification</td>
+<td>Flexible schema for ML model evolution</td>
+</tr>
+<tr>
+<td>D5</td>
+<td>Weight-based ESG metrics</td>
+<td>Standard industry approach; extensible later</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; A to Z IT Recycling Ltd. All rights reserved.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "toc.integrate", "search.highlight"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

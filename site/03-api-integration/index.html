@@ -1,0 +1,1739 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Milestone 0 Technical Documentation">
+      
+      
+        <meta name="author" content="Oluwasegun Olumbe">
+      
+      
+      
+        <link rel="prev" href="../02-data-model/">
+      
+      
+        <link rel="next" href="../04-compliance-security/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>API & Integration - AI-Reclaim™ — Discovery Phase</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#api-integration-outline" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="AI-Reclaim™ — Discovery Phase" class="md-header__button md-logo" aria-label="AI-Reclaim™ — Discovery Phase" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI-Reclaim™ — Discovery Phase
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              API & Integration
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../INDEX/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../EXECUTIVE-SUMMARY/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Executive Summary
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../01-system-architecture/" class="md-tabs__link">
+          
+  
+  
+  Deliverables
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../USER-FLOWS/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  User Flows
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ROADMAP/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Roadmap
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="AI-Reclaim™ — Discovery Phase" class="md-nav__button md-logo" aria-label="AI-Reclaim™ — Discovery Phase" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AI-Reclaim™ — Discovery Phase
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../INDEX/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../EXECUTIVE-SUMMARY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Executive Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deliverables
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Deliverables
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-system-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-data-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Core Data Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API & Integration
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API & Integration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#executive-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Executive Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-api-design-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. API Design Principles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-api-structure-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. API Structure Overview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. API Structure Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-resource-domains" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Resource Domains
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-endpoint-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Endpoint Summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-core-api-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Core API Resources
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Core API Resources">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-assets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Assets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-batches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Batches
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-certificates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Certificates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-audit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 Audit
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-esg-reporting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5 ESG Reporting
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-authentication-authorisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Authentication &amp; Authorisation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Authentication &amp; Authorisation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-authentication-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Authentication Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-authorisation-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Authorisation Matrix
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-integration-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Integration Points
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Integration Points">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-internal-integrations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Internal Integrations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-external-integrations-future-consideration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 External Integrations (Future Consideration)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-api-assumptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. API Assumptions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. API Assumptions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-confirmed-assumptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Confirmed Assumptions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-assumptions-requiring-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Assumptions Requiring Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-non-functional-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Non-Functional Requirements
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-open-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Open Questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-decision-log" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Decision Log
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-compliance-security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compliance & Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-delivery-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Delivery Roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-risks-register/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Risks Register
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../USER-FLOWS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Flows
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ROADMAP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="api-integration-outline">API &amp; Integration Outline</h1>
+<p><strong>Document Version:</strong> 1.0
+<strong>Last Updated:</strong> January 2025
+<strong>Status:</strong> Draft for Review</p>
+<hr />
+<blockquote>
+<p><strong>MILESTONE 0 — DISCOVERY PHASE</strong></p>
+<p>This document is a deliverable of Milestone 0, a paid discovery phase intended to define the technical, architectural, and compliance foundations of AI-Reclaim™ <strong>prior to any production build</strong>.</p>
+<p>This document does not constitute a commitment to build. Detailed scope, timelines, and commercials for development phases will be defined following successful completion and acceptance of Milestone 0.</p>
+<p>All intellectual property vests exclusively in A to Z IT Recycling Ltd.</p>
+</blockquote>
+<hr />
+<h2 id="executive-summary">Executive Summary</h2>
+<p>This document outlines the proposed API structure for AI-Reclaim™. The API serves as the interface between the web application and backend services, enabling asset management, audit logging, certificate generation, and ESG reporting.</p>
+<p><strong>Key decisions:</strong>
+- RESTful API design for broad compatibility and ease of integration
+- JWT-based authentication via AWS Cognito
+- Versioned API (v1) to support future evolution
+- External integrations documented as future consideration</p>
+<hr />
+<h2 id="1-api-design-principles">1. API Design Principles</h2>
+<table>
+<thead>
+<tr>
+<th>Principle</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>RESTful</strong></td>
+<td>Resource-oriented endpoints following REST conventions</td>
+</tr>
+<tr>
+<td><strong>Versioned</strong></td>
+<td>API version in URL path (e.g., <code>/v1/assets</code>)</td>
+</tr>
+<tr>
+<td><strong>JSON</strong></td>
+<td>Request and response bodies in JSON format</td>
+</tr>
+<tr>
+<td><strong>Authenticated</strong></td>
+<td>All endpoints require valid JWT token (except health check)</td>
+</tr>
+<tr>
+<td><strong>Tenant-scoped</strong></td>
+<td>Organisation ID derived from token; users access only their data</td>
+</tr>
+<tr>
+<td><strong>Audited</strong></td>
+<td>All write operations generate audit log entries</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="2-api-structure-overview">2. API Structure Overview</h2>
+<h3 id="21-resource-domains">2.1 Resource Domains</h3>
+<p>The API is organised around the following resource domains:</p>
+<div class="highlight"><pre><span></span><code>/v1
+├── /auth              → Authentication &amp; session management
+├── /assets            → Asset lifecycle management
+├── /batches           → Batch/collection management
+├── /certificates      → Certificate generation &amp; retrieval
+├── /audit             → Audit log queries
+├── /esg               → ESG reporting
+├── /users             → User management (admin)
+└── /organisations     → Organisation settings (admin)
+</code></pre></div>
+<h3 id="22-endpoint-summary">2.2 Endpoint Summary</h3>
+<table>
+<thead>
+<tr>
+<th>Domain</th>
+<th>Key Operations</th>
+<th>Access</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Auth</strong></td>
+<td>Login, logout, refresh token, password reset</td>
+<td>Public/Authenticated</td>
+</tr>
+<tr>
+<td><strong>Assets</strong></td>
+<td>Register, list, view, update status, AI identify</td>
+<td>Client, Operator</td>
+</tr>
+<tr>
+<td><strong>Batches</strong></td>
+<td>Create, add assets, close, view</td>
+<td>Client, Operator</td>
+</tr>
+<tr>
+<td><strong>Certificates</strong></td>
+<td>Generate, list, download PDF</td>
+<td>Operator, Client (read)</td>
+</tr>
+<tr>
+<td><strong>Audit</strong></td>
+<td>Query logs, export</td>
+<td>Auditor, Admin</td>
+</tr>
+<tr>
+<td><strong>ESG</strong></td>
+<td>Generate report, list reports, download</td>
+<td>Client, Admin</td>
+</tr>
+<tr>
+<td><strong>Users</strong></td>
+<td>Create, list, update, deactivate</td>
+<td>Admin</td>
+</tr>
+<tr>
+<td><strong>Organisations</strong></td>
+<td>View settings, update</td>
+<td>Admin</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="3-core-api-resources">3. Core API Resources</h2>
+<h3 id="31-assets">3.1 Assets</h3>
+<p>Primary resource for IT equipment tracking.</p>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th>Method</th>
+<th>Endpoint</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>List assets</td>
+<td>GET</td>
+<td><code>/assets</code></td>
+<td>Paginated list with filters</td>
+</tr>
+<tr>
+<td>Register asset</td>
+<td>POST</td>
+<td><code>/assets</code></td>
+<td>Create new asset record</td>
+</tr>
+<tr>
+<td>Get asset</td>
+<td>GET</td>
+<td><code>/assets/{id}</code></td>
+<td>Retrieve asset details</td>
+</tr>
+<tr>
+<td>Update asset</td>
+<td>PATCH</td>
+<td><code>/assets/{id}</code></td>
+<td>Update asset fields</td>
+</tr>
+<tr>
+<td>Change status</td>
+<td>POST</td>
+<td><code>/assets/{id}/status</code></td>
+<td>Transition lifecycle status</td>
+</tr>
+<tr>
+<td>AI identify</td>
+<td>POST</td>
+<td><code>/assets/{id}/identify</code></td>
+<td>Submit image for AI recognition</td>
+</tr>
+<tr>
+<td>Asset history</td>
+<td>GET</td>
+<td><code>/assets/{id}/history</code></td>
+<td>Audit trail for asset</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Common Filters:</strong>
+- <code>status</code> — Filter by lifecycle status
+- <code>batch_id</code> — Filter by batch
+- <code>asset_type_id</code> — Filter by equipment type
+- <code>created_after</code> / <code>created_before</code> — Date range</p>
+<h3 id="32-batches">3.2 Batches</h3>
+<p>Grouping of assets for collection and processing.</p>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th>Method</th>
+<th>Endpoint</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>List batches</td>
+<td>GET</td>
+<td><code>/batches</code></td>
+<td>Paginated list</td>
+</tr>
+<tr>
+<td>Create batch</td>
+<td>POST</td>
+<td><code>/batches</code></td>
+<td>Create new batch</td>
+</tr>
+<tr>
+<td>Get batch</td>
+<td>GET</td>
+<td><code>/batches/{id}</code></td>
+<td>Batch details with asset summary</td>
+</tr>
+<tr>
+<td>Add assets</td>
+<td>POST</td>
+<td><code>/batches/{id}/assets</code></td>
+<td>Add assets to batch</td>
+</tr>
+<tr>
+<td>Close batch</td>
+<td>POST</td>
+<td><code>/batches/{id}/close</code></td>
+<td>Mark batch ready for collection</td>
+</tr>
+<tr>
+<td>Batch assets</td>
+<td>GET</td>
+<td><code>/batches/{id}/assets</code></td>
+<td>List assets in batch</td>
+</tr>
+</tbody>
+</table>
+<h3 id="33-certificates">3.3 Certificates</h3>
+<p>Compliance documentation.</p>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th>Method</th>
+<th>Endpoint</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>List certificates</td>
+<td>GET</td>
+<td><code>/certificates</code></td>
+<td>Paginated list with filters</td>
+</tr>
+<tr>
+<td>Generate certificate</td>
+<td>POST</td>
+<td><code>/certificates</code></td>
+<td>Issue new certificate</td>
+</tr>
+<tr>
+<td>Get certificate</td>
+<td>GET</td>
+<td><code>/certificates/{id}</code></td>
+<td>Certificate details</td>
+</tr>
+<tr>
+<td>Download PDF</td>
+<td>GET</td>
+<td><code>/certificates/{id}/pdf</code></td>
+<td>Download PDF document</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Certificate Generation Requirements:</strong>
+- Asset or batch must be in <code>completed</code> status
+- Operator role required
+- Certificate type must be appropriate for asset type (e.g., destruction for data-bearing)</p>
+<h3 id="34-audit">3.4 Audit</h3>
+<p>Compliance audit trail.</p>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th>Method</th>
+<th>Endpoint</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Query logs</td>
+<td>GET</td>
+<td><code>/audit</code></td>
+<td>Paginated audit log query</td>
+</tr>
+<tr>
+<td>Asset audit</td>
+<td>GET</td>
+<td><code>/audit/assets/{id}</code></td>
+<td>Audit trail for specific asset</td>
+</tr>
+<tr>
+<td>Export logs</td>
+<td>GET</td>
+<td><code>/audit/export</code></td>
+<td>Export audit logs (CSV/JSON)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Query Parameters:</strong>
+- <code>entity_type</code> — Filter by entity (asset, user, certificate)
+- <code>action</code> — Filter by action type
+- <code>user_id</code> — Filter by acting user
+- <code>date_from</code> / <code>date_to</code> — Date range</p>
+<h3 id="35-esg-reporting">3.5 ESG Reporting</h3>
+<p>Environmental impact reports.</p>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th>Method</th>
+<th>Endpoint</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>List reports</td>
+<td>GET</td>
+<td><code>/esg/reports</code></td>
+<td>Previous reports</td>
+</tr>
+<tr>
+<td>Generate report</td>
+<td>POST</td>
+<td><code>/esg/reports</code></td>
+<td>Generate new report for period</td>
+</tr>
+<tr>
+<td>Get report</td>
+<td>GET</td>
+<td><code>/esg/reports/{id}</code></td>
+<td>Report details</td>
+</tr>
+<tr>
+<td>Download PDF</td>
+<td>GET</td>
+<td><code>/esg/reports/{id}/pdf</code></td>
+<td>Download PDF report</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="4-authentication-authorisation">4. Authentication &amp; Authorisation</h2>
+<h3 id="41-authentication-flow">4.1 Authentication Flow</h3>
+<div class="highlight"><pre><span></span><code>┌──────────┐     ┌─────────┐     ┌──────────┐
+│  Client  │────▶│   API   │────▶│ Cognito  │
+│   App    │◀────│ Gateway │◀────│   Pool   │
+└──────────┘     └─────────┘     └──────────┘
+     │                                │
+     │◀───────── JWT Token ──────────▶│
+</code></pre></div>
+<ol>
+<li>User submits credentials to <code>/auth/login</code></li>
+<li>API validates with Cognito</li>
+<li>Cognito returns JWT tokens (access + refresh)</li>
+<li>Client includes access token in <code>Authorization</code> header</li>
+<li>API validates token and extracts organisation_id</li>
+</ol>
+<h3 id="42-authorisation-matrix">4.2 Authorisation Matrix</h3>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Assets</th>
+<th>Batches</th>
+<th>Certificates</th>
+<th>Audit</th>
+<th>ESG</th>
+<th>Users</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Admin</strong></td>
+<td>Full</td>
+<td>Full</td>
+<td>Full</td>
+<td>Full</td>
+<td>Full</td>
+<td>Full</td>
+</tr>
+<tr>
+<td><strong>Operator</strong></td>
+<td>Read/Update</td>
+<td>Full</td>
+<td>Generate</td>
+<td>Read</td>
+<td>Read</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>Client</strong></td>
+<td>Create/Read</td>
+<td>Create/Read</td>
+<td>Read</td>
+<td>—</td>
+<td>Read</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>Auditor</strong></td>
+<td>Read</td>
+<td>Read</td>
+<td>Read</td>
+<td>Full</td>
+<td>Read</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5-integration-points">5. Integration Points</h2>
+<h3 id="51-internal-integrations">5.1 Internal Integrations</h3>
+<p>Services the API integrates with internally:</p>
+<table>
+<thead>
+<tr>
+<th>Service</th>
+<th>Purpose</th>
+<th>Integration Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AWS Cognito</td>
+<td>Authentication</td>
+<td>SDK / REST</td>
+</tr>
+<tr>
+<td>AWS S3</td>
+<td>File storage (images, PDFs)</td>
+<td>SDK</td>
+</tr>
+<tr>
+<td>AWS Rekognition</td>
+<td>AI image analysis</td>
+<td>SDK</td>
+</tr>
+<tr>
+<td>PostgreSQL</td>
+<td>Data persistence</td>
+<td>Connection pool</td>
+</tr>
+<tr>
+<td>Redis</td>
+<td>Caching, sessions</td>
+<td>Connection pool</td>
+</tr>
+</tbody>
+</table>
+<h3 id="52-external-integrations-future-consideration">5.2 External Integrations (Future Consideration)</h3>
+<p>Potential external integrations identified for future phases:</p>
+<table>
+<thead>
+<tr>
+<th>Integration</th>
+<th>Purpose</th>
+<th>Priority</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Client ERP systems</td>
+<td>Asset data sync</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>Email service</td>
+<td>Notifications, certificate delivery</td>
+<td>High</td>
+</tr>
+<tr>
+<td>SMS gateway</td>
+<td>Collection notifications</td>
+<td>Low</td>
+</tr>
+<tr>
+<td>Logistics providers</td>
+<td>Collection scheduling</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>Accounting systems</td>
+<td>Invoice generation</td>
+<td>Low</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note:</strong> External API access for client systems is documented as a future requirement. Phase 1 will focus on internal platform functionality.</p>
+<hr />
+<h2 id="6-api-assumptions">6. API Assumptions</h2>
+<h3 id="61-confirmed-assumptions">6.1 Confirmed Assumptions</h3>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Assumption</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A1</td>
+<td>RESTful API design</td>
+<td>Stakeholder decision</td>
+</tr>
+<tr>
+<td>A2</td>
+<td>JWT-based authentication via Cognito</td>
+<td>Architecture decision</td>
+</tr>
+<tr>
+<td>A3</td>
+<td>JSON request/response format</td>
+<td>Industry standard</td>
+</tr>
+<tr>
+<td>A4</td>
+<td>API versioning in URL path</td>
+<td>Best practice</td>
+</tr>
+</tbody>
+</table>
+<h3 id="62-assumptions-requiring-validation">6.2 Assumptions Requiring Validation</h3>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Assumption</th>
+<th>Confidence</th>
+<th>Validation Approach</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A5</td>
+<td>Synchronous AI identification acceptable</td>
+<td>Medium</td>
+<td>Performance testing</td>
+</tr>
+<tr>
+<td>A6</td>
+<td>Standard pagination (limit/offset) sufficient</td>
+<td>High</td>
+<td>Review with frontend</td>
+</tr>
+<tr>
+<td>A7</td>
+<td>Webhook/callback not needed for MVP</td>
+<td>Medium</td>
+<td>Confirm with stakeholders</td>
+</tr>
+<tr>
+<td>A8</td>
+<td>File uploads via signed S3 URLs</td>
+<td>High</td>
+<td>Security review</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="7-non-functional-requirements">7. Non-Functional Requirements</h2>
+<table>
+<thead>
+<tr>
+<th>Requirement</th>
+<th>Target</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Response time (p95)</td>
+<td>&lt; 500ms</td>
+<td>Excluding AI identification</td>
+</tr>
+<tr>
+<td>AI identification</td>
+<td>&lt; 5 seconds</td>
+<td>May need async pattern</td>
+</tr>
+<tr>
+<td>Rate limiting</td>
+<td>100 req/min per user</td>
+<td>Prevent abuse</td>
+</tr>
+<tr>
+<td>Max payload size</td>
+<td>10 MB</td>
+<td>For image uploads</td>
+</tr>
+<tr>
+<td>Pagination default</td>
+<td>20 items</td>
+<td>Configurable per endpoint</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="8-open-questions">8. Open Questions</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Question</th>
+<th>Impact</th>
+<th>Resolution Approach</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Q1</td>
+<td>Should AI identification be async with webhooks?</td>
+<td>UX design</td>
+<td>Prototype and test response times</td>
+</tr>
+<tr>
+<td>Q2</td>
+<td>What file formats for bulk asset import?</td>
+<td>Feature scope</td>
+<td>Client consultation</td>
+</tr>
+<tr>
+<td>Q3</td>
+<td>Real-time updates needed (WebSockets)?</td>
+<td>Architecture</td>
+<td>Review UX requirements</td>
+</tr>
+<tr>
+<td>Q4</td>
+<td>Public API for client integrations in Phase 1?</td>
+<td>Scope</td>
+<td>Stakeholder decision (deferred)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="9-decision-log">9. Decision Log</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Decision</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>D1</td>
+<td>REST over GraphQL</td>
+<td>Simpler implementation, broader familiarity, sufficient for use cases</td>
+</tr>
+<tr>
+<td>D2</td>
+<td>External integrations deferred</td>
+<td>Focus Phase 1 on core platform; integrations as future enhancement</td>
+</tr>
+<tr>
+<td>D3</td>
+<td>Cognito for auth</td>
+<td>Managed service, MFA support, reduces implementation risk</td>
+</tr>
+<tr>
+<td>D4</td>
+<td>Versioned API from start</td>
+<td>Enables future evolution without breaking clients</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; A to Z IT Recycling Ltd. All rights reserved.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "toc.integrate", "search.highlight"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

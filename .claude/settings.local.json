@@ -3,7 +3,12 @@
     "allow": [
       "Bash(git init:*)",
       "WebSearch",
-      "WebFetch(domain:aws.amazon.com)"
+      "WebFetch(domain:aws.amazon.com)",
+      "Bash(mkdocs build:*)",
+      "Bash(ls:*)",
+      "Bash(gh api:*)",
+      "Bash(gh repo view:*)",
+      "Bash(gh repo edit:*)"
     ]
   }
 }

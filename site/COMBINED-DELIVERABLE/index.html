@@ -1,0 +1,6679 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Milestone 0 Technical Documentation">
+      
+      
+        <meta name="author" content="Oluwasegun Olumbe">
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>AI-Reclaim™ — Executive Summary - AI-Reclaim™ — Discovery Phase</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ai-reclaimtm-executive-summary" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="AI-Reclaim™ — Discovery Phase" class="md-header__button md-logo" aria-label="AI-Reclaim™ — Discovery Phase" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI-Reclaim™ — Discovery Phase
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              AI-Reclaim™ — Executive Summary
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../INDEX/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../EXECUTIVE-SUMMARY/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Executive Summary
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../01-system-architecture/" class="md-tabs__link">
+          
+  
+  
+  Deliverables
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../USER-FLOWS/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  User Flows
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ROADMAP/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Roadmap
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="AI-Reclaim™ — Discovery Phase" class="md-nav__button md-logo" aria-label="AI-Reclaim™ — Discovery Phase" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AI-Reclaim™ — Discovery Phase
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../INDEX/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../EXECUTIVE-SUMMARY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Executive Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deliverables
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Deliverables
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-system-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-data-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Core Data Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-api-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API & Integration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-compliance-security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compliance & Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-delivery-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Delivery Roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-risks-register/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Risks Register
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../USER-FLOWS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Flows
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ROADMAP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="ai-reclaimtm-executive-summary">AI-Reclaim™ — Executive Summary</h1>
+<p><strong>Milestone 0: Discovery Phase Deliverables</strong></p>
+<p><strong>Prepared for:</strong> A to Z IT Recycling Ltd
+<strong>Prepared by:</strong> Oluwasegun Olumbe</p>
+<hr />
+<h2 id="overview">Overview</h2>
+<p>This document summarises the technical discovery phase for AI-Reclaim™, a compliance-first SaaS platform for IT asset disposition (ITAD) management.</p>
+<p><strong>Target Market:</strong> NHS trusts, banks, local authorities, and enterprises requiring auditable IT asset disposal with environmental reporting.</p>
+<hr />
+<h2 id="what-weve-defined">What We've Defined</h2>
+<table>
+<thead>
+<tr>
+<th>Deliverable</th>
+<th>Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>System Architecture</strong></td>
+<td>AWS-hosted multi-tenant platform with Docker Hardened containers, UK data residency (eu-west-2), and defence-in-depth security</td>
+</tr>
+<tr>
+<td><strong>Data Model</strong></td>
+<td>8 core entities supporting asset lifecycle from registration through certified disposal</td>
+</tr>
+<tr>
+<td><strong>API Design</strong></td>
+<td>RESTful API with Cognito authentication and role-based access control</td>
+</tr>
+<tr>
+<td><strong>Compliance</strong></td>
+<td>GDPR, NHS DSPT, ISO 27001, and Cyber Essentials alignment</td>
+</tr>
+<tr>
+<td><strong>Delivery Roadmap</strong></td>
+<td>6 milestones from infrastructure to launch</td>
+</tr>
+<tr>
+<td><strong>Risk Register</strong></td>
+<td>23 identified risks with mitigations; 11 unknowns requiring resolution</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="key-architectural-decisions">Key Architectural Decisions</h2>
+<table>
+<thead>
+<tr>
+<th>Decision</th>
+<th>Choice</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cloud Provider</td>
+<td>AWS (eu-west-2 London)</td>
+<td>UK data residency, NHS compliance programme</td>
+</tr>
+<tr>
+<td>Database</td>
+<td>PostgreSQL with RLS</td>
+<td>Multi-tenant isolation, audit compliance</td>
+</tr>
+<tr>
+<td>Containers</td>
+<td>Docker Hardened Images</td>
+<td>Near-zero CVE, FIPS/STIG for NHS/Gov</td>
+</tr>
+<tr>
+<td>Authentication</td>
+<td>AWS Cognito</td>
+<td>Managed MFA, enterprise SSO capability</td>
+</tr>
+<tr>
+<td>AI Identification</td>
+<td>AWS Rekognition</td>
+<td>Image-based asset recognition</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="platform-capabilities-phase-1">Platform Capabilities (Phase 1)</h2>
+<div class="highlight"><pre><span></span><code>┌─────────────────────────────────────────────────────────┐
+│                    AI-RECLAIM™ MVP                      │
+├─────────────────────────────────────────────────────────┤
+│                                                         │
+│  ✓ Asset Registration      ✓ AI Identification          │
+│  ✓ Batch Management        ✓ Status Tracking            │
+│  ✓ Certificate Generation  ✓ Immutable Audit Logs       │
+│  ✓ Role-Based Access       ✓ Multi-Tenant Isolation     │
+│                                                         │
+└─────────────────────────────────────────────────────────┘
+</code></pre></div>
+<p><strong>Asset Lifecycle:</strong>
+<div class="highlight"><pre><span></span><code>Registered → Collected → Processing → Completed
+                                         ↓
+                                   Certificate
+                                   (Destruction/Recycling/
+                                    Sanitisation/WEEE)
+</code></pre></div></p>
+<hr />
+<h2 id="compliance-coverage">Compliance Coverage</h2>
+<table>
+<thead>
+<tr>
+<th>Framework</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GDPR</td>
+<td>Designed for compliance</td>
+</tr>
+<tr>
+<td>NHS DSPT</td>
+<td>10 standards addressed</td>
+</tr>
+<tr>
+<td>ISO 27001</td>
+<td>Control domains aligned</td>
+</tr>
+<tr>
+<td>Cyber Essentials Plus</td>
+<td>5 controls implemented</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="delivery-milestones">Delivery Milestones</h2>
+<div class="highlight"><pre><span></span><code>M1 Foundation → M2 Auth → M3 Assets → M4 Processing → M5 Certificates → M6 QA
+     ↓            ↓          ↓            ↓               ↓              ↓
+   AWS/DB      Cognito    AI ID      Batches          PDF Gen        Launch
+   CI/CD        RBAC      CRUD       Workflow         Audit UI        UAT
+</code></pre></div>
+<hr />
+<h2 id="critical-items-requiring-decision">Critical Items Requiring Decision</h2>
+<table>
+<thead>
+<tr>
+<th>Priority</th>
+<th>Item</th>
+<th>Action Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🔴</td>
+<td>AI accuracy unknown</td>
+<td>Approve PoC with sample IT asset images</td>
+</tr>
+<tr>
+<td>🔴</td>
+<td>Operator portal scope</td>
+<td>Confirm if separate UI needed</td>
+</tr>
+<tr>
+<td>🟠</td>
+<td>ISO 27001 requirement</td>
+<td>Confirm with enterprise prospects</td>
+</tr>
+<tr>
+<td>🟠</td>
+<td>Certificate retention period</td>
+<td>Legal consultation required</td>
+</tr>
+<tr>
+<td>🟡</td>
+<td>Penetration testing</td>
+<td>Confirm if required before launch</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="open-questions-for-client">Open Questions for Client</h2>
+<ol>
+<li>
+<p><strong>Operator workflow</strong> — Do recycling operators need a separate portal or can role-based access suffice?</p>
+</li>
+<li>
+<p><strong>Certificate templates</strong> — Are standard templates acceptable or do you need custom branding?</p>
+</li>
+<li>
+<p><strong>Pilot client</strong> — Who will participate in UAT testing?</p>
+</li>
+<li>
+<p><strong>NHS engagement</strong> — Do you have an NHS trust contact for DSPT requirements clarification?</p>
+</li>
+<li>
+<p><strong>Offline capability</strong> — Do field staff need offline data entry?</p>
+</li>
+</ol>
+<hr />
+<h2 id="next-steps">Next Steps</h2>
+<ol>
+<li><strong>Review</strong> — Client reviews all 6 deliverables</li>
+<li><strong>Clarify</strong> — Address open questions above</li>
+<li><strong>Validate</strong> — Run AI identification PoC (critical assumption)</li>
+<li><strong>Approve</strong> — Sign-off on Milestone 0</li>
+<li><strong>Proceed</strong> — Define Phase 1 scope and commercials</li>
+</ol>
+<hr />
+<h2 id="document-index">Document Index</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Document</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td><a href="../01-system-architecture/">System Architecture</a></td>
+<td>Technical architecture, AWS design</td>
+</tr>
+<tr>
+<td>02</td>
+<td><a href="../02-data-model/">Core Data Model</a></td>
+<td>Entities, relationships, ER diagrams</td>
+</tr>
+<tr>
+<td>03</td>
+<td><a href="../03-api-integration/">API &amp; Integration</a></td>
+<td>REST API structure, authentication</td>
+</tr>
+<tr>
+<td>04</td>
+<td><a href="../04-compliance-security/">Compliance &amp; Security</a></td>
+<td>GDPR, NHS DSPT, audit logging</td>
+</tr>
+<tr>
+<td>05</td>
+<td><a href="../05-delivery-roadmap/">Delivery Roadmap</a></td>
+<td>Phase 1 milestones</td>
+</tr>
+<tr>
+<td>06</td>
+<td><a href="../06-risks-register/">Risks Register</a></td>
+<td>Risks, unknowns, mitigations</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<blockquote>
+<p><strong>Note:</strong> This discovery phase defines foundations only. Detailed scope, timelines, and commercials for development phases will be defined following Milestone 0 acceptance.</p>
+<p>All intellectual property vests exclusively in A to Z IT Recycling Ltd.</p>
+</blockquote>
+<hr />
+<h1 id="detailed-deliverables">DETAILED DELIVERABLES</h1>
+<hr />
+<h1 id="system-architecture">System Architecture</h1>
+<p><strong>Document Version:</strong> 1.0
+<strong>Last Updated:</strong> 13 January 2025
+<strong>Status:</strong> Draft for Review
+<strong>Author:</strong> AI-Reclaim Development Team</p>
+<hr />
+<blockquote>
+<p><strong>MILESTONE 0 — DISCOVERY PHASE</strong></p>
+<p>This document is a deliverable of Milestone 0, a paid discovery phase intended to define the technical, architectural, and compliance foundations of AI-Reclaim™ <strong>prior to any production build</strong>.</p>
+<p>This document does not constitute a commitment to build. Detailed scope, timelines, and commercials for development phases will be defined following successful completion and acceptance of Milestone 0.</p>
+<p>All intellectual property vests exclusively in A to Z IT Recycling Ltd.</p>
+</blockquote>
+<hr />
+<h2 id="executive-summary">Executive Summary</h2>
+<p>This document defines the technical architecture for AI-Reclaim™, a compliance-first SaaS platform for IT asset disposition (ITAD) management. The architecture addresses three critical requirements for our target market of NHS trusts, banks, local authorities, and enterprises:</p>
+<ol>
+<li><strong>Regulatory compliance</strong> — Immutable audit trails, secure chain of custody, and certified destruction documentation</li>
+<li><strong>Data sovereignty</strong> — All data processing and storage within UK jurisdiction (AWS eu-west-2)</li>
+<li><strong>Scalability</strong> — Pilot deployment that scales to national adoption without re-architecture</li>
+</ol>
+<p>The proposed solution is a multi-tenant web application hosted on AWS, using PostgreSQL with Row-Level Security for tenant isolation, AWS Rekognition for AI-powered asset identification, and S3 for secure document storage.</p>
+<p><strong>Key architectural decisions:</strong>
+- AWS eu-west-2 (London) as sole deployment region
+- Multi-tenant architecture with database-level isolation
+- Managed services (Cognito, RDS, S3) to reduce operational complexity
+- Web-only MVP with responsive design for tablet use</p>
+<hr />
+<h2 id="1-introduction">1. Introduction</h2>
+<h3 id="11-purpose">1.1 Purpose</h3>
+<p>This document provides the high-level system architecture for AI-Reclaim™. It is intended to:
+- Communicate the technical approach to stakeholders
+- Guide Phase 1 development decisions
+- Serve as a reference for security and compliance review
+- Document assumptions requiring validation</p>
+<h3 id="12-scope">1.2 Scope</h3>
+<p>This architecture covers:
+- Application components and their interactions
+- Data storage and isolation strategy
+- Security and compliance controls
+- Scalability approach from pilot to national scale</p>
+<p>Out of scope for this document:
+- Detailed API specifications (see <code>03-api-integration/</code>)
+- Database schema design (see <code>02-data-model/</code>)
+- Security policies and procedures (see <code>04-compliance-security/</code>)</p>
+<h3 id="13-audience">1.3 Audience</h3>
+<table>
+<thead>
+<tr>
+<th>Audience</th>
+<th>Relevant Sections</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Business stakeholders</td>
+<td>Executive Summary, Section 1</td>
+</tr>
+<tr>
+<td>Development team</td>
+<td>Sections 2-6</td>
+</tr>
+<tr>
+<td>Security/compliance</td>
+<td>Sections 4, 7, 8</td>
+</tr>
+<tr>
+<td>Operations</td>
+<td>Sections 6, 7</td>
+</tr>
+</tbody>
+</table>
+<h3 id="14-platform-overview">1.4 Platform Overview</h3>
+<p>AI-Reclaim™ is a multi-tenant SaaS platform hosted on AWS (UK region) providing IT asset disposition tracking, AI-enabled identification, and compliance reporting for regulated organisations.</p>
+<p>The platform enables organisations to maintain a complete digital chain of custody for IT assets from collection through to certified destruction or recycling, while generating the audit trails and ESG reports required by regulators.</p>
+<h3 id="11-architecture-principles">1.1 Architecture Principles</h3>
+<p>The architecture is guided by the following principles:</p>
+<ol>
+<li>
+<p><strong>Compliance-first design</strong> — Every component is designed with audit logging, data residency, and regulatory requirements as primary concerns, not afterthoughts.</p>
+</li>
+<li>
+<p><strong>Multi-tenant isolation</strong> — Client organisations share infrastructure while data is strictly isolated at the database and storage layers to prevent cross-tenant access.</p>
+</li>
+<li>
+<p><strong>UK data sovereignty</strong> — All data processing and storage occurs exclusively within AWS eu-west-2 (London) to meet UK data protection requirements for NHS, financial services, and public sector clients.</p>
+</li>
+<li>
+<p><strong>Managed services preference</strong> — Where possible, AWS managed services are used to reduce operational overhead, improve security posture, and accelerate time-to-market.</p>
+</li>
+<li>
+<p><strong>Horizontal scalability</strong> — The architecture supports growth from pilot (1-10 organisations) to national scale (50+ organisations) without fundamental redesign.</p>
+</li>
+</ol>
+<hr />
+<h2 id="2-high-level-architecture">2. High-Level Architecture</h2>
+<h3 id="21-architecture-diagram">2.1 Architecture Diagram</h3>
+<pre class="mermaid"><code>graph TB
+    subgraph "Client Layer"
+        WEB[Web Application&lt;br/&gt;React/Next.js]
+    end
+
+    subgraph "AWS UK Region (eu-west-2)"
+        subgraph "Edge &amp; Security"
+            CF[CloudFront CDN]
+            WAF[AWS WAF]
+        end
+
+        subgraph "Application Layer"
+            ALB[Application Load Balancer]
+            AUTH[Auth Service&lt;br/&gt;Cognito]
+        end
+
+        subgraph "ECS Fargate Cluster"
+            subgraph "Containers (Docker Hardened Images)"
+                API[api-gateway&lt;br/&gt;Node.js DHI]
+                ASSET[asset-service&lt;br/&gt;Node.js DHI]
+                AUDIT[audit-service&lt;br/&gt;Node.js DHI]
+                CERT[certificate-service&lt;br/&gt;Node.js DHI]
+                ESG[esg-service&lt;br/&gt;Node.js DHI]
+                AIID[ai-identification&lt;br/&gt;Python DHI]
+            end
+        end
+
+        subgraph "AI/ML Layer"
+            REKOGNITION[AWS Rekognition&lt;br/&gt;Image Analysis]
+        end
+
+        subgraph "Data Layer"
+            ECR[ECR Registry&lt;br/&gt;Private, eu-west-2]
+            RDS[(PostgreSQL&lt;br/&gt;RDS Multi-AZ)]
+            REDIS[(ElastiCache&lt;br/&gt;Redis)]
+            S3[S3 Bucket&lt;br/&gt;Asset Images]
+            S3AUDIT[S3 Bucket&lt;br/&gt;Audit Logs]
+        end
+    end
+
+    WEB --&gt; CF
+    CF --&gt; WAF
+    WAF --&gt; ALB
+    ALB --&gt; API
+    API --&gt; AUTH
+    API --&gt; ASSET
+    API --&gt; AUDIT
+    API --&gt; CERT
+    API --&gt; ESG
+    ASSET --&gt; AIID
+    AIID --&gt; REKOGNITION
+    AIID --&gt; S3
+    ASSET --&gt; RDS
+    AUDIT --&gt; RDS
+    AUDIT --&gt; S3AUDIT
+    CERT --&gt; RDS
+    ESG --&gt; RDS
+    API --&gt; REDIS
+    ECR -.-&gt;|pulls| API</code></pre>
+<h3 id="22-architecture-narrative">2.2 Architecture Narrative</h3>
+<p>The architecture follows a layered approach where each layer has distinct responsibilities:</p>
+<p><strong>Client Layer</strong>: A single-page web application built with React/Next.js provides the user interface for all user types (client organisation staff, recycling operators, auditors, and administrators). The application is served as static assets from S3 via CloudFront, enabling global edge caching while keeping origin data in the UK.</p>
+<p><strong>Edge &amp; Security Layer</strong>: All inbound traffic passes through CloudFront and AWS WAF before reaching the application. WAF provides protection against common web exploits (SQL injection, XSS), bot traffic, and DDoS attacks. This layer acts as the first line of defence for the platform.</p>
+<p><strong>Application Layer</strong>: The API service acts as the single entry point for all client requests. It handles request routing, input validation, and orchestration of business services. Authentication is delegated to AWS Cognito, which manages user identities, JWT token issuance, and supports MFA for compliance requirements.</p>
+<p><strong>Container Platform (ECS Fargate)</strong>: All application services run as containerised microservices on AWS ECS Fargate, using <strong>Docker Hardened Images (DHI)</strong> as base images. DHI provides near-zero CVE posture, SLSA Level 3 provenance, and FIPS/STIG-compliant variants for NHS and government clients. Container images are stored in a private ECR registry within eu-west-2.</p>
+<p><strong>Business Services Layer</strong>: Five domain-specific containerised services handle core platform functionality:
+- <strong>api-gateway</strong> — Request routing, rate limiting, JWT validation
+- <strong>asset-service</strong> — Asset lifecycle management from registration through disposition
+- <strong>audit-service</strong> — Immutable audit log entries for all significant actions
+- <strong>certificate-service</strong> — Destruction and recycling certificate generation
+- <strong>esg-service</strong> — Environmental impact calculations and reporting</p>
+<p><strong>AI/ML Layer</strong>: The AI Identification Service enables users to identify IT assets by uploading photographs or scanning barcodes/serial numbers. Image analysis is performed by AWS Rekognition, with results matched against a device database. This accelerates asset registration and reduces data entry errors.</p>
+<p><strong>Data Layer</strong>: PostgreSQL (RDS) serves as the primary transactional database, chosen for its ACID compliance, Row-Level Security support, and mature audit capabilities. Redis (ElastiCache) provides caching for session data and frequently-accessed queries. S3 buckets store asset images and archived audit logs with appropriate retention policies.</p>
+<hr />
+<h2 id="3-component-specifications">3. Component Specifications</h2>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Purpose</th>
+<th>AWS Service</th>
+<th>Justification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Web Application</td>
+<td>User interface for all user types</td>
+<td>S3 + CloudFront</td>
+<td>Static hosting reduces attack surface; CDN improves performance</td>
+</tr>
+<tr>
+<td>Container Registry</td>
+<td>Private image storage</td>
+<td>ECR (eu-west-2)</td>
+<td>UK data residency; integrated scanning; immutable tags</td>
+</tr>
+<tr>
+<td>api-gateway</td>
+<td>REST API gateway, request routing</td>
+<td>ECS Fargate (Node.js DHI)</td>
+<td>Serverless containers; Docker Hardened base for compliance</td>
+</tr>
+<tr>
+<td>Auth Service</td>
+<td>Authentication, JWT tokens, MFA</td>
+<td>Cognito</td>
+<td>Managed auth with built-in MFA, federation support, compliance certifications</td>
+</tr>
+<tr>
+<td>asset-service</td>
+<td>Asset lifecycle management</td>
+<td>ECS Fargate (Node.js DHI)</td>
+<td>Stateless containers; independent scaling</td>
+</tr>
+<tr>
+<td>audit-service</td>
+<td>Immutable audit log creation</td>
+<td>ECS Fargate (Node.js DHI)</td>
+<td>Dedicated service ensures audit writes are never blocked</td>
+</tr>
+<tr>
+<td>certificate-service</td>
+<td>Certificate generation, PDF</td>
+<td>ECS Fargate (Node.js DHI)</td>
+<td>PDF generation with Lambda burst capacity</td>
+</tr>
+<tr>
+<td>esg-service</td>
+<td>Environmental impact calculations</td>
+<td>ECS Fargate (Node.js DHI)</td>
+<td>Complex calculations benefit from dedicated compute</td>
+</tr>
+<tr>
+<td>ai-identification</td>
+<td>Image recognition + barcode lookup</td>
+<td>ECS Fargate (Python DHI)</td>
+<td>Rekognition integration; scale-to-zero capable</td>
+</tr>
+<tr>
+<td>Primary Database</td>
+<td>Transactional data, tenant isolation</td>
+<td>RDS PostgreSQL</td>
+<td>ACID compliance, RLS for tenant isolation, JSON support</td>
+</tr>
+<tr>
+<td>Cache</td>
+<td>Session data, frequent queries</td>
+<td>ElastiCache Redis</td>
+<td>Sub-millisecond latency; reduces database load</td>
+</tr>
+<tr>
+<td>Object Storage</td>
+<td>Asset images, PDFs, audit archives</td>
+<td>S3</td>
+<td>Unlimited scale; lifecycle policies for retention management</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="4-multi-tenant-architecture">4. Multi-Tenant Architecture</h2>
+<h3 id="41-tenant-isolation-diagram">4.1 Tenant Isolation Diagram</h3>
+<pre class="mermaid"><code>graph LR
+    subgraph "Tenant Isolation Strategy"
+        API[API Layer] --&gt; TID{Tenant ID&lt;br/&gt;from JWT}
+        TID --&gt; RLS[Row-Level Security&lt;br/&gt;PostgreSQL]
+        TID --&gt; S3P[S3 Prefix&lt;br/&gt;per Tenant]
+    end</code></pre>
+<h3 id="42-isolation-strategy">4.2 Isolation Strategy</h3>
+<p>Multi-tenancy is a core architectural decision that enables infrastructure sharing while maintaining strict data isolation between client organisations. The isolation strategy operates at multiple levels:</p>
+<p><strong>Authentication Level</strong>: When a user authenticates via Cognito, their JWT token includes an <code>organisation_id</code> claim. This claim is extracted and validated on every API request, ensuring users can only access data belonging to their organisation.</p>
+<p><strong>Database Level</strong>: PostgreSQL Row-Level Security (RLS) policies automatically filter all queries by <code>organisation_id</code>. Even if application code contains a bug that omits tenant filtering, the database layer enforces isolation. This defence-in-depth approach is critical for regulated environments.</p>
+<p><strong>Storage Level</strong>: S3 objects are stored with a tenant-specific prefix structure (<code>s3://bucket/{organisation_id}/...</code>). IAM policies and bucket policies restrict access to tenant-specific prefixes based on the authenticated user's organisation.</p>
+<p><strong>Cache Level</strong>: Redis keys are namespaced per tenant (<code>{organisation_id}:cache_key</code>), preventing cache pollution between organisations.</p>
+<p>This multi-layered approach ensures that a failure at any single layer does not result in cross-tenant data exposure.</p>
+<hr />
+<h2 id="5-design-assumptions">5. Design Assumptions</h2>
+<p>This section documents assumptions made during architecture definition. Assumptions are categorised by confidence level and validation status.</p>
+<h3 id="51-confirmed-assumptions">5.1 Confirmed Assumptions</h3>
+<p>These assumptions are based on explicit requirements or stakeholder decisions:</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Assumption</th>
+<th>Source</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A1</td>
+<td>Platform will be web-only for MVP</td>
+<td>Stakeholder decision</td>
+<td>Native mobile apps deferred to future phase</td>
+</tr>
+<tr>
+<td>A2</td>
+<td>AWS is the cloud provider</td>
+<td>Stakeholder decision</td>
+<td>Selected over Azure/GCP</td>
+</tr>
+<tr>
+<td>A3</td>
+<td>All data must reside in UK</td>
+<td>Compliance requirement</td>
+<td>NHS, financial services, public sector mandate</td>
+</tr>
+<tr>
+<td>A4</td>
+<td>Multi-tenant architecture</td>
+<td>Stakeholder decision</td>
+<td>Isolation via RLS</td>
+</tr>
+</tbody>
+</table>
+<h3 id="52-technical-assumptions">5.2 Technical Assumptions</h3>
+<p>These assumptions are based on technical analysis and require validation:</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Assumption</th>
+<th>Confidence</th>
+<th>Validation Approach</th>
+<th>Risk if Invalid</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>T1</td>
+<td>AWS Cognito meets authentication requirements including MFA and potential SSO</td>
+<td>High</td>
+<td>Review Cognito capabilities against NHS/enterprise SSO requirements</td>
+<td>May need custom auth implementation</td>
+</tr>
+<tr>
+<td>T2</td>
+<td>PostgreSQL RLS provides sufficient tenant isolation</td>
+<td>High</td>
+<td>Security review during Phase 1</td>
+<td>May need schema-per-tenant approach</td>
+</tr>
+<tr>
+<td>T3</td>
+<td>PostgreSQL handles audit write volume</td>
+<td>Medium</td>
+<td>Load testing with projected volumes</td>
+<td>May need separate audit database or time-series DB</td>
+</tr>
+<tr>
+<td>T4</td>
+<td>AWS Rekognition recognises IT equipment (laptops, servers, monitors)</td>
+<td>Low</td>
+<td><strong>Requires PoC</strong> with sample IT asset images</td>
+<td>May need custom ML model training</td>
+</tr>
+<tr>
+<td>T5</td>
+<td>Synchronous AI identification completes within 5 seconds</td>
+<td>Medium</td>
+<td>Performance testing during Phase 1</td>
+<td>May need async pattern with webhooks/polling</td>
+</tr>
+<tr>
+<td>T6</td>
+<td>ECS Fargate provides adequate compute flexibility</td>
+<td>High</td>
+<td>Standard AWS pattern</td>
+<td>Unlikely to be invalid</td>
+</tr>
+</tbody>
+</table>
+<h3 id="53-business-assumptions">5.3 Business Assumptions</h3>
+<p>These assumptions relate to user requirements and workflows:</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Assumption</th>
+<th>Confidence</th>
+<th>Validation Approach</th>
+<th>Risk if Invalid</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>B1</td>
+<td>Recycling operators can use same portal as clients (with different permissions)</td>
+<td><strong>Unknown</strong></td>
+<td>User research / stakeholder interview</td>
+<td>May need separate operator portal</td>
+</tr>
+<tr>
+<td>B2</td>
+<td>Responsive web design is acceptable for warehouse/field use</td>
+<td>Medium</td>
+<td>User testing with target devices</td>
+<td>May need PWA with offline capability</td>
+</tr>
+<tr>
+<td>B3</td>
+<td>99.9% availability SLA meets customer expectations</td>
+<td>High</td>
+<td>Confirm in sales process</td>
+<td>Higher SLA requires multi-region architecture</td>
+</tr>
+<tr>
+<td>B4</td>
+<td>English-only interface is acceptable for MVP</td>
+<td>High</td>
+<td>Confirm with stakeholders</td>
+<td>Internationalisation adds complexity</td>
+</tr>
+</tbody>
+</table>
+<h3 id="54-assumptions-requiring-immediate-validation">5.4 Assumptions Requiring Immediate Validation</h3>
+<p>The following assumptions are high-risk and should be validated before Phase 1 development begins:</p>
+<table>
+<thead>
+<tr>
+<th>Priority</th>
+<th>ID</th>
+<th>Assumption</th>
+<th>Recommended Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🔴 Critical</td>
+<td>T4</td>
+<td>Rekognition recognises IT equipment</td>
+<td>Run PoC with 50+ sample images of typical IT assets</td>
+</tr>
+<tr>
+<td>🟠 High</td>
+<td>B1</td>
+<td>Operators use same portal</td>
+<td>Interview 2-3 recycling operators about their workflow</td>
+</tr>
+<tr>
+<td>🟡 Medium</td>
+<td>T3</td>
+<td>PostgreSQL audit performance</td>
+<td>Estimate audit event volume; compare to PostgreSQL benchmarks</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="6-scalability-considerations">6. Scalability Considerations</h2>
+<h3 id="61-growth-path">6.1 Growth Path</h3>
+<p>The architecture is designed to scale through three phases without fundamental redesign:</p>
+<pre class="mermaid"><code>graph LR
+    PILOT[Pilot&lt;br/&gt;1-10 orgs] --&gt; GROWTH[Growth&lt;br/&gt;10-50 orgs]
+    GROWTH --&gt; SCALE[Scale&lt;br/&gt;50+ orgs]
+
+    PILOT -.- P1[Single RDS&lt;br/&gt;Fargate min]
+    GROWTH -.- G1[RDS read replicas&lt;br/&gt;Fargate scaling]
+    SCALE -.- S1[Aurora Serverless&lt;br/&gt;Multiple AZs]</code></pre>
+<h3 id="62-phase-specifications">6.2 Phase Specifications</h3>
+<p><strong>Pilot Phase (1-10 Organisations)</strong></p>
+<p>The pilot phase establishes the foundation for growth. Infrastructure is sized for minimal viable capacity with auto-scaling headroom.</p>
+<table>
+<thead>
+<tr>
+<th>Resource</th>
+<th>Sizing</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>API Compute</td>
+<td>ECS Fargate 0.5 vCPU / 1GB, 1-4 tasks</td>
+</tr>
+<tr>
+<td>Database</td>
+<td>RDS db.t3.medium, Single-AZ</td>
+</tr>
+<tr>
+<td>Cache</td>
+<td>ElastiCache cache.t3.micro</td>
+</tr>
+<tr>
+<td>Storage</td>
+<td>S3 Standard</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Growth Phase (10-50 Organisations)</strong></p>
+<p>As user base grows, the focus shifts to resilience and read performance. Database read replicas offload reporting queries from the primary instance.</p>
+<table>
+<thead>
+<tr>
+<th>Resource</th>
+<th>Sizing</th>
+<th>Changes from Pilot</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>API Compute</td>
+<td>Fargate 2-10 tasks</td>
+<td>Increased min capacity</td>
+</tr>
+<tr>
+<td>Database</td>
+<td>RDS Multi-AZ + Read Replica</td>
+<td>Add failover and read scaling</td>
+</tr>
+<tr>
+<td>Cache</td>
+<td>ElastiCache cluster mode</td>
+<td>Add cache redundancy</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Scale Phase (50+ Organisations)</strong></p>
+<p>At national scale, Aurora Serverless provides automatic scaling based on demand, and services may be split into independently deployable microservices.</p>
+<table>
+<thead>
+<tr>
+<th>Resource</th>
+<th>Sizing</th>
+<th>Changes from Growth</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Database</td>
+<td>Aurora Serverless v2</td>
+<td>Auto-scaling, higher IOPS</td>
+</tr>
+<tr>
+<td>Compute</td>
+<td>Fargate with service mesh</td>
+<td>Independent service scaling</td>
+</tr>
+<tr>
+<td>Observability</td>
+<td>Enhanced CloudWatch, X-Ray</td>
+<td>Distributed tracing</td>
+</tr>
+</tbody>
+</table>
+<h3 id="63-performance-targets">6.3 Performance Targets</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Target</th>
+<th>Measurement Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>API Response Time (p95)</td>
+<td>&lt;500ms</td>
+<td>CloudWatch Metrics</td>
+</tr>
+<tr>
+<td>AI Identification Time</td>
+<td>&lt;5s</td>
+<td>CloudWatch Metrics</td>
+</tr>
+<tr>
+<td>Platform Availability</td>
+<td>99.9%</td>
+<td>CloudWatch Synthetics</td>
+</tr>
+<tr>
+<td>Audit Log Write Latency</td>
+<td>&lt;100ms</td>
+<td>CloudWatch Metrics</td>
+</tr>
+<tr>
+<td>Database Query Time (p95)</td>
+<td>&lt;100ms</td>
+<td>RDS Performance Insights</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="7-security-architecture">7. Security Architecture</h2>
+<p>Security is addressed in detail in <code>04-compliance-security/README.md</code>. This section summarises the key architectural security controls:</p>
+<h3 id="71-network-security">7.1 Network Security</h3>
+<ul>
+<li><strong>VPC isolation</strong>: All backend services run in private subnets with no direct internet access</li>
+<li><strong>Security groups</strong>: Least-privilege network access between components</li>
+<li><strong>NAT Gateway</strong>: Controlled outbound internet access for services requiring external APIs</li>
+</ul>
+<h3 id="72-data-security">7.2 Data Security</h3>
+<ul>
+<li><strong>Encryption in transit</strong>: TLS 1.3 enforced on all connections</li>
+<li><strong>Encryption at rest</strong>: AWS KMS-managed keys for RDS, S3, and ElastiCache</li>
+<li><strong>Key rotation</strong>: Automatic annual key rotation via KMS</li>
+</ul>
+<h3 id="73-application-security">7.3 Application Security</h3>
+<ul>
+<li><strong>WAF rules</strong>: OWASP Top 10 protection, rate limiting, bot detection</li>
+<li><strong>Input validation</strong>: All API inputs validated against schemas</li>
+<li><strong>Output encoding</strong>: Prevent XSS via content security policies</li>
+</ul>
+<h3 id="74-access-control">7.4 Access Control</h3>
+<ul>
+<li><strong>IAM roles</strong>: Service-specific roles with least-privilege policies</li>
+<li><strong>Cognito MFA</strong>: Multi-factor authentication required for privileged users</li>
+<li><strong>Audit logging</strong>: All access and changes logged to CloudTrail and application audit log</li>
+</ul>
+<hr />
+<h2 id="8-uk-data-residency">8. UK Data Residency</h2>
+<p>Compliance with UK data protection requirements is a non-negotiable architectural constraint. The following measures ensure all data remains within UK jurisdiction:</p>
+<table>
+<thead>
+<tr>
+<th>Requirement</th>
+<th>Implementation</th>
+<th>Verification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>All data stored in UK</td>
+<td>AWS eu-west-2 (London) region exclusively</td>
+<td>AWS Config rules</td>
+</tr>
+<tr>
+<td>No cross-region replication</td>
+<td>Replication disabled by IAM policy</td>
+<td>IAM policy audit</td>
+</tr>
+<tr>
+<td>Backups in UK</td>
+<td>RDS automated backups in eu-west-2</td>
+<td>Backup configuration audit</td>
+</tr>
+<tr>
+<td>Processing in UK</td>
+<td>All compute resources in eu-west-2</td>
+<td>Resource tagging audit</td>
+</tr>
+<tr>
+<td>CDN edge locations</td>
+<td>CloudFront geo-restriction (optional)</td>
+<td>Distribution configuration</td>
+</tr>
+</tbody>
+</table>
+<h3 id="81-compliance-certifications">8.1 Compliance Certifications</h3>
+<p>AWS eu-west-2 maintains certifications relevant to target customers:
+- ISO 27001, 27017, 27018
+- SOC 1, 2, 3
+- Cyber Essentials Plus
+- NHS Data Security and Protection Toolkit (via AWS compliance programme)</p>
+<hr />
+<h2 id="9-decision-log">9. Decision Log</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Decision</th>
+<th>Rationale</th>
+<th>Alternatives Considered</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>D1</td>
+<td>AWS as cloud provider</td>
+<td>UK region availability, NHS compliance, managed services</td>
+<td>Azure (strong NHS presence), GCP</td>
+</tr>
+<tr>
+<td>D2</td>
+<td>PostgreSQL as primary database</td>
+<td>RLS for multi-tenancy, ACID for audit, team familiarity</td>
+<td>MongoDB (flexible schema), DynamoDB (serverless)</td>
+</tr>
+<tr>
+<td>D3</td>
+<td>Multi-tenant shared infrastructure</td>
+<td>Shared infrastructure with isolation via RLS</td>
+<td>Single-tenant (simpler isolation)</td>
+</tr>
+<tr>
+<td>D4</td>
+<td>Web-only MVP</td>
+<td>Faster time-to-market; responsive design covers tablets</td>
+<td>Native mobile apps (better offline support)</td>
+</tr>
+<tr>
+<td>D5</td>
+<td>Mermaid for diagrams</td>
+<td>Version-controllable, renders in GitHub/IDEs</td>
+<td>Draw.io (richer visuals), Lucidchart (collaboration)</td>
+</tr>
+<tr>
+<td>D6</td>
+<td>Docker Hardened Images (DHI)</td>
+<td>Near-zero CVE posture; FIPS/STIG compliance for NHS/Gov</td>
+<td>Standard Docker images (higher CVE risk)</td>
+</tr>
+<tr>
+<td>D7</td>
+<td>Microservices on ECS Fargate</td>
+<td>Independent scaling; fault isolation; serverless ops</td>
+<td>Monolith (simpler), EKS (more complex)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="10-open-questions">10. Open Questions</h2>
+<p>The following questions require resolution before or during Phase 1:</p>
+<ol>
+<li>
+<p><strong>Operator portal scope</strong>: Do recycling operators require a separate portal with different workflows, or can role-based access within the same portal suffice?</p>
+</li>
+<li>
+<p><strong>AI model training</strong>: Will AWS Rekognition recognise IT assets (laptops, servers, monitors) out-of-the-box, or will custom model training be required?</p>
+</li>
+<li>
+<p><strong>Offline capability</strong>: Do field staff require offline data entry capability, and if so, what sync strategy should be used?</p>
+</li>
+<li>
+<p><strong>Integration requirements</strong>: What existing systems (ERP, ticketing, logistics) do target customers need to integrate with?</p>
+</li>
+<li>
+<p><strong>Certificate legal requirements</strong>: What specific content and format is required for destruction certificates to be legally valid in UK jurisdictions?</p>
+</li>
+</ol>
+<hr />
+<h1 id="core-data-model">Core Data Model</h1>
+<p><strong>Document Version:</strong> 1.0
+<strong>Last Updated:</strong> 13 January 2025
+<strong>Status:</strong> Draft for Review</p>
+<hr />
+<blockquote>
+<p><strong>MILESTONE 0 — DISCOVERY PHASE</strong></p>
+<p>This document is a deliverable of Milestone 0, a paid discovery phase intended to define the technical, architectural, and compliance foundations of AI-Reclaim™ <strong>prior to any production build</strong>.</p>
+<p>This document does not constitute a commitment to build. Detailed scope, timelines, and commercials for development phases will be defined following successful completion and acceptance of Milestone 0.</p>
+<p>All intellectual property vests exclusively in A to Z IT Recycling Ltd.</p>
+</blockquote>
+<hr />
+<h2 id="executive-summary_1">Executive Summary</h2>
+<p>This document defines the core data model for AI-Reclaim™, establishing the primary entities, their attributes, and relationships required to support IT asset disposition tracking, compliance audit trails, and ESG reporting.</p>
+<p><strong>Key design decisions:</strong>
+- Assets tracked individually with optional batch grouping for efficient collection handling
+- Simple 4-stage lifecycle (Registered → Collected → Processing → Completed)
+- Four certificate types supporting destruction, recycling, data sanitisation, and WEEE compliance
+- Multi-tenant isolation via <code>organisation_id</code> foreign key on all tenant-scoped entities
+- Immutable audit log capturing all state changes with before/after values</p>
+<hr />
+<h2 id="1-entity-overview">1. Entity Overview</h2>
+<h3 id="11-primary-entities">1.1 Primary Entities</h3>
+<table>
+<thead>
+<tr>
+<th>Entity</th>
+<th>Description</th>
+<th>Tenant-Scoped</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Organisation</strong></td>
+<td>Client organisation (NHS trust, bank, local authority, etc.)</td>
+<td>No (is tenant)</td>
+</tr>
+<tr>
+<td><strong>User</strong></td>
+<td>System users with role-based access</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><strong>Asset</strong></td>
+<td>Individual IT equipment item tracked through disposal lifecycle</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><strong>Batch</strong></td>
+<td>Collection of assets grouped for efficient handling</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><strong>AssetType</strong></td>
+<td>Category/classification of IT equipment</td>
+<td>No (shared)</td>
+</tr>
+<tr>
+<td><strong>Certificate</strong></td>
+<td>Legal compliance document (destruction, recycling, etc.)</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><strong>AuditLog</strong></td>
+<td>Immutable record of all system actions</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><strong>ESGReport</strong></td>
+<td>Environmental impact report for an organisation</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="12-supporting-entities">1.2 Supporting Entities</h3>
+<table>
+<thead>
+<tr>
+<th>Entity</th>
+<th>Description</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Address</strong></td>
+<td>Physical location for collection/delivery</td>
+<td>Supports multiple addresses per organisation</td>
+</tr>
+<tr>
+<td><strong>Contact</strong></td>
+<td>Contact person within an organisation</td>
+<td>Communication and notifications</td>
+</tr>
+<tr>
+<td><strong>AssetImage</strong></td>
+<td>Photograph of asset for AI identification</td>
+<td>Links to S3 storage</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="2-entity-relationship-diagram">2. Entity Relationship Diagram</h2>
+<h3 id="21-core-relationships">2.1 Core Relationships</h3>
+<pre class="mermaid"><code>erDiagram
+    Organisation ||--o{ User : employs
+    Organisation ||--o{ Asset : owns
+    Organisation ||--o{ Batch : creates
+    Organisation ||--o{ Certificate : receives
+    Organisation ||--o{ ESGReport : generates
+    Organisation ||--o{ Address : has
+    Organisation ||--o{ Contact : has
+
+    Batch ||--o{ Asset : contains
+    Asset }o--|| AssetType : categorised_as
+    Asset ||--o{ Certificate : covered_by
+    Asset ||--o{ AuditLog : generates
+    Asset ||--o{ AssetImage : has
+
+    User ||--o{ AuditLog : creates
+    User }o--|| Role : has
+
+    Certificate }o--|| CertificateType : is_type</code></pre>
+<h3 id="22-detailed-schema-diagram">2.2 Detailed Schema Diagram</h3>
+<pre class="mermaid"><code>erDiagram
+    Organisation {
+        uuid id PK
+        string name
+        string type
+        string registration_number
+        boolean is_active
+        timestamp created_at
+        timestamp updated_at
+    }
+
+    User {
+        uuid id PK
+        uuid organisation_id FK
+        string email
+        string name
+        enum role
+        boolean is_active
+        timestamp created_at
+        timestamp last_login_at
+    }
+
+    Asset {
+        uuid id PK
+        uuid organisation_id FK
+        uuid batch_id FK "nullable"
+        uuid asset_type_id FK
+        string serial_number
+        string make
+        string model
+        enum status
+        decimal weight_kg
+        json ai_identification
+        json metadata
+        timestamp registered_at
+        timestamp collected_at
+        timestamp completed_at
+    }
+
+    Batch {
+        uuid id PK
+        uuid organisation_id FK
+        string reference
+        enum status
+        int asset_count
+        decimal total_weight_kg
+        timestamp created_at
+        timestamp collected_at
+    }
+
+    AssetType {
+        uuid id PK
+        string name
+        string category
+        decimal default_weight_kg
+        decimal co2_factor
+        boolean is_data_bearing
+    }
+
+    Certificate {
+        uuid id PK
+        uuid organisation_id FK
+        uuid asset_id FK "nullable"
+        uuid batch_id FK "nullable"
+        enum type
+        string reference_number
+        text description
+        string pdf_url
+        timestamp issued_at
+        uuid issued_by_user_id FK
+    }
+
+    AuditLog {
+        uuid id PK
+        uuid organisation_id FK
+        uuid user_id FK
+        uuid asset_id FK "nullable"
+        string entity_type
+        uuid entity_id
+        string action
+        json before_state
+        json after_state
+        string ip_address
+        timestamp created_at
+    }
+
+    ESGReport {
+        uuid id PK
+        uuid organisation_id FK
+        date period_start
+        date period_end
+        int total_assets
+        decimal total_weight_kg
+        decimal co2_avoided_kg
+        decimal landfill_diverted_kg
+        json breakdown
+        string pdf_url
+        timestamp generated_at
+    }
+
+    Organisation ||--o{ User : has
+    Organisation ||--o{ Asset : owns
+    Organisation ||--o{ Batch : creates
+    Batch ||--o{ Asset : contains
+    Asset }o--|| AssetType : type
+    Asset ||--o{ Certificate : has
+    Asset ||--o{ AuditLog : logs
+    User ||--o{ AuditLog : creates
+    Organisation ||--o{ ESGReport : generates</code></pre>
+<hr />
+<h2 id="3-entity-specifications">3. Entity Specifications</h2>
+<h3 id="31-organisation">3.1 Organisation</h3>
+<p>The Organisation entity represents a client company using the platform. All tenant-scoped data is isolated by <code>organisation_id</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Constraints</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>UUID</td>
+<td>PK</td>
+<td>Unique identifier</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>VARCHAR(255)</td>
+<td>NOT NULL</td>
+<td>Organisation display name</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>ENUM</td>
+<td>NOT NULL</td>
+<td><code>nhs_trust</code>, <code>bank</code>, <code>local_authority</code>, <code>enterprise</code>, <code>recycler</code></td>
+</tr>
+<tr>
+<td><code>registration_number</code></td>
+<td>VARCHAR(50)</td>
+<td>UNIQUE</td>
+<td>Companies House or charity number</td>
+</tr>
+<tr>
+<td><code>is_active</code></td>
+<td>BOOLEAN</td>
+<td>DEFAULT true</td>
+<td>Soft delete flag</td>
+</tr>
+<tr>
+<td><code>created_at</code></td>
+<td>TIMESTAMP</td>
+<td>NOT NULL</td>
+<td>Record creation time</td>
+</tr>
+<tr>
+<td><code>updated_at</code></td>
+<td>TIMESTAMP</td>
+<td>NOT NULL</td>
+<td>Last modification time</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Business Rules:</strong>
+- Organisation cannot be deleted if it has assets in processing
+- Type determines available features and compliance requirements</p>
+<hr />
+<h3 id="32-user">3.2 User</h3>
+<p>Users belong to an organisation and have role-based permissions.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Constraints</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>UUID</td>
+<td>PK</td>
+<td>Unique identifier</td>
+</tr>
+<tr>
+<td><code>organisation_id</code></td>
+<td>UUID</td>
+<td>FK, NOT NULL</td>
+<td>Parent organisation</td>
+</tr>
+<tr>
+<td><code>email</code></td>
+<td>VARCHAR(255)</td>
+<td>UNIQUE, NOT NULL</td>
+<td>Login identifier</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>VARCHAR(255)</td>
+<td>NOT NULL</td>
+<td>Display name</td>
+</tr>
+<tr>
+<td><code>role</code></td>
+<td>ENUM</td>
+<td>NOT NULL</td>
+<td>User role (see below)</td>
+</tr>
+<tr>
+<td><code>is_active</code></td>
+<td>BOOLEAN</td>
+<td>DEFAULT true</td>
+<td>Account active flag</td>
+</tr>
+<tr>
+<td><code>created_at</code></td>
+<td>TIMESTAMP</td>
+<td>NOT NULL</td>
+<td>Account creation time</td>
+</tr>
+<tr>
+<td><code>last_login_at</code></td>
+<td>TIMESTAMP</td>
+<td></td>
+<td>Last successful login</td>
+</tr>
+</tbody>
+</table>
+<p><strong>User Roles:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Description</th>
+<th>Permissions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>admin</code></td>
+<td>Organisation administrator</td>
+<td>Full access to organisation data, user management</td>
+</tr>
+<tr>
+<td><code>operator</code></td>
+<td>Recycling facility staff</td>
+<td>Asset processing, certificate generation</td>
+</tr>
+<tr>
+<td><code>client</code></td>
+<td>Client organisation staff</td>
+<td>Register assets, view status, download certificates</td>
+</tr>
+<tr>
+<td><code>auditor</code></td>
+<td>Compliance auditor</td>
+<td>Read-only access to all data and audit logs</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="33-asset">3.3 Asset</h3>
+<p>The Asset entity represents an individual IT equipment item tracked through the disposal lifecycle.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Constraints</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>UUID</td>
+<td>PK</td>
+<td>Unique identifier</td>
+</tr>
+<tr>
+<td><code>organisation_id</code></td>
+<td>UUID</td>
+<td>FK, NOT NULL</td>
+<td>Owning organisation</td>
+</tr>
+<tr>
+<td><code>batch_id</code></td>
+<td>UUID</td>
+<td>FK, NULL</td>
+<td>Optional batch grouping</td>
+</tr>
+<tr>
+<td><code>asset_type_id</code></td>
+<td>UUID</td>
+<td>FK, NOT NULL</td>
+<td>Equipment category</td>
+</tr>
+<tr>
+<td><code>serial_number</code></td>
+<td>VARCHAR(100)</td>
+<td></td>
+<td>Manufacturer serial number</td>
+</tr>
+<tr>
+<td><code>make</code></td>
+<td>VARCHAR(100)</td>
+<td></td>
+<td>Manufacturer name</td>
+</tr>
+<tr>
+<td><code>model</code></td>
+<td>VARCHAR(100)</td>
+<td></td>
+<td>Model name/number</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td>ENUM</td>
+<td>NOT NULL</td>
+<td>Current lifecycle stage</td>
+</tr>
+<tr>
+<td><code>weight_kg</code></td>
+<td>DECIMAL(10,3)</td>
+<td></td>
+<td>Actual weight in kilograms</td>
+</tr>
+<tr>
+<td><code>ai_identification</code></td>
+<td>JSONB</td>
+<td></td>
+<td>AI recognition results</td>
+</tr>
+<tr>
+<td><code>metadata</code></td>
+<td>JSONB</td>
+<td></td>
+<td>Additional custom fields</td>
+</tr>
+<tr>
+<td><code>registered_at</code></td>
+<td>TIMESTAMP</td>
+<td>NOT NULL</td>
+<td>When asset was registered</td>
+</tr>
+<tr>
+<td><code>collected_at</code></td>
+<td>TIMESTAMP</td>
+<td></td>
+<td>When asset was collected</td>
+</tr>
+<tr>
+<td><code>completed_at</code></td>
+<td>TIMESTAMP</td>
+<td></td>
+<td>When processing completed</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Asset Status Lifecycle:</strong></p>
+<pre class="mermaid"><code>stateDiagram-v2
+    [*] --&gt; Registered: Asset created
+    Registered --&gt; Collected: Picked up from client
+    Collected --&gt; Processing: Arrived at facility
+    Processing --&gt; Completed: Destruction/recycling done
+    Completed --&gt; [*]</code></pre>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Description</th>
+<th>Allowed Transitions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>registered</code></td>
+<td>Asset logged in system, awaiting collection</td>
+<td>→ <code>collected</code></td>
+</tr>
+<tr>
+<td><code>collected</code></td>
+<td>Asset picked up, in transit to facility</td>
+<td>→ <code>processing</code></td>
+</tr>
+<tr>
+<td><code>processing</code></td>
+<td>At facility, undergoing audit/sanitisation/recycling</td>
+<td>→ <code>completed</code></td>
+</tr>
+<tr>
+<td><code>completed</code></td>
+<td>Final disposition complete, certificate issued</td>
+<td>(terminal)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>AI Identification JSON Structure:</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;confidence&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.94</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;detected_make&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Dell&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;detected_model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Latitude 5520&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;detected_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;laptop&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;image_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;s3://bucket/org-id/assets/asset-id/photo.jpg&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;identified_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-01-13T10:30:00Z&quot;</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<hr />
+<h3 id="34-batch">3.4 Batch</h3>
+<p>Batches allow grouping of assets for efficient collection and processing.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Constraints</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>UUID</td>
+<td>PK</td>
+<td>Unique identifier</td>
+</tr>
+<tr>
+<td><code>organisation_id</code></td>
+<td>UUID</td>
+<td>FK, NOT NULL</td>
+<td>Owning organisation</td>
+</tr>
+<tr>
+<td><code>reference</code></td>
+<td>VARCHAR(50)</td>
+<td>NOT NULL</td>
+<td>Human-readable batch ID</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td>ENUM</td>
+<td>NOT NULL</td>
+<td>Batch status</td>
+</tr>
+<tr>
+<td><code>asset_count</code></td>
+<td>INT</td>
+<td>DEFAULT 0</td>
+<td>Number of assets in batch</td>
+</tr>
+<tr>
+<td><code>total_weight_kg</code></td>
+<td>DECIMAL(10,3)</td>
+<td>DEFAULT 0</td>
+<td>Sum of asset weights</td>
+</tr>
+<tr>
+<td><code>created_at</code></td>
+<td>TIMESTAMP</td>
+<td>NOT NULL</td>
+<td>Batch creation time</td>
+</tr>
+<tr>
+<td><code>collected_at</code></td>
+<td>TIMESTAMP</td>
+<td></td>
+<td>When batch was collected</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Batch Status:</strong>
+- <code>open</code> — Accepting new assets
+- <code>closed</code> — No more assets, awaiting collection
+- <code>collected</code> — In transit
+- <code>processing</code> — At facility
+- <code>completed</code> — All assets processed</p>
+<hr />
+<h3 id="35-assettype">3.5 AssetType</h3>
+<p>Shared reference data for IT equipment categories.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Constraints</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>UUID</td>
+<td>PK</td>
+<td>Unique identifier</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>VARCHAR(100)</td>
+<td>NOT NULL</td>
+<td>Display name (e.g., "Laptop")</td>
+</tr>
+<tr>
+<td><code>category</code></td>
+<td>VARCHAR(50)</td>
+<td>NOT NULL</td>
+<td>High-level category</td>
+</tr>
+<tr>
+<td><code>default_weight_kg</code></td>
+<td>DECIMAL(10,3)</td>
+<td></td>
+<td>Estimated weight if not measured</td>
+</tr>
+<tr>
+<td><code>co2_factor</code></td>
+<td>DECIMAL(10,4)</td>
+<td></td>
+<td>kg CO2 avoided per kg recycled</td>
+</tr>
+<tr>
+<td><code>is_data_bearing</code></td>
+<td>BOOLEAN</td>
+<td>DEFAULT false</td>
+<td>Requires data sanitisation</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Standard Asset Types:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Category</th>
+<th>Data Bearing</th>
+<th>CO2 Factor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Laptop</td>
+<td>Computing</td>
+<td>Yes</td>
+<td>2.1</td>
+</tr>
+<tr>
+<td>Desktop PC</td>
+<td>Computing</td>
+<td>Yes</td>
+<td>1.8</td>
+</tr>
+<tr>
+<td>Server</td>
+<td>Computing</td>
+<td>Yes</td>
+<td>3.2</td>
+</tr>
+<tr>
+<td>Monitor</td>
+<td>Display</td>
+<td>No</td>
+<td>1.5</td>
+</tr>
+<tr>
+<td>Printer</td>
+<td>Peripheral</td>
+<td>No</td>
+<td>1.2</td>
+</tr>
+<tr>
+<td>Mobile Phone</td>
+<td>Mobile</td>
+<td>Yes</td>
+<td>0.8</td>
+</tr>
+<tr>
+<td>Tablet</td>
+<td>Mobile</td>
+<td>Yes</td>
+<td>0.9</td>
+</tr>
+<tr>
+<td>Network Switch</td>
+<td>Networking</td>
+<td>No</td>
+<td>1.4</td>
+</tr>
+<tr>
+<td>Hard Drive</td>
+<td>Storage</td>
+<td>Yes</td>
+<td>0.5</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="36-certificate">3.6 Certificate</h3>
+<p>Legal compliance documents issued upon completion of asset processing.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Constraints</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>UUID</td>
+<td>PK</td>
+<td>Unique identifier</td>
+</tr>
+<tr>
+<td><code>organisation_id</code></td>
+<td>UUID</td>
+<td>FK, NOT NULL</td>
+<td>Receiving organisation</td>
+</tr>
+<tr>
+<td><code>asset_id</code></td>
+<td>UUID</td>
+<td>FK, NULL</td>
+<td>Single asset (if individual)</td>
+</tr>
+<tr>
+<td><code>batch_id</code></td>
+<td>UUID</td>
+<td>FK, NULL</td>
+<td>Batch (if batch certificate)</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>ENUM</td>
+<td>NOT NULL</td>
+<td>Certificate type</td>
+</tr>
+<tr>
+<td><code>reference_number</code></td>
+<td>VARCHAR(50)</td>
+<td>UNIQUE, NOT NULL</td>
+<td>Official reference</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td>TEXT</td>
+<td></td>
+<td>Certificate details</td>
+</tr>
+<tr>
+<td><code>pdf_url</code></td>
+<td>VARCHAR(500)</td>
+<td></td>
+<td>S3 URL to PDF document</td>
+</tr>
+<tr>
+<td><code>issued_at</code></td>
+<td>TIMESTAMP</td>
+<td>NOT NULL</td>
+<td>Issue date/time</td>
+</tr>
+<tr>
+<td><code>issued_by_user_id</code></td>
+<td>UUID</td>
+<td>FK, NOT NULL</td>
+<td>Issuing operator</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Certificate Types:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Code</th>
+<th>Description</th>
+<th>Required For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Certificate of Destruction</td>
+<td><code>destruction</code></td>
+<td>Confirms secure physical destruction</td>
+<td>Data-bearing assets</td>
+</tr>
+<tr>
+<td>Certificate of Recycling</td>
+<td><code>recycling</code></td>
+<td>Confirms environmentally responsible recycling</td>
+<td>All assets</td>
+</tr>
+<tr>
+<td>Data Sanitisation Certificate</td>
+<td><code>sanitisation</code></td>
+<td>Confirms data wiped to NIST 800-88 standard</td>
+<td>Data-bearing assets</td>
+</tr>
+<tr>
+<td>WEEE Compliance Certificate</td>
+<td><code>weee</code></td>
+<td>EU/UK e-waste regulation compliance</td>
+<td>Batch/collection level</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Business Rules:</strong>
+- Data-bearing assets MUST have either <code>destruction</code> or <code>sanitisation</code> certificate
+- Certificates are immutable once issued
+- PDF generated and stored in S3 at issuance</p>
+<hr />
+<h3 id="37-auditlog">3.7 AuditLog</h3>
+<p>Immutable record of all significant system actions for compliance.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Constraints</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>UUID</td>
+<td>PK</td>
+<td>Unique identifier</td>
+</tr>
+<tr>
+<td><code>organisation_id</code></td>
+<td>UUID</td>
+<td>FK, NOT NULL</td>
+<td>Tenant scope</td>
+</tr>
+<tr>
+<td><code>user_id</code></td>
+<td>UUID</td>
+<td>FK, NOT NULL</td>
+<td>Acting user</td>
+</tr>
+<tr>
+<td><code>asset_id</code></td>
+<td>UUID</td>
+<td>FK, NULL</td>
+<td>Related asset (if applicable)</td>
+</tr>
+<tr>
+<td><code>entity_type</code></td>
+<td>VARCHAR(50)</td>
+<td>NOT NULL</td>
+<td>Entity being modified</td>
+</tr>
+<tr>
+<td><code>entity_id</code></td>
+<td>UUID</td>
+<td>NOT NULL</td>
+<td>ID of modified entity</td>
+</tr>
+<tr>
+<td><code>action</code></td>
+<td>VARCHAR(50)</td>
+<td>NOT NULL</td>
+<td>Action performed</td>
+</tr>
+<tr>
+<td><code>before_state</code></td>
+<td>JSONB</td>
+<td></td>
+<td>State before change</td>
+</tr>
+<tr>
+<td><code>after_state</code></td>
+<td>JSONB</td>
+<td></td>
+<td>State after change</td>
+</tr>
+<tr>
+<td><code>ip_address</code></td>
+<td>INET</td>
+<td></td>
+<td>Client IP address</td>
+</tr>
+<tr>
+<td><code>created_at</code></td>
+<td>TIMESTAMP</td>
+<td>NOT NULL</td>
+<td>Action timestamp</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Audit Actions:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Entity Types</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>created</code></td>
+<td>All</td>
+<td>New record created</td>
+</tr>
+<tr>
+<td><code>updated</code></td>
+<td>All</td>
+<td>Record modified</td>
+</tr>
+<tr>
+<td><code>status_changed</code></td>
+<td>Asset, Batch</td>
+<td>Lifecycle status transition</td>
+</tr>
+<tr>
+<td><code>certificate_issued</code></td>
+<td>Certificate</td>
+<td>Certificate generated</td>
+</tr>
+<tr>
+<td><code>login</code></td>
+<td>User</td>
+<td>User authentication</td>
+</tr>
+<tr>
+<td><code>login_failed</code></td>
+<td>User</td>
+<td>Failed authentication attempt</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Immutability:</strong>
+- Audit logs are append-only (no UPDATE or DELETE)
+- Enforced via PostgreSQL trigger and RLS policy
+- Archived to S3 after 90 days for long-term retention</p>
+<hr />
+<h3 id="38-esgreport">3.8 ESGReport</h3>
+<p>Environmental, Social, and Governance impact reports.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Constraints</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>UUID</td>
+<td>PK</td>
+<td>Unique identifier</td>
+</tr>
+<tr>
+<td><code>organisation_id</code></td>
+<td>UUID</td>
+<td>FK, NOT NULL</td>
+<td>Report owner</td>
+</tr>
+<tr>
+<td><code>period_start</code></td>
+<td>DATE</td>
+<td>NOT NULL</td>
+<td>Reporting period start</td>
+</tr>
+<tr>
+<td><code>period_end</code></td>
+<td>DATE</td>
+<td>NOT NULL</td>
+<td>Reporting period end</td>
+</tr>
+<tr>
+<td><code>total_assets</code></td>
+<td>INT</td>
+<td>NOT NULL</td>
+<td>Assets processed in period</td>
+</tr>
+<tr>
+<td><code>total_weight_kg</code></td>
+<td>DECIMAL(12,3)</td>
+<td>NOT NULL</td>
+<td>Total weight processed</td>
+</tr>
+<tr>
+<td><code>co2_avoided_kg</code></td>
+<td>DECIMAL(12,3)</td>
+<td>NOT NULL</td>
+<td>CO2 emissions avoided</td>
+</tr>
+<tr>
+<td><code>landfill_diverted_kg</code></td>
+<td>DECIMAL(12,3)</td>
+<td>NOT NULL</td>
+<td>Waste diverted from landfill</td>
+</tr>
+<tr>
+<td><code>breakdown</code></td>
+<td>JSONB</td>
+<td></td>
+<td>Detailed breakdown by type</td>
+</tr>
+<tr>
+<td><code>pdf_url</code></td>
+<td>VARCHAR(500)</td>
+<td></td>
+<td>S3 URL to PDF report</td>
+</tr>
+<tr>
+<td><code>generated_at</code></td>
+<td>TIMESTAMP</td>
+<td>NOT NULL</td>
+<td>Report generation time</td>
+</tr>
+</tbody>
+</table>
+<p><strong>ESG Breakdown JSON Structure:</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;by_asset_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Laptop&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;weight_kg&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">375.5</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;co2_avoided_kg&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">788.55</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;by_disposition&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;recycled&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">180</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;weight_kg&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">420.0</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;destroyed&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;weight_kg&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">35.5</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p><strong>ESG Calculations:</strong>
+- <code>co2_avoided_kg</code> = Σ (asset weight × asset_type.co2_factor)
+- <code>landfill_diverted_kg</code> = <code>total_weight_kg</code> (assumes 100% diversion)</p>
+<hr />
+<h2 id="4-multi-tenant-data-isolation">4. Multi-Tenant Data Isolation</h2>
+<h3 id="41-isolation-strategy">4.1 Isolation Strategy</h3>
+<p>All tenant-scoped entities include <code>organisation_id</code> as a foreign key. PostgreSQL Row-Level Security (RLS) policies enforce isolation at the database level.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">-- Example RLS policy for assets table</span>
+<span class="k">CREATE</span><span class="w"> </span><span class="n">POLICY</span><span class="w"> </span><span class="n">tenant_isolation</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">assets</span>
+<span class="w">    </span><span class="k">USING</span><span class="w"> </span><span class="p">(</span><span class="n">organisation_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">current_setting</span><span class="p">(</span><span class="s1">&#39;app.current_organisation_id&#39;</span><span class="p">)::</span><span class="n">uuid</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="42-tenant-scoped-vs-shared-entities">4.2 Tenant-Scoped vs Shared Entities</h3>
+<table>
+<thead>
+<tr>
+<th>Entity</th>
+<th>Scope</th>
+<th>Isolation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Organisation</td>
+<td>Global</td>
+<td>N/A (is the tenant)</td>
+</tr>
+<tr>
+<td>User</td>
+<td>Tenant</td>
+<td>RLS by organisation_id</td>
+</tr>
+<tr>
+<td>Asset</td>
+<td>Tenant</td>
+<td>RLS by organisation_id</td>
+</tr>
+<tr>
+<td>Batch</td>
+<td>Tenant</td>
+<td>RLS by organisation_id</td>
+</tr>
+<tr>
+<td>Certificate</td>
+<td>Tenant</td>
+<td>RLS by organisation_id</td>
+</tr>
+<tr>
+<td>AuditLog</td>
+<td>Tenant</td>
+<td>RLS by organisation_id</td>
+</tr>
+<tr>
+<td>ESGReport</td>
+<td>Tenant</td>
+<td>RLS by organisation_id</td>
+</tr>
+<tr>
+<td>AssetType</td>
+<td>Shared</td>
+<td>No RLS (read-only reference data)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5-indexing-strategy">5. Indexing Strategy</h2>
+<h3 id="51-primary-indexes">5.1 Primary Indexes</h3>
+<table>
+<thead>
+<tr>
+<th>Table</th>
+<th>Index</th>
+<th>Columns</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>assets</td>
+<td><code>idx_assets_org_status</code></td>
+<td>(organisation_id, status)</td>
+<td>Filter by org and status</td>
+</tr>
+<tr>
+<td>assets</td>
+<td><code>idx_assets_batch</code></td>
+<td>(batch_id)</td>
+<td>Batch lookups</td>
+</tr>
+<tr>
+<td>assets</td>
+<td><code>idx_assets_serial</code></td>
+<td>(serial_number)</td>
+<td>Serial number search</td>
+</tr>
+<tr>
+<td>audit_logs</td>
+<td><code>idx_audit_org_created</code></td>
+<td>(organisation_id, created_at DESC)</td>
+<td>Audit log queries</td>
+</tr>
+<tr>
+<td>audit_logs</td>
+<td><code>idx_audit_asset</code></td>
+<td>(asset_id, created_at DESC)</td>
+<td>Asset history</td>
+</tr>
+<tr>
+<td>certificates</td>
+<td><code>idx_certs_org_type</code></td>
+<td>(organisation_id, type)</td>
+<td>Certificate listing</td>
+</tr>
+</tbody>
+</table>
+<h3 id="52-full-text-search">5.2 Full-Text Search</h3>
+<div class="highlight"><pre><span></span><code><span class="c1">-- Asset search index</span>
+<span class="k">CREATE</span><span class="w"> </span><span class="k">INDEX</span><span class="w"> </span><span class="n">idx_assets_search</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">assets</span>
+<span class="w">    </span><span class="k">USING</span><span class="w"> </span><span class="n">gin</span><span class="p">(</span><span class="n">to_tsvector</span><span class="p">(</span><span class="s1">&#39;english&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">make</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s1">&#39; &#39;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">model</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s1">&#39; &#39;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">serial_number</span><span class="p">));</span>
+</code></pre></div>
+<hr />
+<h2 id="6-data-retention">6. Data Retention</h2>
+<table>
+<thead>
+<tr>
+<th>Data Type</th>
+<th>Retention Period</th>
+<th>Archive Strategy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Assets</td>
+<td>Indefinite</td>
+<td>Soft delete after 7 years</td>
+</tr>
+<tr>
+<td>Audit Logs</td>
+<td>7 years</td>
+<td>Archive to S3 after 90 days</td>
+</tr>
+<tr>
+<td>Certificates</td>
+<td>Indefinite</td>
+<td>Legal requirement</td>
+</tr>
+<tr>
+<td>ESG Reports</td>
+<td>7 years</td>
+<td>Archive to S3 after 2 years</td>
+</tr>
+<tr>
+<td>Asset Images</td>
+<td>1 year after completion</td>
+<td>Delete from S3</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="7-open-questions">7. Open Questions</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Question</th>
+<th>Impact</th>
+<th>Resolution Approach</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DM1</td>
+<td>Should assets support custom fields per organisation?</td>
+<td>Schema flexibility</td>
+<td>JSONB metadata field (implemented)</td>
+</tr>
+<tr>
+<td>DM2</td>
+<td>Is batch-level certificate sufficient or per-asset required?</td>
+<td>Certificate workflow</td>
+<td>Both supported (asset_id OR batch_id)</td>
+</tr>
+<tr>
+<td>DM3</td>
+<td>What is the legal retention period for certificates?</td>
+<td>Storage capacity</td>
+<td>Research UK WEEE regulations</td>
+</tr>
+<tr>
+<td>DM4</td>
+<td>Should audit logs be cryptographically signed?</td>
+<td>Compliance</td>
+<td>Assess NHS/financial requirements</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="8-decision-log">8. Decision Log</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Decision</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>D1</td>
+<td>Simple 4-stage asset lifecycle</td>
+<td>Reduces complexity; covers core workflow</td>
+</tr>
+<tr>
+<td>D2</td>
+<td>Individual + batch tracking</td>
+<td>Flexibility for different client workflows</td>
+</tr>
+<tr>
+<td>D3</td>
+<td>Four certificate types</td>
+<td>Covers destruction, recycling, sanitisation, WEEE</td>
+</tr>
+<tr>
+<td>D4</td>
+<td>JSONB for AI identification</td>
+<td>Flexible schema for ML model evolution</td>
+</tr>
+<tr>
+<td>D5</td>
+<td>Weight-based ESG metrics</td>
+<td>Standard industry approach; extensible later</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="api-integration-outline">API &amp; Integration Outline</h1>
+<p><strong>Document Version:</strong> 1.0
+<strong>Last Updated:</strong> January 2025
+<strong>Status:</strong> Draft for Review</p>
+<hr />
+<blockquote>
+<p><strong>MILESTONE 0 — DISCOVERY PHASE</strong></p>
+<p>This document is a deliverable of Milestone 0, a paid discovery phase intended to define the technical, architectural, and compliance foundations of AI-Reclaim™ <strong>prior to any production build</strong>.</p>
+<p>This document does not constitute a commitment to build. Detailed scope, timelines, and commercials for development phases will be defined following successful completion and acceptance of Milestone 0.</p>
+<p>All intellectual property vests exclusively in A to Z IT Recycling Ltd.</p>
+</blockquote>
+<hr />
+<h2 id="executive-summary_2">Executive Summary</h2>
+<p>This document outlines the proposed API structure for AI-Reclaim™. The API serves as the interface between the web application and backend services, enabling asset management, audit logging, certificate generation, and ESG reporting.</p>
+<p><strong>Key decisions:</strong>
+- RESTful API design for broad compatibility and ease of integration
+- JWT-based authentication via AWS Cognito
+- Versioned API (v1) to support future evolution
+- External integrations documented as future consideration</p>
+<hr />
+<h2 id="1-api-design-principles">1. API Design Principles</h2>
+<table>
+<thead>
+<tr>
+<th>Principle</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>RESTful</strong></td>
+<td>Resource-oriented endpoints following REST conventions</td>
+</tr>
+<tr>
+<td><strong>Versioned</strong></td>
+<td>API version in URL path (e.g., <code>/v1/assets</code>)</td>
+</tr>
+<tr>
+<td><strong>JSON</strong></td>
+<td>Request and response bodies in JSON format</td>
+</tr>
+<tr>
+<td><strong>Authenticated</strong></td>
+<td>All endpoints require valid JWT token (except health check)</td>
+</tr>
+<tr>
+<td><strong>Tenant-scoped</strong></td>
+<td>Organisation ID derived from token; users access only their data</td>
+</tr>
+<tr>
+<td><strong>Audited</strong></td>
+<td>All write operations generate audit log entries</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="2-api-structure-overview">2. API Structure Overview</h2>
+<h3 id="21-resource-domains">2.1 Resource Domains</h3>
+<p>The API is organised around the following resource domains:</p>
+<div class="highlight"><pre><span></span><code>/v1
+├── /auth              → Authentication &amp; session management
+├── /assets            → Asset lifecycle management
+├── /batches           → Batch/collection management
+├── /certificates      → Certificate generation &amp; retrieval
+├── /audit             → Audit log queries
+├── /esg               → ESG reporting
+├── /users             → User management (admin)
+└── /organisations     → Organisation settings (admin)
+</code></pre></div>
+<h3 id="22-endpoint-summary">2.2 Endpoint Summary</h3>
+<table>
+<thead>
+<tr>
+<th>Domain</th>
+<th>Key Operations</th>
+<th>Access</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Auth</strong></td>
+<td>Login, logout, refresh token, password reset</td>
+<td>Public/Authenticated</td>
+</tr>
+<tr>
+<td><strong>Assets</strong></td>
+<td>Register, list, view, update status, AI identify</td>
+<td>Client, Operator</td>
+</tr>
+<tr>
+<td><strong>Batches</strong></td>
+<td>Create, add assets, close, view</td>
+<td>Client, Operator</td>
+</tr>
+<tr>
+<td><strong>Certificates</strong></td>
+<td>Generate, list, download PDF</td>
+<td>Operator, Client (read)</td>
+</tr>
+<tr>
+<td><strong>Audit</strong></td>
+<td>Query logs, export</td>
+<td>Auditor, Admin</td>
+</tr>
+<tr>
+<td><strong>ESG</strong></td>
+<td>Generate report, list reports, download</td>
+<td>Client, Admin</td>
+</tr>
+<tr>
+<td><strong>Users</strong></td>
+<td>Create, list, update, deactivate</td>
+<td>Admin</td>
+</tr>
+<tr>
+<td><strong>Organisations</strong></td>
+<td>View settings, update</td>
+<td>Admin</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="3-core-api-resources">3. Core API Resources</h2>
+<h3 id="31-assets">3.1 Assets</h3>
+<p>Primary resource for IT equipment tracking.</p>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th>Method</th>
+<th>Endpoint</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>List assets</td>
+<td>GET</td>
+<td><code>/assets</code></td>
+<td>Paginated list with filters</td>
+</tr>
+<tr>
+<td>Register asset</td>
+<td>POST</td>
+<td><code>/assets</code></td>
+<td>Create new asset record</td>
+</tr>
+<tr>
+<td>Get asset</td>
+<td>GET</td>
+<td><code>/assets/{id}</code></td>
+<td>Retrieve asset details</td>
+</tr>
+<tr>
+<td>Update asset</td>
+<td>PATCH</td>
+<td><code>/assets/{id}</code></td>
+<td>Update asset fields</td>
+</tr>
+<tr>
+<td>Change status</td>
+<td>POST</td>
+<td><code>/assets/{id}/status</code></td>
+<td>Transition lifecycle status</td>
+</tr>
+<tr>
+<td>AI identify</td>
+<td>POST</td>
+<td><code>/assets/{id}/identify</code></td>
+<td>Submit image for AI recognition</td>
+</tr>
+<tr>
+<td>Asset history</td>
+<td>GET</td>
+<td><code>/assets/{id}/history</code></td>
+<td>Audit trail for asset</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Common Filters:</strong>
+- <code>status</code> — Filter by lifecycle status
+- <code>batch_id</code> — Filter by batch
+- <code>asset_type_id</code> — Filter by equipment type
+- <code>created_after</code> / <code>created_before</code> — Date range</p>
+<h3 id="32-batches">3.2 Batches</h3>
+<p>Grouping of assets for collection and processing.</p>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th>Method</th>
+<th>Endpoint</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>List batches</td>
+<td>GET</td>
+<td><code>/batches</code></td>
+<td>Paginated list</td>
+</tr>
+<tr>
+<td>Create batch</td>
+<td>POST</td>
+<td><code>/batches</code></td>
+<td>Create new batch</td>
+</tr>
+<tr>
+<td>Get batch</td>
+<td>GET</td>
+<td><code>/batches/{id}</code></td>
+<td>Batch details with asset summary</td>
+</tr>
+<tr>
+<td>Add assets</td>
+<td>POST</td>
+<td><code>/batches/{id}/assets</code></td>
+<td>Add assets to batch</td>
+</tr>
+<tr>
+<td>Close batch</td>
+<td>POST</td>
+<td><code>/batches/{id}/close</code></td>
+<td>Mark batch ready for collection</td>
+</tr>
+<tr>
+<td>Batch assets</td>
+<td>GET</td>
+<td><code>/batches/{id}/assets</code></td>
+<td>List assets in batch</td>
+</tr>
+</tbody>
+</table>
+<h3 id="33-certificates">3.3 Certificates</h3>
+<p>Compliance documentation.</p>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th>Method</th>
+<th>Endpoint</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>List certificates</td>
+<td>GET</td>
+<td><code>/certificates</code></td>
+<td>Paginated list with filters</td>
+</tr>
+<tr>
+<td>Generate certificate</td>
+<td>POST</td>
+<td><code>/certificates</code></td>
+<td>Issue new certificate</td>
+</tr>
+<tr>
+<td>Get certificate</td>
+<td>GET</td>
+<td><code>/certificates/{id}</code></td>
+<td>Certificate details</td>
+</tr>
+<tr>
+<td>Download PDF</td>
+<td>GET</td>
+<td><code>/certificates/{id}/pdf</code></td>
+<td>Download PDF document</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Certificate Generation Requirements:</strong>
+- Asset or batch must be in <code>completed</code> status
+- Operator role required
+- Certificate type must be appropriate for asset type (e.g., destruction for data-bearing)</p>
+<h3 id="34-audit">3.4 Audit</h3>
+<p>Compliance audit trail.</p>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th>Method</th>
+<th>Endpoint</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Query logs</td>
+<td>GET</td>
+<td><code>/audit</code></td>
+<td>Paginated audit log query</td>
+</tr>
+<tr>
+<td>Asset audit</td>
+<td>GET</td>
+<td><code>/audit/assets/{id}</code></td>
+<td>Audit trail for specific asset</td>
+</tr>
+<tr>
+<td>Export logs</td>
+<td>GET</td>
+<td><code>/audit/export</code></td>
+<td>Export audit logs (CSV/JSON)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Query Parameters:</strong>
+- <code>entity_type</code> — Filter by entity (asset, user, certificate)
+- <code>action</code> — Filter by action type
+- <code>user_id</code> — Filter by acting user
+- <code>date_from</code> / <code>date_to</code> — Date range</p>
+<h3 id="35-esg-reporting">3.5 ESG Reporting</h3>
+<p>Environmental impact reports.</p>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th>Method</th>
+<th>Endpoint</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>List reports</td>
+<td>GET</td>
+<td><code>/esg/reports</code></td>
+<td>Previous reports</td>
+</tr>
+<tr>
+<td>Generate report</td>
+<td>POST</td>
+<td><code>/esg/reports</code></td>
+<td>Generate new report for period</td>
+</tr>
+<tr>
+<td>Get report</td>
+<td>GET</td>
+<td><code>/esg/reports/{id}</code></td>
+<td>Report details</td>
+</tr>
+<tr>
+<td>Download PDF</td>
+<td>GET</td>
+<td><code>/esg/reports/{id}/pdf</code></td>
+<td>Download PDF report</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="4-authentication-authorisation">4. Authentication &amp; Authorisation</h2>
+<h3 id="41-authentication-flow">4.1 Authentication Flow</h3>
+<div class="highlight"><pre><span></span><code>┌──────────┐     ┌─────────┐     ┌──────────┐
+│  Client  │────▶│   API   │────▶│ Cognito  │
+│   App    │◀────│ Gateway │◀────│   Pool   │
+└──────────┘     └─────────┘     └──────────┘
+     │                                │
+     │◀───────── JWT Token ──────────▶│
+</code></pre></div>
+<ol>
+<li>User submits credentials to <code>/auth/login</code></li>
+<li>API validates with Cognito</li>
+<li>Cognito returns JWT tokens (access + refresh)</li>
+<li>Client includes access token in <code>Authorization</code> header</li>
+<li>API validates token and extracts organisation_id</li>
+</ol>
+<h3 id="42-authorisation-matrix">4.2 Authorisation Matrix</h3>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Assets</th>
+<th>Batches</th>
+<th>Certificates</th>
+<th>Audit</th>
+<th>ESG</th>
+<th>Users</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Admin</strong></td>
+<td>Full</td>
+<td>Full</td>
+<td>Full</td>
+<td>Full</td>
+<td>Full</td>
+<td>Full</td>
+</tr>
+<tr>
+<td><strong>Operator</strong></td>
+<td>Read/Update</td>
+<td>Full</td>
+<td>Generate</td>
+<td>Read</td>
+<td>Read</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>Client</strong></td>
+<td>Create/Read</td>
+<td>Create/Read</td>
+<td>Read</td>
+<td>—</td>
+<td>Read</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>Auditor</strong></td>
+<td>Read</td>
+<td>Read</td>
+<td>Read</td>
+<td>Full</td>
+<td>Read</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5-integration-points">5. Integration Points</h2>
+<h3 id="51-internal-integrations">5.1 Internal Integrations</h3>
+<p>Services the API integrates with internally:</p>
+<table>
+<thead>
+<tr>
+<th>Service</th>
+<th>Purpose</th>
+<th>Integration Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AWS Cognito</td>
+<td>Authentication</td>
+<td>SDK / REST</td>
+</tr>
+<tr>
+<td>AWS S3</td>
+<td>File storage (images, PDFs)</td>
+<td>SDK</td>
+</tr>
+<tr>
+<td>AWS Rekognition</td>
+<td>AI image analysis</td>
+<td>SDK</td>
+</tr>
+<tr>
+<td>PostgreSQL</td>
+<td>Data persistence</td>
+<td>Connection pool</td>
+</tr>
+<tr>
+<td>Redis</td>
+<td>Caching, sessions</td>
+<td>Connection pool</td>
+</tr>
+</tbody>
+</table>
+<h3 id="52-external-integrations-future-consideration">5.2 External Integrations (Future Consideration)</h3>
+<p>Potential external integrations identified for future phases:</p>
+<table>
+<thead>
+<tr>
+<th>Integration</th>
+<th>Purpose</th>
+<th>Priority</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Client ERP systems</td>
+<td>Asset data sync</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>Email service</td>
+<td>Notifications, certificate delivery</td>
+<td>High</td>
+</tr>
+<tr>
+<td>SMS gateway</td>
+<td>Collection notifications</td>
+<td>Low</td>
+</tr>
+<tr>
+<td>Logistics providers</td>
+<td>Collection scheduling</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>Accounting systems</td>
+<td>Invoice generation</td>
+<td>Low</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note:</strong> External API access for client systems is documented as a future requirement. Phase 1 will focus on internal platform functionality.</p>
+<hr />
+<h2 id="6-api-assumptions">6. API Assumptions</h2>
+<h3 id="61-confirmed-assumptions">6.1 Confirmed Assumptions</h3>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Assumption</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A1</td>
+<td>RESTful API design</td>
+<td>Stakeholder decision</td>
+</tr>
+<tr>
+<td>A2</td>
+<td>JWT-based authentication via Cognito</td>
+<td>Architecture decision</td>
+</tr>
+<tr>
+<td>A3</td>
+<td>JSON request/response format</td>
+<td>Industry standard</td>
+</tr>
+<tr>
+<td>A4</td>
+<td>API versioning in URL path</td>
+<td>Best practice</td>
+</tr>
+</tbody>
+</table>
+<h3 id="62-assumptions-requiring-validation">6.2 Assumptions Requiring Validation</h3>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Assumption</th>
+<th>Confidence</th>
+<th>Validation Approach</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A5</td>
+<td>Synchronous AI identification acceptable</td>
+<td>Medium</td>
+<td>Performance testing</td>
+</tr>
+<tr>
+<td>A6</td>
+<td>Standard pagination (limit/offset) sufficient</td>
+<td>High</td>
+<td>Review with frontend</td>
+</tr>
+<tr>
+<td>A7</td>
+<td>Webhook/callback not needed for MVP</td>
+<td>Medium</td>
+<td>Confirm with stakeholders</td>
+</tr>
+<tr>
+<td>A8</td>
+<td>File uploads via signed S3 URLs</td>
+<td>High</td>
+<td>Security review</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="7-non-functional-requirements">7. Non-Functional Requirements</h2>
+<table>
+<thead>
+<tr>
+<th>Requirement</th>
+<th>Target</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Response time (p95)</td>
+<td>&lt; 500ms</td>
+<td>Excluding AI identification</td>
+</tr>
+<tr>
+<td>AI identification</td>
+<td>&lt; 5 seconds</td>
+<td>May need async pattern</td>
+</tr>
+<tr>
+<td>Rate limiting</td>
+<td>100 req/min per user</td>
+<td>Prevent abuse</td>
+</tr>
+<tr>
+<td>Max payload size</td>
+<td>10 MB</td>
+<td>For image uploads</td>
+</tr>
+<tr>
+<td>Pagination default</td>
+<td>20 items</td>
+<td>Configurable per endpoint</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="8-open-questions">8. Open Questions</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Question</th>
+<th>Impact</th>
+<th>Resolution Approach</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Q1</td>
+<td>Should AI identification be async with webhooks?</td>
+<td>UX design</td>
+<td>Prototype and test response times</td>
+</tr>
+<tr>
+<td>Q2</td>
+<td>What file formats for bulk asset import?</td>
+<td>Feature scope</td>
+<td>Client consultation</td>
+</tr>
+<tr>
+<td>Q3</td>
+<td>Real-time updates needed (WebSockets)?</td>
+<td>Architecture</td>
+<td>Review UX requirements</td>
+</tr>
+<tr>
+<td>Q4</td>
+<td>Public API for client integrations in Phase 1?</td>
+<td>Scope</td>
+<td>Stakeholder decision (deferred)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="9-decision-log_1">9. Decision Log</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Decision</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>D1</td>
+<td>REST over GraphQL</td>
+<td>Simpler implementation, broader familiarity, sufficient for use cases</td>
+</tr>
+<tr>
+<td>D2</td>
+<td>External integrations deferred</td>
+<td>Focus Phase 1 on core platform; integrations as future enhancement</td>
+</tr>
+<tr>
+<td>D3</td>
+<td>Cognito for auth</td>
+<td>Managed service, MFA support, reduces implementation risk</td>
+</tr>
+<tr>
+<td>D4</td>
+<td>Versioned API from start</td>
+<td>Enables future evolution without breaking clients</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="compliance-security-audit-logging">Compliance, Security &amp; Audit Logging</h1>
+<p><strong>Document Version:</strong> 1.0
+<strong>Last Updated:</strong> January 2025
+<strong>Status:</strong> Draft for Review</p>
+<hr />
+<blockquote>
+<p><strong>MILESTONE 0 — DISCOVERY PHASE</strong></p>
+<p>This document is a deliverable of Milestone 0, a paid discovery phase intended to define the technical, architectural, and compliance foundations of AI-Reclaim™ <strong>prior to any production build</strong>.</p>
+<p>This document does not constitute a commitment to build. Detailed scope, timelines, and commercials for development phases will be defined following successful completion and acceptance of Milestone 0.</p>
+<p>All intellectual property vests exclusively in A to Z IT Recycling Ltd.</p>
+</blockquote>
+<hr />
+<h2 id="executive-summary_3">Executive Summary</h2>
+<p>This document defines the compliance, security, and audit logging approach for AI-Reclaim™. As a platform serving NHS trusts, banks, local authorities, and enterprises, compliance is a foundational requirement rather than an afterthought.</p>
+<p><strong>Key decisions:</strong>
+- Target compliance: GDPR, NHS DSPT, ISO 27001, Cyber Essentials Plus
+- Immutable audit logging with before/after state capture
+- UK data residency (AWS eu-west-2 only)
+- Defence-in-depth security architecture
+- Role-based access control with MFA for privileged users</p>
+<hr />
+<h2 id="1-compliance-framework">1. Compliance Framework</h2>
+<h3 id="11-target-compliance-standards">1.1 Target Compliance Standards</h3>
+<table>
+<thead>
+<tr>
+<th>Standard</th>
+<th>Relevance</th>
+<th>Priority</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>GDPR</strong></td>
+<td>All UK/EU personal data processing</td>
+<td>Critical</td>
+</tr>
+<tr>
+<td><strong>NHS DSPT</strong></td>
+<td>NHS trust customers</td>
+<td>Critical</td>
+</tr>
+<tr>
+<td><strong>ISO 27001</strong></td>
+<td>Enterprise customers, demonstrates security maturity</td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Cyber Essentials Plus</strong></td>
+<td>UK government contracts, baseline security</td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>WEEE Regulations</strong></td>
+<td>IT asset disposal compliance</td>
+<td>Medium</td>
+</tr>
+</tbody>
+</table>
+<h3 id="12-gdpr-compliance">1.2 GDPR Compliance</h3>
+<table>
+<thead>
+<tr>
+<th>Requirement</th>
+<th>Implementation Approach</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lawful basis</td>
+<td>Processing based on contract (service delivery) and legitimate interest (security)</td>
+</tr>
+<tr>
+<td>Data minimisation</td>
+<td>Collect only data required for asset tracking and compliance</td>
+</tr>
+<tr>
+<td>Storage limitation</td>
+<td>Defined retention periods per data type (see Data Retention)</td>
+</tr>
+<tr>
+<td>Right to access</td>
+<td>Export functionality for organisation data</td>
+</tr>
+<tr>
+<td>Right to erasure</td>
+<td>Soft delete with anonymisation after retention period</td>
+</tr>
+<tr>
+<td>Right to portability</td>
+<td>Standard export formats (JSON, CSV)</td>
+</tr>
+<tr>
+<td>Security of processing</td>
+<td>Encryption, access controls, audit logging</td>
+</tr>
+<tr>
+<td>Breach notification</td>
+<td>Incident response procedure with 72-hour notification</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Personal Data Processed:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Data Category</th>
+<th>Examples</th>
+<th>Retention</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>User account data</td>
+<td>Name, email, role</td>
+<td>Account lifetime + 1 year</td>
+</tr>
+<tr>
+<td>Audit logs</td>
+<td>User actions, IP addresses</td>
+<td>7 years</td>
+</tr>
+<tr>
+<td>Asset data</td>
+<td>Serial numbers (may link to individuals)</td>
+<td>7 years</td>
+</tr>
+</tbody>
+</table>
+<h3 id="13-nhs-data-security-and-protection-toolkit-dspt">1.3 NHS Data Security and Protection Toolkit (DSPT)</h3>
+<p>The NHS DSPT requires organisations to meet 10 data security standards. Key requirements addressed:</p>
+<table>
+<thead>
+<tr>
+<th>DSPT Standard</th>
+<th>How AI-Reclaim Addresses</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. Personal confidential data</td>
+<td>Role-based access, need-to-know principle</td>
+</tr>
+<tr>
+<td>2. Staff responsibilities</td>
+<td>User training documentation, access policies</td>
+</tr>
+<tr>
+<td>3. Training</td>
+<td>Platform includes user role documentation</td>
+</tr>
+<tr>
+<td>4. Managing access</td>
+<td>RBAC, MFA, access reviews</td>
+</tr>
+<tr>
+<td>5. Process reviews</td>
+<td>Audit logging, compliance reporting</td>
+</tr>
+<tr>
+<td>6. Responding to incidents</td>
+<td>Incident response procedure</td>
+</tr>
+<tr>
+<td>7. Continuity planning</td>
+<td>Multi-AZ deployment, backup strategy</td>
+</tr>
+<tr>
+<td>8. Unsupported systems</td>
+<td>AWS managed services, regular updates</td>
+</tr>
+<tr>
+<td>9. IT protection</td>
+<td>Encryption, WAF, security monitoring</td>
+</tr>
+<tr>
+<td>10. Accountable suppliers</td>
+<td>Supplier security assessment process</td>
+</tr>
+</tbody>
+</table>
+<h3 id="14-iso-27001-alignment">1.4 ISO 27001 Alignment</h3>
+<p>Key ISO 27001 control domains addressed:</p>
+<table>
+<thead>
+<tr>
+<th>Control Domain</th>
+<th>Implementation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A.5 Information security policies</td>
+<td>Documented security policies</td>
+</tr>
+<tr>
+<td>A.6 Organisation of information security</td>
+<td>Defined roles and responsibilities</td>
+</tr>
+<tr>
+<td>A.8 Asset management</td>
+<td>Asset inventory, classification</td>
+</tr>
+<tr>
+<td>A.9 Access control</td>
+<td>RBAC, authentication, authorisation</td>
+</tr>
+<tr>
+<td>A.10 Cryptography</td>
+<td>Encryption at rest and in transit</td>
+</tr>
+<tr>
+<td>A.12 Operations security</td>
+<td>Logging, monitoring, change management</td>
+</tr>
+<tr>
+<td>A.13 Communications security</td>
+<td>Network segmentation, TLS</td>
+</tr>
+<tr>
+<td>A.14 System acquisition</td>
+<td>Secure development practices</td>
+</tr>
+<tr>
+<td>A.16 Incident management</td>
+<td>Incident response procedure</td>
+</tr>
+<tr>
+<td>A.18 Compliance</td>
+<td>Legal and regulatory compliance</td>
+</tr>
+</tbody>
+</table>
+<h3 id="15-cyber-essentials-plus">1.5 Cyber Essentials Plus</h3>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>Implementation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Firewalls</td>
+<td>AWS WAF, Security Groups, VPC</td>
+</tr>
+<tr>
+<td>Secure configuration</td>
+<td>Infrastructure as Code, hardened AMIs</td>
+</tr>
+<tr>
+<td>User access control</td>
+<td>Cognito MFA, RBAC, least privilege</td>
+</tr>
+<tr>
+<td>Malware protection</td>
+<td>AWS GuardDuty, regular scanning</td>
+</tr>
+<tr>
+<td>Patch management</td>
+<td>Managed services, automated updates</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="2-security-architecture">2. Security Architecture</h2>
+<h3 id="21-defence-in-depth">2.1 Defence in Depth</h3>
+<div class="highlight"><pre><span></span><code>┌─────────────────────────────────────────────────────────────┐
+│                     PERIMETER SECURITY                       │
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────────────┐  │
+│  │ CloudFront  │  │   AWS WAF   │  │   DDoS Protection   │  │
+│  └─────────────┘  └─────────────┘  └─────────────────────┘  │
+├─────────────────────────────────────────────────────────────┤
+│                    NETWORK SECURITY                          │
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────────────┐  │
+│  │     VPC     │  │   Subnets   │  │  Security Groups    │  │
+│  │  Isolation  │  │ Public/Priv │  │   (Least Privilege) │  │
+│  └─────────────┘  └─────────────┘  └─────────────────────┘  │
+├─────────────────────────────────────────────────────────────┤
+│                   APPLICATION SECURITY                       │
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────────────┐  │
+│  │   Cognito   │  │    RBAC     │  │  Input Validation   │  │
+│  │  Auth/MFA   │  │             │  │                     │  │
+│  └─────────────┘  └─────────────┘  └─────────────────────┘  │
+├─────────────────────────────────────────────────────────────┤
+│                      DATA SECURITY                           │
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────────────┐  │
+│  │ Encryption  │  │     RLS     │  │   Audit Logging     │  │
+│  │ Rest/Transit│  │  (Postgres) │  │                     │  │
+│  └─────────────┘  └─────────────┘  └─────────────────────┘  │
+└─────────────────────────────────────────────────────────────┘
+</code></pre></div>
+<h3 id="22-security-controls-by-layer">2.2 Security Controls by Layer</h3>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Control</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Perimeter</strong></td>
+<td>CloudFront</td>
+<td>CDN, edge caching, TLS termination</td>
+</tr>
+<tr>
+<td></td>
+<td>AWS WAF</td>
+<td>OWASP Top 10 protection, rate limiting</td>
+</tr>
+<tr>
+<td></td>
+<td>Shield</td>
+<td>DDoS protection</td>
+</tr>
+<tr>
+<td><strong>Network</strong></td>
+<td>VPC</td>
+<td>Network isolation</td>
+</tr>
+<tr>
+<td></td>
+<td>Private subnets</td>
+<td>Backend services not internet-accessible</td>
+</tr>
+<tr>
+<td></td>
+<td>Security groups</td>
+<td>Micro-segmentation, least privilege</td>
+</tr>
+<tr>
+<td></td>
+<td>NACLs</td>
+<td>Subnet-level access control</td>
+</tr>
+<tr>
+<td><strong>Application</strong></td>
+<td>Cognito</td>
+<td>Authentication, MFA</td>
+</tr>
+<tr>
+<td></td>
+<td>JWT validation</td>
+<td>Request authentication</td>
+</tr>
+<tr>
+<td></td>
+<td>RBAC</td>
+<td>Authorisation</td>
+</tr>
+<tr>
+<td></td>
+<td>Input validation</td>
+<td>Prevent injection attacks</td>
+</tr>
+<tr>
+<td></td>
+<td>CORS</td>
+<td>Cross-origin protection</td>
+</tr>
+<tr>
+<td><strong>Data</strong></td>
+<td>KMS encryption</td>
+<td>Data at rest</td>
+</tr>
+<tr>
+<td></td>
+<td>TLS 1.3</td>
+<td>Data in transit</td>
+</tr>
+<tr>
+<td></td>
+<td>RLS</td>
+<td>Tenant isolation</td>
+</tr>
+<tr>
+<td></td>
+<td>Audit logging</td>
+<td>Accountability</td>
+</tr>
+</tbody>
+</table>
+<h3 id="23-network-architecture">2.3 Network Architecture</h3>
+<div class="highlight"><pre><span></span><code>┌──────────────────── VPC (10.0.0.0/16) ────────────────────┐
+│                                                            │
+│  ┌─────────── Public Subnets (10.0.1.0/24) ───────────┐   │
+│  │  ALB    NAT Gateway                                 │   │
+│  └─────────────────────────────────────────────────────┘   │
+│                           │                                │
+│  ┌─────────── Private Subnets (10.0.2.0/24) ──────────┐   │
+│  │  ECS Tasks (API, Services)                          │   │
+│  └─────────────────────────────────────────────────────┘   │
+│                           │                                │
+│  ┌─────────── Data Subnets (10.0.3.0/24) ─────────────┐   │
+│  │  RDS    ElastiCache                                 │   │
+│  └─────────────────────────────────────────────────────┘   │
+│                                                            │
+└────────────────────────────────────────────────────────────┘
+</code></pre></div>
+<hr />
+<h2 id="3-authentication-access-control">3. Authentication &amp; Access Control</h2>
+<h3 id="31-authentication">3.1 Authentication</h3>
+<table>
+<thead>
+<tr>
+<th>Requirement</th>
+<th>Implementation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identity provider</td>
+<td>AWS Cognito User Pools</td>
+</tr>
+<tr>
+<td>Password policy</td>
+<td>Min 12 chars, complexity requirements</td>
+</tr>
+<tr>
+<td>MFA</td>
+<td>Required for Admin and Operator roles</td>
+</tr>
+<tr>
+<td>Session management</td>
+<td>JWT tokens, 1-hour access token, 30-day refresh</td>
+</tr>
+<tr>
+<td>Account lockout</td>
+<td>5 failed attempts triggers temporary lockout</td>
+</tr>
+<tr>
+<td>Password reset</td>
+<td>Secure email-based flow</td>
+</tr>
+</tbody>
+</table>
+<h3 id="32-role-based-access-control-rbac">3.2 Role-Based Access Control (RBAC)</h3>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Description</th>
+<th>MFA Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Admin</strong></td>
+<td>Organisation administrator, full access</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><strong>Operator</strong></td>
+<td>Recycling facility staff, asset processing</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><strong>Client</strong></td>
+<td>Client organisation staff, asset registration</td>
+<td>No (recommended)</td>
+</tr>
+<tr>
+<td><strong>Auditor</strong></td>
+<td>Compliance auditor, read-only access</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="33-permission-matrix">3.3 Permission Matrix</h3>
+<table>
+<thead>
+<tr>
+<th>Permission</th>
+<th>Admin</th>
+<th>Operator</th>
+<th>Client</th>
+<th>Auditor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Manage users</td>
+<td>✓</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>View all audit logs</td>
+<td>✓</td>
+<td>—</td>
+<td>—</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Generate certificates</td>
+<td>✓</td>
+<td>✓</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Process assets</td>
+<td>✓</td>
+<td>✓</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Register assets</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>—</td>
+</tr>
+<tr>
+<td>View own assets</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Download certificates</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Generate ESG reports</td>
+<td>✓</td>
+<td>—</td>
+<td>✓</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="4-audit-logging">4. Audit Logging</h2>
+<h3 id="41-audit-logging-approach">4.1 Audit Logging Approach</h3>
+<p>All significant actions are logged to an immutable audit trail. The audit log captures:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Timestamp</td>
+<td>When action occurred</td>
+<td>2025-01-13T10:30:00Z</td>
+</tr>
+<tr>
+<td>User ID</td>
+<td>Who performed action</td>
+<td>uuid</td>
+</tr>
+<tr>
+<td>Organisation ID</td>
+<td>Tenant context</td>
+<td>uuid</td>
+</tr>
+<tr>
+<td>Action</td>
+<td>What was done</td>
+<td><code>asset.status_changed</code></td>
+</tr>
+<tr>
+<td>Entity type</td>
+<td>What was affected</td>
+<td><code>asset</code></td>
+</tr>
+<tr>
+<td>Entity ID</td>
+<td>Which record</td>
+<td>uuid</td>
+</tr>
+<tr>
+<td>Before state</td>
+<td>Previous values</td>
+<td>JSON</td>
+</tr>
+<tr>
+<td>After state</td>
+<td>New values</td>
+<td>JSON</td>
+</tr>
+<tr>
+<td>IP address</td>
+<td>Client IP</td>
+<td>192.168.1.1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="42-audited-events">4.2 Audited Events</h3>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Events</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Authentication</strong></td>
+<td>Login success, login failure, logout, password change, MFA setup</td>
+</tr>
+<tr>
+<td><strong>Assets</strong></td>
+<td>Create, update, status change, delete</td>
+</tr>
+<tr>
+<td><strong>Batches</strong></td>
+<td>Create, add assets, close, status change</td>
+</tr>
+<tr>
+<td><strong>Certificates</strong></td>
+<td>Generate, download</td>
+</tr>
+<tr>
+<td><strong>Users</strong></td>
+<td>Create, update, deactivate, role change</td>
+</tr>
+<tr>
+<td><strong>System</strong></td>
+<td>Configuration change, export data</td>
+</tr>
+</tbody>
+</table>
+<h3 id="43-audit-log-immutability">4.3 Audit Log Immutability</h3>
+<p>Audit log immutability is critical for compliance. A multi-layered approach ensures logs cannot be tampered with at any level.</p>
+<h4 id="431-immutability-architecture">4.3.1 Immutability Architecture</h4>
+<div class="highlight"><pre><span></span><code>┌─────────────────────────────────────────────────────────────────┐
+│                    AUDIT LOG FLOW                               │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  Application                                                    │
+│      │                                                          │
+│      ▼                                                          │
+│  ┌─────────────────────────────────────────────────────────┐   │
+│  │              PostgreSQL (Hot Storage)                    │   │
+│  │  ┌─────────────────────────────────────────────────┐    │   │
+│  │  │  audit_logs table                               │    │   │
+│  │  │  • INSERT only (triggers block UPDATE/DELETE)   │    │   │
+│  │  │  • RLS enforced                                 │    │   │
+│  │  │  • Hash chain: each row references previous     │    │   │
+│  │  └─────────────────────────────────────────────────┘    │   │
+│  └─────────────────────────────────────────────────────────┘   │
+│      │                                                          │
+│      │ Archive Job (90 days)                                    │
+│      ▼                                                          │
+│  ┌─────────────────────────────────────────────────────────┐   │
+│  │              S3 (Cold Storage)                           │   │
+│  │  ┌─────────────────────────────────────────────────┐    │   │
+│  │  │  s3://ai-reclaim-audit-logs/                    │    │   │
+│  │  │  • Object Lock: Compliance Mode                 │    │   │
+│  │  │  • Retention: 7 years                           │    │   │
+│  │  │  • Versioning enabled                           │    │   │
+│  │  │  • Server-side encryption (KMS)                 │    │   │
+│  │  └─────────────────────────────────────────────────┘    │   │
+│  └─────────────────────────────────────────────────────────┘   │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+</code></pre></div>
+<h4 id="432-database-level-controls">4.3.2 Database-Level Controls</h4>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>Implementation</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>INSERT-only trigger</td>
+<td>PostgreSQL trigger on audit_logs</td>
+<td>Blocks UPDATE and DELETE statements</td>
+</tr>
+<tr>
+<td>RLS policy</td>
+<td><code>USING (false)</code> for UPDATE/DELETE</td>
+<td>Users cannot modify via SQL</td>
+</tr>
+<tr>
+<td>Separate schema</td>
+<td><code>audit</code> schema with restricted grants</td>
+<td>Limits access to audit data</td>
+</tr>
+<tr>
+<td>Connection isolation</td>
+<td>Dedicated audit writer role</td>
+<td>Application uses least-privilege role</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Trigger Logic:</strong>
+- Any UPDATE attempt → raises exception
+- Any DELETE attempt → raises exception
+- Only INSERT permitted from application service</p>
+<h4 id="433-s3-object-lock-configuration">4.3.3 S3 Object Lock Configuration</h4>
+<p>S3 Object Lock provides WORM (Write Once Read Many) storage for archived audit logs.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Value</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Mode</strong></td>
+<td>Compliance</td>
+<td>Cannot be overridden, even by root account</td>
+</tr>
+<tr>
+<td><strong>Retention period</strong></td>
+<td>7 years (2,555 days)</td>
+<td>Meets financial/legal retention requirements</td>
+</tr>
+<tr>
+<td><strong>Versioning</strong></td>
+<td>Enabled</td>
+<td>Required for Object Lock</td>
+</tr>
+<tr>
+<td><strong>Encryption</strong></td>
+<td>SSE-KMS</td>
+<td>AWS managed keys with audit trail</td>
+</tr>
+<tr>
+<td><strong>Legal hold</strong></td>
+<td>Available</td>
+<td>Can extend retention for litigation</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Compliance Mode vs Governance Mode:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Compliance Mode ✓</th>
+<th>Governance Mode</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Override by root</td>
+<td>No</td>
+<td>Yes (with permission)</td>
+</tr>
+<tr>
+<td>Retention change</td>
+<td>Cannot shorten</td>
+<td>Can shorten with permission</td>
+</tr>
+<tr>
+<td>Audit requirement</td>
+<td>Meets strict compliance</td>
+<td>May not satisfy auditors</td>
+</tr>
+<tr>
+<td>Recommendation</td>
+<td><strong>Selected</strong></td>
+<td>Not recommended</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Bucket Policy:</strong>
+- Deny <code>s3:DeleteObject</code> for all principals
+- Deny <code>s3:PutObjectRetention</code> (shorten) for all principals
+- Allow <code>s3:PutObjectLegalHold</code> for compliance officers only</p>
+<h4 id="434-hash-chain-integrity">4.3.4 Hash Chain Integrity</h4>
+<p>Each audit log entry includes a cryptographic hash linking it to the previous entry, creating a tamper-evident chain.</p>
+<p><strong>Hash Calculation:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Included in Hash</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Previous hash</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Timestamp</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>User ID</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Organisation ID</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Action</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Entity type</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Entity ID</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Before state</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>After state</td>
+<td>✓</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Hash Algorithm:</strong> SHA-256</p>
+<p><strong>Chain Structure:</strong>
+<div class="highlight"><pre><span></span><code>Entry 1: hash_1 = SHA256(genesis + data_1)
+Entry 2: hash_2 = SHA256(hash_1 + data_2)
+Entry 3: hash_3 = SHA256(hash_2 + data_3)
+...
+Entry N: hash_N = SHA256(hash_N-1 + data_N)
+</code></pre></div></p>
+<p><strong>Verification Process:</strong>
+1. Read entries in sequence
+2. Recalculate hash for each entry
+3. Compare calculated hash with stored hash
+4. Any mismatch indicates tampering</p>
+<h4 id="435-cryptographic-signing-future-enhancement">4.3.5 Cryptographic Signing (Future Enhancement)</h4>
+<blockquote>
+<p><strong>Note:</strong> This capability is designed for future implementation. Can be deferred to Phase 2.</p>
+</blockquote>
+<p>For enhanced non-repudiation, audit log batches can be digitally signed using AWS KMS.</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Approach</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Signing key</td>
+<td>AWS KMS asymmetric key (RSA_2048)</td>
+</tr>
+<tr>
+<td>Signed content</td>
+<td>Daily batch hash + metadata</td>
+</tr>
+<tr>
+<td>Signature storage</td>
+<td>Alongside archived logs in S3</td>
+</tr>
+<tr>
+<td>Key rotation</td>
+<td>Annual, with key versioning</td>
+</tr>
+<tr>
+<td>Verification</td>
+<td>Public key available for auditors</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Benefits:</strong>
+- Proves logs existed at signing time
+- Detects any post-signing modification
+- Non-repudiation for legal proceedings</p>
+<p><strong>Implementation Approach:</strong>
+1. Daily job calculates Merkle root of day's entries
+2. Signs Merkle root with KMS key
+3. Stores signature in S3 alongside log archive
+4. Auditors can verify using public key</p>
+<h4 id="436-verification-compliance-reporting">4.3.6 Verification &amp; Compliance Reporting</h4>
+<table>
+<thead>
+<tr>
+<th>Verification Type</th>
+<th>Method</th>
+<th>Frequency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hash chain integrity</td>
+<td>Automated job recalculates chain</td>
+<td>Daily</td>
+</tr>
+<tr>
+<td>S3 Object Lock status</td>
+<td>AWS Config rule</td>
+<td>Continuous</td>
+</tr>
+<tr>
+<td>Archive completeness</td>
+<td>Compare DB count vs S3 objects</td>
+<td>Weekly</td>
+</tr>
+<tr>
+<td>Retention compliance</td>
+<td>S3 Inventory report</td>
+<td>Monthly</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Compliance Reports:</strong>
+- Audit log volume by organisation
+- Hash verification results
+- Object Lock retention status
+- Access attempts to audit data</p>
+<p><strong>Audit Support:</strong>
+- Export capability for external auditors
+- Chain verification tool for spot checks
+- Object Lock retention proof via S3 console</p>
+<h3 id="44-audit-log-access">4.4 Audit Log Access</h3>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Access Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Admin</td>
+<td>View own organisation logs</td>
+</tr>
+<tr>
+<td>Auditor</td>
+<td>View and export all logs</td>
+</tr>
+<tr>
+<td>Operator</td>
+<td>View logs for own actions</td>
+</tr>
+<tr>
+<td>Client</td>
+<td>No direct access (via asset history)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5-data-protection">5. Data Protection</h2>
+<h3 id="51-encryption">5.1 Encryption</h3>
+<table>
+<thead>
+<tr>
+<th>Data State</th>
+<th>Method</th>
+<th>Key Management</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>At rest (database)</td>
+<td>AES-256 via RDS encryption</td>
+<td>AWS KMS</td>
+</tr>
+<tr>
+<td>At rest (files)</td>
+<td>AES-256 via S3 encryption</td>
+<td>AWS KMS</td>
+</tr>
+<tr>
+<td>At rest (cache)</td>
+<td>AES-256 via ElastiCache encryption</td>
+<td>AWS KMS</td>
+</tr>
+<tr>
+<td>In transit</td>
+<td>TLS 1.3</td>
+<td>AWS Certificate Manager</td>
+</tr>
+</tbody>
+</table>
+<h3 id="52-key-management">5.2 Key Management</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Approach</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Key storage</td>
+<td>AWS KMS (FIPS 140-2 Level 2)</td>
+</tr>
+<tr>
+<td>Key rotation</td>
+<td>Automatic annual rotation</td>
+</tr>
+<tr>
+<td>Access control</td>
+<td>IAM policies, least privilege</td>
+</tr>
+<tr>
+<td>Audit</td>
+<td>CloudTrail logging of key usage</td>
+</tr>
+</tbody>
+</table>
+<h3 id="53-data-classification">5.3 Data Classification</h3>
+<table>
+<thead>
+<tr>
+<th>Classification</th>
+<th>Examples</th>
+<th>Handling</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Confidential</strong></td>
+<td>User credentials, API keys</td>
+<td>Encrypted, no logging of values</td>
+</tr>
+<tr>
+<td><strong>Sensitive</strong></td>
+<td>Personal data, audit logs</td>
+<td>Encrypted, access controlled</td>
+</tr>
+<tr>
+<td><strong>Internal</strong></td>
+<td>Asset details, certificates</td>
+<td>Encrypted, tenant-isolated</td>
+</tr>
+<tr>
+<td><strong>Public</strong></td>
+<td>Asset type reference data</td>
+<td>No special handling</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="6-data-residency">6. Data Residency</h2>
+<h3 id="61-uk-data-sovereignty">6.1 UK Data Sovereignty</h3>
+<table>
+<thead>
+<tr>
+<th>Requirement</th>
+<th>Implementation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Data location</td>
+<td>AWS eu-west-2 (London) only</td>
+</tr>
+<tr>
+<td>Processing location</td>
+<td>All compute in eu-west-2</td>
+</tr>
+<tr>
+<td>Backup location</td>
+<td>Same region</td>
+</tr>
+<tr>
+<td>Replication</td>
+<td>No cross-region replication</td>
+</tr>
+</tbody>
+</table>
+<h3 id="62-technical-controls">6.2 Technical Controls</h3>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AWS Config rules</td>
+<td>Alert on non-UK resource creation</td>
+</tr>
+<tr>
+<td>IAM policies</td>
+<td>Deny actions in other regions</td>
+</tr>
+<tr>
+<td>CloudFront</td>
+<td>Origin in eu-west-2</td>
+</tr>
+<tr>
+<td>Service Control Policies</td>
+<td>Organisation-level region restriction</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="7-data-retention">7. Data Retention</h2>
+<table>
+<thead>
+<tr>
+<th>Data Type</th>
+<th>Active Retention</th>
+<th>Archive</th>
+<th>Deletion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>User accounts</td>
+<td>Account lifetime</td>
+<td>+1 year</td>
+<td>Anonymise</td>
+</tr>
+<tr>
+<td>Assets</td>
+<td>7 years</td>
+<td>S3 Glacier</td>
+<td>Anonymise</td>
+</tr>
+<tr>
+<td>Audit logs</td>
+<td>90 days hot</td>
+<td>7 years S3</td>
+<td>Delete</td>
+</tr>
+<tr>
+<td>Certificates</td>
+<td>Indefinite</td>
+<td>—</td>
+<td>Never</td>
+</tr>
+<tr>
+<td>ESG reports</td>
+<td>2 years</td>
+<td>7 years S3</td>
+<td>Delete</td>
+</tr>
+<tr>
+<td>Asset images</td>
+<td>1 year</td>
+<td>—</td>
+<td>Delete</td>
+</tr>
+<tr>
+<td>Session data</td>
+<td>30 days</td>
+<td>—</td>
+<td>Delete</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="8-incident-response">8. Incident Response</h2>
+<h3 id="81-incident-classification">8.1 Incident Classification</h3>
+<table>
+<thead>
+<tr>
+<th>Severity</th>
+<th>Description</th>
+<th>Response Time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Critical</strong></td>
+<td>Data breach, system compromise</td>
+<td>Immediate</td>
+</tr>
+<tr>
+<td><strong>High</strong></td>
+<td>Service outage, security vulnerability</td>
+<td>4 hours</td>
+</tr>
+<tr>
+<td><strong>Medium</strong></td>
+<td>Partial outage, suspicious activity</td>
+<td>24 hours</td>
+</tr>
+<tr>
+<td><strong>Low</strong></td>
+<td>Minor issue, policy violation</td>
+<td>72 hours</td>
+</tr>
+</tbody>
+</table>
+<h3 id="82-incident-response-process">8.2 Incident Response Process</h3>
+<div class="highlight"><pre><span></span><code>┌─────────┐   ┌─────────┐   ┌─────────┐   ┌─────────┐   ┌─────────┐
+│ Detect  │──▶│ Assess  │──▶│ Contain │──▶│Eradicate│──▶│ Recover │
+└─────────┘   └─────────┘   └─────────┘   └─────────┘   └─────────┘
+                                                              │
+                                                              ▼
+                                                        ┌─────────┐
+                                                        │ Review  │
+                                                        └─────────┘
+</code></pre></div>
+<h3 id="83-breach-notification">8.3 Breach Notification</h3>
+<table>
+<thead>
+<tr>
+<th>Requirement</th>
+<th>Timeline</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Internal escalation</td>
+<td>Immediate</td>
+</tr>
+<tr>
+<td>ICO notification (if required)</td>
+<td>Within 72 hours</td>
+</tr>
+<tr>
+<td>Affected organisation notification</td>
+<td>Without undue delay</td>
+</tr>
+<tr>
+<td>Documentation</td>
+<td>Complete incident report</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="9-security-monitoring">9. Security Monitoring</h2>
+<h3 id="91-monitoring-components">9.1 Monitoring Components</h3>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AWS CloudTrail</td>
+<td>API activity logging</td>
+</tr>
+<tr>
+<td>AWS GuardDuty</td>
+<td>Threat detection</td>
+</tr>
+<tr>
+<td>CloudWatch Logs</td>
+<td>Application logging</td>
+</tr>
+<tr>
+<td>CloudWatch Alarms</td>
+<td>Threshold alerting</td>
+</tr>
+<tr>
+<td>AWS Config</td>
+<td>Configuration compliance</td>
+</tr>
+</tbody>
+</table>
+<h3 id="92-security-alerts">9.2 Security Alerts</h3>
+<table>
+<thead>
+<tr>
+<th>Alert Type</th>
+<th>Trigger</th>
+<th>Response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Failed logins</td>
+<td>5+ failures in 5 minutes</td>
+<td>Review, potential lockout</td>
+</tr>
+<tr>
+<td>Unusual access</td>
+<td>Off-hours admin access</td>
+<td>Verify legitimacy</td>
+</tr>
+<tr>
+<td>Data export</td>
+<td>Large data export</td>
+<td>Review authorisation</td>
+</tr>
+<tr>
+<td>Configuration change</td>
+<td>Security group modified</td>
+<td>Verify change request</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="10-assumptions">10. Assumptions</h2>
+<h3 id="101-confirmed-assumptions">10.1 Confirmed Assumptions</h3>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Assumption</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A1</td>
+<td>UK data residency required</td>
+<td>Compliance requirement</td>
+</tr>
+<tr>
+<td>A2</td>
+<td>MFA required for privileged roles</td>
+<td>Security best practice</td>
+</tr>
+<tr>
+<td>A3</td>
+<td>7-year audit log retention</td>
+<td>Legal/compliance guidance</td>
+</tr>
+<tr>
+<td>A4</td>
+<td>AWS managed services acceptable</td>
+<td>Architecture decision</td>
+</tr>
+</tbody>
+</table>
+<h3 id="102-assumptions-requiring-validation">10.2 Assumptions Requiring Validation</h3>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Assumption</th>
+<th>Confidence</th>
+<th>Validation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A5</td>
+<td>NHS DSPT self-assessment sufficient (vs. audit)</td>
+<td>Medium</td>
+<td>Confirm with NHS clients</td>
+</tr>
+<tr>
+<td>A6</td>
+<td>ISO 27001 certification not required for MVP</td>
+<td>Medium</td>
+<td>Confirm with enterprise clients</td>
+</tr>
+<tr>
+<td>A7</td>
+<td>Standard audit logging sufficient (vs. forensic)</td>
+<td>High</td>
+<td>Confirm with auditors</td>
+</tr>
+<tr>
+<td>A8</td>
+<td>72-hour breach notification meets all requirements</td>
+<td>High</td>
+<td>Legal review</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="11-open-questions">11. Open Questions</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Question</th>
+<th>Impact</th>
+<th>Resolution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Q1</td>
+<td>Is ISO 27001 certification required for Phase 1?</td>
+<td>Scope</td>
+<td>Client consultation</td>
+</tr>
+<tr>
+<td>Q2</td>
+<td>Specific NHS trust security questionnaire requirements?</td>
+<td>Compliance scope</td>
+<td>Engage with NHS clients</td>
+</tr>
+<tr>
+<td>Q3</td>
+<td>Should audit logs be cryptographically signed?</td>
+<td>Implementation effort</td>
+<td>Security review</td>
+</tr>
+<tr>
+<td>Q4</td>
+<td>Third-party penetration testing required before launch?</td>
+<td>Scope</td>
+<td>Stakeholder decision</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="12-decision-log">12. Decision Log</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Decision</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>D1</td>
+<td>Target all major compliance frameworks</td>
+<td>Broadest market coverage</td>
+</tr>
+<tr>
+<td>D2</td>
+<td>Standard audit depth (not forensic)</td>
+<td>Balance between compliance and storage/performance</td>
+</tr>
+<tr>
+<td>D3</td>
+<td>7-year audit retention</td>
+<td>Aligns with financial record requirements</td>
+</tr>
+<tr>
+<td>D4</td>
+<td>MFA required for Admin/Operator only</td>
+<td>Balance security and usability</td>
+</tr>
+<tr>
+<td>D5</td>
+<td>AWS KMS for key management</td>
+<td>Managed service, compliance certifications</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="phase-1-delivery-roadmap">Phase 1 Delivery Roadmap</h1>
+<p><strong>Document Version:</strong> 1.0
+<strong>Last Updated:</strong> January 2025
+<strong>Status:</strong> Draft for Review</p>
+<hr />
+<blockquote>
+<p><strong>MILESTONE 0 — DISCOVERY PHASE</strong></p>
+<p>This document is a deliverable of Milestone 0, a paid discovery phase intended to define the technical, architectural, and compliance foundations of AI-Reclaim™ <strong>prior to any production build</strong>.</p>
+<p>This document does not constitute a commitment to build. Detailed scope, timelines, and commercials for development phases will be defined following successful completion and acceptance of Milestone 0.</p>
+<p>All intellectual property vests exclusively in A to Z IT Recycling Ltd.</p>
+</blockquote>
+<hr />
+<h2 id="executive-summary_4">Executive Summary</h2>
+<p>This document defines the scope and milestone breakdown for Phase 1 (MVP) of AI-Reclaim™. Phase 1 delivers the core asset disposition workflow from registration through to certificate generation, including AI-powered asset identification.</p>
+<p><strong>Phase 1 Goal:</strong> Deliver a working platform that enables a client organisation to register IT assets, track them through collection and processing, and receive compliance certificates.</p>
+<p><strong>Key inclusions:</strong>
+- Complete asset lifecycle (Registered → Collected → Processing → Completed)
+- AI-powered asset identification (image + barcode)
+- Certificate generation (Destruction, Recycling, Sanitisation, WEEE)
+- Immutable audit logging
+- Multi-tenant architecture with RBAC</p>
+<hr />
+<h2 id="1-phase-1-scope">1. Phase 1 Scope</h2>
+<h3 id="11-in-scope">1.1 In Scope</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Description</th>
+<th>Priority</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>User authentication</strong></td>
+<td>Cognito-based login, MFA for privileged roles</td>
+<td>Must have</td>
+</tr>
+<tr>
+<td><strong>Organisation management</strong></td>
+<td>Create/manage client organisations</td>
+<td>Must have</td>
+</tr>
+<tr>
+<td><strong>User management</strong></td>
+<td>Create users, assign roles (Admin, Operator, Client, Auditor)</td>
+<td>Must have</td>
+</tr>
+<tr>
+<td><strong>Asset registration</strong></td>
+<td>Register individual assets with details</td>
+<td>Must have</td>
+</tr>
+<tr>
+<td><strong>AI identification</strong></td>
+<td>Image upload + barcode/serial lookup</td>
+<td>Must have</td>
+</tr>
+<tr>
+<td><strong>Asset lifecycle</strong></td>
+<td>Status transitions through 4 stages</td>
+<td>Must have</td>
+</tr>
+<tr>
+<td><strong>Batch management</strong></td>
+<td>Group assets for collection</td>
+<td>Must have</td>
+</tr>
+<tr>
+<td><strong>Certificate generation</strong></td>
+<td>Issue 4 certificate types with PDF</td>
+<td>Must have</td>
+</tr>
+<tr>
+<td><strong>Audit logging</strong></td>
+<td>Immutable log of all actions</td>
+<td>Must have</td>
+</tr>
+<tr>
+<td><strong>Basic reporting</strong></td>
+<td>Asset counts, status summaries</td>
+<td>Should have</td>
+</tr>
+</tbody>
+</table>
+<h3 id="12-out-of-scope-future-phases">1.2 Out of Scope (Future Phases)</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Rationale</th>
+<th>Target Phase</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ESG reporting</td>
+<td>Not critical for core workflow</td>
+<td>Phase 2</td>
+</tr>
+<tr>
+<td>External API access</td>
+<td>Focus on internal platform first</td>
+<td>Phase 2</td>
+</tr>
+<tr>
+<td>Mobile native apps</td>
+<td>Web responsive sufficient for MVP</td>
+<td>Phase 2+</td>
+</tr>
+<tr>
+<td>Client ERP integrations</td>
+<td>Requires client-specific work</td>
+<td>Phase 2+</td>
+</tr>
+<tr>
+<td>Advanced analytics</td>
+<td>Basic reporting sufficient for MVP</td>
+<td>Phase 2</td>
+</tr>
+<tr>
+<td>Multi-language support</td>
+<td>English-only for UK launch</td>
+<td>Phase 2+</td>
+</tr>
+</tbody>
+</table>
+<h3 id="13-user-stories">1.3 User Stories</h3>
+<p><strong>Client Organisation Staff:</strong>
+- Register IT assets for disposal (individually or batch)
+- Upload photos for AI identification
+- Track asset status through lifecycle
+- Download certificates for completed assets</p>
+<p><strong>Recycling Operator:</strong>
+- View assets assigned for processing
+- Update asset status as work progresses
+- Generate certificates upon completion
+- View audit trail for assets</p>
+<p><strong>Administrator:</strong>
+- Manage users and permissions
+- View organisation-wide reports
+- Access full audit logs</p>
+<p><strong>Auditor:</strong>
+- Read-only access to all data
+- Export audit logs for compliance review</p>
+<hr />
+<h2 id="2-milestone-breakdown">2. Milestone Breakdown</h2>
+<h3 id="21-milestone-overview">2.1 Milestone Overview</h3>
+<div class="highlight"><pre><span></span><code>┌─────────────────────────────────────────────────────────────────┐
+│                     PHASE 1 MILESTONES                          │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  M1          M2          M3          M4          M5          M6 │
+│  ────        ────        ────        ────        ────        ───│
+│  Foundation  Auth &amp;      Asset       Processing  Certificates  │
+│  &amp; Infra     Users       Mgmt        &amp; Batches   &amp; Audit     QA │
+│                                                                 │
+│  ▼           ▼           ▼           ▼           ▼           ▼  │
+│  AWS setup   Cognito     CRUD        Status      PDF gen     Test│
+│  CI/CD       RBAC        AI ID       Batches     Audit UI    Fix │
+│  DB setup    User UI     Search      Workflow    Reports     UAT │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+</code></pre></div>
+<h3 id="22-milestone-details">2.2 Milestone Details</h3>
+<hr />
+<h4 id="m1-foundation-infrastructure">M1: Foundation &amp; Infrastructure</h4>
+<p><strong>Objective:</strong> Establish development environment, CI/CD pipeline, and core infrastructure.</p>
+<table>
+<thead>
+<tr>
+<th>Deliverable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AWS infrastructure</td>
+<td>VPC, subnets, security groups (IaC)</td>
+</tr>
+<tr>
+<td>Database setup</td>
+<td>RDS PostgreSQL with RLS policies</td>
+</tr>
+<tr>
+<td>CI/CD pipeline</td>
+<td>GitHub Actions for build/test/deploy</td>
+</tr>
+<tr>
+<td>Development environment</td>
+<td>Local dev setup, staging environment</td>
+</tr>
+<tr>
+<td>Monitoring foundation</td>
+<td>CloudWatch, logging setup</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Dependencies:</strong> None (starting point)</p>
+<p><strong>Acceptance Criteria:</strong>
+- Infrastructure deployed via IaC
+- Database accessible with RLS enabled
+- CI/CD pipeline runs successfully
+- Staging environment accessible</p>
+<hr />
+<h4 id="m2-authentication-user-management">M2: Authentication &amp; User Management</h4>
+<p><strong>Objective:</strong> Implement secure authentication and user/organisation management.</p>
+<table>
+<thead>
+<tr>
+<th>Deliverable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cognito integration</td>
+<td>User pools, MFA configuration</td>
+</tr>
+<tr>
+<td>Authentication API</td>
+<td>Login, logout, password reset, token refresh</td>
+</tr>
+<tr>
+<td>Organisation CRUD</td>
+<td>Create, read, update organisations</td>
+</tr>
+<tr>
+<td>User CRUD</td>
+<td>Create, read, update, deactivate users</td>
+</tr>
+<tr>
+<td>RBAC implementation</td>
+<td>Role-based permissions</td>
+</tr>
+<tr>
+<td>Admin UI</td>
+<td>User and organisation management screens</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Dependencies:</strong> M1 (infrastructure)</p>
+<p><strong>Acceptance Criteria:</strong>
+- Users can register and login
+- MFA works for Admin/Operator roles
+- Admins can manage users
+- Role permissions enforced on all endpoints</p>
+<hr />
+<h4 id="m3-asset-management-ai-identification">M3: Asset Management &amp; AI Identification</h4>
+<p><strong>Objective:</strong> Implement core asset registration with AI-powered identification.</p>
+<table>
+<thead>
+<tr>
+<th>Deliverable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Asset CRUD</td>
+<td>Create, read, update assets</td>
+</tr>
+<tr>
+<td>Asset type reference data</td>
+<td>Seed standard IT equipment types</td>
+</tr>
+<tr>
+<td>Image upload</td>
+<td>S3 integration for asset photos</td>
+</tr>
+<tr>
+<td>AI identification</td>
+<td>Rekognition integration for device recognition</td>
+</tr>
+<tr>
+<td>Barcode/serial lookup</td>
+<td>Manual and scanned entry</td>
+</tr>
+<tr>
+<td>Asset search</td>
+<td>Filter and search assets</td>
+</tr>
+<tr>
+<td>Asset UI</td>
+<td>Registration form, list view, detail view</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Dependencies:</strong> M2 (authentication, organisations)</p>
+<p><strong>Acceptance Criteria:</strong>
+- Users can register assets
+- Image upload triggers AI identification
+- AI results populate asset fields (with confidence score)
+- Assets searchable and filterable</p>
+<hr />
+<h4 id="m4-processing-batch-management">M4: Processing &amp; Batch Management</h4>
+<p><strong>Objective:</strong> Implement asset lifecycle workflow and batch grouping.</p>
+<table>
+<thead>
+<tr>
+<th>Deliverable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Status transitions</td>
+<td>Implement 4-stage lifecycle with validation</td>
+</tr>
+<tr>
+<td>Batch CRUD</td>
+<td>Create, read, update batches</td>
+</tr>
+<tr>
+<td>Batch-asset linking</td>
+<td>Add/remove assets from batches</td>
+</tr>
+<tr>
+<td>Batch status</td>
+<td>Batch lifecycle (open → closed → collected → processing → completed)</td>
+</tr>
+<tr>
+<td>Workflow UI</td>
+<td>Status update screens, batch management</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Dependencies:</strong> M3 (assets)</p>
+<p><strong>Acceptance Criteria:</strong>
+- Assets transition through lifecycle correctly
+- Invalid transitions rejected
+- Batches group assets correctly
+- Batch status reflects contained assets</p>
+<hr />
+<h4 id="m5-certificates-audit">M5: Certificates &amp; Audit</h4>
+<p><strong>Objective:</strong> Implement certificate generation and audit trail visibility.</p>
+<table>
+<thead>
+<tr>
+<th>Deliverable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Certificate generation</td>
+<td>Create certificate records</td>
+</tr>
+<tr>
+<td>PDF generation</td>
+<td>Generate certificate PDFs (Lambda)</td>
+</tr>
+<tr>
+<td>Certificate types</td>
+<td>Support all 4 types with validation</td>
+</tr>
+<tr>
+<td>Audit log API</td>
+<td>Query and export audit logs</td>
+</tr>
+<tr>
+<td>Audit UI</td>
+<td>Audit log viewer with filters</td>
+</tr>
+<tr>
+<td>Asset history</td>
+<td>View audit trail per asset</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Dependencies:</strong> M4 (asset lifecycle complete)</p>
+<p><strong>Acceptance Criteria:</strong>
+- Certificates generated for completed assets
+- PDF downloads work
+- Certificate types validated (e.g., destruction requires data-bearing)
+- Audit logs queryable and exportable</p>
+<hr />
+<h4 id="m6-qa-launch-preparation">M6: QA &amp; Launch Preparation</h4>
+<p><strong>Objective:</strong> Testing, bug fixes, and launch readiness.</p>
+<table>
+<thead>
+<tr>
+<th>Deliverable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Integration testing</td>
+<td>End-to-end workflow testing</td>
+</tr>
+<tr>
+<td>Security testing</td>
+<td>Vulnerability scan, pen test (if required)</td>
+</tr>
+<tr>
+<td>Performance testing</td>
+<td>Load testing core workflows</td>
+</tr>
+<tr>
+<td>Bug fixes</td>
+<td>Address issues from testing</td>
+</tr>
+<tr>
+<td>Documentation</td>
+<td>User guides, API documentation</td>
+</tr>
+<tr>
+<td>UAT</td>
+<td>User acceptance testing with pilot client</td>
+</tr>
+<tr>
+<td>Production deployment</td>
+<td>Deploy to production environment</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Dependencies:</strong> M1-M5 complete</p>
+<p><strong>Acceptance Criteria:</strong>
+- All critical bugs resolved
+- Security scan passed
+- Performance meets targets
+- UAT sign-off received
+- Production environment live</p>
+<hr />
+<h2 id="3-dependencies-critical-path">3. Dependencies &amp; Critical Path</h2>
+<h3 id="31-dependency-map">3.1 Dependency Map</h3>
+<div class="highlight"><pre><span></span><code>M1 Foundation
+ │
+ └──▶ M2 Auth &amp; Users
+       │
+       └──▶ M3 Asset Management
+             │
+             └──▶ M4 Processing &amp; Batches
+                   │
+                   └──▶ M5 Certificates &amp; Audit
+                         │
+                         └──▶ M6 QA &amp; Launch
+</code></pre></div>
+<h3 id="32-critical-path">3.2 Critical Path</h3>
+<p>All milestones are sequential, forming a single critical path:</p>
+<p><strong>M1 → M2 → M3 → M4 → M5 → M6</strong></p>
+<p>No milestone can start until the previous is complete due to technical dependencies.</p>
+<h3 id="33-risk-to-timeline">3.3 Risk to Timeline</h3>
+<table>
+<thead>
+<tr>
+<th>Risk</th>
+<th>Impact</th>
+<th>Mitigation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AI accuracy issues</td>
+<td>May delay M3</td>
+<td>Early PoC with sample images</td>
+</tr>
+<tr>
+<td>Cognito complexity</td>
+<td>May delay M2</td>
+<td>Spike on MFA integration</td>
+</tr>
+<tr>
+<td>PDF generation issues</td>
+<td>May delay M5</td>
+<td>Evaluate PDF libraries early</td>
+</tr>
+<tr>
+<td>Scope creep</td>
+<td>Delays all</td>
+<td>Strict change control</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="4-technical-approach">4. Technical Approach</h2>
+<h3 id="41-technology-stack-proposed">4.1 Technology Stack (Proposed)</h3>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Technology</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Frontend</td>
+<td>React / Next.js</td>
+<td>Modern, widely supported</td>
+</tr>
+<tr>
+<td>Backend</td>
+<td>Node.js / Express</td>
+<td>Team familiarity, async performance</td>
+</tr>
+<tr>
+<td>Database</td>
+<td>PostgreSQL (RDS)</td>
+<td>Per architecture document</td>
+</tr>
+<tr>
+<td>Auth</td>
+<td>AWS Cognito</td>
+<td>Per architecture document</td>
+</tr>
+<tr>
+<td>Storage</td>
+<td>AWS S3</td>
+<td>Per architecture document</td>
+</tr>
+<tr>
+<td>AI</td>
+<td>AWS Rekognition</td>
+<td>Per architecture document</td>
+</tr>
+<tr>
+<td>PDF</td>
+<td>AWS Lambda + library</td>
+<td>Serverless, scalable</td>
+</tr>
+<tr>
+<td>IaC</td>
+<td>Terraform / CDK</td>
+<td>Reproducible infrastructure</td>
+</tr>
+<tr>
+<td>CI/CD</td>
+<td>GitHub Actions</td>
+<td>Integrated with repo</td>
+</tr>
+</tbody>
+</table>
+<h3 id="42-development-practices">4.2 Development Practices</h3>
+<table>
+<thead>
+<tr>
+<th>Practice</th>
+<th>Approach</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Version control</td>
+<td>GitHub, feature branches, PR reviews</td>
+</tr>
+<tr>
+<td>Testing</td>
+<td>Unit tests, integration tests, E2E tests</td>
+</tr>
+<tr>
+<td>Code quality</td>
+<td>Linting, formatting, type checking</td>
+</tr>
+<tr>
+<td>Documentation</td>
+<td>API docs auto-generated, user guides</td>
+</tr>
+<tr>
+<td>Environments</td>
+<td>Development, Staging, Production</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5-resource-requirements">5. Resource Requirements</h2>
+<h3 id="51-team-composition-indicative">5.1 Team Composition (Indicative)</h3>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Responsibility</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tech Lead</td>
+<td>Architecture decisions, code review, technical guidance</td>
+</tr>
+<tr>
+<td>Backend Developer</td>
+<td>API development, database, integrations</td>
+</tr>
+<tr>
+<td>Frontend Developer</td>
+<td>UI development, UX implementation</td>
+</tr>
+<tr>
+<td>DevOps</td>
+<td>Infrastructure, CI/CD, monitoring</td>
+</tr>
+<tr>
+<td>QA</td>
+<td>Testing strategy, test execution</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="6-assumptions">6. Assumptions</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Assumption</th>
+<th>Impact if Invalid</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A1</td>
+<td>Single pilot client for UAT</td>
+<td>May need multiple test scenarios</td>
+</tr>
+<tr>
+<td>A2</td>
+<td>English-only UI sufficient</td>
+<td>Delays if i18n required</td>
+</tr>
+<tr>
+<td>A3</td>
+<td>Standard certificate templates acceptable</td>
+<td>Custom templates add effort</td>
+</tr>
+<tr>
+<td>A4</td>
+<td>AWS Rekognition accuracy sufficient</td>
+<td>May need custom model training</td>
+</tr>
+<tr>
+<td>A5</td>
+<td>Team has React/Node experience</td>
+<td>Learning curve if not</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="7-open-questions_1">7. Open Questions</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Question</th>
+<th>Decision Needed By</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Q1</td>
+<td>Who is the pilot client for UAT?</td>
+<td>Before M6</td>
+</tr>
+<tr>
+<td>Q2</td>
+<td>Are custom certificate templates required?</td>
+<td>Before M5</td>
+</tr>
+<tr>
+<td>Q3</td>
+<td>Penetration testing required before launch?</td>
+<td>Before M6</td>
+</tr>
+<tr>
+<td>Q4</td>
+<td>Production support model post-launch?</td>
+<td>Before M6</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="8-decision-log_1">8. Decision Log</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Decision</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>D1</td>
+<td>Core flow for MVP (not full platform)</td>
+<td>Faster to market, validate with users</td>
+</tr>
+<tr>
+<td>D2</td>
+<td>AI identification in Phase 1</td>
+<td>Key differentiator, core value prop</td>
+</tr>
+<tr>
+<td>D3</td>
+<td>ESG reporting deferred to Phase 2</td>
+<td>Not critical for core workflow</td>
+</tr>
+<tr>
+<td>D4</td>
+<td>Sequential milestones</td>
+<td>Technical dependencies require this</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="risks-unknowns-register">Risks &amp; Unknowns Register</h1>
+<p><strong>Document Version:</strong> 1.0
+<strong>Last Updated:</strong> January 2025
+<strong>Status:</strong> Draft for Review</p>
+<hr />
+<blockquote>
+<p><strong>MILESTONE 0 — DISCOVERY PHASE</strong></p>
+<p>This document is a deliverable of Milestone 0, a paid discovery phase intended to define the technical, architectural, and compliance foundations of AI-Reclaim™ <strong>prior to any production build</strong>.</p>
+<p>This document does not constitute a commitment to build. Detailed scope, timelines, and commercials for development phases will be defined following successful completion and acceptance of Milestone 0.</p>
+<p>All intellectual property vests exclusively in A to Z IT Recycling Ltd.</p>
+</blockquote>
+<hr />
+<h2 id="executive-summary_5">Executive Summary</h2>
+<p>This register consolidates all risks and unknowns identified across Milestone 0 deliverables. It provides a single view of items requiring attention before or during Phase 1 development.</p>
+<p><strong>Summary:</strong>
+- 12 Technical risks
+- 6 Compliance risks
+- 5 Operational risks
+- 11 Unknowns requiring resolution</p>
+<hr />
+<h2 id="1-risk-assessment-matrix">1. Risk Assessment Matrix</h2>
+<table>
+<thead>
+<tr>
+<th>Probability ↓ / Impact →</th>
+<th>Low</th>
+<th>Medium</th>
+<th>High</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>High</strong></td>
+<td>Monitor</td>
+<td>Mitigate</td>
+<td>🔴 Critical</td>
+</tr>
+<tr>
+<td><strong>Medium</strong></td>
+<td>Accept</td>
+<td>Monitor</td>
+<td>🟠 Mitigate</td>
+</tr>
+<tr>
+<td><strong>Low</strong></td>
+<td>Accept</td>
+<td>Accept</td>
+<td>🟡 Monitor</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="2-technical-risks">2. Technical Risks</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Risk</th>
+<th>Prob</th>
+<th>Impact</th>
+<th>Rating</th>
+<th>Mitigation</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>T1</td>
+<td>AWS Rekognition doesn't recognise IT equipment accurately</td>
+<td>Medium</td>
+<td>High</td>
+<td>🟠 Mitigate</td>
+<td>PoC with 50+ sample images before Phase 1</td>
+<td>Architecture</td>
+</tr>
+<tr>
+<td>T2</td>
+<td>AI identification response time exceeds 5s</td>
+<td>Medium</td>
+<td>Medium</td>
+<td>Monitor</td>
+<td>Implement async pattern with polling/webhook if needed</td>
+<td>API</td>
+</tr>
+<tr>
+<td>T3</td>
+<td>PostgreSQL audit log performance degrades at scale</td>
+<td>Medium</td>
+<td>High</td>
+<td>🟠 Mitigate</td>
+<td>Load test with projected volumes; consider time-series DB</td>
+<td>Architecture</td>
+</tr>
+<tr>
+<td>T4</td>
+<td>Multi-tenant RLS insufficient for client requirements</td>
+<td>Low</td>
+<td>High</td>
+<td>🟡 Monitor</td>
+<td>Security review; consider schema-per-tenant if needed</td>
+<td>Architecture</td>
+</tr>
+<tr>
+<td>T5</td>
+<td>Cognito MFA/SSO doesn't meet enterprise requirements</td>
+<td>Low</td>
+<td>Medium</td>
+<td>Accept</td>
+<td>Spike on Cognito capabilities early in M2</td>
+<td>Architecture</td>
+</tr>
+<tr>
+<td>T6</td>
+<td>PDF generation fails at scale</td>
+<td>Medium</td>
+<td>Medium</td>
+<td>Monitor</td>
+<td>Evaluate PDF libraries; use Lambda for burst capacity</td>
+<td>Roadmap</td>
+</tr>
+<tr>
+<td>T7</td>
+<td>S3 signed URL security concerns</td>
+<td>Low</td>
+<td>Medium</td>
+<td>Accept</td>
+<td>Security review during M3</td>
+<td>API</td>
+</tr>
+<tr>
+<td>T8</td>
+<td>Database connection pool exhaustion</td>
+<td>Low</td>
+<td>High</td>
+<td>🟡 Monitor</td>
+<td>Configure appropriate pool size; implement connection management</td>
+<td>Architecture</td>
+</tr>
+<tr>
+<td>T9</td>
+<td>Image storage capacity planning</td>
+<td>Low</td>
+<td>Low</td>
+<td>Accept</td>
+<td>Implement lifecycle policies; review after pilot</td>
+<td>Architecture</td>
+</tr>
+<tr>
+<td>T10</td>
+<td>Third-party API dependencies unavailable</td>
+<td>Medium</td>
+<td>Medium</td>
+<td>Monitor</td>
+<td>Abstract integrations; implement circuit breakers</td>
+<td>Architecture</td>
+</tr>
+<tr>
+<td>T11</td>
+<td>Barcode scanning accuracy issues</td>
+<td>Low</td>
+<td>Medium</td>
+<td>Accept</td>
+<td>Support manual entry fallback</td>
+<td>Data Model</td>
+</tr>
+<tr>
+<td>T12</td>
+<td>Real-time updates needed (WebSocket)</td>
+<td>Medium</td>
+<td>Medium</td>
+<td>Monitor</td>
+<td>Review UX requirements; add if needed in Phase 2</td>
+<td>API</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="3-compliance-risks">3. Compliance Risks</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Risk</th>
+<th>Prob</th>
+<th>Impact</th>
+<th>Rating</th>
+<th>Mitigation</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C1</td>
+<td>GDPR non-compliance discovered post-launch</td>
+<td>Low</td>
+<td>High</td>
+<td>🟡 Monitor</td>
+<td>Legal review before launch; DPO consultation</td>
+<td>Compliance</td>
+</tr>
+<tr>
+<td>C2</td>
+<td>NHS DSPT requirements unclear or change</td>
+<td>Medium</td>
+<td>Medium</td>
+<td>Monitor</td>
+<td>Early engagement with NHS clients; track DSPT updates</td>
+<td>Compliance</td>
+</tr>
+<tr>
+<td>C3</td>
+<td>ISO 27001 certification required for Phase 1</td>
+<td>Medium</td>
+<td>High</td>
+<td>🟠 Mitigate</td>
+<td>Confirm with enterprise clients early; budget if needed</td>
+<td>Compliance</td>
+</tr>
+<tr>
+<td>C4</td>
+<td>Audit log tampering vulnerability</td>
+<td>Low</td>
+<td>High</td>
+<td>🟡 Monitor</td>
+<td>Immutable storage; S3 Object Lock; consider cryptographic signing</td>
+<td>Compliance</td>
+</tr>
+<tr>
+<td>C5</td>
+<td>Data residency violation (accidental cross-region)</td>
+<td>Low</td>
+<td>High</td>
+<td>🟡 Monitor</td>
+<td>AWS Config rules; IAM deny policies; regular audit</td>
+<td>Architecture</td>
+</tr>
+<tr>
+<td>C6</td>
+<td>Breach notification process inadequate</td>
+<td>Low</td>
+<td>High</td>
+<td>🟡 Monitor</td>
+<td>Document procedure; legal review; test with tabletop exercise</td>
+<td>Compliance</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="4-operational-risks">4. Operational Risks</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Risk</th>
+<th>Prob</th>
+<th>Impact</th>
+<th>Rating</th>
+<th>Mitigation</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>O1</td>
+<td>Scope creep delays delivery</td>
+<td>High</td>
+<td>Medium</td>
+<td>🟠 Mitigate</td>
+<td>Strict change control; defer non-critical features to Phase 2</td>
+<td>Roadmap</td>
+</tr>
+<tr>
+<td>O2</td>
+<td>Key person dependency</td>
+<td>Medium</td>
+<td>Medium</td>
+<td>Monitor</td>
+<td>Documentation; knowledge sharing; cross-training</td>
+<td>Roadmap</td>
+</tr>
+<tr>
+<td>O3</td>
+<td>Pilot client unavailable for UAT</td>
+<td>Medium</td>
+<td>Medium</td>
+<td>Monitor</td>
+<td>Identify backup client; internal UAT as fallback</td>
+<td>Roadmap</td>
+</tr>
+<tr>
+<td>O4</td>
+<td>Team lacks React/Node experience</td>
+<td>Low</td>
+<td>Medium</td>
+<td>Accept</td>
+<td>Training time; hire if needed</td>
+<td>Roadmap</td>
+</tr>
+<tr>
+<td>O5</td>
+<td>Infrastructure capacity planning</td>
+<td>Low</td>
+<td>Low</td>
+<td>Accept</td>
+<td>Monitor usage; implement alerts</td>
+<td>Roadmap</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5-unknowns">5. Unknowns</h2>
+<p>Items requiring resolution before or during Phase 1:</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Unknown</th>
+<th>Impact if Unresolved</th>
+<th>Resolution Approach</th>
+<th>Owner</th>
+<th>Due</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>U1</td>
+<td>Operator portal requirements</td>
+<td>May need separate UI design</td>
+<td>Interview 2-3 recycling operators</td>
+<td>Product</td>
+<td>Before M3</td>
+</tr>
+<tr>
+<td>U2</td>
+<td>AI training data availability</td>
+<td>May need custom model</td>
+<td>Assess data sources; test Rekognition</td>
+<td>Tech</td>
+<td>Before M3</td>
+</tr>
+<tr>
+<td>U3</td>
+<td>NHS specific security questionnaire</td>
+<td>May delay NHS sales</td>
+<td>Engage NHS trust prospect</td>
+<td>Sales</td>
+<td>Before M6</td>
+</tr>
+<tr>
+<td>U4</td>
+<td>Legal retention period for certificates</td>
+<td>Storage capacity impact</td>
+<td>Legal consultation</td>
+<td>Legal</td>
+<td>Before M5</td>
+</tr>
+<tr>
+<td>U5</td>
+<td>Custom certificate templates needed</td>
+<td>Additional design/dev</td>
+<td>Confirm with pilot client</td>
+<td>Product</td>
+<td>Before M5</td>
+</tr>
+<tr>
+<td>U6</td>
+<td>Penetration testing required</td>
+<td>Scope impact</td>
+<td>Stakeholder decision</td>
+<td>PM</td>
+<td>Before M6</td>
+</tr>
+<tr>
+<td>U7</td>
+<td>Offline capability requirement</td>
+<td>Architecture impact</td>
+<td>Confirm with field staff users</td>
+<td>Product</td>
+<td>Before M3</td>
+</tr>
+<tr>
+<td>U8</td>
+<td>Integration requirements (ERP, etc.)</td>
+<td>Phase 2 scope</td>
+<td>Discovery with target clients</td>
+<td>Sales</td>
+<td>Before Phase 2</td>
+</tr>
+<tr>
+<td>U9</td>
+<td>Bulk import file formats</td>
+<td>Feature scope</td>
+<td>Client consultation</td>
+<td>Product</td>
+<td>Before M3</td>
+</tr>
+<tr>
+<td>U10</td>
+<td>Production support model</td>
+<td>Operational planning</td>
+<td>Stakeholder decision</td>
+<td>PM</td>
+<td>Before M6</td>
+</tr>
+<tr>
+<td>U11</td>
+<td>Cryptographic signing for audit logs</td>
+<td>Implementation effort</td>
+<td>Security review</td>
+<td>Tech</td>
+<td>Before M5</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="6-risk-heatmap">6. Risk Heatmap</h2>
+<div class="highlight"><pre><span></span><code>                    IMPACT
+           Low      Medium     High
+        ┌────────┬──────────┬──────────┐
+  High  │   —    │   O1     │    —     │
+        ├────────┼──────────┼──────────┤
+Prob    │  T9    │ T2,T6    │ T1,T3    │
+Medium  │  O5    │ T10,T12  │   C3     │
+        │        │ C2,O2,O3 │          │
+        ├────────┼──────────┼──────────┤
+  Low   │   —    │ T5,T7    │ T4,T8    │
+        │        │ T11,O4   │ C1,C4    │
+        │        │          │ C5,C6    │
+        └────────┴──────────┴──────────┘
+</code></pre></div>
+<hr />
+<h2 id="7-critical-items-for-immediate-action">7. Critical Items for Immediate Action</h2>
+<p>These items should be addressed before Phase 1 development begins:</p>
+<table>
+<thead>
+<tr>
+<th>Priority</th>
+<th>ID</th>
+<th>Item</th>
+<th>Action Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🔴 1</td>
+<td>T1</td>
+<td>AI accuracy unknown</td>
+<td>Run PoC with 50+ IT asset images</td>
+</tr>
+<tr>
+<td>🔴 2</td>
+<td>U1</td>
+<td>Operator portal scope</td>
+<td>Interview recycling operators</td>
+</tr>
+<tr>
+<td>🟠 3</td>
+<td>C3</td>
+<td>ISO 27001 requirement</td>
+<td>Confirm with enterprise prospects</td>
+</tr>
+<tr>
+<td>🟠 4</td>
+<td>T3</td>
+<td>Audit log performance</td>
+<td>Estimate volumes; benchmark PostgreSQL</td>
+</tr>
+<tr>
+<td>🟡 5</td>
+<td>U4</td>
+<td>Certificate retention</td>
+<td>Legal consultation</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="8-risk-review-schedule">8. Risk Review Schedule</h2>
+<table>
+<thead>
+<tr>
+<th>Activity</th>
+<th>Frequency</th>
+<th>Participants</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Risk register review</td>
+<td>Weekly during development</td>
+<td>Tech Lead, PM</td>
+</tr>
+<tr>
+<td>Risk status update</td>
+<td>Each milestone completion</td>
+<td>Full team</td>
+</tr>
+<tr>
+<td>New risk identification</td>
+<td>Ongoing</td>
+<td>All team members</td>
+</tr>
+<tr>
+<td>Critical risk escalation</td>
+<td>Immediate</td>
+<td>PM → Stakeholders</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="9-risk-response-definitions">9. Risk Response Definitions</h2>
+<table>
+<thead>
+<tr>
+<th>Response</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Accept</strong></td>
+<td>Risk is acknowledged; no specific action taken</td>
+</tr>
+<tr>
+<td><strong>Monitor</strong></td>
+<td>Risk is tracked; action taken if probability/impact increases</td>
+</tr>
+<tr>
+<td><strong>Mitigate</strong></td>
+<td>Active steps taken to reduce probability or impact</td>
+</tr>
+<tr>
+<td><strong>Avoid</strong></td>
+<td>Change approach to eliminate risk entirely</td>
+</tr>
+<tr>
+<td><strong>Transfer</strong></td>
+<td>Shift risk to third party (insurance, contracts)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="10-document-cross-references">10. Document Cross-References</h2>
+<p>Risks consolidated from:</p>
+<table>
+<thead>
+<tr>
+<th>Document</th>
+<th>Risks</th>
+<th>Open Questions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../01-system-architecture/README.md">01 - System Architecture</a></td>
+<td>T1-T5, T8-T10, C5</td>
+<td>5</td>
+</tr>
+<tr>
+<td><a href="../02-data-model/README.md">02 - Core Data Model</a></td>
+<td>T11</td>
+<td>4</td>
+</tr>
+<tr>
+<td><a href="../03-api-integration/README.md">03 - API &amp; Integration</a></td>
+<td>T2, T7, T12</td>
+<td>4</td>
+</tr>
+<tr>
+<td><a href="../04-compliance-security/README.md">04 - Compliance &amp; Security</a></td>
+<td>C1-C4, C6</td>
+<td>4</td>
+</tr>
+<tr>
+<td><a href="../05-delivery-roadmap/README.md">05 - Delivery Roadmap</a></td>
+<td>T6, O1-O5</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="user-flows-end-to-end">User Flows — End-to-End</h1>
+<p><strong>AI-Reclaim™ Discovery Phase</strong></p>
+<p><strong>Author:</strong> Oluwasegun Olumbe
+<strong>Client:</strong> A to Z IT Recycling Ltd</p>
+<hr />
+<blockquote>
+<p><strong>MILESTONE 0 — DISCOVERY PHASE</strong></p>
+<p>This document illustrates assumed user journeys through the AI-Reclaim™ platform. These flows require validation with stakeholders before Phase 1 development.</p>
+</blockquote>
+<hr />
+<h2 id="1-complete-platform-flow">1. Complete Platform Flow</h2>
+<pre class="mermaid"><code>flowchart TB
+    subgraph "CLIENT ORGANISATION"
+        A1[Login] --&gt; A2[Register Asset]
+        A2 --&gt; A3[Upload Photo]
+        A3 --&gt; A4[AI Identification]
+        A4 --&gt; A5[Confirm Details]
+        A5 --&gt; A6[Add to Batch]
+        A6 --&gt; A7[Submit for Collection]
+    end
+
+    subgraph "A TO Z OPERATIONS"
+        B1[View Pending Batches] --&gt; B2[Collect Assets]
+        B2 --&gt; B3[Update Status: Collected]
+        B3 --&gt; B4[Process Assets]
+        B4 --&gt; B5[Update Status: Processing]
+        B5 --&gt; B6[Complete Processing]
+        B6 --&gt; B7[Generate Certificate]
+    end
+
+    subgraph "CLIENT ORGANISATION "
+        C1[Receive Notification] --&gt; C2[View Certificate]
+        C2 --&gt; C3[Download PDF]
+    end
+
+    A7 --&gt; B1
+    B7 --&gt; C1</code></pre>
+<hr />
+<h2 id="2-client-organisation-user-flow">2. Client Organisation User Flow</h2>
+<pre class="mermaid"><code>flowchart LR
+    subgraph "AUTHENTICATION"
+        L1[Visit Portal] --&gt; L2[Enter Credentials]
+        L2 --&gt; L3{MFA Required?}
+        L3 --&gt;|Yes| L4[Enter MFA Code]
+        L3 --&gt;|No| L5[Dashboard]
+        L4 --&gt; L5
+    end
+
+    subgraph "ASSET REGISTRATION"
+        L5 --&gt; R1[New Asset]
+        R1 --&gt; R2[Upload Photo]
+        R2 --&gt; R3[AI Analysis]
+        R3 --&gt; R4{Confident?}
+        R4 --&gt;|Yes| R5[Auto-fill Details]
+        R4 --&gt;|No| R6[Manual Entry]
+        R5 --&gt; R7[Review &amp; Save]
+        R6 --&gt; R7
+    end
+
+    subgraph "BATCH &amp; TRACKING"
+        R7 --&gt; T1[Add to Batch]
+        T1 --&gt; T2[Schedule Collection]
+        T2 --&gt; T3[Track Status]
+        T3 --&gt; T4[Download Certificate]
+    end</code></pre>
+<hr />
+<h2 id="3-asset-lifecycle-flow">3. Asset Lifecycle Flow</h2>
+<pre class="mermaid"><code>stateDiagram-v2
+    [*] --&gt; Registered: Client registers asset
+
+    Registered --&gt; Collected: A to Z collects batch
+
+    Collected --&gt; Processing: Asset received at facility
+
+    Processing --&gt; Completed: Destruction/Recycling done
+
+    Completed --&gt; [*]: Certificate issued
+
+    state Processing {
+        [*] --&gt; DataWipe
+        DataWipe --&gt; PhysicalProcess
+        PhysicalProcess --&gt; QualityCheck
+        QualityCheck --&gt; [*]
+    }</code></pre>
+<hr />
+<h2 id="4-operator-a-to-z-staff-flow">4. Operator (A to Z Staff) Flow</h2>
+<pre class="mermaid"><code>flowchart TB
+    subgraph "START SHIFT"
+        O1[Login] --&gt; O2[View Dashboard]
+        O2 --&gt; O3[See Pending Batches]
+    end
+
+    subgraph "COLLECTION"
+        O3 --&gt; C1[Select Batch]
+        C1 --&gt; C2[View Asset List]
+        C2 --&gt; C3[Collect from Client]
+        C3 --&gt; C4[Verify Assets]
+        C4 --&gt; C5[Mark Collected]
+    end
+
+    subgraph "PROCESSING"
+        C5 --&gt; P1[Receive at Facility]
+        P1 --&gt; P2[Scan Asset]
+        P2 --&gt; P3[Process Asset]
+        P3 --&gt; P4{Data Bearing?}
+        P4 --&gt;|Yes| P5[Data Sanitisation]
+        P4 --&gt;|No| P6[Physical Processing]
+        P5 --&gt; P7[Mark Completed]
+        P6 --&gt; P7
+    end
+
+    subgraph "CERTIFICATION"
+        P7 --&gt; X1[Select Certificate Type]
+        X1 --&gt; X2[Generate Certificate]
+        X2 --&gt; X3[Client Notified]
+    end</code></pre>
+<hr />
+<h2 id="5-auditor-flow">5. Auditor Flow</h2>
+<pre class="mermaid"><code>flowchart LR
+    subgraph "ACCESS"
+        A1[Login] --&gt; A2[Read-Only Dashboard]
+    end
+
+    subgraph "AUDIT ACTIVITIES"
+        A2 --&gt; B1[Search Audit Logs]
+        B1 --&gt; B2[Filter by Date/User/Action]
+        B2 --&gt; B3[View Entry Details]
+        B3 --&gt; B4[Export Report]
+    end
+
+    subgraph "COMPLIANCE"
+        A2 --&gt; C1[View Certificates]
+        C1 --&gt; C2[Verify Chain of Custody]
+        C2 --&gt; C3[Generate Compliance Report]
+    end</code></pre>
+<hr />
+<h2 id="6-ai-identification-flow">6. AI Identification Flow</h2>
+<pre class="mermaid"><code>flowchart TB
+    subgraph "INPUT"
+        I1[User Uploads Photo] --&gt; I2[Image Stored in S3]
+        I3[User Scans Barcode] --&gt; I4[Serial Number Captured]
+    end
+
+    subgraph "AI PROCESSING"
+        I2 --&gt; P1[AWS Rekognition]
+        P1 --&gt; P2{Device Recognised?}
+        P2 --&gt;|Yes| P3[Return Device Type]
+        P2 --&gt;|No| P4[Return Low Confidence]
+
+        I4 --&gt; P5[Database Lookup]
+        P5 --&gt; P6{Match Found?}
+        P6 --&gt;|Yes| P7[Return Device Details]
+        P6 --&gt;|No| P8[No Match]
+    end
+
+    subgraph "RESULT"
+        P3 --&gt; R1[Auto-populate Form]
+        P4 --&gt; R2[Manual Entry Required]
+        P7 --&gt; R1
+        P8 --&gt; R2
+        R1 --&gt; R3[User Confirms]
+        R2 --&gt; R3
+    end</code></pre>
+<hr />
+<h2 id="7-certificate-generation-flow">7. Certificate Generation Flow</h2>
+<pre class="mermaid"><code>flowchart TB
+    subgraph "TRIGGER"
+        T1[Asset Marked Completed] --&gt; T2{Certificate Type?}
+    end
+
+    subgraph "VALIDATION"
+        T2 --&gt;|Destruction| V1[Verify Data Bearing]
+        T2 --&gt;|Recycling| V2[Verify Recyclable]
+        T2 --&gt;|Sanitisation| V3[Verify Data Wiped]
+        T2 --&gt;|WEEE| V4[Verify WEEE Category]
+    end
+
+    subgraph "GENERATION"
+        V1 --&gt; G1[Create Certificate Record]
+        V2 --&gt; G1
+        V3 --&gt; G1
+        V4 --&gt; G1
+        G1 --&gt; G2[Generate PDF]
+        G2 --&gt; G3[Store in S3]
+        G3 --&gt; G4[Log Audit Entry]
+    end
+
+    subgraph "DELIVERY"
+        G4 --&gt; D1[Notify Client]
+        D1 --&gt; D2[Client Downloads PDF]
+    end</code></pre>
+<hr />
+<h2 id="8-role-based-access-summary">8. Role-Based Access Summary</h2>
+<pre class="mermaid"><code>flowchart TB
+    subgraph "ADMIN"
+        AD[Administrator]
+        AD --&gt; AD1[Manage Users]
+        AD --&gt; AD2[Manage Organisations]
+        AD --&gt; AD3[View All Data]
+        AD --&gt; AD4[System Configuration]
+    end
+
+    subgraph "OPERATOR"
+        OP[Operator]
+        OP --&gt; OP1[Process Assets]
+        OP --&gt; OP2[Update Status]
+        OP --&gt; OP3[Generate Certificates]
+        OP --&gt; OP4[View Assigned Batches]
+    end
+
+    subgraph "CLIENT"
+        CL[Client User]
+        CL --&gt; CL1[Register Assets]
+        CL --&gt; CL2[Create Batches]
+        CL --&gt; CL3[Track Status]
+        CL --&gt; CL4[Download Certificates]
+    end
+
+    subgraph "AUDITOR"
+        AU[Auditor]
+        AU --&gt; AU1[View All Data]
+        AU --&gt; AU2[Export Audit Logs]
+        AU --&gt; AU3[Read-Only Access]
+    end</code></pre>
+<hr />
+<h2 id="assumptions-to-validate">Assumptions to Validate</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Assumption</th>
+<th>Validate With</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Client registers assets before collection</td>
+<td>Client stakeholders</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Single portal serves all user types</td>
+<td>Operators, Clients</td>
+</tr>
+<tr>
+<td>3</td>
+<td>AI identification happens at registration</td>
+<td>Client stakeholders</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Operators update status at each stage</td>
+<td>A to Z operations team</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Certificates generated per-asset (not batch only)</td>
+<td>Compliance team</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Auditors need export functionality</td>
+<td>Auditor stakeholders</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="document-cross-references">Document Cross-References</h2>
+<ul>
+<li><a href="../01-system-architecture/">System Architecture</a> — Technical implementation</li>
+<li><a href="../02-data-model/">Data Model</a> — Entity relationships</li>
+<li><a href="../03-api-integration/">API &amp; Integration</a> — Endpoint design</li>
+<li><a href="../04-compliance-security/">Compliance &amp; Security</a> — Audit requirements</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; A to Z IT Recycling Ltd. All rights reserved.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "toc.integrate", "search.highlight"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
