@@ -28,7 +28,7 @@ markdown_extensions:
   - md_in_html
 
 nav:
-  - Home: INDEX.md
+  - Home: index.md
   - Executive Summary: EXECUTIVE-SUMMARY.md
   - Deliverables:
     - System Architecture: 01-system-architecture/README.md
