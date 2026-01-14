@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(git init:*)"
+      "Bash(git init:*)",
+      "WebSearch",
+      "WebFetch(domain:aws.amazon.com)"
     ]
   }
 }
