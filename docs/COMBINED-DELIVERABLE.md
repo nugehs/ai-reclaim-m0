@@ -262,7 +262,7 @@ graph TB
 
         subgraph "ECS Fargate Cluster"
             subgraph "Containers (Docker Hardened Images)"
-                API[api-gateway<br/>Node.js DHI]
+                API[api-service<br/>Node.js DHI]
                 ASSET[asset-service<br/>Node.js DHI]
                 AUDIT[audit-service<br/>Node.js DHI]
                 CERT[certificate-service<br/>Node.js DHI]
@@ -313,12 +313,12 @@ The architecture follows a layered approach where each layer has distinct respon
 
 **Edge & Security Layer**: All inbound traffic passes through CloudFront and AWS WAF before reaching the application. WAF provides protection against common web exploits (SQL injection, XSS), bot traffic, and DDoS attacks. This layer acts as the first line of defence for the platform.
 
-**Application Layer**: The API service acts as the single entry point for all client requests. It handles request routing, input validation, and orchestration of business services. Authentication is delegated to AWS Cognito, which manages user identities, JWT token issuance, and supports MFA for compliance requirements.
+**Application Layer**: The Application Load Balancer (ALB) receives all inbound requests from WAF and routes them to the appropriate backend services. AWS Cognito provides managed authentication, handling user identities, JWT token issuance, and MFA for compliance requirements. The ALB performs health checks and distributes traffic across container instances.
 
 **Container Platform (ECS Fargate)**: All application services run as containerised microservices on AWS ECS Fargate, using **Docker Hardened Images (DHI)** as base images. DHI provides near-zero CVE posture, SLSA Level 3 provenance, and FIPS/STIG-compliant variants for NHS and government clients. Container images are stored in a private ECR registry within eu-west-2.
 
 **Business Services Layer**: Five domain-specific containerised services handle core platform functionality:
-- **api-gateway** — Request routing, rate limiting, JWT validation
+- **api-service** — Request routing, rate limiting, JWT validation
 - **asset-service** — Asset lifecycle management from registration through disposition
 - **audit-service** — Immutable audit log entries for all significant actions
 - **certificate-service** — Destruction and recycling certificate generation
@@ -336,7 +336,7 @@ The architecture follows a layered approach where each layer has distinct respon
 |-----------|---------|-------------|---------------|
 | Web Application | User interface for all user types | S3 + CloudFront | Static hosting reduces attack surface; CDN improves performance |
 | Container Registry | Private image storage | ECR (eu-west-2) | UK data residency; integrated scanning; immutable tags |
-| api-gateway | REST API gateway, request routing | ECS Fargate (Node.js DHI) | Serverless containers; Docker Hardened base for compliance |
+| api-service | API routing, rate limiting, request orchestration | ECS Fargate (Node.js DHI) | Serverless containers; Docker Hardened base for compliance |
 | Auth Service | Authentication, JWT tokens, MFA | Cognito | Managed auth with built-in MFA, federation support, compliance certifications |
 | asset-service | Asset lifecycle management | ECS Fargate (Node.js DHI) | Stateless containers; independent scaling |
 | audit-service | Immutable audit log creation | ECS Fargate (Node.js DHI) | Dedicated service ensures audit writes are never blocked |
