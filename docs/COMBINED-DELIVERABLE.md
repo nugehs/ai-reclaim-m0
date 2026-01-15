@@ -1285,7 +1285,7 @@ Environmental impact reports.
 ```
 ┌──────────┐     ┌─────────┐     ┌──────────┐
 │  Client  │────▶│   API   │────▶│ Cognito  │
-│   App    │◀────│ Gateway │◀────│   Pool   │
+│   App    │◀────│ Service │◀────│   Pool   │
 └──────────┘     └─────────┘     └──────────┘
      │                                │
      │◀───────── JWT Token ──────────▶│
