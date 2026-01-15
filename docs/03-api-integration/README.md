@@ -82,13 +82,13 @@ Primary resource for IT equipment tracking.
 
 | Operation | Method | Endpoint | Description |
 |-----------|--------|----------|-------------|
-| List assets | GET | `/assets` | Paginated list with filters |
-| Register asset | POST | `/assets` | Create new asset record |
-| Get asset | GET | `/assets/{id}` | Retrieve asset details |
-| Update asset | PATCH | `/assets/{id}` | Update asset fields |
-| Change status | POST | `/assets/{id}/status` | Transition lifecycle status |
-| AI identify | POST | `/assets/{id}/identify` | Submit image for AI recognition |
-| Asset history | GET | `/assets/{id}/history` | Audit trail for asset |
+| List assets | GET | `/v1/assets` | Paginated list with filters |
+| Register asset | POST | `/v1/assets` | Create new asset record |
+| Get asset | GET | `/v1/assets/{id}` | Retrieve asset details |
+| Update asset | PATCH | `/v1/assets/{id}` | Update asset fields |
+| Change status | POST | `/v1/assets/{id}/status` | Transition lifecycle status |
+| AI identify | POST | `/v1/assets/{id}/identify` | Submit image for AI recognition |
+| Asset history | GET | `/v1/assets/{id}/history` | Audit trail for asset |
 
 **Common Filters:**
 - `status` — Filter by lifecycle status
@@ -102,12 +102,12 @@ Grouping of assets for collection and processing.
 
 | Operation | Method | Endpoint | Description |
 |-----------|--------|----------|-------------|
-| List batches | GET | `/batches` | Paginated list |
-| Create batch | POST | `/batches` | Create new batch |
-| Get batch | GET | `/batches/{id}` | Batch details with asset summary |
-| Add assets | POST | `/batches/{id}/assets` | Add assets to batch |
-| Close batch | POST | `/batches/{id}/close` | Mark batch ready for collection |
-| Batch assets | GET | `/batches/{id}/assets` | List assets in batch |
+| List batches | GET | `/v1/batches` | Paginated list |
+| Create batch | POST | `/v1/batches` | Create new batch |
+| Get batch | GET | `/v1/batches/{id}` | Batch details with asset summary |
+| Add assets | POST | `/v1/batches/{id}/assets` | Add assets to batch |
+| Close batch | POST | `/v1/batches/{id}/close` | Mark batch ready for collection |
+| Batch assets | GET | `/v1/batches/{id}/assets` | List assets in batch |
 
 ### 3.3 Certificates
 
@@ -115,10 +115,10 @@ Compliance documentation.
 
 | Operation | Method | Endpoint | Description |
 |-----------|--------|----------|-------------|
-| List certificates | GET | `/certificates` | Paginated list with filters |
-| Generate certificate | POST | `/certificates` | Issue new certificate |
-| Get certificate | GET | `/certificates/{id}` | Certificate details |
-| Download PDF | GET | `/certificates/{id}/pdf` | Download PDF document |
+| List certificates | GET | `/v1/certificates` | Paginated list with filters |
+| Generate certificate | POST | `/v1/certificates` | Issue new certificate |
+| Get certificate | GET | `/v1/certificates/{id}` | Certificate details |
+| Download PDF | GET | `/v1/certificates/{id}/pdf` | Download PDF document |
 
 **Certificate Generation Requirements:**
 - Asset or batch must be in `completed` status
@@ -131,9 +131,9 @@ Compliance audit trail.
 
 | Operation | Method | Endpoint | Description |
 |-----------|--------|----------|-------------|
-| Query logs | GET | `/audit` | Paginated audit log query |
-| Asset audit | GET | `/audit/assets/{id}` | Audit trail for specific asset |
-| Export logs | GET | `/audit/export` | Export audit logs (CSV/JSON) |
+| Query logs | GET | `/v1/audit` | Paginated audit log query |
+| Asset audit | GET | `/v1/audit/assets/{id}` | Audit trail for specific asset |
+| Export logs | GET | `/v1/audit/export` | Export audit logs (CSV/JSON) |
 
 **Query Parameters:**
 - `entity_type` — Filter by entity (asset, user, certificate)
@@ -147,10 +147,10 @@ Environmental impact reports.
 
 | Operation | Method | Endpoint | Description |
 |-----------|--------|----------|-------------|
-| List reports | GET | `/esg/reports` | Previous reports |
-| Generate report | POST | `/esg/reports` | Generate new report for period |
-| Get report | GET | `/esg/reports/{id}` | Report details |
-| Download PDF | GET | `/esg/reports/{id}/pdf` | Download PDF report |
+| List reports | GET | `/v1/esg/reports` | Previous reports |
+| Generate report | POST | `/v1/esg/reports` | Generate new report for period |
+| Get report | GET | `/v1/esg/reports/{id}` | Report details |
+| Download PDF | GET | `/v1/esg/reports/{id}/pdf` | Download PDF report |
 
 ---
 
@@ -214,29 +214,7 @@ Potential external integrations identified for future phases:
 
 ---
 
-## 6. API Assumptions
-
-### 6.1 Confirmed Assumptions
-
-| ID | Assumption | Source |
-|----|------------|--------|
-| A1 | RESTful API design | Stakeholder decision |
-| A2 | JWT-based authentication via Cognito | Architecture decision |
-| A3 | JSON request/response format | Industry standard |
-| A4 | API versioning in URL path | Best practice |
-
-### 6.2 Assumptions Requiring Validation
-
-| ID | Assumption | Confidence | Validation Approach |
-|----|------------|------------|---------------------|
-| A5 | Synchronous AI identification acceptable | Medium | Performance testing |
-| A6 | Standard pagination (limit/offset) sufficient | High | Review with frontend |
-| A7 | Webhook/callback not needed for MVP | Medium | Confirm with stakeholders |
-| A8 | File uploads via signed S3 URLs | High | Security review |
-
----
-
-## 7. Non-Functional Requirements
+## 6. Non-Functional Requirements
 
 | Requirement | Target | Notes |
 |-------------|--------|-------|
@@ -248,7 +226,7 @@ Potential external integrations identified for future phases:
 
 ---
 
-## 8. Open Questions
+## 7. Open Questions
 
 | ID | Question | Impact | Resolution Approach |
 |----|----------|--------|---------------------|
@@ -256,6 +234,28 @@ Potential external integrations identified for future phases:
 | Q2 | What file formats for bulk asset import? | Feature scope | Client consultation |
 | Q3 | Real-time updates needed (WebSockets)? | Architecture | Review UX requirements |
 | Q4 | Public API for client integrations in Phase 1? | Scope | Stakeholder decision (deferred) |
+
+---
+
+## 8. Assumptions
+
+### 8.1 Confirmed Assumptions
+
+| ID | Assumption | Source |
+|----|------------|--------|
+| A1 | RESTful API design | Stakeholder decision |
+| A2 | JWT-based authentication via Cognito | Architecture decision |
+| A3 | JSON request/response format | Industry standard |
+| A4 | API versioning in URL path | Best practice |
+
+### 8.2 Assumptions Requiring Validation
+
+| ID | Assumption | Confidence | Validation Approach |
+|----|------------|------------|---------------------|
+| A5 | Synchronous AI identification acceptable | Medium | Performance testing |
+| A6 | Standard pagination (limit/offset) sufficient | High | Review with frontend |
+| A7 | Webhook/callback not needed for MVP | Medium | Confirm with stakeholders |
+| A8 | File uploads via signed S3 URLs | High | Security review |
 
 ---
 
