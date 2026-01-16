@@ -1,4 +1,5 @@
 site_name: AI-Reclaim™ — Discovery Phase
+site_url: https://nugehs.github.io/ai-reclaim-m0/
 site_description: Milestone 0 Technical Documentation
 site_author: Oluwasegun Olumbe
 use_directory_urls: true
@@ -6,9 +7,6 @@ use_directory_urls: true
 plugins:
   - search
   - mermaid2
-  - redirects:
-      redirect_maps:
-        'INDEX.md': 'index.md'
 
 theme:
   name: material
