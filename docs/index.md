@@ -24,8 +24,7 @@
 | 06  | [Risks Register](./06-risks-register/README.md)             | Risks, unknowns, mitigations                          | Complete |
 | 07  | [User Flows](./USER-FLOWS.md)                               | End‑to‑end user journeys (Mermaid)                    | Complete |
 
-**Tracking:** [ROADMAP.md](./ROADMAP.md)  
-**Glossary & Context:** See `CLAUDE.md` at repository root
+**Tracking:** [ROADMAP.md](./ROADMAP.md)
 
 ---
 

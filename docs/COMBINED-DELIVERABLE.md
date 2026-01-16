@@ -261,7 +261,7 @@ graph TB
         end
 
         subgraph "ECS Fargate Cluster"
-            subgraph "Containers (Docker Hardened Images)"
+            subgraph "Containers - Docker Hardened Images"
                 API[api-service<br/>Node.js DHI]
                 ASSET[asset-service<br/>Node.js DHI]
                 AUDIT[audit-service<br/>Node.js DHI]

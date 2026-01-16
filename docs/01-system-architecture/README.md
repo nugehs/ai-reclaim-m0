@@ -111,13 +111,13 @@ graph TB
         end
 
         subgraph "ECS Fargate Cluster"
-            subgraph "Containers (Docker Hardened Images)"
-                API[api-service<br/>Node.js (Docker Hardened Images)]
-                ASSET[asset-service<br/>Node.js (Docker Hardened Images)]
-                AUDIT[audit-service<br/>Node.js (Docker Hardened Images)]
-                CERT[certificate-service<br/>Node.js (Docker Hardened Images)]
-                ESG[esg-service<br/>Node.js (Docker Hardened Images)]
-                AIID[ai-identification<br/>Python (Docker Hardened Images)]
+            subgraph "Containers - Docker Hardened Images"
+                API[api-service<br/>Node.js DHI]
+                ASSET[asset-service<br/>Node.js DHI]
+                AUDIT[audit-service<br/>Node.js DHI]
+                CERT[certificate-service<br/>Node.js DHI]
+                ESG[esg-service<br/>Node.js DHI]
+                AIID[ai-identification<br/>Python DHI]
             end
         end
 
