@@ -14,15 +14,15 @@
 
 ## Document Overview
 
-| # | Document | Description | Status |
-|---|----------|-------------|--------|
-| 01 | [System Architecture](./01-system-architecture/README.md) | High‑level SaaS architecture, AWS design, scalability | Complete |
-| 02 | [Core Data Model](./02-data-model/README.md) | Entities, relationships, ER diagrams | Complete |
-| 03 | [API & Integration](./03-api-integration/README.md) | REST API structure, auth, integrations | Complete |
-| 04 | [Compliance & Security](./04-compliance-security/README.md) | GDPR, NHS DSPT, audit logging, security | Complete |
-| 05 | [Delivery Roadmap](./05-delivery-roadmap/README.md) | Phase 1 scope, milestones, dependencies | Complete |
-| 06 | [Risks Register](./06-risks-register/README.md) | Risks, unknowns, mitigations | Complete |
-| 07 | [User Flows](./USER-FLOWS.md) | End‑to‑end user journeys (Mermaid) | Complete |
+| #   | Document                                                    | Description                                           | Status   |
+| --- | ----------------------------------------------------------- | ----------------------------------------------------- | -------- |
+| 01  | [System Architecture](./01-system-architecture/README.md)   | High‑level SaaS architecture, AWS design, scalability | Complete |
+| 02  | [Core Data Model](./02-data-model/README.md)                | Entities, relationships, ER diagrams                  | Complete |
+| 03  | [API & Integration](./03-api-integration/README.md)         | REST API structure, auth, integrations                | Complete |
+| 04  | [Compliance & Security](./04-compliance-security/README.md) | GDPR, NHS DSPT, audit logging, security               | Complete |
+| 05  | [Delivery Roadmap](./05-delivery-roadmap/README.md)         | Phase 1 scope, milestones, dependencies               | Complete |
+| 06  | [Risks Register](./06-risks-register/README.md)             | Risks, unknowns, mitigations                          | Complete |
+| 07  | [User Flows](./USER-FLOWS.md)                               | End‑to‑end user journeys (Mermaid)                    | Complete |
 
 **Tracking:** [ROADMAP.md](./ROADMAP.md)  
 **Glossary & Context:** See `CLAUDE.md` at repository root
