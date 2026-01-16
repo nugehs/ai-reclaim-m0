@@ -3,6 +3,13 @@ site_description: Milestone 0 Technical Documentation
 site_author: Oluwasegun Olumbe
 use_directory_urls: true
 
+plugins:
+  - search
+  - mermaid2
+  - redirects:
+      redirect_maps:
+        'INDEX.md': 'index.md'
+
 theme:
   name: material
   palette:
@@ -21,7 +28,7 @@ markdown_extensions:
       custom_fences:
         - name: mermaid
           class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
+          format: !!python/name:mermaid2.fence_mermaid
   - pymdownx.tabbed
   - admonition
   - pymdownx.details
@@ -29,7 +36,7 @@ markdown_extensions:
   - md_in_html
 
 nav:
-  - Home: INDEX.md
+  - Home: index.md
   - Executive Summary: EXECUTIVE-SUMMARY.md
   - Deliverables:
     - System Architecture: 01-system-architecture/README.md
