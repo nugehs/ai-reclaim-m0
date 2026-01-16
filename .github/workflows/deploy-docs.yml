@@ -23,6 +23,10 @@ jobs:
         run: |
           pip install mkdocs mkdocs-material pymdown-extensions
 
-      - name: Build and Deploy
+      - name: Build (strict)
+        run: |
+          mkdocs build --strict
+
+      - name: Deploy to GitHub Pages
         run: |
           mkdocs gh-deploy --force
