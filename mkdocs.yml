@@ -28,13 +28,8 @@ markdown_extensions:
   - attr_list
   - md_in_html
 
-plugins:
-  - redirects:
-      redirect_maps:
-        'INDEX.md': 'index.md'
-
 nav:
-  - Home: index.md
+  - Home: INDEX.md
   - Executive Summary: EXECUTIVE-SUMMARY.md
   - Deliverables:
     - System Architecture: 01-system-architecture/README.md
