@@ -2519,11 +2519,11 @@ Risks consolidated from:
 
 | Document | Risks | Open Questions |
 |----------|-------|----------------|
-| [01 - System Architecture](../01-system-architecture/README.md) | T1-T5, T8-T10, C5 | 5 |
-| [02 - Core Data Model](../02-data-model/README.md) | T11 | 4 |
-| [03 - API & Integration](../03-api-integration/README.md) | T2, T7, T12 | 4 |
-| [04 - Compliance & Security](../04-compliance-security/README.md) | C1-C4, C6 | 4 |
-| [05 - Delivery Roadmap](../05-delivery-roadmap/README.md) | T6, O1-O5 | 4 |
+| [01 - System Architecture](01-system-architecture/README.md) | T1-T5, T8-T10, C5 | 5 |
+| [02 - Core Data Model](02-data-model/README.md) | T11 | 4 |
+| [03 - API & Integration](03-api-integration/README.md) | T2, T7, T12 | 4 |
+| [04 - Compliance & Security](04-compliance-security/README.md) | C1-C4, C6 | 4 |
+| [05 - Delivery Roadmap](05-delivery-roadmap/README.md) | T6, O1-O5 | 4 |
 
 
 ---
