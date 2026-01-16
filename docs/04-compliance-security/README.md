@@ -1,8 +1,9 @@
 # Compliance, Security & Audit Logging
 
 **Document Version:** 1.0
-**Last Updated:** January 2025
-**Status:** Draft for Review
+**Last Updated:** 24 January 2025
+**Status:** Complete
+**Author:** Oluwasegun Olumbe
 
 ---
 

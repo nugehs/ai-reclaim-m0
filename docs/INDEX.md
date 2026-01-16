@@ -24,10 +24,11 @@
 | 03 | [API & Integration](./03-api-integration/README.md) | REST API structure, auth, integrations | Complete |
 | 04 | [Compliance & Security](./04-compliance-security/README.md) | GDPR, NHS DSPT, audit logging, security | Complete |
 | 05 | [Delivery Roadmap](./05-delivery-roadmap/README.md) | Phase 1 scope, milestones, dependencies | Complete |
-| 06 | [Risks Register](./06-risks-register/README.md) | Risks, unknowns, mitigations | Template |
+| 06 | [Risks Register](./06-risks-register/README.md) | Risks, unknowns, mitigations | Complete |
 | 07 | [User Flows](./USER-FLOWS.md) | End-to-end user journeys (Mermaid) | Complete |
 
-**Tracking:** [ROADMAP.md](./ROADMAP.md) — Task-level progress
+**Tracking:** [ROADMAP.md](./ROADMAP.md) — Task-level progress  
+**Glossary & Context:** See `CLAUDE.md` at repository root
 
 ---
 
