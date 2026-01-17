@@ -193,6 +193,58 @@ The architecture follows a layered approach where each layer has distinct respon
 
 **AI/ML Layer**: The AI Identification Service enables users to identify IT assets by uploading photographs or scanning barcodes/serial numbers. Image analysis is performed by [AWS Rekognition](https://aws.amazon.com/rekognition/), with results matched against a device database. This accelerates asset registration and reduces data entry errors.
 
+#### AI Identification Capabilities (Phase 1)
+
+| Capability | Description | Technology |
+|------------|-------------|------------|
+| **Image Recognition** | Detects device type from uploaded photos | AWS Rekognition |
+| **Label Detection** | Identifies make, model, brand from visual features | Rekognition Labels API |
+| **Confidence Scoring** | Returns match confidence (0-100%) for each identification | Rekognition API |
+| **Auto-population** | Automatically fills asset form fields when confidence ≥ threshold | Application logic |
+| **Barcode/Serial Lookup** | Extracts serial numbers via camera or manual entry | OCR + Database lookup |
+| **Fallback to Manual** | Prompts manual entry when confidence < 70% | UI workflow |
+
+#### AI Identification Flow
+
+```mermaid
+flowchart LR
+    subgraph INPUT["📥 Input"]
+        A[📷 Photo Upload]
+        B[📱 Barcode Scan]
+        C[⌨️ Manual Entry]
+    end
+
+    subgraph AIENGINE["🤖 AI Engine"]
+        D[☁️ S3 Storage]
+        E[🧠 AWS Rekognition]
+        F{🎯 Confidence<br/>≥ 70%?}
+        G[🗄️ Device Database<br/>Lookup]
+    end
+
+    subgraph OUTPUT["📤 Output"]
+        H[✅ Auto-fill Form]
+        I[⚠️ Manual Review]
+        J[💾 Save Asset]
+    end
+
+    A --> D --> E --> F
+    B --> G --> F
+    C --> J
+    F -->|Yes| H --> J
+    F -->|No| I --> J
+
+    %% Styling
+    classDef inputStyle fill:#e3f2fd,stroke:#1565c0,stroke-width:2px,color:#0d47a1
+    classDef aiStyle fill:#fce4ec,stroke:#c2185b,stroke-width:2px,color:#880e4f
+    classDef outputStyle fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px,color:#1b5e20
+    classDef decisionStyle fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#bf360c
+
+    class A,B,C inputStyle
+    class D,E,G aiStyle
+    class F decisionStyle
+    class H,I,J outputStyle
+```
+
 **Data Layer**: PostgreSQL ([RDS](https://aws.amazon.com/rds/postgresql/)) serves as the primary transactional database, chosen for its ACID compliance, Row-Level Security support, and mature audit capabilities. Redis ([ElastiCache](https://aws.amazon.com/elasticache/redis/)) provides caching for session data and frequently-accessed queries. [S3](https://aws.amazon.com/s3/) buckets store asset images and archived audit logs with appropriate retention policies.
 
 ---

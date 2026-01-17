@@ -178,6 +178,43 @@ This document defines the scope and milestone breakdown for Phase 1 (MVP) of AI-
 - AI results populate asset fields (with confidence score)
 - Assets searchable and filterable
 
+**Work Breakdown Structure — AI Identification:**
+
+```
+M3: AI Identification
+│
+├── 3.1 Image Upload Infrastructure
+│   ├── 3.1.1 S3 bucket configuration (asset-images)
+│   ├── 3.1.2 Pre-signed URL generation
+│   ├── 3.1.3 Image validation (format, size)
+│   └── 3.1.4 Thumbnail generation
+│
+├── 3.2 AWS Rekognition Integration
+│   ├── 3.2.1 Rekognition API connection
+│   ├── 3.2.2 Label detection implementation
+│   ├── 3.2.3 Confidence threshold configuration (70%)
+│   └── 3.2.4 Error handling & fallback
+│
+├── 3.3 Device Matching Logic
+│   ├── 3.3.1 Device database schema (make/model/type)
+│   ├── 3.3.2 Seed data for common IT assets
+│   ├── 3.3.3 Rekognition label → device mapping
+│   └── 3.3.4 Barcode/serial number lookup
+│
+├── 3.4 AI Response Handling
+│   ├── 3.4.1 Parse Rekognition response
+│   ├── 3.4.2 Calculate confidence score
+│   ├── 3.4.3 Map to asset fields (make, model, type)
+│   └── 3.4.4 Store AI results in asset.ai_identification JSON
+│
+└── 3.5 UI Integration
+    ├── 3.5.1 Photo capture/upload component
+    ├── 3.5.2 AI processing indicator (loading state)
+    ├── 3.5.3 Auto-fill form with AI results
+    ├── 3.5.4 Confidence display & manual override
+    └── 3.5.5 Fallback to manual entry flow
+```
+
 ---
 
 #### M4: Processing & Batch Management
