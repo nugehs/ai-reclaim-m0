@@ -1,54 +1,91 @@
-# Milestone 0 — Content Index
+# :material-recycle: AI-Reclaim™
 
-**AI-Reclaim™ Discovery Phase Documentation**  
-**Author:** Oluwasegun Olumbe  
-**Client:** A to Z IT Recycling Ltd
+## Milestone 0 — Discovery Phase Documentation
 
----
-
-> MILESTONE 0 — DISCOVERY PHASE
->
-> This index links to all discovery deliverables that define the technical, architectural, and compliance foundations of AI‑Reclaim™ prior to any production build.
+**Prepared for:** A to Z IT Recycling Ltd
+**Prepared by:** Oluwasegun Olumbe
+**Date:** January 2025
 
 ---
 
-## Document Overview
+!!! info "About This Document"
+    This documentation defines the technical, architectural, and compliance foundations of AI-Reclaim™ — a compliance-first SaaS platform for IT asset disposition (ITAD) management.
 
-| #   | Document                                                    | Description                                           | Status   |
-| --- | ----------------------------------------------------------- | ----------------------------------------------------- | -------- |
-| 01  | [System Architecture](./01-system-architecture/README.md)   | High‑level SaaS architecture, AWS design, scalability | Complete |
-| 02  | [Core Data Model](./02-data-model/README.md)                | Entities, relationships, ER diagrams                  | Complete |
-| 03  | [API & Integration](./03-api-integration/README.md)         | REST API structure, auth, integrations                | Complete |
-| 04  | [Compliance & Security](./04-compliance-security/README.md) | GDPR, NHS DSPT, audit logging, security               | Complete |
-| 05  | [Delivery Roadmap](./05-delivery-roadmap/README.md)         | Phase 1 scope, milestones, dependencies               | Complete |
-| 06  | [Risks Register](./06-risks-register/README.md)             | Risks, unknowns, mitigations                          | Complete |
-| 07  | [User Flows](./USER-FLOWS.md)                               | End‑to‑end user journeys (Mermaid)                    | Complete |
-
-**Tracking:** [ROADMAP.md](./ROADMAP.md)
+    **Target Market:** NHS trusts, banks, local authorities, and enterprises requiring auditable IT asset disposal with environmental reporting.
 
 ---
 
-## Key Decisions Summary
+## :material-file-document-multiple: Deliverables
 
-- UK data residency: AWS eu‑west‑2 only
-- Multi‑tenant isolation: PostgreSQL RLS
-- Auth: AWS Cognito (JWT, MFA)
-- Immutable audit logging
-- Certificates: destruction, recycling, sanitisation, WEEE
+| # | Document | Description | Status |
+|:-:|----------|-------------|:------:|
+| 01 | [:material-server-network: System Architecture](./01-system-architecture/README.md) | AWS design, multi-tenant architecture, scalability | :white_check_mark: |
+| 02 | [:material-database: Core Data Model](./02-data-model/README.md) | Entities, relationships, ER diagrams | :white_check_mark: |
+| 03 | [:material-api: API & Integration](./03-api-integration/README.md) | REST API structure, auth, integrations | :white_check_mark: |
+| 04 | [:material-shield-check: Compliance & Security](./04-compliance-security/README.md) | GDPR, NHS DSPT, audit logging | :white_check_mark: |
+| 05 | [:material-road-variant: Delivery Roadmap](./05-delivery-roadmap/README.md) | Phase 1 scope, milestones | :white_check_mark: |
+| 06 | [:material-alert-circle: Risks Register](./06-risks-register/README.md) | Risks, unknowns, mitigations | :white_check_mark: |
+| 07 | [:material-account-arrow-right: User Flows](./USER-FLOWS.md) | End-to-end user journeys | :white_check_mark: |
 
----
-
-## Open Questions Summary
-
-- Operator portal scope and UX
-- ISO 27001 requirement timing
-- Certificate retention periods
-- AI identification accuracy thresholds
+[:material-timeline: View Project Roadmap](./ROADMAP.md){ .md-button }
 
 ---
 
-## Assumptions Requiring Validation
+## :material-check-decagram: Key Decisions
 
-- Pilot client available for UAT
-- Standard certificate templates are acceptable
-- English‑only UI for UK launch
+!!! success "Architecture Decisions"
+    - **Cloud Provider:** AWS (eu-west-2 London) — UK data residency
+    - **Database:** PostgreSQL with Row-Level Security — multi-tenant isolation
+    - **Containers:** Docker Hardened Images — near-zero CVE posture
+    - **Authentication:** AWS Cognito — managed MFA, JWT tokens
+    - **AI:** AWS Rekognition — image-based asset identification
+
+---
+
+## :material-help-circle: Open Questions
+
+!!! question "Requiring Resolution"
+    - [ ] Operator portal scope and UX requirements
+    - [ ] ISO 27001 certification timing
+    - [ ] Certificate retention periods (legal review)
+    - [ ] AI identification accuracy thresholds
+
+---
+
+## :material-clipboard-check: Assumptions to Validate
+
+!!! warning "Before Phase 1"
+    - [ ] Pilot client available for UAT
+    - [ ] Standard certificate templates are acceptable
+    - [ ] English-only UI sufficient for UK launch
+    - [ ] AWS Rekognition accuracy meets requirements
+
+---
+
+<div class="grid cards" markdown>
+
+-   :material-certificate:{ .lg .middle } **Compliance Ready**
+
+    ---
+
+    Designed for GDPR, NHS DSPT, ISO 27001, and Cyber Essentials Plus
+
+-   :material-cloud-check:{ .lg .middle } **UK Data Residency**
+
+    ---
+
+    All data stored and processed in AWS eu-west-2 (London)
+
+-   :material-lock:{ .lg .middle } **Security First**
+
+    ---
+
+    Immutable audit logs, MFA, defence-in-depth architecture
+
+-   :material-leaf:{ .lg .middle } **ESG Reporting**
+
+    ---
+
+    CO₂ avoided, landfill diverted, environmental impact tracking
+
+</div>

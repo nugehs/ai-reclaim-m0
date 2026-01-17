@@ -11,14 +11,48 @@ plugins:
 theme:
   name: material
   palette:
-    primary: indigo
-    accent: teal
+    # Light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep purple
+      accent: teal
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: deep purple
+      accent: teal
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: Inter
+    code: JetBrains Mono
+  icon:
+    logo: material/recycle
   features:
     - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.sections
     - navigation.expand
-    - toc.integrate
+    - navigation.top
+    - navigation.footer
+    - toc.follow
+    - search.suggest
     - search.highlight
+    - content.tabs.link
+    - content.code.copy
+
+extra:
+  generator: false
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/nugehs/ai-reclaim-m0
+
+extra_css:
+  - stylesheets/extra.css
 
 markdown_extensions:
   - tables
@@ -27,11 +61,27 @@ markdown_extensions:
         - name: mermaid
           class: mermaid
           format: !!python/name:mermaid2.fence_mermaid
-  - pymdownx.tabbed
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
   - admonition
   - pymdownx.details
   - attr_list
   - md_in_html
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.mark
+  - def_list
+  - toc:
+      permalink: true
 
 nav:
   - Home: index.md
@@ -46,4 +96,4 @@ nav:
   - User Flows: USER-FLOWS.md
   - Roadmap: ROADMAP.md
 
-copyright: "&copy; A to Z IT Recycling Ltd. All rights reserved."
+copyright: "&copy; 2025 A to Z IT Recycling Ltd. All rights reserved."

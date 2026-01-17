@@ -1,0 +1,148 @@
+/* AI-Reclaim Custom Styles */
+
+/* Header styling */
+.md-header {
+  background: linear-gradient(135deg, #673ab7 0%, #512da8 100%);
+}
+
+/* Hero section for home page */
+.md-content h1:first-of-type {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+/* Improved table styling */
+.md-typeset table:not([class]) {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.md-typeset table:not([class]) th {
+  background-color: #673ab7;
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+.md-typeset table:not([class]) tr:nth-child(even) {
+  background-color: rgba(103, 58, 183, 0.05);
+}
+
+.md-typeset table:not([class]) tr:hover {
+  background-color: rgba(103, 58, 183, 0.1);
+}
+
+/* Status badges */
+.md-typeset table td:last-child {
+  white-space: nowrap;
+}
+
+/* Admonition styling */
+.md-typeset .admonition,
+.md-typeset details {
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Code blocks */
+.md-typeset pre {
+  border-radius: 8px;
+}
+
+/* Mermaid diagrams */
+.mermaid {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin: 1.5rem 0;
+}
+
+[data-md-color-scheme="slate"] .mermaid {
+  background: #2d2d2d;
+}
+
+/* Navigation tabs */
+.md-tabs {
+  background: linear-gradient(135deg, #512da8 0%, #311b92 100%);
+}
+
+/* Footer */
+.md-footer {
+  background: #1a1a2e;
+}
+
+/* Blockquotes (milestone callout) */
+.md-typeset blockquote {
+  border-left: 4px solid #673ab7;
+  background: linear-gradient(135deg, rgba(103, 58, 183, 0.1) 0%, rgba(103, 58, 183, 0.05) 100%);
+  border-radius: 0 8px 8px 0;
+  padding: 1rem 1.5rem;
+}
+
+/* Links */
+.md-typeset a {
+  color: #673ab7;
+}
+
+.md-typeset a:hover {
+  color: #512da8;
+}
+
+/* Content max width */
+.md-content {
+  max-width: 1200px;
+}
+
+/* Better heading spacing */
+.md-typeset h2 {
+  margin-top: 2.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid rgba(103, 58, 183, 0.2);
+}
+
+.md-typeset h3 {
+  margin-top: 1.5rem;
+  color: #512da8;
+}
+
+/* Card-like sections */
+.md-typeset hr {
+  margin: 2rem 0;
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(103, 58, 183, 0.3), transparent);
+}
+
+/* Status indicators */
+.md-typeset strong:contains("Complete") {
+  color: #4caf50;
+}
+
+/* TOC styling */
+.md-sidebar--secondary {
+  border-left: 1px solid rgba(103, 58, 183, 0.1);
+}
+
+/* Search */
+.md-search__input {
+  border-radius: 8px;
+}
+
+/* Print styles */
+@media print {
+  .md-header,
+  .md-tabs,
+  .md-sidebar,
+  .md-footer {
+    display: none;
+  }
+
+  .md-content {
+    max-width: 100%;
+  }
+}
