@@ -15,7 +15,7 @@
 
 ---
 
-## :material-file-document-multiple: Deliverables
+## :material-file-document-multiple: Milestone 0 Deliverables
 
 | # | Document | Description | Status |
 |:-:|----------|-------------|:------:|
@@ -25,7 +25,18 @@
 | 04 | [:material-shield-check: Compliance & Security](./04-compliance-security/README.md) | GDPR, NHS DSPT, audit logging | :material-file-search: Review |
 | 05 | [:material-road-variant: Delivery Roadmap](./05-delivery-roadmap/README.md) | Phase 1 scope, milestones | :material-file-search: Review |
 | 06 | [:material-alert-circle: Risks Register](./06-risks-register/README.md) | Risks, unknowns, mitigations | :material-file-search: Review |
-| 07 | [:material-account-arrow-right: User Flows](./USER-FLOWS.md) | End-to-end user journeys | :material-file-search: Review |
+
+---
+
+## :material-gift: Supplementary Materials (Added Value)
+
+!!! info "Not part of Milestone 0 scope"
+    The following materials are provided as added value to support Phase 1 planning and requirements gathering.
+
+| Document | Description | Status |
+|----------|-------------|:------:|
+| [:material-account-arrow-right: User Flows (Scenarios)](./USER-FLOWS.md) | Proposed user journeys — requires validation | :material-file-search: Review |
+| [:material-book-alphabet: Glossary](./GLOSSARY.md) | Acronyms and terminology reference | :material-file-search: Review |
 
 ---
 

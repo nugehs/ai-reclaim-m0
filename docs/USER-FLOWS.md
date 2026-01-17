@@ -8,6 +8,9 @@
 
 ---
 
+!!! info "Supplementary Material — Added Value"
+    This document is provided as **added value** and is not part of the Milestone 0 scope of work. It is intended to support Phase 1 planning and requirements gathering.
+
 !!! warning "Scenarios Requiring Client Validation"
     The workflows below are **proposed scenarios** based on initial requirements gathering. These are **not confirmed specifications**.
 

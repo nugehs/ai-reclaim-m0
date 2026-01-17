@@ -124,7 +124,7 @@ M1 Foundation → M2 Auth → M3 Assets → M4 Processing → M5 Certificates �
 
 ---
 
-## Document Index
+## Milestone 0 Document Index
 
 | # | Document | Description |
 |---|----------|-------------|
@@ -134,7 +134,13 @@ M1 Foundation → M2 Auth → M3 Assets → M4 Processing → M5 Certificates �
 | 04 | [Compliance & Security](./04-compliance-security/README.md) | GDPR, NHS DSPT, audit logging |
 | 05 | [Delivery Roadmap](./05-delivery-roadmap/README.md) | Phase 1 milestones |
 | 06 | [Risks Register](./06-risks-register/README.md) | Risks, unknowns, mitigations |
-| 07 | [User Flows](./USER-FLOWS.md) | End-to-end user journeys |
+
+**Supplementary (Added Value):**
+
+| Document | Description |
+|----------|-------------|
+| [User Flows (Scenarios)](./USER-FLOWS.md) | Proposed user journeys for validation |
+| [Glossary](./GLOSSARY.md) | Acronyms and terminology |
 
 ---
 
