@@ -4,9 +4,50 @@
   const STORAGE_KEY = 'ai_reclaim_auth';
   const TERMS_ACCEPTED_KEY = 'ai_reclaim_terms';
 
+  // Add logout button if authenticated
+  function addLogoutButton() {
+    const logoutBtn = document.createElement('button');
+    logoutBtn.id = 'logout-btn';
+    logoutBtn.innerHTML = '🔓 Logout';
+    logoutBtn.title = 'Clear session and logout';
+
+    const logoutStyles = document.createElement('style');
+    logoutStyles.textContent = `
+      #logout-btn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        padding: 0.5rem 1rem;
+        background: #673ab7;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        cursor: pointer;
+        z-index: 9999;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        transition: background 0.2s, transform 0.2s;
+      }
+      #logout-btn:hover {
+        background: #512da8;
+        transform: translateY(-2px);
+      }
+    `;
+    document.head.appendChild(logoutStyles);
+    document.body.appendChild(logoutBtn);
+
+    logoutBtn.addEventListener('click', function() {
+      sessionStorage.removeItem(STORAGE_KEY);
+      sessionStorage.removeItem(TERMS_ACCEPTED_KEY);
+      window.location.reload();
+    });
+  }
+
   // Check if already authenticated
   if (sessionStorage.getItem(STORAGE_KEY) === 'true' &&
       sessionStorage.getItem(TERMS_ACCEPTED_KEY) === 'true') {
+    addLogoutButton();
     return; // Already authenticated
   }
 
