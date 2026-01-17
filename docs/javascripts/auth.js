@@ -79,7 +79,7 @@
         <button id="auth-submit" type="button">Access Documentation</button>
       </div>
 
-      <p class="auth-footer">© 2025 A to Z IT Recycling Ltd. All rights reserved.</p>
+      <p class="auth-footer">© 2026 A to Z IT Recycling Ltd. All rights reserved.</p>
     </div>
   `;
 
