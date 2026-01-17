@@ -1,6 +1,6 @@
 // AI-Reclaim Documentation - Password Protection
 (function() {
-  const PASSWORD = 'A2Z2026';  // Change this password as needed
+  const PASSWORD = 'AtoZ2026';  // Change this password as needed
   const STORAGE_KEY = 'ai_reclaim_auth';
   const TERMS_ACCEPTED_KEY = 'ai_reclaim_terms';
 
