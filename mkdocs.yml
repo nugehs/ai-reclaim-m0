@@ -94,7 +94,7 @@ nav:
     - Compliance & Security: 04-compliance-security/README.md
     - Delivery Roadmap: 05-delivery-roadmap/README.md
     - Risks Register: 06-risks-register/README.md
-  - User Flows: USER-FLOWS.md
+  - User Flows (Scenarios): USER-FLOWS.md
   - Glossary: GLOSSARY.md
 
 copyright: "&copy; 2025 A to Z IT Recycling Ltd. All rights reserved."

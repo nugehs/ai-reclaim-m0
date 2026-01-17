@@ -1,19 +1,28 @@
-# User Flows — End-to-End
+# User Flows — Proposed Scenarios
 
 **AI-Reclaim™ Discovery Phase**
 
 **Author:** Oluwasegun Olumbe
 **Client:** A to Z IT Recycling Ltd
+**Status:** Draft for Review
 
 ---
 
-> **MILESTONE 0 — DISCOVERY PHASE**
->
-> This document illustrates assumed user journeys through the AI-Reclaim™ platform. These flows require validation with stakeholders before Phase 1 development.
+!!! warning "Scenarios Requiring Client Validation"
+    The workflows below are **proposed scenarios** based on initial requirements gathering. These are **not confirmed specifications**.
+
+    **We need your input to validate:**
+
+    - Do these flows match your actual business processes?
+    - What steps are missing or incorrect?
+    - Which user roles need adjustment?
+    - Are there alternative workflows we should consider?
 
 ---
 
-## 1. Complete Platform Flow
+## Scenario 1: Complete Platform Flow
+
+> **Assumption:** Client registers assets → A to Z collects & processes → Client receives certificate
 
 ```mermaid
 flowchart TB
@@ -44,9 +53,16 @@ flowchart TB
     B7 --> C1
 ```
 
+??? question "Validation Questions"
+    1. Does the client always register assets before collection, or does A to Z sometimes register on their behalf?
+    2. Is the photo upload and AI identification step mandatory or optional?
+    3. Are there any approval steps before a batch is submitted for collection?
+
 ---
 
-## 2. Client Organisation User Flow
+## Scenario 2: Client Organisation User Flow
+
+> **Assumption:** Clients self-register assets via portal with optional AI-assisted identification
 
 ```mermaid
 flowchart LR
@@ -77,9 +93,16 @@ flowchart LR
     end
 ```
 
+??? question "Validation Questions"
+    1. Is MFA required for all users or only admin/privileged users?
+    2. Can clients edit asset details after registration, or is it locked once submitted?
+    3. Who schedules collection — the client or A to Z operations?
+
 ---
 
-## 3. Asset Lifecycle Flow
+## Scenario 3: Asset Lifecycle Flow
+
+> **Assumption:** Assets move through: Registered → Collected → Processing → Completed
 
 ```mermaid
 stateDiagram-v2
@@ -101,9 +124,16 @@ stateDiagram-v2
     }
 ```
 
+??? question "Validation Questions"
+    1. Are these the correct status stages, or are there additional states?
+    2. Does every asset go through Data Wipe, or only data-bearing devices?
+    3. Is there a "rejected" or "quarantine" state for problematic assets?
+
 ---
 
-## 4. Operator (A to Z Staff) Flow
+## Scenario 4: Operator (A to Z Staff) Flow
+
+> **Assumption:** Operators use the same portal as clients, with different permissions
 
 ```mermaid
 flowchart TB
@@ -138,9 +168,17 @@ flowchart TB
     end
 ```
 
+??? question "Validation Questions"
+    1. Do operators need a separate portal/app, or is the web portal sufficient?
+    2. Do operators scan assets at collection site, at facility, or both?
+    3. What devices will operators use? (tablets, phones, desktop)
+    4. Is there a handover/signature step when collecting from clients?
+
 ---
 
-## 5. Auditor Flow
+## Scenario 5: Auditor Flow
+
+> **Assumption:** Auditors have read-only access to verify compliance and export reports
 
 ```mermaid
 flowchart LR
@@ -162,9 +200,16 @@ flowchart LR
     end
 ```
 
+??? question "Validation Questions"
+    1. Who are the auditors? (Internal A to Z staff, external auditors, client compliance teams?)
+    2. What specific reports do auditors need to generate?
+    3. Do auditors need real-time access or periodic report delivery?
+
 ---
 
-## 6. AI Identification Flow
+## Scenario 6: AI Identification Flow
+
+> **Assumption:** AI automatically identifies IT assets from photos to reduce manual data entry
 
 ```mermaid
 flowchart TB
@@ -195,9 +240,16 @@ flowchart TB
     end
 ```
 
+??? question "Validation Questions"
+    1. Is AI identification a must-have for MVP, or a nice-to-have?
+    2. What accuracy level is acceptable? (e.g., 80%? 95%?)
+    3. Should users be able to skip AI and enter details manually from the start?
+
 ---
 
-## 7. Certificate Generation Flow
+## Scenario 7: Certificate Generation Flow
+
+> **Assumption:** Certificates are generated per-asset upon completion, with multiple certificate types
 
 ```mermaid
 flowchart TB
@@ -228,9 +280,17 @@ flowchart TB
     end
 ```
 
+??? question "Validation Questions"
+    1. Are certificates issued per-asset, per-batch, or both?
+    2. What certificate types are required? (Destruction, Recycling, Sanitisation, WEEE, other?)
+    3. Do certificates require digital signatures or just PDF generation?
+    4. What retention period is required for certificates?
+
 ---
 
-## 8. Role-Based Access Summary
+## Scenario 8: Role-Based Access Summary
+
+> **Assumption:** Four user roles with distinct permissions: Admin, Operator, Client, Auditor
 
 ```mermaid
 flowchart TB
@@ -266,9 +326,14 @@ flowchart TB
     end
 ```
 
+??? question "Validation Questions"
+    1. Are these four roles sufficient, or are additional roles needed?
+    2. Can one person have multiple roles?
+    3. Are there different permission levels within each role (e.g., senior operator)?
+
 ---
 
-## Assumptions to Validate
+## Summary: Key Assumptions to Validate
 
 | # | Assumption | Validate With |
 |---|------------|---------------|
