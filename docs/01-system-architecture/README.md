@@ -95,23 +95,23 @@ The architecture is guided by the following principles:
 
 ```mermaid
 graph TB
-    subgraph "Client Layer"
+    subgraph CLIENT["🖥️ Client Layer"]
         WEB[Web Application<br/>React/Next.js]
     end
 
-    subgraph "AWS UK Region (eu-west-2)"
-        subgraph "Edge & Security"
+    subgraph AWS["☁️ AWS UK Region (eu-west-2)"]
+        subgraph EDGE["🛡️ Edge & Security"]
             CF[CloudFront CDN]
             WAF[AWS WAF]
         end
 
-        subgraph "Application Layer"
+        subgraph APP["⚙️ Application Layer"]
             ALB[Application Load Balancer]
             AUTH[Auth Service<br/>Cognito]
         end
 
-        subgraph "ECS Fargate Cluster"
-            subgraph "Containers - Docker Hardened Images"
+        subgraph ECS["🐳 ECS Fargate Cluster"]
+            subgraph CONTAINERS["Containers - Docker Hardened Images"]
                 API[api-service<br/>Node.js DHI]
                 ASSET[asset-service<br/>Node.js DHI]
                 AUDIT[audit-service<br/>Node.js DHI]
@@ -121,11 +121,11 @@ graph TB
             end
         end
 
-        subgraph "AI/ML Layer"
+        subgraph AIML["🤖 AI/ML Layer"]
             REKOGNITION[AWS Rekognition<br/>Image Analysis]
         end
 
-        subgraph "Data Layer"
+        subgraph DATA["💾 Data Layer"]
             ECR[ECR Registry<br/>Private, eu-west-2]
             RDS[(PostgreSQL<br/>RDS Multi-AZ)]
             REDIS[(ElastiCache<br/>Redis)]
@@ -153,6 +153,23 @@ graph TB
     ESG --> RDS
     API --> REDIS
     ECR -.->|pulls| API
+
+    %% Styling
+    classDef clientStyle fill:#e1f5fe,stroke:#01579b,stroke-width:2px,color:#01579b
+    classDef edgeStyle fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#e65100
+    classDef appStyle fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px,color:#7b1fa2
+    classDef containerStyle fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px,color:#2e7d32
+    classDef aiStyle fill:#fce4ec,stroke:#c2185b,stroke-width:2px,color:#c2185b
+    classDef dataStyle fill:#e3f2fd,stroke:#1565c0,stroke-width:2px,color:#1565c0
+    classDef dbStyle fill:#fff8e1,stroke:#f9a825,stroke-width:2px,color:#f9a825
+
+    class WEB clientStyle
+    class CF,WAF edgeStyle
+    class ALB,AUTH appStyle
+    class API,ASSET,AUDIT,CERT,ESG,AIID containerStyle
+    class REKOGNITION aiStyle
+    class ECR,S3,S3AUDIT dataStyle
+    class RDS,REDIS dbStyle
 ```
 
 ### 2.2 Architecture Narrative
@@ -205,11 +222,25 @@ The architecture follows a layered approach where each layer has distinct respon
 
 ```mermaid
 graph LR
-    subgraph "Tenant Isolation Strategy"
-        API[API Layer] --> TID{Tenant ID<br/>from JWT}
-        TID --> RLS[Row-Level Security<br/>PostgreSQL]
-        TID --> S3P[S3 Prefix<br/>per Tenant]
+    subgraph ISOLATION["🔐 Tenant Isolation Strategy"]
+        API[🌐 API Layer] --> TID{🎫 Tenant ID<br/>from JWT}
+        TID --> RLS[🛡️ Row-Level Security<br/>PostgreSQL]
+        TID --> S3P[📁 S3 Prefix<br/>per Tenant]
+        TID --> CACHE[💨 Redis Namespace<br/>per Tenant]
     end
+
+    %% Styling
+    classDef apiStyle fill:#e3f2fd,stroke:#1565c0,stroke-width:2px,color:#1565c0
+    classDef decisionStyle fill:#fff3e0,stroke:#e65100,stroke-width:3px,color:#e65100
+    classDef securityStyle fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px,color:#2e7d32
+    classDef storageStyle fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px,color:#7b1fa2
+    classDef cacheStyle fill:#fce4ec,stroke:#c2185b,stroke-width:2px,color:#c2185b
+
+    class API apiStyle
+    class TID decisionStyle
+    class RLS securityStyle
+    class S3P storageStyle
+    class CACHE cacheStyle
 ```
 
 ### 4.2 Isolation Strategy
@@ -287,12 +318,23 @@ The architecture is designed to scale through three phases without fundamental r
 
 ```mermaid
 graph LR
-    PILOT[Pilot<br/>1-10 orgs] --> GROWTH[Growth<br/>10-50 orgs]
-    GROWTH --> SCALE[Scale<br/>50+ orgs]
+    PILOT[🚀 Pilot<br/>1-10 orgs] --> GROWTH[📈 Growth<br/>10-50 orgs]
+    GROWTH --> SCALE[🏢 Scale<br/>50+ orgs]
 
     PILOT -.- P1[Single RDS<br/>Fargate min]
     GROWTH -.- G1[RDS read replicas<br/>Fargate scaling]
     SCALE -.- S1[Aurora Serverless<br/>Multiple AZs]
+
+    %% Styling
+    classDef pilotStyle fill:#e8f5e9,stroke:#2e7d32,stroke-width:3px,color:#1b5e20
+    classDef growthStyle fill:#fff3e0,stroke:#e65100,stroke-width:3px,color:#bf360c
+    classDef scaleStyle fill:#e3f2fd,stroke:#1565c0,stroke-width:3px,color:#0d47a1
+    classDef specStyle fill:#fafafa,stroke:#757575,stroke-width:1px,color:#616161
+
+    class PILOT pilotStyle
+    class GROWTH growthStyle
+    class SCALE scaleStyle
+    class P1,G1,S1 specStyle
 ```
 
 ### 6.2 Phase Specifications

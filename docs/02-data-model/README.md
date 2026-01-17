@@ -79,6 +79,27 @@ erDiagram
     User }o--|| Role : has
 
     Certificate }o--|| CertificateType : is_type
+
+    Organisation {
+        uuid id PK
+        string name
+    }
+    User {
+        uuid id PK
+        string email
+    }
+    Asset {
+        uuid id PK
+        string serial_number
+    }
+    Batch {
+        uuid id PK
+        string reference
+    }
+    Certificate {
+        uuid id PK
+        string reference_number
+    }
 ```
 
 ### 2.2 Detailed Schema Diagram
@@ -275,6 +296,16 @@ stateDiagram-v2
     Collected --> Processing: Arrived at facility
     Processing --> Completed: Destruction/recycling done
     Completed --> [*]
+
+    classDef registered fill:#e3f2fd,stroke:#1565c0,color:#0d47a1
+    classDef collected fill:#fff3e0,stroke:#e65100,color:#bf360c
+    classDef processing fill:#f3e5f5,stroke:#7b1fa2,color:#4a148c
+    classDef completed fill:#e8f5e9,stroke:#2e7d32,color:#1b5e20
+
+    class Registered registered
+    class Collected collected
+    class Processing processing
+    class Completed completed
 ```
 
 | Status | Description | Allowed Transitions |
