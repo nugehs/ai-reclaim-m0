@@ -1,5 +1,15 @@
 /* AI-Reclaim Custom Styles */
 
+/* Hide right sidebar (TOC) */
+.md-sidebar--secondary {
+  display: none;
+}
+
+/* Expand content to full width */
+.md-content {
+  margin-right: 0;
+}
+
 /* Header styling */
 .md-header {
   background: linear-gradient(135deg, #673ab7 0%, #512da8 100%);
