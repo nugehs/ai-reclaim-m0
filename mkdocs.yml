@@ -48,9 +48,6 @@ theme:
 
 extra:
   generator: false
-  social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/nugehs/ai-reclaim-m0
 
 extra_css:
   - stylesheets/extra.css
