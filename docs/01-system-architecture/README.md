@@ -25,12 +25,12 @@ This document defines the technical architecture for AI-Reclaim™, a compliance
 2. **Data sovereignty** — All data processing and storage within UK jurisdiction (AWS eu-west-2)
 3. **Scalability** — Pilot deployment that scales to national adoption without re-architecture
 
-The proposed solution is a multi-tenant web application hosted on AWS, using PostgreSQL with Row-Level Security for tenant isolation, AWS Rekognition for AI-powered asset identification, and S3 for secure document storage.
+The proposed solution is a multi-tenant web application hosted on AWS, using PostgreSQL with Row-Level Security for tenant isolation, [AWS Rekognition](https://aws.amazon.com/rekognition/) for AI-powered asset identification, and [S3](https://aws.amazon.com/s3/) for secure document storage.
 
 **Key architectural decisions:**
 - AWS eu-west-2 (London) as sole deployment region
 - Multi-tenant architecture with database-level isolation
-- Managed services (Cognito, RDS, S3) to reduce operational complexity
+- Managed services ([Cognito](https://aws.amazon.com/cognito/), [RDS](https://aws.amazon.com/rds/), [S3](https://aws.amazon.com/s3/)) to reduce operational complexity
 - Web-only MVP with responsive design for tablet use
 
 ---
@@ -161,11 +161,11 @@ The architecture follows a layered approach where each layer has distinct respon
 
 **Client Layer**: A single-page web application built with React/Next.js provides the user interface for all user types (client organisation staff, recycling operators, auditors, and administrators). The application is served as static assets from S3 via CloudFront, enabling global edge caching while keeping origin data in the UK.
 
-**Edge & Security Layer**: All inbound traffic passes through CloudFront and AWS WAF before reaching the application. WAF provides protection against common web exploits (SQL injection, XSS), bot traffic, and DDoS attacks. This layer acts as the first line of defence for the platform.
+**Edge & Security Layer**: All inbound traffic passes through [CloudFront](https://aws.amazon.com/cloudfront/) and [AWS WAF](https://aws.amazon.com/waf/) before reaching the application. WAF provides protection against common web exploits (SQL injection, XSS), bot traffic, and DDoS attacks. This layer acts as the first line of defence for the platform.
 
-**Application Layer**: The Application Load Balancer (ALB) receives all inbound requests from WAF and routes them to the appropriate backend services. AWS Cognito provides managed authentication, handling user identities, JWT token issuance, and MFA for compliance requirements. The ALB performs health checks and distributes traffic across container instances.
+**Application Layer**: The [Application Load Balancer (ALB)](https://aws.amazon.com/elasticloadbalancing/) receives all inbound requests from WAF and routes them to the appropriate backend services. [AWS Cognito](https://aws.amazon.com/cognito/) provides managed authentication, handling user identities, JWT token issuance, and MFA for compliance requirements. The ALB performs health checks and distributes traffic across container instances.
 
-**Container Platform (ECS Fargate)**: All application services run as containerised microservices on AWS ECS Fargate, using **Docker Hardened Images (DHI)** as base images. DHI provides near-zero CVE posture, SLSA Level 3 provenance, and FIPS/STIG-compliant variants for NHS and government clients. Container images are stored in a private ECR registry within eu-west-2.
+**Container Platform ([ECS Fargate](https://aws.amazon.com/fargate/))**: All application services run as containerised microservices on AWS ECS Fargate, using **Docker Hardened Images (DHI)** as base images. DHI provides near-zero CVE posture, SLSA Level 3 provenance, and FIPS/STIG-compliant variants for NHS and government clients. Container images are stored in a private [ECR](https://aws.amazon.com/ecr/) registry within eu-west-2.
 
 **Business Services Layer**: Five domain-specific containerised services handle core platform functionality:
 - **api-service** — Request routing, rate limiting, JWT validation
@@ -174,9 +174,9 @@ The architecture follows a layered approach where each layer has distinct respon
 - **certificate-service** — Destruction and recycling certificate generation
 - **esg-service** — Environmental impact calculations and reporting
 
-**AI/ML Layer**: The AI Identification Service enables users to identify IT assets by uploading photographs or scanning barcodes/serial numbers. Image analysis is performed by AWS Rekognition, with results matched against a device database. This accelerates asset registration and reduces data entry errors.
+**AI/ML Layer**: The AI Identification Service enables users to identify IT assets by uploading photographs or scanning barcodes/serial numbers. Image analysis is performed by [AWS Rekognition](https://aws.amazon.com/rekognition/), with results matched against a device database. This accelerates asset registration and reduces data entry errors.
 
-**Data Layer**: PostgreSQL (RDS) serves as the primary transactional database, chosen for its ACID compliance, Row-Level Security support, and mature audit capabilities. Redis (ElastiCache) provides caching for session data and frequently-accessed queries. S3 buckets store asset images and archived audit logs with appropriate retention policies.
+**Data Layer**: PostgreSQL ([RDS](https://aws.amazon.com/rds/postgresql/)) serves as the primary transactional database, chosen for its ACID compliance, Row-Level Security support, and mature audit capabilities. Redis ([ElastiCache](https://aws.amazon.com/elasticache/redis/)) provides caching for session data and frequently-accessed queries. [S3](https://aws.amazon.com/s3/) buckets store asset images and archived audit logs with appropriate retention policies.
 
 ---
 
@@ -184,18 +184,18 @@ The architecture follows a layered approach where each layer has distinct respon
 
 | Component | Purpose | AWS Service | Justification |
 |-----------|---------|-------------|---------------|
-| Web Application | User interface for all user types | S3 + CloudFront | Static hosting reduces attack surface; CDN improves performance |
-| Container Registry | Private image storage | ECR (eu-west-2) | UK data residency; integrated scanning; immutable tags |
-| api-service | API routing, rate limiting, request orchestration | ECS Fargate (Node.js DHI) | Serverless containers; Docker Hardened base for compliance |
-| Auth Service | Authentication, JWT tokens, MFA | Cognito | Managed auth with built-in MFA, federation support, compliance certifications |
-| asset-service | Asset lifecycle management | ECS Fargate (Node.js DHI) | Stateless containers; independent scaling |
-| audit-service | Immutable audit log creation | ECS Fargate (Node.js DHI) | Dedicated service ensures audit writes are never blocked |
-| certificate-service | Certificate generation, PDF | ECS Fargate (Node.js DHI) | PDF generation with Lambda burst capacity |
-| esg-service | Environmental impact calculations | ECS Fargate (Node.js DHI) | Complex calculations benefit from dedicated compute |
-| ai-identification | Image recognition + barcode lookup | ECS Fargate (Python DHI) | Rekognition integration; scale-to-zero capable |
-| Primary Database | Transactional data, tenant isolation | RDS PostgreSQL | ACID compliance, RLS for tenant isolation, JSON support |
-| Cache | Session data, frequent queries | ElastiCache Redis | Sub-millisecond latency; reduces database load |
-| Object Storage | Asset images, PDFs, audit archives | S3 | Unlimited scale; lifecycle policies for retention management |
+| Web Application | User interface for all user types | [S3](https://aws.amazon.com/s3/) + [CloudFront](https://aws.amazon.com/cloudfront/) | Static hosting reduces attack surface; CDN improves performance |
+| Container Registry | Private image storage | [ECR](https://aws.amazon.com/ecr/) (eu-west-2) | UK data residency; integrated scanning; immutable tags |
+| api-service | API routing, rate limiting, request orchestration | [ECS Fargate](https://aws.amazon.com/fargate/) (Node.js DHI) | Serverless containers; Docker Hardened base for compliance |
+| Auth Service | Authentication, JWT tokens, MFA | [Cognito](https://aws.amazon.com/cognito/) | Managed auth with built-in MFA, federation support, compliance certifications |
+| asset-service | Asset lifecycle management | [ECS Fargate](https://aws.amazon.com/fargate/) (Node.js DHI) | Stateless containers; independent scaling |
+| audit-service | Immutable audit log creation | [ECS Fargate](https://aws.amazon.com/fargate/) (Node.js DHI) | Dedicated service ensures audit writes are never blocked |
+| certificate-service | Certificate generation, PDF | [ECS Fargate](https://aws.amazon.com/fargate/) (Node.js DHI) | PDF generation with Lambda burst capacity |
+| esg-service | Environmental impact calculations | [ECS Fargate](https://aws.amazon.com/fargate/) (Node.js DHI) | Complex calculations benefit from dedicated compute |
+| ai-identification | Image recognition + barcode lookup | [ECS Fargate](https://aws.amazon.com/fargate/) (Python DHI) | Rekognition integration; scale-to-zero capable |
+| Primary Database | Transactional data, tenant isolation | [RDS PostgreSQL](https://aws.amazon.com/rds/postgresql/) | ACID compliance, RLS for tenant isolation, JSON support |
+| Cache | Session data, frequent queries | [ElastiCache Redis](https://aws.amazon.com/elasticache/redis/) | Sub-millisecond latency; reduces database load |
+| Object Storage | Asset images, PDFs, audit archives | [S3](https://aws.amazon.com/s3/) | Unlimited scale; lifecycle policies for retention management |
 
 ---
 
@@ -320,7 +320,7 @@ As user base grows, the focus shifts to resilience and read performance. Databas
 
 **Scale Phase (50+ Organisations)**
 
-At national scale, Aurora Serverless provides automatic scaling based on demand, and services may be split into independently deployable microservices.
+At national scale, [Aurora Serverless](https://aws.amazon.com/rds/aurora/serverless/) provides automatic scaling based on demand, and services may be split into independently deployable microservices.
 
 | Resource | Sizing | Changes from Growth |
 |----------|--------|-------------------|
@@ -353,8 +353,8 @@ Security is addressed in detail in `04-compliance-security/README.md`. This sect
 ### 7.2 Data Security
 
 - **Encryption in transit**: TLS 1.3 enforced on all connections
-- **Encryption at rest**: AWS KMS-managed keys for RDS, S3, and ElastiCache
-- **Key rotation**: Automatic annual key rotation via KMS
+- **Encryption at rest**: [AWS KMS](https://aws.amazon.com/kms/)-managed keys for RDS, S3, and ElastiCache
+- **Key rotation**: Automatic annual key rotation via [KMS](https://aws.amazon.com/kms/)
 
 ### 7.3 Application Security
 
@@ -366,7 +366,7 @@ Security is addressed in detail in `04-compliance-security/README.md`. This sect
 
 - **IAM roles**: Service-specific roles with least-privilege policies
 - **Cognito MFA**: Multi-factor authentication required for privileged users
-- **Audit logging**: All access and changes logged to CloudTrail and application audit log
+- **Audit logging**: All access and changes logged to [CloudTrail](https://aws.amazon.com/cloudtrail/) and application audit log
 
 ---
 
@@ -376,7 +376,7 @@ Compliance with UK data protection requirements is a non-negotiable architectura
 
 | Requirement | Implementation | Verification |
 |-------------|----------------|--------------|
-| All data stored in UK | AWS eu-west-2 (London) region exclusively | AWS Config rules |
+| All data stored in UK | AWS eu-west-2 (London) region exclusively | [AWS Config](https://aws.amazon.com/config/) rules |
 | No cross-region replication | Replication disabled by IAM policy | IAM policy audit |
 | Backups in UK | RDS automated backups in eu-west-2 | Backup configuration audit |
 | Processing in UK | All compute resources in eu-west-2 | Resource tagging audit |
