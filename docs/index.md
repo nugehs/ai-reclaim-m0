@@ -15,19 +15,15 @@
 
 ---
 
-## :material-file-document-multiple: Deliverables
+## :material-file-document-multiple: Checkpoint 1 — Deliverables
 
 | # | Document | Description | Status |
 |:-:|----------|-------------|:------:|
 | 01 | [:material-server-network: System Architecture](./01-system-architecture/README.md) | AWS design, multi-tenant architecture, scalability | :material-file-search: Review |
 | 02 | [:material-database: Core Data Model](./02-data-model/README.md) | Entities, relationships, ER diagrams | :material-file-search: Review |
-| 03 | [:material-api: API & Integration](./03-api-integration/README.md) | REST API structure, auth, integrations | :material-file-search: Review |
-| 04 | [:material-shield-check: Compliance & Security](./04-compliance-security/README.md) | GDPR, NHS DSPT, audit logging | :material-file-search: Review |
-| 05 | [:material-road-variant: Delivery Roadmap](./05-delivery-roadmap/README.md) | Phase 1 scope, milestones | :material-file-search: Review |
-| 06 | [:material-alert-circle: Risks Register](./06-risks-register/README.md) | Risks, unknowns, mitigations | :material-file-search: Review |
-| 07 | [:material-account-arrow-right: User Flows](./USER-FLOWS.md) | End-to-end user journeys | :material-file-search: Review |
 
-[:material-timeline: View Project Roadmap](./ROADMAP.md){ .md-button }
+!!! note "Upcoming Checkpoints"
+    Additional deliverables (API & Integration, Compliance & Security, Delivery Roadmap, Risks Register) will be shared in subsequent checkpoints.
 
 ---
 
