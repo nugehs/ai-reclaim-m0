@@ -87,19 +87,14 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Executive Summary: EXECUTIVE-SUMMARY.md
-  - Checkpoint 1 - Review:
+  - Deliverables:
     - System Architecture: 01-system-architecture/README.md
     - Core Data Model: 02-data-model/README.md
+    - API & Integration: 03-api-integration/README.md
+    - Compliance & Security: 04-compliance-security/README.md
+    - Delivery Roadmap: 05-delivery-roadmap/README.md
+    - Risks Register: 06-risks-register/README.md
+  - User Flows: USER-FLOWS.md
   - Glossary: GLOSSARY.md
-  # --- CHECKPOINT 2 (uncomment when ready) ---
-  # - Checkpoint 2 - Review:
-  #   - API & Integration: 03-api-integration/README.md
-  #   - Compliance & Security: 04-compliance-security/README.md
-  # --- CHECKPOINT 3 (uncomment when ready) ---
-  # - Checkpoint 3 - Review:
-  #   - Delivery Roadmap: 05-delivery-roadmap/README.md
-  #   - Risks Register: 06-risks-register/README.md
-  #   - User Flows: USER-FLOWS.md
-  #   - Roadmap: ROADMAP.md
 
 copyright: "&copy; 2025 A to Z IT Recycling Ltd. All rights reserved."
