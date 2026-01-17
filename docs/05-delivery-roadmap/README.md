@@ -89,25 +89,86 @@ This document defines the scope and milestone breakdown for Phase 1 (MVP) of AI-
 
 ### 2.1 Milestone Overview
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                     PHASE 1 MILESTONES                          │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│  M1          M2          M3          M4          M5          M6 │
-│  ────        ────        ────        ────        ────        ───│
-│  Foundation  Auth &      Asset       Processing  Certificates  │
-│  & Infra     Users       Mgmt        & Batches   & Audit     QA │
-│                                                                 │
-│  ▼           ▼           ▼           ▼           ▼           ▼  │
-│  AWS setup   Cognito     CRUD        Status      PDF gen     Test│
-│  CI/CD       RBAC        AI ID       Batches     Audit UI    Fix │
-│  DB setup    User UI     Search      Workflow    Reports     UAT │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
+```mermaid
+flowchart LR
+    subgraph PHASE1["🚀 PHASE 1 — MVP"]
+        M1[🏗️ M1<br/>Foundation<br/>& Infra]
+        M2[🔐 M2<br/>Auth &<br/>Users]
+        M3[🤖 M3<br/>Asset Mgmt<br/>& AI ID]
+        M4[⚙️ M4<br/>Processing<br/>& Batches]
+        M5[📜 M5<br/>Certificates<br/>& Audit]
+        M6[✅ M6<br/>QA &<br/>Launch]
+    end
+
+    M1 --> M2 --> M3 --> M4 --> M5 --> M6
+
+    %% Styling
+    classDef infraStyle fill:#e3f2fd,stroke:#1565c0,stroke-width:2px,color:#0d47a1
+    classDef authStyle fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px,color:#4a148c
+    classDef assetStyle fill:#fce4ec,stroke:#c2185b,stroke-width:2px,color:#880e4f
+    classDef processStyle fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#bf360c
+    classDef certStyle fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px,color:#1b5e20
+    classDef qaStyle fill:#e0f7fa,stroke:#00838f,stroke-width:2px,color:#006064
+
+    class M1 infraStyle
+    class M2 authStyle
+    class M3 assetStyle
+    class M4 processStyle
+    class M5 certStyle
+    class M6 qaStyle
 ```
 
-### 2.2 Milestone Details
+### 2.2 Phase 1 Work Breakdown Structure (WBS)
+
+```mermaid
+flowchart TB
+    PHASE1[🚀 Phase 1 — MVP<br/>AI-Reclaim Platform]
+
+    PHASE1 --> M1[🏗️ M1: Foundation & Infrastructure]
+    PHASE1 --> M2[🔐 M2: Auth & User Management]
+    PHASE1 --> M3[🤖 M3: Asset Management & AI]
+    PHASE1 --> M4[⚙️ M4: Processing & Batches]
+    PHASE1 --> M5[📜 M5: Certificates & Audit]
+    PHASE1 --> M6[✅ M6: QA & Launch]
+
+    M1 --> M1_1[1.1 AWS Infrastructure]
+    M1 --> M1_2[1.2 Database Setup]
+    M1 --> M1_3[1.3 CI/CD Pipeline]
+    M1 --> M1_4[1.4 Dev Environment]
+
+    M2 --> M2_1[2.1 Cognito Integration]
+    M2 --> M2_2[2.2 User Management]
+    M2 --> M2_3[2.3 RBAC System]
+    M2 --> M2_4[2.4 Admin UI]
+
+    M3 --> M3_1[3.1 Asset CRUD]
+    M3 --> M3_2[3.2 Image Upload]
+    M3 --> M3_3[3.3 AI Identification]
+    M3 --> M3_4[3.4 Asset UI]
+
+    M4 --> M4_1[4.1 Status Workflow]
+    M4 --> M4_2[4.2 Batch Management]
+    M4 --> M4_3[4.3 Operator UI]
+
+    M5 --> M5_1[5.1 Certificate Generation]
+    M5 --> M5_2[5.2 PDF Service]
+    M5 --> M5_3[5.3 Audit Trail UI]
+
+    M6 --> M6_1[6.1 Testing]
+    M6 --> M6_2[6.2 Security Review]
+    M6 --> M6_3[6.3 UAT & Launch]
+
+    %% Styling
+    classDef rootStyle fill:#1a237e,stroke:#1a237e,stroke-width:3px,color:#ffffff
+    classDef milestoneStyle fill:#3949ab,stroke:#1a237e,stroke-width:2px,color:#ffffff
+    classDef taskStyle fill:#e8eaf6,stroke:#3949ab,stroke-width:1px,color:#1a237e
+
+    class PHASE1 rootStyle
+    class M1,M2,M3,M4,M5,M6 milestoneStyle
+    class M1_1,M1_2,M1_3,M1_4,M2_1,M2_2,M2_3,M2_4,M3_1,M3_2,M3_3,M3_4,M4_1,M4_2,M4_3,M5_1,M5_2,M5_3,M6_1,M6_2,M6_3 taskStyle
+```
+
+### 2.3 Milestone Details
 
 ---
 
@@ -131,6 +192,45 @@ This document defines the scope and milestone breakdown for Phase 1 (MVP) of AI-
 - CI/CD pipeline runs successfully
 - Staging environment accessible
 
+**Work Breakdown Structure — M1:**
+
+```
+M1: Foundation & Infrastructure
+│
+├── 1.1 AWS Infrastructure
+│   ├── 1.1.1 VPC configuration (public/private subnets)
+│   ├── 1.1.2 Security groups setup
+│   ├── 1.1.3 NAT Gateway configuration
+│   ├── 1.1.4 Route tables and networking
+│   └── 1.1.5 IAM roles and policies
+│
+├── 1.2 Database Setup
+│   ├── 1.2.1 RDS PostgreSQL provisioning
+│   ├── 1.2.2 Database schema creation
+│   ├── 1.2.3 Row-Level Security (RLS) policies
+│   ├── 1.2.4 Connection pooling setup
+│   └── 1.2.5 Backup configuration
+│
+├── 1.3 CI/CD Pipeline
+│   ├── 1.3.1 GitHub Actions workflow setup
+│   ├── 1.3.2 Build pipeline (lint, test, build)
+│   ├── 1.3.3 Deploy pipeline (staging, production)
+│   ├── 1.3.4 Environment secrets management
+│   └── 1.3.5 Docker image build & push to ECR
+│
+├── 1.4 Development Environment
+│   ├── 1.4.1 Local Docker Compose setup
+│   ├── 1.4.2 Environment variables template
+│   ├── 1.4.3 Database seeding scripts
+│   └── 1.4.4 Developer documentation
+│
+└── 1.5 Monitoring Foundation
+    ├── 1.5.1 CloudWatch log groups
+    ├── 1.5.2 CloudWatch alarms (basic)
+    ├── 1.5.3 Application logging setup
+    └── 1.5.4 Health check endpoints
+```
+
 ---
 
 #### M2: Authentication & User Management
@@ -153,6 +253,54 @@ This document defines the scope and milestone breakdown for Phase 1 (MVP) of AI-
 - MFA works for Admin/Operator roles
 - Admins can manage users
 - Role permissions enforced on all endpoints
+
+**Work Breakdown Structure — M2:**
+
+```
+M2: Authentication & User Management
+│
+├── 2.1 Cognito Integration
+│   ├── 2.1.1 User pool creation
+│   ├── 2.1.2 App client configuration
+│   ├── 2.1.3 MFA setup (TOTP/SMS)
+│   ├── 2.1.4 Custom attributes (organisation_id, role)
+│   └── 2.1.5 Token configuration (access, ID, refresh)
+│
+├── 2.2 Authentication API
+│   ├── 2.2.1 Login endpoint
+│   ├── 2.2.2 Logout endpoint
+│   ├── 2.2.3 Password reset flow
+│   ├── 2.2.4 Token refresh endpoint
+│   ├── 2.2.5 JWT validation middleware
+│   └── 2.2.6 Session management
+│
+├── 2.3 Organisation Management
+│   ├── 2.3.1 Organisation CRUD API
+│   ├── 2.3.2 Organisation types (NHS, bank, etc.)
+│   ├── 2.3.3 Organisation status (active/inactive)
+│   └── 2.3.4 Organisation settings storage
+│
+├── 2.4 User Management
+│   ├── 2.4.1 User CRUD API
+│   ├── 2.4.2 User-organisation linking
+│   ├── 2.4.3 User activation/deactivation
+│   ├── 2.4.4 Password policies
+│   └── 2.4.5 User invitation flow
+│
+├── 2.5 RBAC System
+│   ├── 2.5.1 Role definitions (Admin, Operator, Client, Auditor)
+│   ├── 2.5.2 Permission matrix implementation
+│   ├── 2.5.3 Role assignment API
+│   ├── 2.5.4 Permission checking middleware
+│   └── 2.5.5 Role-based UI visibility
+│
+└── 2.6 Admin UI
+    ├── 2.6.1 User list/search screen
+    ├── 2.6.2 User create/edit forms
+    ├── 2.6.3 Organisation management screen
+    ├── 2.6.4 Role assignment interface
+    └── 2.6.5 User activity dashboard
+```
 
 ---
 
@@ -200,6 +348,40 @@ This document defines the scope and milestone breakdown for Phase 1 (MVP) of AI-
 - Batches group assets correctly
 - Batch status reflects contained assets
 
+**Work Breakdown Structure — M4:**
+
+```
+M4: Processing & Batch Management
+│
+├── 4.1 Asset Status Workflow
+│   ├── 4.1.1 Status enum definition (Registered → Collected → Processing → Completed)
+│   ├── 4.1.2 Transition validation rules
+│   ├── 4.1.3 Status update API
+│   ├── 4.1.4 Status history tracking
+│   └── 4.1.5 Timestamp recording (collected_at, completed_at)
+│
+├── 4.2 Batch Management
+│   ├── 4.2.1 Batch CRUD API
+│   ├── 4.2.2 Batch reference number generation
+│   ├── 4.2.3 Batch status workflow (open → closed → collected → processing → completed)
+│   ├── 4.2.4 Batch weight/count aggregation
+│   └── 4.2.5 Batch-organisation linking
+│
+├── 4.3 Asset-Batch Operations
+│   ├── 4.3.1 Add assets to batch
+│   ├── 4.3.2 Remove assets from batch
+│   ├── 4.3.3 Bulk status update (batch level)
+│   ├── 4.3.4 Batch validation (no empty batches)
+│   └── 4.3.5 Asset transfer between batches
+│
+└── 4.4 Operator UI
+    ├── 4.4.1 Batch list/search screen
+    ├── 4.4.2 Batch detail view with asset list
+    ├── 4.4.3 Status update workflow UI
+    ├── 4.4.4 Batch creation form
+    └── 4.4.5 Collection scheduling interface
+```
+
 ---
 
 #### M5: Certificates & Audit
@@ -222,6 +404,47 @@ This document defines the scope and milestone breakdown for Phase 1 (MVP) of AI-
 - PDF downloads work
 - Certificate types validated (e.g., destruction requires data-bearing)
 - Audit logs queryable and exportable
+
+**Work Breakdown Structure — M5:**
+
+```
+M5: Certificates & Audit
+│
+├── 5.1 Certificate Generation
+│   ├── 5.1.1 Certificate data model
+│   ├── 5.1.2 Certificate CRUD API
+│   ├── 5.1.3 Reference number generation (unique)
+│   ├── 5.1.4 Certificate-asset/batch linking
+│   └── 5.1.5 Certificate validation rules
+│
+├── 5.2 Certificate Types
+│   ├── 5.2.1 Destruction certificate logic
+│   ├── 5.2.2 Recycling certificate logic
+│   ├── 5.2.3 Data sanitisation certificate logic
+│   ├── 5.2.4 WEEE compliance certificate logic
+│   └── 5.2.5 Type-specific validation (data-bearing check)
+│
+├── 5.3 PDF Service
+│   ├── 5.3.1 PDF template design (4 types)
+│   ├── 5.3.2 Lambda function setup
+│   ├── 5.3.3 Dynamic content injection
+│   ├── 5.3.4 S3 storage for PDFs
+│   └── 5.3.5 Download URL generation (pre-signed)
+│
+├── 5.4 Audit Logging
+│   ├── 5.4.1 Audit log data model (immutable)
+│   ├── 5.4.2 Audit event capture (all CRUD operations)
+│   ├── 5.4.3 Before/after state recording
+│   ├── 5.4.4 User/IP tracking
+│   └── 5.4.5 Audit log archival to S3
+│
+└── 5.5 Audit UI
+    ├── 5.5.1 Audit log list/search screen
+    ├── 5.5.2 Filter by date/user/action/entity
+    ├── 5.5.3 Audit detail view (before/after diff)
+    ├── 5.5.4 Asset history timeline
+    └── 5.5.5 Export to CSV/PDF
+```
 
 ---
 
@@ -248,24 +471,91 @@ This document defines the scope and milestone breakdown for Phase 1 (MVP) of AI-
 - UAT sign-off received
 - Production environment live
 
+**Work Breakdown Structure — M6:**
+
+```
+M6: QA & Launch Preparation
+│
+├── 6.1 Integration Testing
+│   ├── 6.1.1 End-to-end test scenarios
+│   ├── 6.1.2 API integration tests
+│   ├── 6.1.3 UI automated tests (Cypress/Playwright)
+│   ├── 6.1.4 Cross-browser testing
+│   └── 6.1.5 Mobile/tablet responsiveness testing
+│
+├── 6.2 Security Testing
+│   ├── 6.2.1 OWASP vulnerability scan
+│   ├── 6.2.2 Dependency vulnerability check
+│   ├── 6.2.3 Penetration testing (if required)
+│   ├── 6.2.4 Authentication/authorisation testing
+│   └── 6.2.5 Data isolation verification (multi-tenant)
+│
+├── 6.3 Performance Testing
+│   ├── 6.3.1 Load testing (concurrent users)
+│   ├── 6.3.2 API response time benchmarks
+│   ├── 6.3.3 Database query performance
+│   ├── 6.3.4 AI identification latency testing
+│   └── 6.3.5 File upload/download performance
+│
+├── 6.4 Bug Fixes & Polish
+│   ├── 6.4.1 Critical bug triage and fix
+│   ├── 6.4.2 UI/UX polish
+│   ├── 6.4.3 Error message improvements
+│   ├── 6.4.4 Edge case handling
+│   └── 6.4.5 Performance optimisation
+│
+├── 6.5 Documentation
+│   ├── 6.5.1 API documentation (OpenAPI/Swagger)
+│   ├── 6.5.2 User guide (client users)
+│   ├── 6.5.3 Operator manual
+│   ├── 6.5.4 Admin guide
+│   └── 6.5.5 Deployment runbook
+│
+└── 6.6 UAT & Launch
+    ├── 6.6.1 UAT environment setup
+    ├── 6.6.2 Pilot client onboarding
+    ├── 6.6.3 UAT execution & feedback
+    ├── 6.6.4 Production deployment
+    └── 6.6.5 Go-live monitoring & support
+```
+
 ---
 
 ## 3. Dependencies & Critical Path
 
 ### 3.1 Dependency Map
 
-```
-M1 Foundation
- │
- └──▶ M2 Auth & Users
-       │
-       └──▶ M3 Asset Management
-             │
-             └──▶ M4 Processing & Batches
-                   │
-                   └──▶ M5 Certificates & Audit
-                         │
-                         └──▶ M6 QA & Launch
+```mermaid
+flowchart TB
+    subgraph DEPS["📊 Phase 1 Dependencies"]
+        M1[🏗️ M1: Foundation<br/>& Infrastructure]
+        M2[🔐 M2: Auth &<br/>User Management]
+        M3[🤖 M3: Asset Mgmt<br/>& AI Identification]
+        M4[⚙️ M4: Processing<br/>& Batches]
+        M5[📜 M5: Certificates<br/>& Audit]
+        M6[✅ M6: QA &<br/>Launch]
+    end
+
+    M1 -->|Infrastructure<br/>ready| M2
+    M2 -->|Auth &<br/>users ready| M3
+    M3 -->|Assets<br/>ready| M4
+    M4 -->|Lifecycle<br/>complete| M5
+    M5 -->|Features<br/>complete| M6
+
+    %% Styling
+    classDef infraStyle fill:#e3f2fd,stroke:#1565c0,stroke-width:2px,color:#0d47a1
+    classDef authStyle fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px,color:#4a148c
+    classDef assetStyle fill:#fce4ec,stroke:#c2185b,stroke-width:2px,color:#880e4f
+    classDef processStyle fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#bf360c
+    classDef certStyle fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px,color:#1b5e20
+    classDef qaStyle fill:#e0f7fa,stroke:#00838f,stroke-width:2px,color:#006064
+
+    class M1 infraStyle
+    class M2 authStyle
+    class M3 assetStyle
+    class M4 processStyle
+    class M5 certStyle
+    class M6 qaStyle
 ```
 
 ### 3.2 Critical Path
