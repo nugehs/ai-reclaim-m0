@@ -55,6 +55,9 @@ extra:
 extra_css:
   - stylesheets/extra.css
 
+extra_javascript:
+  - javascripts/auth.js
+
 markdown_extensions:
   - tables
   - pymdownx.superfences:
