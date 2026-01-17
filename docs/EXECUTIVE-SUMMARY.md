@@ -124,17 +124,14 @@ M1 Foundation → M2 Auth → M3 Assets → M4 Processing → M5 Certificates �
 
 ---
 
-## Document Index
+## Document Index — Checkpoint 1
 
 | # | Document | Description |
 |---|----------|-------------|
 | 01 | [System Architecture](./01-system-architecture/README.md) | Technical architecture, AWS design |
 | 02 | [Core Data Model](./02-data-model/README.md) | Entities, relationships, ER diagrams |
-| 03 | [API & Integration](./03-api-integration/README.md) | REST API structure, authentication |
-| 04 | [Compliance & Security](./04-compliance-security/README.md) | GDPR, NHS DSPT, audit logging |
-| 05 | [Delivery Roadmap](./05-delivery-roadmap/README.md) | Phase 1 milestones |
-| 06 | [Risks Register](./06-risks-register/README.md) | Risks, unknowns, mitigations |
-| 07 | [User Flows](./USER-FLOWS.md) | End-to-end user journeys |
+
+*Additional deliverables will be shared in subsequent checkpoints.*
 
 ---
 
