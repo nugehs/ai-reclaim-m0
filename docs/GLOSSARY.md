@@ -54,9 +54,7 @@ This glossary defines key terms, acronyms, and standards referenced throughout t
 | **PoC** | Proof of Concept | Small-scale implementation to verify that a concept or approach is feasible. |
 | **UAT** | User Acceptance Testing | Final testing phase where end users validate that the system meets requirements. |
 | **SLA** | Service Level Agreement | Contract defining expected service performance metrics (uptime, response time, etc.). |
-| **DHI** | Docker Hardened Images | Security-hardened container base images with minimal attack surface and near-zero CVE count. |
 | **CVE** | Common Vulnerabilities and Exposures | Publicly disclosed cybersecurity vulnerabilities, each assigned a unique identifier. |
-| **SLSA** | Supply-chain Levels for Software Artifacts | Framework for ensuring the integrity of software artifacts throughout the supply chain. |
 
 ---
 

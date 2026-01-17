@@ -111,13 +111,13 @@ graph TB
         end
 
         subgraph ECS["🐳 ECS Fargate Cluster"]
-            subgraph CONTAINERS["Containers - Docker Hardened Images"]
-                API[api-service<br/>Node.js DHI]
-                ASSET[asset-service<br/>Node.js DHI]
-                AUDIT[audit-service<br/>Node.js DHI]
-                CERT[certificate-service<br/>Node.js DHI]
-                ESG[esg-service<br/>Node.js DHI]
-                AIID[ai-identification<br/>Python DHI]
+            subgraph CONTAINERS["Hardened Containers"]
+                API[api-service<br/>Node.js]
+                ASSET[asset-service<br/>Node.js]
+                AUDIT[audit-service<br/>Node.js]
+                CERT[certificate-service<br/>Node.js]
+                ESG[esg-service<br/>Node.js]
+                AIID[ai-identification<br/>Python]
             end
         end
 
@@ -182,7 +182,7 @@ The architecture follows a layered approach where each layer has distinct respon
 
 **Application Layer**: The [Application Load Balancer (ALB)](https://aws.amazon.com/elasticloadbalancing/) receives all inbound requests from WAF and routes them to the appropriate backend services. [AWS Cognito](https://aws.amazon.com/cognito/) provides managed authentication, handling user identities, JWT token issuance, and MFA for compliance requirements. The ALB performs health checks and distributes traffic across container instances.
 
-**Container Platform ([ECS Fargate](https://aws.amazon.com/fargate/))**: All application services run as containerised microservices on AWS ECS Fargate, using **Docker Hardened Images (DHI)** as base images. DHI provides near-zero CVE posture, SLSA Level 3 provenance, and FIPS/STIG-compliant variants for NHS and government clients. Container images are stored in a private [ECR](https://aws.amazon.com/ecr/) registry within eu-west-2.
+**Container Platform ([ECS Fargate](https://aws.amazon.com/fargate/))**: All application services run as containerised microservices on AWS ECS Fargate, using **hardened base images** (e.g., distroless, Chainguard, or AWS-vetted images per feasibility assessment). Regular vulnerability scanning via ECR ensures minimal CVE footprint. Container images are stored in a private [ECR](https://aws.amazon.com/ecr/) registry within eu-west-2.
 
 **Business Services Layer**: Five domain-specific containerised services handle core platform functionality:
 - **api-service** — Request routing, rate limiting, JWT validation
@@ -203,13 +203,13 @@ The architecture follows a layered approach where each layer has distinct respon
 |-----------|---------|-------------|---------------|
 | Web Application | User interface for all user types | [S3](https://aws.amazon.com/s3/) + [CloudFront](https://aws.amazon.com/cloudfront/) | Static hosting reduces attack surface; CDN improves performance |
 | Container Registry | Private image storage | [ECR](https://aws.amazon.com/ecr/) (eu-west-2) | UK data residency; integrated scanning; immutable tags |
-| api-service | API routing, rate limiting, request orchestration | [ECS Fargate](https://aws.amazon.com/fargate/) (Node.js DHI) | Serverless containers; Docker Hardened base for compliance |
+| api-service | API routing, rate limiting, request orchestration | [ECS Fargate](https://aws.amazon.com/fargate/) (Node.js) | Serverless containers; hardened base images |
 | Auth Service | Authentication, JWT tokens, MFA | [Cognito](https://aws.amazon.com/cognito/) | Managed auth with built-in MFA, federation support, compliance certifications |
-| asset-service | Asset lifecycle management | [ECS Fargate](https://aws.amazon.com/fargate/) (Node.js DHI) | Stateless containers; independent scaling |
-| audit-service | Immutable audit log creation | [ECS Fargate](https://aws.amazon.com/fargate/) (Node.js DHI) | Dedicated service ensures audit writes are never blocked |
-| certificate-service | Certificate generation, PDF | [ECS Fargate](https://aws.amazon.com/fargate/) (Node.js DHI) | PDF generation with Lambda burst capacity |
-| esg-service | Environmental impact calculations | [ECS Fargate](https://aws.amazon.com/fargate/) (Node.js DHI) | Complex calculations benefit from dedicated compute |
-| ai-identification | Image recognition + barcode lookup | [ECS Fargate](https://aws.amazon.com/fargate/) (Python DHI) | Rekognition integration; scale-to-zero capable |
+| asset-service | Asset lifecycle management | [ECS Fargate](https://aws.amazon.com/fargate/) (Node.js) | Stateless containers; independent scaling |
+| audit-service | Immutable audit log creation | [ECS Fargate](https://aws.amazon.com/fargate/) (Node.js) | Dedicated service ensures audit writes are never blocked |
+| certificate-service | Certificate generation, PDF | [ECS Fargate](https://aws.amazon.com/fargate/) (Node.js) | PDF generation with Lambda burst capacity |
+| esg-service | Environmental impact calculations | [ECS Fargate](https://aws.amazon.com/fargate/) (Node.js) | Complex calculations benefit from dedicated compute |
+| ai-identification | Image classification + barcode decoding | [ECS Fargate](https://aws.amazon.com/fargate/) (Python) | Rekognition for images; separate barcode library |
 | Primary Database | Transactional data, tenant isolation | [RDS PostgreSQL](https://aws.amazon.com/rds/postgresql/) | ACID compliance, RLS for tenant isolation, JSON support |
 | Cache | Session data, frequent queries | [ElastiCache Redis](https://aws.amazon.com/elasticache/redis/) | Sub-millisecond latency; reduces database load |
 | Object Storage | Asset images, PDFs, audit archives | [S3](https://aws.amazon.com/s3/) | Unlimited scale; lifecycle policies for retention management |
@@ -426,11 +426,11 @@ Compliance with UK data protection requirements is a non-negotiable architectura
 
 ### 8.1 Compliance Certifications
 
-AWS eu-west-2 maintains certifications relevant to target customers:
+AWS eu-west-2 maintains security certifications that support compliance efforts:
 - ISO 27001, 27017, 27018
 - SOC 1, 2, 3
-- Cyber Essentials Plus
-- NHS Data Security and Protection Toolkit (via AWS compliance programme)
+
+**Note:** Cyber Essentials Plus and NHS DSPT are organisation-level certifications that remain the responsibility of A to Z IT Recycling Ltd. AWS infrastructure supports achieving these certifications, but the organisation must implement appropriate controls and complete the certification process.
 
 ---
 
@@ -443,7 +443,7 @@ AWS eu-west-2 maintains certifications relevant to target customers:
 | D3 | Multi-tenant shared infrastructure | Shared infrastructure with isolation via RLS | Single-tenant (simpler isolation) |
 | D4 | Web-only MVP | Faster time-to-market; responsive design covers tablets | Native mobile apps (better offline support) |
 | D5 | Mermaid for diagrams | Version-controllable, renders in GitHub/IDEs | Draw.io (richer visuals), Lucidchart (collaboration) |
-| D6 | Docker Hardened Images (DHI) | Near-zero CVE posture; FIPS/STIG compliance for NHS/Gov | Standard Docker images (higher CVE risk) |
+| D6 | Hardened base images | Minimal CVE footprint; regular vulnerability scanning | Standard Docker images (higher CVE risk) |
 | D7 | Microservices on ECS Fargate | Independent scaling; fault isolation; serverless ops | Monolith (simpler), EKS (more complex) |
 
 ---

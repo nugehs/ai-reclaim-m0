@@ -45,7 +45,7 @@
 !!! success "Architecture Decisions"
     - **Cloud Provider:** AWS (eu-west-2 London) — UK data residency
     - **Database:** [PostgreSQL RDS](https://aws.amazon.com/rds/postgresql/) with Row-Level Security — multi-tenant isolation
-    - **Containers:** Docker Hardened Images on [ECS Fargate](https://aws.amazon.com/fargate/) — near-zero CVE posture
+    - **Containers:** Hardened base images on [ECS Fargate](https://aws.amazon.com/fargate/) — minimal CVE footprint
     - **Authentication:** [AWS Cognito](https://aws.amazon.com/cognito/) — managed MFA, JWT tokens
     - **AI:** [AWS Rekognition](https://aws.amazon.com/rekognition/) — image-based asset identification
 

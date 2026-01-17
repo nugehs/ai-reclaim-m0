@@ -19,7 +19,7 @@ This document summarises the technical discovery phase for AI-Reclaim™, a comp
 
 | Deliverable | Summary |
 |-------------|---------|
-| **System Architecture** | AWS-hosted multi-tenant platform with Docker Hardened containers, UK data residency (eu-west-2), and defence-in-depth security |
+| **System Architecture** | AWS-hosted multi-tenant platform with hardened containers, UK data residency (eu-west-2), and defence-in-depth security |
 | **Data Model** | 8 core entities supporting asset lifecycle from registration through certified disposal |
 | **API Design** | RESTful API with Cognito authentication and role-based access control |
 | **Compliance** | GDPR, NHS DSPT, ISO 27001, and Cyber Essentials alignment |
@@ -34,7 +34,7 @@ This document summarises the technical discovery phase for AI-Reclaim™, a comp
 |----------|--------|-----------|
 | Cloud Provider | AWS (eu-west-2 London) | UK data residency, NHS compliance programme |
 | Database | PostgreSQL with RLS | Multi-tenant isolation, audit compliance |
-| Containers | Docker Hardened Images | Near-zero CVE, FIPS/STIG for NHS/Gov |
+| Containers | Hardened base images | Minimal CVE footprint, regular scanning |
 | Authentication | AWS Cognito | Managed MFA, enterprise SSO capability |
 | AI Identification | AWS Rekognition | Image-based asset recognition |
 
@@ -261,13 +261,13 @@ graph TB
         end
 
         subgraph "ECS Fargate Cluster"
-            subgraph "Containers - Docker Hardened Images"
-                API[api-service<br/>Node.js DHI]
-                ASSET[asset-service<br/>Node.js DHI]
-                AUDIT[audit-service<br/>Node.js DHI]
-                CERT[certificate-service<br/>Node.js DHI]
-                ESG[esg-service<br/>Node.js DHI]
-                AIID[ai-identification<br/>Python DHI]
+            subgraph "Containers - Hardened base images"
+                API[api-service<br/>Node.js]
+                ASSET[asset-service<br/>Node.js]
+                AUDIT[audit-service<br/>Node.js]
+                CERT[certificate-service<br/>Node.js]
+                ESG[esg-service<br/>Node.js]
+                AIID[ai-identification<br/>Python]
             end
         end
 
@@ -315,7 +315,7 @@ The architecture follows a layered approach where each layer has distinct respon
 
 **Application Layer**: The Application Load Balancer (ALB) receives all inbound requests from WAF and routes them to the appropriate backend services. AWS Cognito provides managed authentication, handling user identities, JWT token issuance, and MFA for compliance requirements. The ALB performs health checks and distributes traffic across container instances.
 
-**Container Platform (ECS Fargate)**: All application services run as containerised microservices on AWS ECS Fargate, using **Docker Hardened Images (DHI)** as base images. DHI provides near-zero CVE posture, SLSA Level 3 provenance, and FIPS/STIG-compliant variants for NHS and government clients. Container images are stored in a private ECR registry within eu-west-2.
+**Container Platform (ECS Fargate)**: All application services run as containerised microservices on AWS ECS Fargate, using **hardened base images** (e.g., distroless, Chainguard, or AWS-vetted images per feasibility assessment). Regular vulnerability scanning via ECR ensures minimal CVE footprint. Container images are stored in a private ECR registry within eu-west-2.
 
 **Business Services Layer**: Five domain-specific containerised services handle core platform functionality:
 - **api-service** — Request routing, rate limiting, JWT validation
@@ -336,13 +336,13 @@ The architecture follows a layered approach where each layer has distinct respon
 |-----------|---------|-------------|---------------|
 | Web Application | User interface for all user types | S3 + CloudFront | Static hosting reduces attack surface; CDN improves performance |
 | Container Registry | Private image storage | ECR (eu-west-2) | UK data residency; integrated scanning; immutable tags |
-| api-service | API routing, rate limiting, request orchestration | ECS Fargate (Node.js DHI) | Serverless containers; Docker Hardened base for compliance |
+| api-service | API routing, rate limiting, request orchestration | ECS Fargate (Node.js) | Serverless containers; Docker Hardened base for compliance |
 | Auth Service | Authentication, JWT tokens, MFA | Cognito | Managed auth with built-in MFA, federation support, compliance certifications |
-| asset-service | Asset lifecycle management | ECS Fargate (Node.js DHI) | Stateless containers; independent scaling |
-| audit-service | Immutable audit log creation | ECS Fargate (Node.js DHI) | Dedicated service ensures audit writes are never blocked |
-| certificate-service | Certificate generation, PDF | ECS Fargate (Node.js DHI) | PDF generation with Lambda burst capacity |
-| esg-service | Environmental impact calculations | ECS Fargate (Node.js DHI) | Complex calculations benefit from dedicated compute |
-| ai-identification | Image recognition + barcode lookup | ECS Fargate (Python DHI) | Rekognition integration; scale-to-zero capable |
+| asset-service | Asset lifecycle management | ECS Fargate (Node.js) | Stateless containers; independent scaling |
+| audit-service | Immutable audit log creation | ECS Fargate (Node.js) | Dedicated service ensures audit writes are never blocked |
+| certificate-service | Certificate generation, PDF | ECS Fargate (Node.js) | PDF generation with Lambda burst capacity |
+| esg-service | Environmental impact calculations | ECS Fargate (Node.js) | Complex calculations benefit from dedicated compute |
+| ai-identification | Image classification + barcode decoding | ECS Fargate (Python) | Rekognition for images; separate barcode library |
 | Primary Database | Transactional data, tenant isolation | RDS PostgreSQL | ACID compliance, RLS for tenant isolation, JSON support |
 | Cache | Session data, frequent queries | ElastiCache Redis | Sub-millisecond latency; reduces database load |
 | Object Storage | Asset images, PDFs, audit archives | S3 | Unlimited scale; lifecycle policies for retention management |
@@ -551,7 +551,7 @@ AWS eu-west-2 maintains certifications relevant to target customers:
 | D3 | Multi-tenant shared infrastructure | Shared infrastructure with isolation via RLS | Single-tenant (simpler isolation) |
 | D4 | Web-only MVP | Faster time-to-market; responsive design covers tablets | Native mobile apps (better offline support) |
 | D5 | Mermaid for diagrams | Version-controllable, renders in GitHub/IDEs | Draw.io (richer visuals), Lucidchart (collaboration) |
-| D6 | Docker Hardened Images (DHI) | Near-zero CVE posture; FIPS/STIG compliance for NHS/Gov | Standard Docker images (higher CVE risk) |
+| D6 | Hardened base images | Minimal CVE footprint; regular vulnerability scanning | Standard Docker images (higher CVE risk) |
 | D7 | Microservices on ECS Fargate | Independent scaling; fault isolation; serverless ops | Monolith (simpler), EKS (more complex) |
 
 ---

@@ -489,7 +489,9 @@ Environmental, Social, and Governance impact reports.
 
 **ESG Calculations:**
 - `co2_avoided_kg` = Σ (asset weight × asset_type.co2_factor)
-- `landfill_diverted_kg` = `total_weight_kg` (assumes 100% diversion)
+- `landfill_diverted_kg` = `total_weight_kg` × diversion_rate
+
+> **Note:** The formula above is a placeholder. Actual diversion rates vary by asset type and processing method. Implementation should use measured diversion rates from operational data rather than assuming 100% diversion.
 
 ---
 

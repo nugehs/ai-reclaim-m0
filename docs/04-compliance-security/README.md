@@ -157,7 +157,7 @@ Key ISO 27001 control domains addressed:
 | | Input validation | Prevent injection attacks |
 | | CORS | Cross-origin protection |
 | **Data** | KMS encryption | Data at rest |
-| | TLS 1.3 | Data in transit |
+| | TLS 1.2+ (1.3 preferred) | Data in transit |
 | | RLS | Tenant isolation |
 | | Audit logging | Accountability |
 
@@ -429,13 +429,13 @@ For enhanced non-repudiation, audit log batches can be digitally signed using AW
 | At rest (database) | AES-256 via RDS encryption | AWS KMS |
 | At rest (files) | AES-256 via S3 encryption | AWS KMS |
 | At rest (cache) | AES-256 via ElastiCache encryption | AWS KMS |
-| In transit | TLS 1.3 | AWS Certificate Manager |
+| In transit | TLS 1.2+ (1.3 preferred) | AWS Certificate Manager |
 
 ### 5.2 Key Management
 
 | Aspect | Approach |
 |--------|----------|
-| Key storage | AWS KMS (FIPS 140-2 Level 2) |
+| Key storage | AWS KMS (FIPS 140-2 validated) |
 | Key rotation | Automatic annual rotation |
 | Access control | IAM policies, least privilege |
 | Audit | CloudTrail logging of key usage |
@@ -480,7 +480,7 @@ For enhanced non-repudiation, audit log batches can be digitally signed using AW
 | User accounts | Account lifetime | +1 year | Anonymise |
 | Assets | 7 years | S3 Glacier | Anonymise |
 | Audit logs | 90 days hot | 7 years S3 | Delete |
-| Certificates | Indefinite | — | Never |
+| Certificates | TBD | TBD | TBD (subject to legal review) |
 | ESG reports | 2 years | 7 years S3 | Delete |
 | Asset images | 1 year | — | Delete |
 | Session data | 30 days | — | Delete |

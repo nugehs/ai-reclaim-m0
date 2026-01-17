@@ -19,7 +19,7 @@ This document summarises the technical discovery phase for AI-Reclaim™, a comp
 
 | Deliverable | Summary |
 |-------------|---------|
-| **System Architecture** | AWS-hosted multi-tenant platform with Docker Hardened containers, UK data residency (eu-west-2), and defence-in-depth security |
+| **System Architecture** | AWS-hosted multi-tenant platform with hardened containers, UK data residency (eu-west-2), and defence-in-depth security |
 | **Data Model** | 8 core entities supporting asset lifecycle from registration through certified disposal |
 | **API Design** | RESTful API with Cognito authentication and role-based access control |
 | **Compliance** | GDPR, NHS DSPT, ISO 27001, and Cyber Essentials alignment |
@@ -34,7 +34,7 @@ This document summarises the technical discovery phase for AI-Reclaim™, a comp
 |----------|--------|-----------|
 | Cloud Provider | AWS (eu-west-2 London) | UK data residency, NHS compliance programme |
 | Database | PostgreSQL with RLS | Multi-tenant isolation, audit compliance |
-| Containers | Docker Hardened Images | Near-zero CVE, FIPS/STIG for NHS/Gov |
+| Containers | Hardened base images | Minimal CVE footprint, regular scanning |
 | Authentication | AWS Cognito | Managed MFA, enterprise SSO capability |
 | AI Identification | AWS Rekognition | Image-based asset recognition |
 
@@ -70,10 +70,12 @@ Registered → Collected → Processing → Completed
 
 | Framework | Status |
 |-----------|--------|
-| GDPR | Designed for compliance |
-| NHS DSPT | 10 standards addressed |
-| ISO 27001 | Control domains aligned |
-| Cyber Essentials Plus | 5 controls implemented |
+| GDPR | Architecture designed for compliance |
+| NHS DSPT | Mapped to 10 DSPT standards |
+| ISO 27001 | Aligned to control domains |
+| Cyber Essentials Plus | Mapped to 5 CE+ control areas |
+
+> **Note:** Organisation remains responsible for achieving DSPT and CE+ certification via appropriate controls and assessment processes.
 
 ---
 
