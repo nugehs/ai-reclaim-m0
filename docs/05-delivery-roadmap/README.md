@@ -378,8 +378,7 @@ M4: Processing & Batch Management
     ├── 4.4.1 Batch list/search screen
     ├── 4.4.2 Batch detail view with asset list
     ├── 4.4.3 Status update workflow UI
-    ├── 4.4.4 Batch creation form
-    └── 4.4.5 Collection scheduling interface
+    └── 4.4.4 Batch creation form
 ```
 
 ---
@@ -479,7 +478,7 @@ M6: QA & Launch Preparation
 ├── 6.1 Integration Testing
 │   ├── 6.1.1 End-to-end test scenarios
 │   ├── 6.1.2 API integration tests
-│   ├── 6.1.3 UI automated tests (Cypress/Playwright)
+│   ├── 6.1.3 UI automated tests
 │   ├── 6.1.4 Cross-browser testing
 │   └── 6.1.5 Mobile/tablet responsiveness testing
 │
