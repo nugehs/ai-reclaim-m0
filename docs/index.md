@@ -15,19 +15,28 @@
 
 ---
 
-## :material-file-document-multiple: Deliverables
+## :material-file-document-multiple: Milestone 0 Deliverables
 
 | # | Document | Description | Status |
 |:-:|----------|-------------|:------:|
-| 01 | [:material-server-network: System Architecture](./01-system-architecture/README.md) | AWS design, multi-tenant architecture, scalability | :white_check_mark: |
-| 02 | [:material-database: Core Data Model](./02-data-model/README.md) | Entities, relationships, ER diagrams | :white_check_mark: |
-| 03 | [:material-api: API & Integration](./03-api-integration/README.md) | REST API structure, auth, integrations | :white_check_mark: |
-| 04 | [:material-shield-check: Compliance & Security](./04-compliance-security/README.md) | GDPR, NHS DSPT, audit logging | :white_check_mark: |
-| 05 | [:material-road-variant: Delivery Roadmap](./05-delivery-roadmap/README.md) | Phase 1 scope, milestones | :white_check_mark: |
-| 06 | [:material-alert-circle: Risks Register](./06-risks-register/README.md) | Risks, unknowns, mitigations | :white_check_mark: |
-| 07 | [:material-account-arrow-right: User Flows](./USER-FLOWS.md) | End-to-end user journeys | :white_check_mark: |
+| 01 | [:material-server-network: System Architecture](./01-system-architecture/README.md) | AWS design, multi-tenant architecture, scalability | :material-file-search: Review |
+| 02 | [:material-database: Core Data Model](./02-data-model/README.md) | Entities, relationships, ER diagrams | :material-file-search: Review |
+| 03 | [:material-api: API & Integration](./03-api-integration/README.md) | REST API structure, auth, integrations | :material-file-search: Review |
+| 04 | [:material-shield-check: Compliance & Security](./04-compliance-security/README.md) | GDPR, NHS DSPT, audit logging | :material-file-search: Review |
+| 05 | [:material-road-variant: Delivery Roadmap](./05-delivery-roadmap/README.md) | Phase 1 scope, milestones | :material-file-search: Review |
+| 06 | [:material-alert-circle: Risks Register](./06-risks-register/README.md) | Risks, unknowns, mitigations | :material-file-search: Review |
 
-[:material-timeline: View Project Roadmap](./ROADMAP.md){ .md-button }
+---
+
+## :material-gift: Supplementary Materials (Added Value)
+
+!!! info "Not part of Milestone 0 scope"
+    The following materials are provided as added value to support Phase 1 planning and requirements gathering.
+
+| Document | Description | Status |
+|----------|-------------|:------:|
+| [:material-account-arrow-right: User Flows (Scenarios)](./USER-FLOWS.md) | Proposed user journeys — requires validation | :material-file-search: Review |
+| [:material-book-alphabet: Glossary](./GLOSSARY.md) | Acronyms and terminology reference | :material-file-search: Review |
 
 ---
 
@@ -35,10 +44,10 @@
 
 !!! success "Architecture Decisions"
     - **Cloud Provider:** AWS (eu-west-2 London) — UK data residency
-    - **Database:** PostgreSQL with Row-Level Security — multi-tenant isolation
-    - **Containers:** Docker Hardened Images — near-zero CVE posture
-    - **Authentication:** AWS Cognito — managed MFA, JWT tokens
-    - **AI:** AWS Rekognition — image-based asset identification
+    - **Database:** [PostgreSQL RDS](https://aws.amazon.com/rds/postgresql/) with Row-Level Security — multi-tenant isolation
+    - **Containers:** Docker Hardened Images on [ECS Fargate](https://aws.amazon.com/fargate/) — near-zero CVE posture
+    - **Authentication:** [AWS Cognito](https://aws.amazon.com/cognito/) — managed MFA, JWT tokens
+    - **AI:** [AWS Rekognition](https://aws.amazon.com/rekognition/) — image-based asset identification
 
 ---
 
