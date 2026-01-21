@@ -122,51 +122,45 @@ flowchart LR
 
 ```mermaid
 flowchart TB
-    PHASE1[🚀 Phase 1 — MVP<br/>AI-Reclaim Platform]
+    PHASE1[🚀 <b>Phase 1 — MVP</b><br/>AI-Reclaim Platform]
 
-    PHASE1 --> M1[🏗️ M1: Foundation & Infrastructure]
-    PHASE1 --> M2[🔐 M2: Auth & User Management]
-    PHASE1 --> M3[🤖 M3: Asset Management & AI]
-    PHASE1 --> M4[⚙️ M4: Processing & Batches]
-    PHASE1 --> M5[📜 M5: Certificates & Audit]
-    PHASE1 --> M6[✅ M6: QA & Launch]
+    subgraph ROW1[" "]
+        direction LR
+        M1[🏗️ <b>M1</b><br/>Foundation &<br/>Infrastructure]
+        M2[🔐 <b>M2</b><br/>Auth & User<br/>Management]
+        M3[🤖 <b>M3</b><br/>Asset Mgmt<br/>& AI]
+    end
 
-    M1 --> M1_1[1.1 AWS Infrastructure]
-    M1 --> M1_2[1.2 Database Setup]
-    M1 --> M1_3[1.3 CI/CD Pipeline]
-    M1 --> M1_4[1.4 Dev Environment]
+    subgraph ROW2[" "]
+        direction LR
+        M4[⚙️ <b>M4</b><br/>Processing<br/>& Batches]
+        M5[📜 <b>M5</b><br/>Certificates<br/>& Audit]
+        M6[✅ <b>M6</b><br/>QA &<br/>Launch]
+    end
 
-    M2 --> M2_1[2.1 Cognito Integration]
-    M2 --> M2_2[2.2 User Management]
-    M2 --> M2_3[2.3 RBAC System]
-    M2 --> M2_4[2.4 Admin UI]
-
-    M3 --> M3_1[3.1 Asset CRUD]
-    M3 --> M3_2[3.2 Image Upload]
-    M3 --> M3_3[3.3 AI Identification]
-    M3 --> M3_4[3.4 Asset UI]
-
-    M4 --> M4_1[4.1 Status Workflow]
-    M4 --> M4_2[4.2 Batch Management]
-    M4 --> M4_3[4.3 Operator UI]
-
-    M5 --> M5_1[5.1 Certificate Generation]
-    M5 --> M5_2[5.2 PDF Service]
-    M5 --> M5_3[5.3 Audit Trail UI]
-
-    M6 --> M6_1[6.1 Testing]
-    M6 --> M6_2[6.2 Security Review]
-    M6 --> M6_3[6.3 UAT & Launch]
+    PHASE1 --> ROW1
+    PHASE1 --> ROW2
 
     %% Styling
-    classDef rootStyle fill:#1a237e,stroke:#1a237e,stroke-width:3px,color:#ffffff
-    classDef milestoneStyle fill:#3949ab,stroke:#1a237e,stroke-width:2px,color:#ffffff
-    classDef taskStyle fill:#e8eaf6,stroke:#3949ab,stroke-width:1px,color:#1a237e
+    classDef rootStyle fill:#2D5A5A,stroke:#1E4040,stroke-width:3px,color:#ffffff
+    classDef milestoneStyle fill:#3D7A7A,stroke:#2D5A5A,stroke-width:2px,color:#ffffff
+    classDef invisible fill:none,stroke:none
 
     class PHASE1 rootStyle
     class M1,M2,M3,M4,M5,M6 milestoneStyle
-    class M1_1,M1_2,M1_3,M1_4,M2_1,M2_2,M2_3,M2_4,M3_1,M3_2,M3_3,M3_4,M4_1,M4_2,M4_3,M5_1,M5_2,M5_3,M6_1,M6_2,M6_3 taskStyle
+    class ROW1,ROW2 invisible
 ```
+
+**Milestone Task Breakdown:**
+
+| Milestone | Key Deliverables |
+|-----------|------------------|
+| **M1: Foundation** | 1.1 AWS Infrastructure · 1.2 Database Setup · 1.3 CI/CD Pipeline · 1.4 Dev Environment |
+| **M2: Auth & Users** | 2.1 Cognito Integration · 2.2 User Management · 2.3 RBAC System · 2.4 Admin UI |
+| **M3: Assets & AI** | 3.1 Asset CRUD · 3.2 Image Upload · 3.3 AI Identification · 3.4 Asset UI |
+| **M4: Processing** | 4.1 Status Workflow · 4.2 Batch Management · 4.3 Operator UI |
+| **M5: Certificates** | 5.1 Certificate Generation · 5.2 PDF Service · 5.3 Audit Trail UI |
+| **M6: Launch** | 6.1 Testing · 6.2 Security Review · 6.3 UAT & Launch |
 
 ### 2.3 Milestone Details
 
