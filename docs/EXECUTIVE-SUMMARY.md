@@ -94,11 +94,11 @@ M1 Foundation → M2 Auth → M3 Assets → M4 Processing → M5 Certificates �
 
 | Priority | Item | Action Required |
 |----------|------|-----------------|
-| 🔴 | AI accuracy unknown | Approve PoC with sample IT asset images |
-| 🔴 | Operator portal scope | Confirm if separate UI needed |
-| 🟠 | ISO 27001 requirement | Confirm with enterprise prospects |
-| 🟠 | Certificate retention period | Legal consultation required |
-| 🟡 | Penetration testing | Confirm if required before launch |
+| 🔴 | <abbr title="We need to test if AWS Rekognition can accurately identify IT equipment types (laptops, servers, monitors, etc.) from photos. A Proof of Concept with real sample images from your warehouse will validate this before we commit to the approach.">AI accuracy unknown</abbr> | Approve PoC with sample IT asset images |
+| 🔴 | <abbr title="Should recycling facility staff have their own simplified interface focused on processing tasks, or can they use the same portal as clients with different permissions? A separate UI adds development cost but may improve efficiency.">Operator portal scope</abbr> | Confirm if separate UI needed |
+| 🟠 | <abbr title="ISO 27001 is an information security certification. Some enterprise clients may require AI-Reclaim to be ISO 27001 certified before they can use it. This affects infrastructure design and adds compliance overhead.">ISO 27001 requirement</abbr> | Confirm with enterprise prospects |
+| 🟠 | <abbr title="How long must certificates of destruction/recycling be stored? UK regulations typically require 3-7 years for compliance records. This affects database storage costs and data retention policies.">Certificate retention period</abbr> | Legal consultation required |
+| 🟡 | <abbr title="Penetration testing is a security assessment where ethical hackers attempt to find vulnerabilities. Required by some regulated clients (NHS, banks) but adds cost and time before launch.">Penetration testing</abbr> | Confirm if required before launch |
 
 ---
 
