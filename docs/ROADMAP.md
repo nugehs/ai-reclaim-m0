@@ -1,7 +1,7 @@
 # Milestone 0 — Delivery Roadmap
 
-**Start Date:** 13 Jan 2025
-**End Date:** 24 Jan 2025
+**Start Date:** 13 Jan 2026
+**End Date:** 24 Jan 2026
 **Duration:** 2 weeks
 
 ---

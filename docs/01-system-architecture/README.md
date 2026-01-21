@@ -1,7 +1,7 @@
 # System Architecture
 
 **Document Version:** 1.0
-**Last Updated:** 24 January 2025
+**Last Updated:** 24 January 2026
 **Status:** Draft for Review
 **Author:** Oluwasegun Olumbe
 
@@ -372,13 +372,13 @@ At national scale, [Aurora Serverless](https://aws.amazon.com/rds/aurora/serverl
 
 ### 6.3 Performance Targets
 
-| Metric | Target | Measurement Method |
-|--------|--------|-------------------|
-| API Response Time (p95) | <500ms | CloudWatch Metrics |
-| AI Identification Time | <5s | CloudWatch Metrics |
-| Platform Availability | 99.9% | CloudWatch Synthetics |
-| Audit Log Write Latency | <100ms | CloudWatch Metrics |
-| Database Query Time (p95) | <100ms | RDS Performance Insights |
+| Metric | Target |
+|--------|--------|
+| API response time | Fast (sub-second) |
+| AI identification | Under 5 seconds |
+| Platform availability | 99.9% uptime |
+
+*Detailed performance benchmarks and monitoring approach to be defined in Phase 1.*
 
 ---
 

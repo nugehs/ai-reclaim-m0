@@ -1,7 +1,7 @@
 # Core Data Model
 
 **Document Version:** 1.0
-**Last Updated:** 24 January 2025
+**Last Updated:** 24 January 2026
 **Status:** Draft for Review
 **Author:** Oluwasegun Olumbe
 
@@ -224,15 +224,14 @@ erDiagram
 
 The Organisation entity represents a client company using the platform. All tenant-scoped data is isolated by `organisation_id`.
 
-| Field | Type | Constraints | Description |
-|-------|------|-------------|-------------|
-| `id` | UUID | PK | Unique identifier |
-| `name` | VARCHAR(255) | NOT NULL | Organisation display name |
-| `type` | ENUM | NOT NULL | `nhs_trust`, `bank`, `local_authority`, `enterprise`, `recycler` |
-| `registration_number` | VARCHAR(50) | UNIQUE | Companies House or charity number |
-| `is_active` | BOOLEAN | DEFAULT true | Soft delete flag |
-| `created_at` | TIMESTAMP | NOT NULL | Record creation time |
-| `updated_at` | TIMESTAMP | NOT NULL | Last modification time |
+| Field | Description |
+|-------|-------------|
+| id | Unique identifier |
+| name | Organisation display name |
+| type | Organisation type: NHS trust, bank, local authority, enterprise, recycler |
+| registration_number | Companies House or charity number |
+| is_active | Soft delete flag |
+| created_at | Record creation time |
 
 **Business Rules:**
 - Organisation cannot be deleted if it has assets in processing
@@ -244,16 +243,16 @@ The Organisation entity represents a client company using the platform. All tena
 
 Users belong to an organisation and have role-based permissions.
 
-| Field | Type | Constraints | Description |
-|-------|------|-------------|-------------|
-| `id` | UUID | PK | Unique identifier |
-| `organisation_id` | UUID | FK, NOT NULL | Parent organisation |
-| `email` | VARCHAR(255) | UNIQUE, NOT NULL | Login identifier |
-| `name` | VARCHAR(255) | NOT NULL | Display name |
-| `role` | ENUM | NOT NULL | User role (see below) |
-| `is_active` | BOOLEAN | DEFAULT true | Account active flag |
-| `created_at` | TIMESTAMP | NOT NULL | Account creation time |
-| `last_login_at` | TIMESTAMP | | Last successful login |
+| Field | Description |
+|-------|-------------|
+| id | Unique identifier |
+| organisation_id | Parent organisation |
+| email | Login identifier (unique) |
+| name | Display name |
+| role | User role (see below) |
+| is_active | Account active flag |
+| created_at | Account creation time |
+| last_login_at | Last successful login |
 
 **User Roles:**
 
@@ -270,22 +269,22 @@ Users belong to an organisation and have role-based permissions.
 
 The Asset entity represents an individual IT equipment item tracked through the disposal lifecycle.
 
-| Field | Type | Constraints | Description |
-|-------|------|-------------|-------------|
-| `id` | UUID | PK | Unique identifier |
-| `organisation_id` | UUID | FK, NOT NULL | Owning organisation |
-| `batch_id` | UUID | FK, NULL | Optional batch grouping |
-| `asset_type_id` | UUID | FK, NOT NULL | Equipment category |
-| `serial_number` | VARCHAR(100) | | Manufacturer serial number |
-| `make` | VARCHAR(100) | | Manufacturer name |
-| `model` | VARCHAR(100) | | Model name/number |
-| `status` | ENUM | NOT NULL | Current lifecycle stage |
-| `weight_kg` | DECIMAL(10,3) | | Actual weight in kilograms |
-| `ai_identification` | JSONB | | AI recognition results |
-| `metadata` | JSONB | | Additional custom fields |
-| `registered_at` | TIMESTAMP | NOT NULL | When asset was registered |
-| `collected_at` | TIMESTAMP | | When asset was collected |
-| `completed_at` | TIMESTAMP | | When processing completed |
+| Field | Description |
+|-------|-------------|
+| id | Unique identifier |
+| organisation_id | Owning organisation |
+| batch_id | Optional batch grouping |
+| asset_type_id | Equipment category |
+| serial_number | Manufacturer serial number |
+| make | Manufacturer name |
+| model | Model name/number |
+| status | Current lifecycle stage |
+| weight_kg | Actual weight in kilograms |
+| ai_identification | AI recognition results (structured data) |
+| metadata | Additional custom fields |
+| registered_at | When asset was registered |
+| collected_at | When asset was collected |
+| completed_at | When processing completed |
 
 **Asset Status Lifecycle:**
 
@@ -315,34 +314,22 @@ stateDiagram-v2
 | `processing` | At facility, undergoing audit/sanitisation/recycling | → `completed` |
 | `completed` | Final disposition complete, certificate issued | (terminal) |
 
-**AI Identification JSON Structure:**
-```json
-{
-  "confidence": 0.94,
-  "detected_make": "Dell",
-  "detected_model": "Latitude 5520",
-  "detected_type": "laptop",
-  "image_url": "s3://bucket/org-id/assets/asset-id/photo.jpg",
-  "identified_at": "2025-01-13T10:30:00Z"
-}
-```
-
 ---
 
 ### 3.4 Batch
 
 Batches allow grouping of assets for efficient collection and processing.
 
-| Field | Type | Constraints | Description |
-|-------|------|-------------|-------------|
-| `id` | UUID | PK | Unique identifier |
-| `organisation_id` | UUID | FK, NOT NULL | Owning organisation |
-| `reference` | VARCHAR(50) | NOT NULL | Human-readable batch ID |
-| `status` | ENUM | NOT NULL | Batch status |
-| `asset_count` | INT | DEFAULT 0 | Number of assets in batch |
-| `total_weight_kg` | DECIMAL(10,3) | DEFAULT 0 | Sum of asset weights |
-| `created_at` | TIMESTAMP | NOT NULL | Batch creation time |
-| `collected_at` | TIMESTAMP | | When batch was collected |
+| Field | Description |
+|-------|-------------|
+| id | Unique identifier |
+| organisation_id | Owning organisation |
+| reference | Human-readable batch ID |
+| status | Batch status |
+| asset_count | Number of assets in batch |
+| total_weight_kg | Sum of asset weights |
+| created_at | Batch creation time |
+| collected_at | When batch was collected |
 
 **Batch Status:**
 - `open` — Accepting new assets
@@ -357,14 +344,14 @@ Batches allow grouping of assets for efficient collection and processing.
 
 Shared reference data for IT equipment categories.
 
-| Field | Type | Constraints | Description |
-|-------|------|-------------|-------------|
-| `id` | UUID | PK | Unique identifier |
-| `name` | VARCHAR(100) | NOT NULL | Display name (e.g., "Laptop") |
-| `category` | VARCHAR(50) | NOT NULL | High-level category |
-| `default_weight_kg` | DECIMAL(10,3) | | Estimated weight if not measured |
-| `co2_factor` | DECIMAL(10,4) | | kg CO2 avoided per kg recycled |
-| `is_data_bearing` | BOOLEAN | DEFAULT false | Requires data sanitisation |
+| Field | Description |
+|-------|-------------|
+| id | Unique identifier |
+| name | Display name (e.g., "Laptop") |
+| category | High-level category |
+| default_weight_kg | Estimated weight if not measured |
+| co2_factor | kg CO2 avoided per kg recycled |
+| is_data_bearing | Requires data sanitisation |
 
 **Standard Asset Types:**
 
@@ -386,18 +373,18 @@ Shared reference data for IT equipment categories.
 
 Legal compliance documents issued upon completion of asset processing.
 
-| Field | Type | Constraints | Description |
-|-------|------|-------------|-------------|
-| `id` | UUID | PK | Unique identifier |
-| `organisation_id` | UUID | FK, NOT NULL | Receiving organisation |
-| `asset_id` | UUID | FK, NULL | Single asset (if individual) |
-| `batch_id` | UUID | FK, NULL | Batch (if batch certificate) |
-| `type` | ENUM | NOT NULL | Certificate type |
-| `reference_number` | VARCHAR(50) | UNIQUE, NOT NULL | Official reference |
-| `description` | TEXT | | Certificate details |
-| `pdf_url` | VARCHAR(500) | | S3 URL to PDF document |
-| `issued_at` | TIMESTAMP | NOT NULL | Issue date/time |
-| `issued_by_user_id` | UUID | FK, NOT NULL | Issuing operator |
+| Field | Description |
+|-------|-------------|
+| id | Unique identifier |
+| organisation_id | Receiving organisation |
+| asset_id | Single asset (if individual certificate) |
+| batch_id | Batch (if batch certificate) |
+| type | Certificate type |
+| reference_number | Official reference (unique) |
+| description | Certificate details |
+| pdf_url | URL to PDF document |
+| issued_at | Issue date/time |
+| issued_by_user_id | Issuing operator |
 
 **Certificate Types:**
 
@@ -419,19 +406,19 @@ Legal compliance documents issued upon completion of asset processing.
 
 Immutable record of all significant system actions for compliance.
 
-| Field | Type | Constraints | Description |
-|-------|------|-------------|-------------|
-| `id` | UUID | PK | Unique identifier |
-| `organisation_id` | UUID | FK, NOT NULL | Tenant scope |
-| `user_id` | UUID | FK, NOT NULL | Acting user |
-| `asset_id` | UUID | FK, NULL | Related asset (if applicable) |
-| `entity_type` | VARCHAR(50) | NOT NULL | Entity being modified |
-| `entity_id` | UUID | NOT NULL | ID of modified entity |
-| `action` | VARCHAR(50) | NOT NULL | Action performed |
-| `before_state` | JSONB | | State before change |
-| `after_state` | JSONB | | State after change |
-| `ip_address` | INET | | Client IP address |
-| `created_at` | TIMESTAMP | NOT NULL | Action timestamp |
+| Field | Description |
+|-------|-------------|
+| id | Unique identifier |
+| organisation_id | Tenant scope |
+| user_id | Acting user |
+| asset_id | Related asset (if applicable) |
+| entity_type | Entity being modified |
+| entity_id | ID of modified entity |
+| action | Action performed |
+| before_state | State before change |
+| after_state | State after change |
+| ip_address | Client IP address |
+| created_at | Action timestamp |
 
 **Audit Actions:**
 
@@ -445,9 +432,8 @@ Immutable record of all significant system actions for compliance.
 | `login_failed` | User | Failed authentication attempt |
 
 **Immutability:**
-- Audit logs are append-only (no UPDATE or DELETE)
-- Enforced via PostgreSQL trigger and RLS policy
-- Archived to S3 after 90 days for long-term retention
+- Audit logs are append-only (no updates or deletes)
+- Tamper-proof storage enforced at database level
 
 ---
 
@@ -455,43 +441,23 @@ Immutable record of all significant system actions for compliance.
 
 Environmental, Social, and Governance impact reports.
 
-| Field | Type | Constraints | Description |
-|-------|------|-------------|-------------|
-| `id` | UUID | PK | Unique identifier |
-| `organisation_id` | UUID | FK, NOT NULL | Report owner |
-| `period_start` | DATE | NOT NULL | Reporting period start |
-| `period_end` | DATE | NOT NULL | Reporting period end |
-| `total_assets` | INT | NOT NULL | Assets processed in period |
-| `total_weight_kg` | DECIMAL(12,3) | NOT NULL | Total weight processed |
-| `co2_avoided_kg` | DECIMAL(12,3) | NOT NULL | CO2 emissions avoided |
-| `landfill_diverted_kg` | DECIMAL(12,3) | NOT NULL | Waste diverted from landfill |
-| `breakdown` | JSONB | | Detailed breakdown by type |
-| `pdf_url` | VARCHAR(500) | | S3 URL to PDF report |
-| `generated_at` | TIMESTAMP | NOT NULL | Report generation time |
+| Field | Description |
+|-------|-------------|
+| id | Unique identifier |
+| organisation_id | Report owner |
+| period_start | Reporting period start |
+| period_end | Reporting period end |
+| total_assets | Assets processed in period |
+| total_weight_kg | Total weight processed |
+| co2_avoided_kg | CO2 emissions avoided |
+| landfill_diverted_kg | Waste diverted from landfill |
+| breakdown | Detailed breakdown by type |
+| pdf_url | URL to PDF report |
+| generated_at | Report generation time |
 
-**ESG Breakdown JSON Structure:**
-```json
-{
-  "by_asset_type": [
-    {
-      "type": "Laptop",
-      "count": 150,
-      "weight_kg": 375.5,
-      "co2_avoided_kg": 788.55
-    }
-  ],
-  "by_disposition": {
-    "recycled": { "count": 180, "weight_kg": 420.0 },
-    "destroyed": { "count": 20, "weight_kg": 35.5 }
-  }
-}
-```
-
-**ESG Calculations:**
-- `co2_avoided_kg` = Σ (asset weight × asset_type.co2_factor)
-- `landfill_diverted_kg` = `total_weight_kg` × diversion_rate
-
-> **Note:** The formula above is a placeholder. Actual diversion rates vary by asset type and processing method. Implementation should use measured diversion rates from operational data rather than assuming 100% diversion.
+**ESG Metrics:**
+- CO2 avoided calculated from asset weights and equipment-specific factors
+- Landfill diversion based on actual processing outcomes
 
 ---
 
@@ -499,13 +465,7 @@ Environmental, Social, and Governance impact reports.
 
 ### 4.1 Isolation Strategy
 
-All tenant-scoped entities include `organisation_id` as a foreign key. PostgreSQL Row-Level Security (RLS) policies enforce isolation at the database level.
-
-```sql
--- Example RLS policy for assets table
-CREATE POLICY tenant_isolation ON assets
-    USING (organisation_id = current_setting('app.current_organisation_id')::uuid);
-```
+All tenant-scoped entities include `organisation_id` as a foreign key. Row-Level Security (RLS) policies enforce isolation at the database level, ensuring organisations can only access their own data.
 
 ### 4.2 Tenant-Scoped vs Shared Entities
 
@@ -522,42 +482,21 @@ CREATE POLICY tenant_isolation ON assets
 
 ---
 
-## 5. Indexing Strategy
+## 5. Data Retention
 
-### 5.1 Primary Indexes
-
-| Table | Index | Columns | Purpose |
-|-------|-------|---------|---------|
-| assets | `idx_assets_org_status` | (organisation_id, status) | Filter by org and status |
-| assets | `idx_assets_batch` | (batch_id) | Batch lookups |
-| assets | `idx_assets_serial` | (serial_number) | Serial number search |
-| audit_logs | `idx_audit_org_created` | (organisation_id, created_at DESC) | Audit log queries |
-| audit_logs | `idx_audit_asset` | (asset_id, created_at DESC) | Asset history |
-| certificates | `idx_certs_org_type` | (organisation_id, type) | Certificate listing |
-
-### 5.2 Full-Text Search
-
-```sql
--- Asset search index
-CREATE INDEX idx_assets_search ON assets
-    USING gin(to_tsvector('english', make || ' ' || model || ' ' || serial_number));
-```
-
----
-
-## 6. Data Retention
-
-| Data Type | Retention Period | Archive Strategy |
-|-----------|------------------|------------------|
+| Data Type | Retention Period | Notes |
+|-----------|------------------|-------|
 | Assets | Indefinite | Soft delete after 7 years |
-| Audit Logs | 7 years | Archive to S3 after 90 days |
+| Audit Logs | 7 years | Compliance requirement |
 | Certificates | Indefinite | Legal requirement |
-| ESG Reports | 7 years | Archive to S3 after 2 years |
-| Asset Images | 1 year after completion | Delete from S3 |
+| ESG Reports | 7 years | Reporting requirement |
+| Asset Images | 1 year after completion | Storage optimisation |
+
+*Indexing strategy and archive implementation to be defined in Phase 1.*
 
 ---
 
-## 7. Open Questions
+## 6. Open Questions
 
 | ID | Question | Impact | Resolution Approach |
 |----|----------|--------|---------------------|

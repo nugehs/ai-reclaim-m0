@@ -1,7 +1,7 @@
 # Phase 1 Delivery Roadmap
 
 **Document Version:** 1.0
-**Last Updated:** 24 January 2025
+**Last Updated:** 24 January 2026
 **Status:** Draft for Review
 **Author:** Oluwasegun Olumbe
 
@@ -122,20 +122,20 @@ flowchart LR
 
 ```mermaid
 flowchart TB
-    PHASE1[🚀 <b>Phase 1 — MVP</b><br/>AI-Reclaim Platform]
+    PHASE1[🚀 Phase 1 — MVP<br/>AI-Reclaim Platform]
 
     subgraph ROW1[" "]
         direction LR
-        M1[🏗️ <b>M1</b><br/>Foundation &<br/>Infrastructure]
-        M2[🔐 <b>M2</b><br/>Auth & User<br/>Management]
-        M3[🤖 <b>M3</b><br/>Asset Mgmt<br/>& AI]
+        M1[🏗️ M1: Foundation<br/>& Infrastructure]
+        M2[🔐 M2: Auth &<br/>User Management]
+        M3[🤖 M3: Asset Mgmt<br/>& AI]
     end
 
     subgraph ROW2[" "]
         direction LR
-        M4[⚙️ <b>M4</b><br/>Processing<br/>& Batches]
-        M5[📜 <b>M5</b><br/>Certificates<br/>& Audit]
-        M6[✅ <b>M6</b><br/>QA &<br/>Launch]
+        M4[⚙️ M4: Processing<br/>& Batches]
+        M5[📜 M5: Certificates<br/>& Audit]
+        M6[✅ M6: QA &<br/>Launch]
     end
 
     PHASE1 --> ROW1
@@ -143,11 +143,21 @@ flowchart TB
 
     %% Styling
     classDef rootStyle fill:#2D5A5A,stroke:#1E4040,stroke-width:3px,color:#ffffff
-    classDef milestoneStyle fill:#3D7A7A,stroke:#2D5A5A,stroke-width:2px,color:#ffffff
+    classDef infraStyle fill:#e3f2fd,stroke:#1565c0,stroke-width:2px,color:#0d47a1
+    classDef authStyle fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px,color:#4a148c
+    classDef assetStyle fill:#fce4ec,stroke:#c2185b,stroke-width:2px,color:#880e4f
+    classDef processStyle fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#bf360c
+    classDef certStyle fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px,color:#1b5e20
+    classDef qaStyle fill:#e0f7fa,stroke:#00838f,stroke-width:2px,color:#006064
     classDef invisible fill:none,stroke:none
 
     class PHASE1 rootStyle
-    class M1,M2,M3,M4,M5,M6 milestoneStyle
+    class M1 infraStyle
+    class M2 authStyle
+    class M3 assetStyle
+    class M4 processStyle
+    class M5 certStyle
+    class M6 qaStyle
     class ROW1,ROW2 invisible
 ```
 

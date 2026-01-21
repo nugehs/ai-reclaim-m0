@@ -1,7 +1,7 @@
 # Compliance, Security & Audit Logging
 
 **Document Version:** 1.0
-**Last Updated:** 24 January 2025
+**Last Updated:** 24 January 2026
 **Status:** Draft for Review
 **Author:** Oluwasegun Olumbe
 
@@ -228,7 +228,7 @@ All significant actions are logged to an immutable audit trail. The audit log ca
 
 | Field | Description | Example |
 |-------|-------------|---------|
-| Timestamp | When action occurred | 2025-01-13T10:30:00Z |
+| Timestamp | When action occurred | 2026-01-13T10:30:00Z |
 | User ID | Who performed action | uuid |
 | Organisation ID | Tenant context | uuid |
 | Action | What was done | `asset.status_changed` |
@@ -251,163 +251,20 @@ All significant actions are logged to an immutable audit trail. The audit log ca
 
 ### 4.3 Audit Log Immutability
 
-Audit log immutability is critical for compliance. A multi-layered approach ensures logs cannot be tampered with at any level.
+Audit log immutability is critical for compliance. Logs are protected at multiple levels:
 
-#### 4.3.1 Immutability Architecture
+| Protection Layer | Approach |
+|------------------|----------|
+| Database | Append-only (no updates or deletes permitted) |
+| Storage | Tamper-proof archival with enforced retention |
+| Retention | 7 years to meet compliance requirements |
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    AUDIT LOG FLOW                               │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│  Application                                                    │
-│      │                                                          │
-│      ▼                                                          │
-│  ┌─────────────────────────────────────────────────────────┐   │
-│  │              PostgreSQL (Hot Storage)                    │   │
-│  │  ┌─────────────────────────────────────────────────┐    │   │
-│  │  │  audit_logs table                               │    │   │
-│  │  │  • INSERT only (triggers block UPDATE/DELETE)   │    │   │
-│  │  │  • RLS enforced                                 │    │   │
-│  │  │  • Hash chain: each row references previous     │    │   │
-│  │  └─────────────────────────────────────────────────┘    │   │
-│  └─────────────────────────────────────────────────────────┘   │
-│      │                                                          │
-│      │ Archive Job (90 days)                                    │
-│      ▼                                                          │
-│  ┌─────────────────────────────────────────────────────────┐   │
-│  │              S3 (Cold Storage)                           │   │
-│  │  ┌─────────────────────────────────────────────────┐    │   │
-│  │  │  s3://ai-reclaim-audit-logs/                    │    │   │
-│  │  │  • Object Lock: Compliance Mode                 │    │   │
-│  │  │  • Retention: 7 years                           │    │   │
-│  │  │  • Versioning enabled                           │    │   │
-│  │  │  • Server-side encryption (KMS)                 │    │   │
-│  │  └─────────────────────────────────────────────────┘    │   │
-│  └─────────────────────────────────────────────────────────┘   │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+**Key Principles:**
+- Logs cannot be modified once written
+- Archived logs are protected against deletion
+- Export capability available for external auditors
 
-#### 4.3.2 Database-Level Controls
-
-| Control | Implementation | Purpose |
-|---------|----------------|---------|
-| INSERT-only trigger | PostgreSQL trigger on audit_logs | Blocks UPDATE and DELETE statements |
-| RLS policy | `USING (false)` for UPDATE/DELETE | Users cannot modify via SQL |
-| Separate schema | `audit` schema with restricted grants | Limits access to audit data |
-| Connection isolation | Dedicated audit writer role | Application uses least-privilege role |
-
-**Trigger Logic:**
-- Any UPDATE attempt → raises exception
-- Any DELETE attempt → raises exception
-- Only INSERT permitted from application service
-
-#### 4.3.3 S3 Object Lock Configuration
-
-S3 Object Lock provides WORM (Write Once Read Many) storage for archived audit logs.
-
-| Setting | Value | Rationale |
-|---------|-------|-----------|
-| **Mode** | Compliance | Cannot be overridden, even by root account |
-| **Retention period** | 7 years (2,555 days) | Meets financial/legal retention requirements |
-| **Versioning** | Enabled | Required for Object Lock |
-| **Encryption** | SSE-KMS | AWS managed keys with audit trail |
-| **Legal hold** | Available | Can extend retention for litigation |
-
-**Compliance Mode vs Governance Mode:**
-
-| Aspect | Compliance Mode ✓ | Governance Mode |
-|--------|-------------------|-----------------|
-| Override by root | No | Yes (with permission) |
-| Retention change | Cannot shorten | Can shorten with permission |
-| Audit requirement | Meets strict compliance | May not satisfy auditors |
-| Recommendation | **Selected** | Not recommended |
-
-**Bucket Policy:**
-- Deny `s3:DeleteObject` for all principals
-- Deny `s3:PutObjectRetention` (shorten) for all principals
-- Allow `s3:PutObjectLegalHold` for compliance officers only
-
-#### 4.3.4 Hash Chain Integrity
-
-Each audit log entry includes a cryptographic hash linking it to the previous entry, creating a tamper-evident chain.
-
-**Hash Calculation:**
-
-| Field | Included in Hash |
-|-------|------------------|
-| Previous hash | ✓ |
-| Timestamp | ✓ |
-| User ID | ✓ |
-| Organisation ID | ✓ |
-| Action | ✓ |
-| Entity type | ✓ |
-| Entity ID | ✓ |
-| Before state | ✓ |
-| After state | ✓ |
-
-**Hash Algorithm:** SHA-256
-
-**Chain Structure:**
-```
-Entry 1: hash_1 = SHA256(genesis + data_1)
-Entry 2: hash_2 = SHA256(hash_1 + data_2)
-Entry 3: hash_3 = SHA256(hash_2 + data_3)
-...
-Entry N: hash_N = SHA256(hash_N-1 + data_N)
-```
-
-**Verification Process:**
-1. Read entries in sequence
-2. Recalculate hash for each entry
-3. Compare calculated hash with stored hash
-4. Any mismatch indicates tampering
-
-#### 4.3.5 Cryptographic Signing (Future Enhancement)
-
-> **Note:** This capability is designed for future implementation. Can be deferred to Phase 2.
-
-For enhanced non-repudiation, audit log batches can be digitally signed using AWS KMS.
-
-| Component | Approach |
-|-----------|----------|
-| Signing key | AWS KMS asymmetric key (RSA_2048) |
-| Signed content | Daily batch hash + metadata |
-| Signature storage | Alongside archived logs in S3 |
-| Key rotation | Annual, with key versioning |
-| Verification | Public key available for auditors |
-
-**Benefits:**
-- Proves logs existed at signing time
-- Detects any post-signing modification
-- Non-repudiation for legal proceedings
-
-**Implementation Approach:**
-1. Daily job calculates Merkle root of day's entries
-2. Signs Merkle root with KMS key
-3. Stores signature in S3 alongside log archive
-4. Auditors can verify using public key
-
-#### 4.3.6 Verification & Compliance Reporting
-
-| Verification Type | Method | Frequency |
-|-------------------|--------|-----------|
-| Hash chain integrity | Automated job recalculates chain | Daily |
-| S3 Object Lock status | AWS Config rule | Continuous |
-| Archive completeness | Compare DB count vs S3 objects | Weekly |
-| Retention compliance | S3 Inventory report | Monthly |
-
-**Compliance Reports:**
-- Audit log volume by organisation
-- Hash verification results
-- Object Lock retention status
-- Access attempts to audit data
-
-**Audit Support:**
-- Export capability for external auditors
-- Chain verification tool for spot checks
-- Object Lock retention proof via S3 console
+*Detailed immutability implementation (hash chains, cryptographic signing) to be specified in Phase 1.*
 
 ### 4.4 Audit Log Access
 
@@ -424,23 +281,13 @@ For enhanced non-repudiation, audit log batches can be digitally signed using AW
 
 ### 5.1 Encryption
 
-| Data State | Method | Key Management |
-|------------|--------|----------------|
-| At rest (database) | AES-256 via RDS encryption | AWS KMS |
-| At rest (files) | AES-256 via S3 encryption | AWS KMS |
-| At rest (cache) | AES-256 via ElastiCache encryption | AWS KMS |
-| In transit | TLS 1.2+ (1.3 preferred) | AWS Certificate Manager |
+| Data State | Approach |
+|------------|----------|
+| At rest | AES-256 encryption for database, files, and cache |
+| In transit | TLS encryption for all communications |
+| Key management | AWS KMS managed keys with automatic rotation |
 
-### 5.2 Key Management
-
-| Aspect | Approach |
-|--------|----------|
-| Key storage | AWS KMS (FIPS 140-2 validated) |
-| Key rotation | Automatic annual rotation |
-| Access control | IAM policies, least privilege |
-| Audit | CloudTrail logging of key usage |
-
-### 5.3 Data Classification
+### 5.2 Data Classification
 
 | Classification | Examples | Handling |
 |----------------|----------|----------|
