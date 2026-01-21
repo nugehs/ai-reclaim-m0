@@ -1,6 +1,6 @@
 // AI-Reclaim Documentation - Password Protection
 (function() {
-  const PASSWORD = 'AtoZ2026';  // Change this password as needed
+  const PASSWORD = 'AtoZR2026';  // Change this password as needed
   const STORAGE_KEY = 'ai_reclaim_auth';
   const TERMS_ACCEPTED_KEY = 'ai_reclaim_terms';
 
@@ -18,7 +18,7 @@
         bottom: 20px;
         right: 20px;
         padding: 0.5rem 1rem;
-        background: #673ab7;
+        background: #2D5A5A;
         color: white;
         border: none;
         border-radius: 6px;
@@ -30,7 +30,7 @@
         transition: background 0.2s, transform 0.2s;
       }
       #logout-btn:hover {
-        background: #512da8;
+        background: #1E4040;
         transform: translateY(-2px);
       }
     `;
@@ -92,7 +92,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      background: linear-gradient(135deg, #1E4040 0%, #2D5A5A 50%, #3D7A7A 100%);
       z-index: 99999;
       display: flex;
       align-items: center;
@@ -119,7 +119,7 @@
     }
 
     .auth-container h1 {
-      color: #1a1a2e;
+      color: #2D5A5A;
       margin: 0 0 0.5rem 0;
       font-size: 1.75rem;
       font-weight: 700;
@@ -159,7 +159,7 @@
 
     #auth-password:focus {
       outline: none;
-      border-color: #673ab7;
+      border-color: #2D5A5A;
     }
 
     .auth-error {
@@ -196,7 +196,7 @@
     #auth-submit {
       width: 100%;
       padding: 1rem;
-      background: linear-gradient(135deg, #673ab7 0%, #512da8 100%);
+      background: linear-gradient(135deg, #2D5A5A 0%, #1E4040 100%);
       color: white;
       border: none;
       border-radius: 8px;
@@ -208,7 +208,7 @@
 
     #auth-submit:hover {
       transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(103, 58, 183, 0.4);
+      box-shadow: 0 4px 12px rgba(45, 90, 90, 0.4);
     }
 
     #auth-submit:active {
