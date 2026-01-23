@@ -1,0 +1,994 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Milestone 0 Technical Documentation" name="description"/>
+<meta content="Oluwasegun Olumbe" name="author"/>
+<link href="https://nugehs.github.io/ai-reclaim-m0/USER-FLOWS/" rel="canonical"/>
+<link href="../06-risks-register/" rel="prev"/>
+<link href="../ROADMAP/" rel="next"/>
+<link href="../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.1" name="generator"/>
+<title>User Flows (Scenarios) - AI-Reclaim™ — Discovery Phase</title>
+<link href="../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+<link href="../stylesheets/extra.css" rel="stylesheet"/>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="custom" data-md-color-primary="custom" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#user-flows-proposed-scenarios">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="AI-Reclaim™ — Discovery Phase" class="md-header__button md-logo" data-md-component="logo" href=".." title="AI-Reclaim™ — Discovery Phase">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m21.82 15.42-2.5 4.33c-.49.86-1.4 1.31-2.32 1.25h-2v2l-2.5-4.5L15 14v2h2.82l-2.22-3.85 4.33-2.5 1.8 3.12c.52.77.59 1.8.09 2.65M9.21 3.06h5c.98 0 1.83.57 2.24 1.39l1 1.74 1.73-1-2.64 4.41-5.15.09 1.73-1-1.41-2.45-2.21 3.85-4.34-2.5 1.8-3.12c.41-.83 1.26-1.41 2.25-1.41m-4.16 16.7-2.5-4.33c-.49-.85-.42-1.87.09-2.64l1-1.73-1.73-1 5.14.08 2.65 4.42-1.73-1L6.56 16H11v5H7.4a2.51 2.51 0 0 1-2.35-1.24"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            AI-Reclaim™ — Discovery Phase
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              User Flows (Scenarios)
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="custom" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="custom" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="custom" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="custom" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="..">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../EXECUTIVE-SUMMARY/">
+        
+  
+  
+    
+  
+  Executive Summary
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../01-system-architecture/">
+          
+  
+  
+    
+  
+  Milestone 0 Deliverables
+
+        </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="./">
+          
+  
+  
+    
+  
+  Supplementary
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="AI-Reclaim™ — Discovery Phase" class="md-nav__button md-logo" data-md-component="logo" href=".." title="AI-Reclaim™ — Discovery Phase">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m21.82 15.42-2.5 4.33c-.49.86-1.4 1.31-2.32 1.25h-2v2l-2.5-4.5L15 14v2h2.82l-2.22-3.85 4.33-2.5 1.8 3.12c.52.77.59 1.8.09 2.65M9.21 3.06h5c.98 0 1.83.57 2.24 1.39l1 1.74 1.73-1-2.64 4.41-5.15.09 1.73-1-1.41-2.45-2.21 3.85-4.34-2.5 1.8-3.12c.41-.83 1.26-1.41 2.25-1.41m-4.16 16.7-2.5-4.33c-.49-.85-.42-1.87.09-2.64l1-1.73-1.73-1 5.14.08 2.65 4.42-1.73-1L6.56 16H11v5H7.4a2.51 2.51 0 0 1-2.35-1.24"></path></svg>
+</a>
+    AI-Reclaim™ — Discovery Phase
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="..">
+<span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../EXECUTIVE-SUMMARY/">
+<span class="md-ellipsis">
+    
+  
+    Executive Summary
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_3" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../01-system-architecture/">
+<span class="md-ellipsis">
+    
+  
+    Milestone 0 Deliverables
+  
+
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Milestone 0 Deliverables
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../02-data-model/">
+<span class="md-ellipsis">
+    
+  
+    Core Data Model
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../03-api-integration/">
+<span class="md-ellipsis">
+    
+  
+    API &amp; Integration
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../04-compliance-security/">
+<span class="md-ellipsis">
+    
+  
+    Compliance &amp; Security
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../05-delivery-roadmap/">
+<span class="md-ellipsis">
+    
+  
+    Delivery Roadmap
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../06-risks-register/">
+<span class="md-ellipsis">
+    
+  
+    Risks Register
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+<span class="md-ellipsis">
+    
+  
+    Supplementary
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Supplementary
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    User Flows (Scenarios)
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    
+  
+    User Flows (Scenarios)
+  
+
+    
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#scenario-1-complete-platform-flow">
+<span class="md-ellipsis">
+      
+        Scenario 1: Complete Platform Flow
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#scenario-2-client-organisation-user-flow">
+<span class="md-ellipsis">
+      
+        Scenario 2: Client Organisation User Flow
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#scenario-3-asset-lifecycle-flow">
+<span class="md-ellipsis">
+      
+        Scenario 3: Asset Lifecycle Flow
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#scenario-4-operator-a-to-z-staff-flow">
+<span class="md-ellipsis">
+      
+        Scenario 4: Operator (A to Z Staff) Flow
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#scenario-5-auditor-flow">
+<span class="md-ellipsis">
+      
+        Scenario 5: Auditor Flow
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#scenario-6-ai-identification-flow">
+<span class="md-ellipsis">
+      
+        Scenario 6: AI Identification Flow
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#scenario-7-certificate-generation-flow">
+<span class="md-ellipsis">
+      
+        Scenario 7: Certificate Generation Flow
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#scenario-8-role-based-access-summary">
+<span class="md-ellipsis">
+      
+        Scenario 8: Role-Based Access Summary
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#summary-key-assumptions-to-validate">
+<span class="md-ellipsis">
+      
+        Summary: Key Assumptions to Validate
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#document-cross-references">
+<span class="md-ellipsis">
+      
+        Document Cross-References
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ROADMAP/">
+<span class="md-ellipsis">
+    
+  
+    Roadmap
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../GLOSSARY/">
+<span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="user-flows-proposed-scenarios">User Flows — Proposed Scenarios<a class="headerlink" href="#user-flows-proposed-scenarios" title="Permanent link">¶</a></h1>
+<p><strong>AI-Reclaim™ Discovery Phase</strong></p>
+<p><strong>Author:</strong> Oluwasegun Olumbe
+<strong>Client:</strong> A to Z IT Recycling Ltd
+<strong>Status:</strong> Complete</p>
+<hr/>
+<div class="admonition info">
+<p class="admonition-title">Supplementary Material — Added Value</p>
+<p>This document is provided as <strong>added value</strong> and is not part of the Milestone 0 scope of work. It is intended to support Phase 1 planning and requirements gathering.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Scenarios Requiring Client Validation</p>
+<p>The workflows below are <strong>proposed scenarios</strong> based on initial requirements gathering. These are <strong>not confirmed specifications</strong>.</p>
+<p><strong>We need your input to validate:</strong></p>
+<ul>
+<li>Do these flows match your actual business processes?</li>
+<li>What steps are missing or incorrect?</li>
+<li>Which user roles need adjustment?</li>
+<li>Are there alternative workflows we should consider?</li>
+</ul>
+</div>
+<hr/>
+<h2 id="scenario-1-complete-platform-flow">Scenario 1: Complete Platform Flow<a class="headerlink" href="#scenario-1-complete-platform-flow" title="Permanent link">¶</a></h2>
+<blockquote>
+<p><strong>Assumption:</strong> Client registers assets → A to Z collects &amp; processes → Client receives certificate</p>
+</blockquote>
+<div class="mermaid">flowchart TB
+    subgraph CLIENT1["🏢 CLIENT ORGANISATION"]
+        A1[🔐 Login] --&gt; A2[📝 Register Asset]
+        A2 --&gt; A3[📷 Upload Photo]
+        A3 --&gt; A4[🤖 AI Identification]
+        A4 --&gt; A5[✅ Confirm Details]
+        A5 --&gt; A6[📦 Add to Batch]
+        A6 --&gt; A7[🚀 Submit for Collection]
+    end
+
+    subgraph ATOZ["♻️ A TO Z OPERATIONS"]
+        B1[📋 View Pending Batches] --&gt; B2[🚚 Collect Assets]
+        B2 --&gt; B3[📍 Update Status: Collected]
+        B3 --&gt; B4[⚙️ Process Assets]
+        B4 --&gt; B5[🔄 Update Status: Processing]
+        B5 --&gt; B6[✔️ Complete Processing]
+        B6 --&gt; B7[📜 Generate Certificate]
+    end
+
+    subgraph CLIENT2["🏢 CLIENT ORGANISATION"]
+        C1[🔔 Receive Notification] --&gt; C2[👁️ View Certificate]
+        C2 --&gt; C3[⬇️ Download PDF]
+    end
+
+    A7 --&gt; B1
+    B7 --&gt; C1
+
+    %% Styling
+    classDef clientStyle fill:#e3f2fd,stroke:#1565c0,stroke-width:2px,color:#0d47a1
+    classDef opStyle fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px,color:#1b5e20
+    classDef resultStyle fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#bf360c
+
+    class A1,A2,A3,A4,A5,A6,A7 clientStyle
+    class B1,B2,B3,B4,B5,B6,B7 opStyle
+    class C1,C2,C3 resultStyle
+</div>
+<details class="question">
+<summary>Validation Questions</summary>
+<ol>
+<li>Does the client always register assets before collection, or does A to Z sometimes register on their behalf?</li>
+<li>Is the photo upload and AI identification step mandatory or optional?</li>
+<li>Are there any approval steps before a batch is submitted for collection?</li>
+</ol>
+</details>
+<hr/>
+<h2 id="scenario-2-client-organisation-user-flow">Scenario 2: Client Organisation User Flow<a class="headerlink" href="#scenario-2-client-organisation-user-flow" title="Permanent link">¶</a></h2>
+<blockquote>
+<p><strong>Assumption:</strong> Clients self-register assets via portal with optional AI-assisted identification</p>
+</blockquote>
+<div class="mermaid">flowchart LR
+    subgraph AUTH["🔐 AUTHENTICATION"]
+        L1[🌐 Visit Portal] --&gt; L2[📧 Enter Credentials]
+        L2 --&gt; L3{🔒 MFA Required?}
+        L3 --&gt;|Yes| L4[📱 Enter MFA Code]
+        L3 --&gt;|No| L5[🏠 Dashboard]
+        L4 --&gt; L5
+    end
+
+    subgraph REG["📝 ASSET REGISTRATION"]
+        L5 --&gt; R1[➕ New Asset]
+        R1 --&gt; R2[📷 Upload Photo]
+        R2 --&gt; R3[🤖 AI Analysis]
+        R3 --&gt; R4{🎯 Confident?}
+        R4 --&gt;|Yes| R5[✨ Auto-fill Details]
+        R4 --&gt;|No| R6[✏️ Manual Entry]
+        R5 --&gt; R7[💾 Review &amp; Save]
+        R6 --&gt; R7
+    end
+
+    subgraph TRACK["📦 BATCH &amp; TRACKING"]
+        R7 --&gt; T1[📦 Add to Batch]
+        T1 --&gt; T2[📅 Schedule Collection]
+        T2 --&gt; T3[🔍 Track Status]
+        T3 --&gt; T4[📜 Download Certificate]
+    end
+
+    %% Styling
+    classDef authStyle fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px,color:#4a148c
+    classDef regStyle fill:#e3f2fd,stroke:#1565c0,stroke-width:2px,color:#0d47a1
+    classDef trackStyle fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px,color:#1b5e20
+    classDef decisionStyle fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#bf360c
+
+    class L1,L2,L4,L5 authStyle
+    class R1,R2,R3,R5,R6,R7 regStyle
+    class T1,T2,T3,T4 trackStyle
+    class L3,R4 decisionStyle
+</div>
+<details class="question">
+<summary>Validation Questions</summary>
+<ol>
+<li>Is MFA required for all users or only admin/privileged users?</li>
+<li>Can clients edit asset details after registration, or is it locked once submitted?</li>
+<li>Who schedules collection — the client or A to Z operations?</li>
+</ol>
+</details>
+<hr/>
+<h2 id="scenario-3-asset-lifecycle-flow">Scenario 3: Asset Lifecycle Flow<a class="headerlink" href="#scenario-3-asset-lifecycle-flow" title="Permanent link">¶</a></h2>
+<blockquote>
+<p><strong>Assumption:</strong> Assets move through: Registered → Collected → Processing → Completed</p>
+</blockquote>
+<div class="mermaid">stateDiagram-v2
+    [*] --&gt; Registered: Client registers asset
+
+    Registered --&gt; Collected: A to Z collects batch
+
+    Collected --&gt; Processing: Asset received at facility
+
+    Processing --&gt; Completed: Destruction/Recycling done
+
+    Completed --&gt; [*]: Certificate issued
+
+    state Processing {
+        [*] --&gt; DataWipe
+        DataWipe --&gt; PhysicalProcess
+        PhysicalProcess --&gt; QualityCheck
+        QualityCheck --&gt; [*]
+    }
+
+    classDef registered fill:#e3f2fd,stroke:#1565c0,color:#0d47a1
+    classDef collected fill:#fff3e0,stroke:#e65100,color:#bf360c
+    classDef processing fill:#f3e5f5,stroke:#7b1fa2,color:#4a148c
+    classDef completed fill:#e8f5e9,stroke:#2e7d32,color:#1b5e20
+
+    class Registered registered
+    class Collected collected
+    class Processing processing
+    class Completed completed
+</div>
+<details class="question">
+<summary>Validation Questions</summary>
+<ol>
+<li>Are these the correct status stages, or are there additional states?</li>
+<li>Does every asset go through Data Wipe, or only data-bearing devices?</li>
+<li>Is there a "rejected" or "quarantine" state for problematic assets?</li>
+</ol>
+</details>
+<hr/>
+<h2 id="scenario-4-operator-a-to-z-staff-flow">Scenario 4: Operator (A to Z Staff) Flow<a class="headerlink" href="#scenario-4-operator-a-to-z-staff-flow" title="Permanent link">¶</a></h2>
+<blockquote>
+<p><strong>Assumption:</strong> Operators use the same portal as clients, with different permissions</p>
+</blockquote>
+<div class="mermaid">flowchart TB
+    subgraph SHIFT["🕐 START SHIFT"]
+        O1[🔐 Login] --&gt; O2[📊 View Dashboard]
+        O2 --&gt; O3[📋 See Pending Batches]
+    end
+
+    subgraph COLLECT["🚚 COLLECTION"]
+        O3 --&gt; C1[📦 Select Batch]
+        C1 --&gt; C2[📝 View Asset List]
+        C2 --&gt; C3[🏢 Collect from Client]
+        C3 --&gt; C4[✅ Verify Assets]
+        C4 --&gt; C5[📍 Mark Collected]
+    end
+
+    subgraph PROCESS["⚙️ PROCESSING"]
+        C5 --&gt; P1[📥 Receive at Facility]
+        P1 --&gt; P2[📱 Scan Asset]
+        P2 --&gt; P3[🔧 Process Asset]
+        P3 --&gt; P4{💾 Data Bearing?}
+        P4 --&gt;|Yes| P5[🗑️ Data Sanitisation]
+        P4 --&gt;|No| P6[♻️ Physical Processing]
+        P5 --&gt; P7[✔️ Mark Completed]
+        P6 --&gt; P7
+    end
+
+    subgraph CERT["📜 CERTIFICATION"]
+        P7 --&gt; X1[📋 Select Certificate Type]
+        X1 --&gt; X2[📄 Generate Certificate]
+        X2 --&gt; X3[🔔 Client Notified]
+    end
+
+    %% Styling
+    classDef shiftStyle fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px,color:#1b5e20
+    classDef collectStyle fill:#e3f2fd,stroke:#1565c0,stroke-width:2px,color:#0d47a1
+    classDef processStyle fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px,color:#4a148c
+    classDef certStyle fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#bf360c
+    classDef decisionStyle fill:#fce4ec,stroke:#c2185b,stroke-width:2px,color:#880e4f
+
+    class O1,O2,O3 shiftStyle
+    class C1,C2,C3,C4,C5 collectStyle
+    class P1,P2,P3,P5,P6,P7 processStyle
+    class X1,X2,X3 certStyle
+    class P4 decisionStyle
+</div>
+<details class="question">
+<summary>Validation Questions</summary>
+<ol>
+<li>Do operators need a separate portal/app, or is the web portal sufficient?</li>
+<li>Do operators scan assets at collection site, at facility, or both?</li>
+<li>What devices will operators use? (tablets, phones, desktop)</li>
+<li>Is there a handover/signature step when collecting from clients?</li>
+</ol>
+</details>
+<hr/>
+<h2 id="scenario-5-auditor-flow">Scenario 5: Auditor Flow<a class="headerlink" href="#scenario-5-auditor-flow" title="Permanent link">¶</a></h2>
+<blockquote>
+<p><strong>Assumption:</strong> Auditors have read-only access to verify compliance and export reports</p>
+</blockquote>
+<div class="mermaid">flowchart LR
+    subgraph ACCESS["🔐 ACCESS"]
+        A1[🔐 Login] --&gt; A2[👁️ Read-Only Dashboard]
+    end
+
+    subgraph AUDIT["📋 AUDIT ACTIVITIES"]
+        A2 --&gt; B1[🔍 Search Audit Logs]
+        B1 --&gt; B2[🎯 Filter by Date/User/Action]
+        B2 --&gt; B3[📄 View Entry Details]
+        B3 --&gt; B4[📊 Export Report]
+    end
+
+    subgraph COMPLY["✅ COMPLIANCE"]
+        A2 --&gt; C1[📜 View Certificates]
+        C1 --&gt; C2[🔗 Verify Chain of Custody]
+        C2 --&gt; C3[📈 Generate Compliance Report]
+    end
+
+    %% Styling
+    classDef accessStyle fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px,color:#4a148c
+    classDef auditStyle fill:#e3f2fd,stroke:#1565c0,stroke-width:2px,color:#0d47a1
+    classDef complyStyle fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px,color:#1b5e20
+
+    class A1,A2 accessStyle
+    class B1,B2,B3,B4 auditStyle
+    class C1,C2,C3 complyStyle
+</div>
+<details class="question">
+<summary>Validation Questions</summary>
+<ol>
+<li>Who are the auditors? (Internal A to Z staff, external auditors, client compliance teams?)</li>
+<li>What specific reports do auditors need to generate?</li>
+<li>Do auditors need real-time access or periodic report delivery?</li>
+</ol>
+</details>
+<hr/>
+<h2 id="scenario-6-ai-identification-flow">Scenario 6: AI Identification Flow<a class="headerlink" href="#scenario-6-ai-identification-flow" title="Permanent link">¶</a></h2>
+<blockquote>
+<p><strong>Assumption:</strong> AI automatically identifies IT assets from photos to reduce manual data entry</p>
+</blockquote>
+<div class="mermaid">flowchart TB
+    subgraph INPUT["📥 INPUT"]
+        I1[📷 User Uploads Photo] --&gt; I2[☁️ Image Stored in S3]
+        I3[📱 User Scans Barcode] --&gt; I4[🔢 Serial Number Captured]
+    end
+
+    subgraph AIPROC["🤖 AI PROCESSING"]
+        I2 --&gt; P1[🧠 AWS Rekognition]
+        P1 --&gt; P2{🎯 Device Recognised?}
+        P2 --&gt;|Yes| P3[✅ Return Device Type]
+        P2 --&gt;|No| P4[❓ Return Low Confidence]
+
+        I4 --&gt; P5[🔍 Database Lookup]
+        P5 --&gt; P6{📋 Match Found?}
+        P6 --&gt;|Yes| P7[✅ Return Device Details]
+        P6 --&gt;|No| P8[❌ No Match]
+    end
+
+    subgraph RESULT["📤 RESULT"]
+        P3 --&gt; R1[✨ Auto-populate Form]
+        P4 --&gt; R2[✏️ Manual Entry Required]
+        P7 --&gt; R1
+        P8 --&gt; R2
+        R1 --&gt; R3[👤 User Confirms]
+        R2 --&gt; R3
+    end
+
+    %% Styling
+    classDef inputStyle fill:#e3f2fd,stroke:#1565c0,stroke-width:2px,color:#0d47a1
+    classDef aiStyle fill:#fce4ec,stroke:#c2185b,stroke-width:2px,color:#880e4f
+    classDef resultStyle fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px,color:#1b5e20
+    classDef successStyle fill:#c8e6c9,stroke:#388e3c,stroke-width:2px,color:#1b5e20
+    classDef failStyle fill:#ffcdd2,stroke:#d32f2f,stroke-width:2px,color:#b71c1c
+    classDef decisionStyle fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#bf360c
+
+    class I1,I2,I3,I4 inputStyle
+    class P1,P5 aiStyle
+    class R1,R3 resultStyle
+    class P3,P7 successStyle
+    class P4,P8,R2 failStyle
+    class P2,P6 decisionStyle
+</div>
+<details class="question">
+<summary>Validation Questions</summary>
+<ol>
+<li>Is AI identification a must-have for MVP, or a nice-to-have?</li>
+<li>What accuracy level is acceptable? (e.g., 80%? 95%?)</li>
+<li>Should users be able to skip AI and enter details manually from the start?</li>
+</ol>
+</details>
+<hr/>
+<h2 id="scenario-7-certificate-generation-flow">Scenario 7: Certificate Generation Flow<a class="headerlink" href="#scenario-7-certificate-generation-flow" title="Permanent link">¶</a></h2>
+<blockquote>
+<p><strong>Assumption:</strong> Certificates are generated per-asset upon completion, with multiple certificate types</p>
+</blockquote>
+<div class="mermaid">flowchart TB
+    subgraph TRIGGER["🎯 TRIGGER"]
+        T1[✔️ Asset Marked Completed] --&gt; T2{📋 Certificate Type?}
+    end
+
+    subgraph VALID["✅ VALIDATION"]
+        T2 --&gt;|Destruction| V1[💾 Verify Data Bearing]
+        T2 --&gt;|Recycling| V2[♻️ Verify Recyclable]
+        T2 --&gt;|Sanitisation| V3[🗑️ Verify Data Wiped]
+        T2 --&gt;|WEEE| V4[🇪🇺 Verify WEEE Category]
+    end
+
+    subgraph GEN["📄 GENERATION"]
+        V1 --&gt; G1[📝 Create Certificate Record]
+        V2 --&gt; G1
+        V3 --&gt; G1
+        V4 --&gt; G1
+        G1 --&gt; G2[📜 Generate PDF]
+        G2 --&gt; G3[☁️ Store in S3]
+        G3 --&gt; G4[📋 Log Audit Entry]
+    end
+
+    subgraph DELIVER["📬 DELIVERY"]
+        G4 --&gt; D1[🔔 Notify Client]
+        D1 --&gt; D2[⬇️ Client Downloads PDF]
+    end
+
+    %% Styling
+    classDef triggerStyle fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#bf360c
+    classDef validStyle fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px,color:#1b5e20
+    classDef genStyle fill:#e3f2fd,stroke:#1565c0,stroke-width:2px,color:#0d47a1
+    classDef deliverStyle fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px,color:#4a148c
+    classDef decisionStyle fill:#fce4ec,stroke:#c2185b,stroke-width:2px,color:#880e4f
+
+    class T1 triggerStyle
+    class T2 decisionStyle
+    class V1,V2,V3,V4 validStyle
+    class G1,G2,G3,G4 genStyle
+    class D1,D2 deliverStyle
+</div>
+<details class="question">
+<summary>Validation Questions</summary>
+<ol>
+<li>Are certificates issued per-asset, per-batch, or both?</li>
+<li>What certificate types are required? (Destruction, Recycling, Sanitisation, WEEE, other?)</li>
+<li>Do certificates require digital signatures or just PDF generation?</li>
+<li>What retention period is required for certificates?</li>
+</ol>
+</details>
+<hr/>
+<h2 id="scenario-8-role-based-access-summary">Scenario 8: Role-Based Access Summary<a class="headerlink" href="#scenario-8-role-based-access-summary" title="Permanent link">¶</a></h2>
+<blockquote>
+<p><strong>Assumption:</strong> Four user roles with distinct permissions: Admin, Operator, Client, Auditor</p>
+</blockquote>
+<div class="mermaid">flowchart TB
+    subgraph ADMIN["👑 ADMIN"]
+        AD[🔑 Administrator]
+        AD --&gt; AD1[👥 Manage Users]
+        AD --&gt; AD2[🏢 Manage Organisations]
+        AD --&gt; AD3[👁️ View All Data]
+        AD --&gt; AD4[⚙️ System Configuration]
+    end
+
+    subgraph OPERATOR["🔧 OPERATOR"]
+        OP[👷 Operator]
+        OP --&gt; OP1[⚙️ Process Assets]
+        OP --&gt; OP2[📍 Update Status]
+        OP --&gt; OP3[📜 Generate Certificates]
+        OP --&gt; OP4[📦 View Assigned Batches]
+    end
+
+    subgraph CLIENT["🏢 CLIENT"]
+        CL[👤 Client User]
+        CL --&gt; CL1[📝 Register Assets]
+        CL --&gt; CL2[📦 Create Batches]
+        CL --&gt; CL3[🔍 Track Status]
+        CL --&gt; CL4[⬇️ Download Certificates]
+    end
+
+    subgraph AUDITOR["🔍 AUDITOR"]
+        AU[🕵️ Auditor]
+        AU --&gt; AU1[👁️ View All Data]
+        AU --&gt; AU2[📊 Export Audit Logs]
+        AU --&gt; AU3[🔒 Read-Only Access]
+    end
+
+    %% Styling
+    classDef adminStyle fill:#ffcdd2,stroke:#c62828,stroke-width:2px,color:#b71c1c
+    classDef operatorStyle fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px,color:#1b5e20
+    classDef clientStyle fill:#e3f2fd,stroke:#1565c0,stroke-width:2px,color:#0d47a1
+    classDef auditorStyle fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px,color:#4a148c
+
+    class AD,AD1,AD2,AD3,AD4 adminStyle
+    class OP,OP1,OP2,OP3,OP4 operatorStyle
+    class CL,CL1,CL2,CL3,CL4 clientStyle
+    class AU,AU1,AU2,AU3 auditorStyle
+</div>
+<details class="question">
+<summary>Validation Questions</summary>
+<ol>
+<li>Are these four roles sufficient, or are additional roles needed?</li>
+<li>Can one person have multiple roles?</li>
+<li>Are there different permission levels within each role (e.g., senior operator)?</li>
+</ol>
+</details>
+<hr/>
+<h2 id="summary-key-assumptions-to-validate">Summary: Key Assumptions to Validate<a class="headerlink" href="#summary-key-assumptions-to-validate" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Assumption</th>
+<th>Validate With</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Client registers assets before collection</td>
+<td>Client stakeholders</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Single portal serves all user types</td>
+<td>Operators, Clients</td>
+</tr>
+<tr>
+<td>3</td>
+<td>AI identification happens at registration</td>
+<td>Client stakeholders</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Operators update status at each stage</td>
+<td>A to Z operations team</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Certificates generated per-asset (not batch only)</td>
+<td>Compliance team</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Auditors need export functionality</td>
+<td>Auditor stakeholders</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="document-cross-references">Document Cross-References<a class="headerlink" href="#document-cross-references" title="Permanent link">¶</a></h2>
+<ul>
+<li><a href="../01-system-architecture/">System Architecture</a> — Technical implementation</li>
+<li><a href="../02-data-model/">Data Model</a> — Entity relationships</li>
+<li><a href="../03-api-integration/">API &amp; Integration</a> — Endpoint design</li>
+<li><a href="../04-compliance-security/">Compliance &amp; Security</a> — Audit requirements</li>
+</ul>
+</article>
+</div>
+<script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+</main>
+<footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: Risks Register" class="md-footer__link md-footer__link--prev" href="../06-risks-register/">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</div>
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                Previous
+              </span>
+<div class="md-ellipsis">
+                Risks Register
+              </div>
+</div>
+</a>
+<a aria-label="Next: Roadmap" class="md-footer__link md-footer__link--next" href="../ROADMAP/">
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                Next
+              </span>
+<div class="md-ellipsis">
+                Roadmap
+              </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      © 2026 A to Z IT Recycling Ltd. All rights reserved.
+    </div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.footer", "navigation.indexes", "toc.integrate", "search.suggest", "search.highlight", "content.tabs.link", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+<script src="../javascripts/auth.js"></script>
+<script type="module">import mermaid from "https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs";
+mermaid.initialize({});</script></body>
+</html>

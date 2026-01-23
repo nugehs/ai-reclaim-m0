@@ -1,0 +1,348 @@
+/* AI-Reclaim Brand Colors */
+:root {
+  --brand-teal-dark: #2D5A5A;
+  --brand-teal: #3D7A7A;
+  --brand-orange: #D4A039;
+  --brand-coral: #C75050;
+  --brand-green: #228B22;
+  --brand-cream: #FDF8F3;
+
+  /* MkDocs Material Theme Overrides */
+  --md-primary-fg-color: #2D5A5A;
+  --md-primary-fg-color--light: #3D7A7A;
+  --md-primary-fg-color--dark: #1E4040;
+  --md-accent-fg-color: #D4A039;
+  --md-accent-fg-color--transparent: rgba(212, 160, 57, 0.1);
+}
+
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #3D7A7A;
+  --md-primary-fg-color--light: #4D8A8A;
+  --md-primary-fg-color--dark: #2D5A5A;
+  --md-accent-fg-color: #D4A039;
+}
+
+/* Hide right sidebar (TOC) */
+.md-sidebar--secondary {
+  display: none;
+}
+
+/* Expand content to full width */
+.md-content {
+  margin-right: 0;
+}
+
+/* Header styling */
+.md-header {
+  background: linear-gradient(135deg, #2D5A5A 0%, #1E4040 100%);
+}
+
+/* Hero section for home page */
+.md-content h1:first-of-type {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+/* Improved table styling */
+.md-typeset table:not([class]) {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.md-typeset table:not([class]) th {
+  background-color: #2D5A5A;
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+.md-typeset table:not([class]) tr:nth-child(even) {
+  background-color: rgba(45, 90, 90, 0.05);
+}
+
+.md-typeset table:not([class]) tr:hover {
+  background-color: rgba(45, 90, 90, 0.1);
+}
+
+/* Status badges */
+.md-typeset table td:last-child {
+  white-space: nowrap;
+}
+
+/* Admonition styling */
+.md-typeset .admonition,
+.md-typeset details {
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Custom admonition colors */
+.md-typeset .admonition.note,
+.md-typeset details.note {
+  border-color: #3D7A7A;
+}
+
+.md-typeset .note > .admonition-title,
+.md-typeset .note > summary {
+  background-color: rgba(61, 122, 122, 0.1);
+}
+
+.md-typeset .note > .admonition-title::before,
+.md-typeset .note > summary::before {
+  background-color: #3D7A7A;
+}
+
+.md-typeset .admonition.tip,
+.md-typeset details.tip {
+  border-color: #D4A039;
+}
+
+.md-typeset .tip > .admonition-title,
+.md-typeset .tip > summary {
+  background-color: rgba(212, 160, 57, 0.1);
+}
+
+.md-typeset .tip > .admonition-title::before,
+.md-typeset .tip > summary::before {
+  background-color: #D4A039;
+}
+
+.md-typeset .admonition.warning,
+.md-typeset details.warning {
+  border-color: #C75050;
+}
+
+.md-typeset .warning > .admonition-title,
+.md-typeset .warning > summary {
+  background-color: rgba(199, 80, 80, 0.1);
+}
+
+.md-typeset .warning > .admonition-title::before,
+.md-typeset .warning > summary::before {
+  background-color: #C75050;
+}
+
+.md-typeset .admonition.success,
+.md-typeset details.success {
+  border-color: #228B22;
+}
+
+.md-typeset .success > .admonition-title,
+.md-typeset .success > summary {
+  background-color: rgba(34, 139, 34, 0.1);
+}
+
+.md-typeset .success > .admonition-title::before,
+.md-typeset .success > summary::before {
+  background-color: #228B22;
+}
+
+/* Code blocks */
+.md-typeset pre {
+  border-radius: 8px;
+}
+
+/* Mermaid diagrams */
+.mermaid {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin: 1.5rem 0;
+}
+
+[data-md-color-scheme="slate"] .mermaid {
+  background: #2d2d2d;
+}
+
+/* Navigation tabs */
+.md-tabs {
+  background: linear-gradient(135deg, #1E4040 0%, #152D2D 100%);
+}
+
+/* Footer */
+.md-footer {
+  background: #1E4040;
+}
+
+/* Blockquotes (milestone callout) */
+.md-typeset blockquote {
+  border-left: 4px solid #D4A039;
+  background: linear-gradient(135deg, rgba(212, 160, 57, 0.1) 0%, rgba(212, 160, 57, 0.05) 100%);
+  border-radius: 0 8px 8px 0;
+  padding: 1rem 1.5rem;
+}
+
+/* Links */
+.md-typeset a {
+  color: #2D5A5A;
+}
+
+.md-typeset a:hover {
+  color: #D4A039;
+}
+
+/* Content max width */
+.md-content {
+  max-width: 1200px;
+}
+
+/* Better heading spacing */
+.md-typeset h2 {
+  margin-top: 2.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid rgba(45, 90, 90, 0.2);
+}
+
+.md-typeset h3 {
+  margin-top: 1.5rem;
+  color: #2D5A5A;
+}
+
+/* Card-like sections */
+.md-typeset hr {
+  margin: 2rem 0;
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(45, 90, 90, 0.3), transparent);
+}
+
+/* TOC styling */
+.md-sidebar--secondary {
+  border-left: 1px solid rgba(45, 90, 90, 0.1);
+}
+
+/* Search */
+.md-search__input {
+  border-radius: 8px;
+}
+
+/* Navigation styling */
+.md-nav__link--active {
+  color: #2D5A5A;
+  font-weight: 600;
+}
+
+.md-nav__item--active > .md-nav__link {
+  color: #2D5A5A;
+}
+
+/* Checkbox styling for task lists */
+.md-typeset [type="checkbox"]:checked + .task-list-indicator::before {
+  background-color: #228B22;
+}
+
+/* Highlight/mark styling */
+.md-typeset mark {
+  background-color: rgba(212, 160, 57, 0.3);
+}
+
+/* Button styling */
+.md-typeset .md-button {
+  background-color: #2D5A5A;
+  border-color: #2D5A5A;
+}
+
+.md-typeset .md-button:hover {
+  background-color: #3D7A7A;
+  border-color: #3D7A7A;
+}
+
+.md-typeset .md-button--primary {
+  background-color: #D4A039;
+  border-color: #D4A039;
+}
+
+.md-typeset .md-button--primary:hover {
+  background-color: #C4902F;
+  border-color: #C4902F;
+}
+
+/* Status indicator classes */
+.status-complete {
+  color: #228B22;
+  font-weight: 600;
+}
+
+.status-in-progress {
+  color: #D4A039;
+  font-weight: 600;
+}
+
+.status-pending {
+  color: #C75050;
+  font-weight: 600;
+}
+
+/* Accent text classes */
+.text-teal {
+  color: #2D5A5A;
+}
+
+.text-orange {
+  color: #D4A039;
+}
+
+.text-coral {
+  color: #C75050;
+}
+
+.text-green {
+  color: #228B22;
+}
+
+/* Background classes */
+.bg-cream {
+  background-color: #FDF8F3;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.bg-teal {
+  background-color: #2D5A5A;
+  color: white;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+/* Callout boxes */
+.callout {
+  background-color: #FDF8F3;
+  border-left: 4px solid #D4A039;
+  padding: 1rem 1.5rem;
+  margin: 1rem 0;
+  border-radius: 0 8px 8px 0;
+}
+
+.callout-success {
+  border-left-color: #228B22;
+  background-color: rgba(34, 139, 34, 0.05);
+}
+
+.callout-warning {
+  border-left-color: #C75050;
+  background-color: rgba(199, 80, 80, 0.05);
+}
+
+.callout-info {
+  border-left-color: #3D7A7A;
+  background-color: rgba(61, 122, 122, 0.05);
+}
+
+/* Print styles */
+@media print {
+  .md-header,
+  .md-tabs,
+  .md-sidebar,
+  .md-footer {
+    display: none;
+  }
+
+  .md-content {
+    max-width: 100%;
+  }
+}

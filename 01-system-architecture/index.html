@@ -1,0 +1,1164 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Milestone 0 Technical Documentation" name="description"/>
+<meta content="Oluwasegun Olumbe" name="author"/>
+<link href="https://nugehs.github.io/ai-reclaim-m0/01-system-architecture/" rel="canonical"/>
+<link href="../EXECUTIVE-SUMMARY/" rel="prev"/>
+<link href="../02-data-model/" rel="next"/>
+<link href="../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.1" name="generator"/>
+<title>System Architecture - AI-Reclaim™ — Discovery Phase</title>
+<link href="../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+<link href="../stylesheets/extra.css" rel="stylesheet"/>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="custom" data-md-color-primary="custom" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#system-architecture">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="AI-Reclaim™ — Discovery Phase" class="md-header__button md-logo" data-md-component="logo" href=".." title="AI-Reclaim™ — Discovery Phase">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m21.82 15.42-2.5 4.33c-.49.86-1.4 1.31-2.32 1.25h-2v2l-2.5-4.5L15 14v2h2.82l-2.22-3.85 4.33-2.5 1.8 3.12c.52.77.59 1.8.09 2.65M9.21 3.06h5c.98 0 1.83.57 2.24 1.39l1 1.74 1.73-1-2.64 4.41-5.15.09 1.73-1-1.41-2.45-2.21 3.85-4.34-2.5 1.8-3.12c.41-.83 1.26-1.41 2.25-1.41m-4.16 16.7-2.5-4.33c-.49-.85-.42-1.87.09-2.64l1-1.73-1.73-1 5.14.08 2.65 4.42-1.73-1L6.56 16H11v5H7.4a2.51 2.51 0 0 1-2.35-1.24"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            AI-Reclaim™ — Discovery Phase
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              System Architecture
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="custom" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="custom" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="custom" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="custom" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="..">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../EXECUTIVE-SUMMARY/">
+        
+  
+  
+    
+  
+  Executive Summary
+
+      </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="./">
+          
+  
+  
+    
+  
+  Milestone 0 Deliverables
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../USER-FLOWS/">
+          
+  
+  
+    
+  
+  Supplementary
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="AI-Reclaim™ — Discovery Phase" class="md-nav__button md-logo" data-md-component="logo" href=".." title="AI-Reclaim™ — Discovery Phase">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m21.82 15.42-2.5 4.33c-.49.86-1.4 1.31-2.32 1.25h-2v2l-2.5-4.5L15 14v2h2.82l-2.22-3.85 4.33-2.5 1.8 3.12c.52.77.59 1.8.09 2.65M9.21 3.06h5c.98 0 1.83.57 2.24 1.39l1 1.74 1.73-1-2.64 4.41-5.15.09 1.73-1-1.41-2.45-2.21 3.85-4.34-2.5 1.8-3.12c.41-.83 1.26-1.41 2.25-1.41m-4.16 16.7-2.5-4.33c-.49-.85-.42-1.87.09-2.64l1-1.73-1.73-1 5.14.08 2.65 4.42-1.73-1L6.56 16H11v5H7.4a2.51 2.51 0 0 1-2.35-1.24"></path></svg>
+</a>
+    AI-Reclaim™ — Discovery Phase
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="..">
+<span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../EXECUTIVE-SUMMARY/">
+<span class="md-ellipsis">
+    
+  
+    Executive Summary
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    
+  
+    Milestone 0 Deliverables
+  
+
+    
+  </span>
+</a>
+<label class="md-nav__link md-nav__link--active" for="__nav_3" id="__nav_3_label" tabindex="">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="true" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Milestone 0 Deliverables
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../02-data-model/">
+<span class="md-ellipsis">
+    
+  
+    Core Data Model
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../03-api-integration/">
+<span class="md-ellipsis">
+    
+  
+    API &amp; Integration
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../04-compliance-security/">
+<span class="md-ellipsis">
+    
+  
+    Compliance &amp; Security
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../05-delivery-roadmap/">
+<span class="md-ellipsis">
+    
+  
+    Delivery Roadmap
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../06-risks-register/">
+<span class="md-ellipsis">
+    
+  
+    Risks Register
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Supplementary
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Supplementary
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../USER-FLOWS/">
+<span class="md-ellipsis">
+    
+  
+    User Flows (Scenarios)
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ROADMAP/">
+<span class="md-ellipsis">
+    
+  
+    Roadmap
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../GLOSSARY/">
+<span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="system-architecture">System Architecture<a class="headerlink" href="#system-architecture" title="Permanent link">¶</a></h1>
+<p><strong>Document Version:</strong> 1.0
+<strong>Last Updated:</strong> 23 January 2026
+<strong>Status:</strong> Complete
+<strong>Author:</strong> Oluwasegun Olumbe</p>
+<hr/>
+<blockquote>
+<p><strong>MILESTONE 0 — DISCOVERY PHASE</strong></p>
+<p>This document is a deliverable of Milestone 0, a paid discovery phase intended to define the technical, architectural, and compliance foundations of AI-Reclaim™ <strong>prior to any production build</strong>.</p>
+<p>This document does not constitute a commitment to build. Detailed scope, timelines, and commercials for development phases will be defined following successful completion and acceptance of Milestone 0.</p>
+<p>All intellectual property vests exclusively in A to Z IT Recycling Ltd.</p>
+</blockquote>
+<hr/>
+<h2 id="executive-summary">Executive Summary<a class="headerlink" href="#executive-summary" title="Permanent link">¶</a></h2>
+<p>This document defines the technical architecture for AI-Reclaim™, a compliance-first SaaS platform for IT asset disposition (ITAD) management. The architecture addresses three critical requirements for our target market of NHS trusts, banks, local authorities, and enterprises:</p>
+<ol>
+<li><strong>Regulatory compliance</strong> — Immutable audit trails, secure chain of custody, and certified destruction documentation</li>
+<li><strong>Data sovereignty</strong> — All data processing and storage within UK jurisdiction (AWS eu-west-2)</li>
+<li><strong>Scalability</strong> — Pilot deployment that scales to national adoption without re-architecture</li>
+</ol>
+<p>The proposed solution is a multi-tenant web application hosted on AWS, using PostgreSQL with Row-Level Security for tenant isolation, <a href="https://aws.amazon.com/rekognition/">AWS Rekognition</a> for AI-powered asset identification, and <a href="https://aws.amazon.com/s3/">S3</a> for secure document storage.</p>
+<p><strong>Key architectural decisions:</strong>
+- AWS eu-west-2 (London) as sole deployment region
+- Multi-tenant architecture with database-level isolation
+- Managed services (<a href="https://aws.amazon.com/cognito/">Cognito</a>, <a href="https://aws.amazon.com/rds/">RDS</a>, <a href="https://aws.amazon.com/s3/">S3</a>) to reduce operational complexity
+- Web-only MVP with responsive design for tablet use</p>
+<hr/>
+<h2 id="1-introduction">1. Introduction<a class="headerlink" href="#1-introduction" title="Permanent link">¶</a></h2>
+<h3 id="11-purpose">1.1 Purpose<a class="headerlink" href="#11-purpose" title="Permanent link">¶</a></h3>
+<p>This document provides the high-level system architecture for AI-Reclaim™. It is intended to:
+- Communicate the technical approach to stakeholders
+- Guide Phase 1 development decisions
+- Serve as a reference for security and compliance review
+- Document assumptions requiring validation</p>
+<h3 id="12-scope">1.2 Scope<a class="headerlink" href="#12-scope" title="Permanent link">¶</a></h3>
+<p>This architecture covers:
+- Application components and their interactions
+- Data storage and isolation strategy
+- Security and compliance controls
+- Scalability approach from pilot to national scale</p>
+<p>Out of scope for this document:
+- Detailed API specifications (see <code>03-api-integration/</code>)
+- Database schema design (see <code>02-data-model/</code>)
+- Security policies and procedures (see <code>04-compliance-security/</code>)</p>
+<h3 id="13-audience">1.3 Audience<a class="headerlink" href="#13-audience" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>Audience</th>
+<th>Relevant Sections</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Business stakeholders</td>
+<td>Executive Summary, Section 1</td>
+</tr>
+<tr>
+<td>Development team</td>
+<td>Sections 2-6</td>
+</tr>
+<tr>
+<td>Security/compliance</td>
+<td>Sections 4, 7, 8</td>
+</tr>
+<tr>
+<td>Operations</td>
+<td>Sections 6, 7</td>
+</tr>
+</tbody>
+</table>
+<h3 id="14-platform-overview">1.4 Platform Overview<a class="headerlink" href="#14-platform-overview" title="Permanent link">¶</a></h3>
+<p>AI-Reclaim™ is a multi-tenant SaaS platform hosted on AWS (UK region) providing IT asset disposition tracking, AI-enabled identification, and compliance reporting for regulated organisations.</p>
+<p>The platform enables organisations to maintain a complete digital chain of custody for IT assets from collection through to certified destruction or recycling, while generating the audit trails and ESG reports required by regulators.</p>
+<h3 id="11-architecture-principles">1.1 Architecture Principles<a class="headerlink" href="#11-architecture-principles" title="Permanent link">¶</a></h3>
+<p>The architecture is guided by the following principles:</p>
+<ol>
+<li>
+<p><strong>Compliance-first design</strong> — Every component is designed with audit logging, data residency, and regulatory requirements as primary concerns, not afterthoughts.</p>
+</li>
+<li>
+<p><strong>Multi-tenant isolation</strong> — Client organisations share infrastructure while data is strictly isolated at the database and storage layers to prevent cross-tenant access.</p>
+</li>
+<li>
+<p><strong>UK data sovereignty</strong> — All data processing and storage occurs exclusively within AWS eu-west-2 (London) to meet UK data protection requirements for NHS, financial services, and public sector clients.</p>
+</li>
+<li>
+<p><strong>Managed services preference</strong> — Where possible, AWS managed services are used to reduce operational overhead, improve security posture, and accelerate time-to-market.</p>
+</li>
+<li>
+<p><strong>Horizontal scalability</strong> — The architecture supports growth from pilot (1-10 organisations) to national scale (50+ organisations) without fundamental redesign.</p>
+</li>
+</ol>
+<hr/>
+<h2 id="2-high-level-architecture">2. High-Level Architecture<a class="headerlink" href="#2-high-level-architecture" title="Permanent link">¶</a></h2>
+<h3 id="21-architecture-diagram">2.1 Architecture Diagram<a class="headerlink" href="#21-architecture-diagram" title="Permanent link">¶</a></h3>
+<div class="mermaid">graph TB
+    subgraph CLIENT["🖥️ Client Layer"]
+        WEB[Web Application<br/>React/Next.js]
+    end
+
+    subgraph AWS["☁️ AWS UK Region (eu-west-2)"]
+        subgraph EDGE["🛡️ Edge &amp; Security"]
+            CF[CloudFront CDN]
+            WAF[AWS WAF]
+        end
+
+        subgraph APP["⚙️ Application Layer"]
+            ALB[Application Load Balancer]
+            AUTH[Auth Service<br/>Cognito]
+        end
+
+        subgraph ECS["🐳 ECS Fargate Cluster"]
+            subgraph CONTAINERS["Hardened Containers"]
+                API[api-service<br/>Node.js]
+                ASSET[asset-service<br/>Node.js]
+                AUDIT[audit-service<br/>Node.js]
+                CERT[certificate-service<br/>Node.js]
+                ESG[esg-service<br/>Node.js]
+                AIID[ai-identification<br/>Python]
+            end
+        end
+
+        subgraph AIML["🤖 AI/ML Layer"]
+            REKOGNITION[AWS Rekognition<br/>Image Analysis]
+        end
+
+        subgraph DATA["💾 Data Layer"]
+            ECR[ECR Registry<br/>Private, eu-west-2]
+            RDS[(PostgreSQL<br/>RDS Multi-AZ)]
+            REDIS[(ElastiCache<br/>Redis)]
+            S3[S3 Bucket<br/>Asset Images]
+            S3AUDIT[S3 Bucket<br/>Audit Logs]
+        end
+    end
+
+    WEB --&gt; CF
+    CF --&gt; WAF
+    WAF --&gt; ALB
+    ALB --&gt; API
+    API --&gt; AUTH
+    API --&gt; ASSET
+    API --&gt; AUDIT
+    API --&gt; CERT
+    API --&gt; ESG
+    ASSET --&gt; AIID
+    AIID --&gt; REKOGNITION
+    AIID --&gt; S3
+    ASSET --&gt; RDS
+    AUDIT --&gt; RDS
+    AUDIT --&gt; S3AUDIT
+    CERT --&gt; RDS
+    ESG --&gt; RDS
+    API --&gt; REDIS
+    ECR -.-&gt;|pulls| API
+
+    %% Styling
+    classDef clientStyle fill:#e1f5fe,stroke:#01579b,stroke-width:2px,color:#01579b
+    classDef edgeStyle fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#e65100
+    classDef appStyle fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px,color:#7b1fa2
+    classDef containerStyle fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px,color:#2e7d32
+    classDef aiStyle fill:#fce4ec,stroke:#c2185b,stroke-width:2px,color:#c2185b
+    classDef dataStyle fill:#e3f2fd,stroke:#1565c0,stroke-width:2px,color:#1565c0
+    classDef dbStyle fill:#fff8e1,stroke:#f9a825,stroke-width:2px,color:#f9a825
+
+    class WEB clientStyle
+    class CF,WAF edgeStyle
+    class ALB,AUTH appStyle
+    class API,ASSET,AUDIT,CERT,ESG,AIID containerStyle
+    class REKOGNITION aiStyle
+    class ECR,S3,S3AUDIT dataStyle
+    class RDS,REDIS dbStyle
+</div>
+<h3 id="22-architecture-narrative">2.2 Architecture Narrative<a class="headerlink" href="#22-architecture-narrative" title="Permanent link">¶</a></h3>
+<p>The architecture follows a layered approach where each layer has distinct responsibilities:</p>
+<p><strong>Client Layer</strong>: A single-page web application built with React/Next.js provides the user interface for all user types (client organisation staff, recycling operators, auditors, and administrators). The application is served as static assets from S3 via CloudFront, enabling global edge caching while keeping origin data in the UK.</p>
+<p><strong>Edge &amp; Security Layer</strong>: All inbound traffic passes through <a href="https://aws.amazon.com/cloudfront/">CloudFront</a> and <a href="https://aws.amazon.com/waf/">AWS WAF</a> before reaching the application. WAF provides protection against common web exploits (SQL injection, XSS), bot traffic, and DDoS attacks. This layer acts as the first line of defence for the platform.</p>
+<p><strong>Application Layer</strong>: The <a href="https://aws.amazon.com/elasticloadbalancing/">Application Load Balancer (ALB)</a> receives all inbound requests from WAF and routes them to the appropriate backend services. <a href="https://aws.amazon.com/cognito/">AWS Cognito</a> provides managed authentication, handling user identities, JWT token issuance, and MFA for compliance requirements. The ALB performs health checks and distributes traffic across container instances.</p>
+<p><strong>Container Platform (<a href="https://aws.amazon.com/fargate/">ECS Fargate</a>)</strong>: All application services run as containerised microservices on AWS ECS Fargate, using <strong>hardened base images</strong> (e.g., distroless, Chainguard, or AWS-vetted images per feasibility assessment). Regular vulnerability scanning via ECR ensures minimal CVE footprint. Container images are stored in a private <a href="https://aws.amazon.com/ecr/">ECR</a> registry within eu-west-2.</p>
+<p><strong>Business Services Layer</strong>: Five domain-specific containerised services handle core platform functionality:
+- <strong>api-service</strong> — Request routing, rate limiting, JWT validation
+- <strong>asset-service</strong> — Asset lifecycle management from registration through disposition
+- <strong>audit-service</strong> — Immutable audit log entries for all significant actions
+- <strong>certificate-service</strong> — Destruction and recycling certificate generation
+- <strong>esg-service</strong> — Environmental impact calculations and reporting</p>
+<p><strong>AI/ML Layer</strong>: The AI Identification Service enables users to identify IT assets by uploading photographs or scanning barcodes/serial numbers. Image analysis is performed by <a href="https://aws.amazon.com/rekognition/">AWS Rekognition</a>, with results matched against a device database. This accelerates asset registration and reduces data entry errors.</p>
+<p><strong>Data Layer</strong>: PostgreSQL (<a href="https://aws.amazon.com/rds/postgresql/">RDS</a>) serves as the primary transactional database, chosen for its ACID compliance, Row-Level Security support, and mature audit capabilities. Redis (<a href="https://aws.amazon.com/elasticache/redis/">ElastiCache</a>) provides caching for session data and frequently-accessed queries. <a href="https://aws.amazon.com/s3/">S3</a> buckets store asset images and archived audit logs with appropriate retention policies.</p>
+<hr/>
+<h2 id="3-component-specifications">3. Component Specifications<a class="headerlink" href="#3-component-specifications" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Purpose</th>
+<th>AWS Service</th>
+<th>Justification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Web Application</td>
+<td>User interface for all user types</td>
+<td><a href="https://aws.amazon.com/s3/">S3</a> + <a href="https://aws.amazon.com/cloudfront/">CloudFront</a></td>
+<td>Static hosting reduces attack surface; CDN improves performance</td>
+</tr>
+<tr>
+<td>Container Registry</td>
+<td>Private image storage</td>
+<td><a href="https://aws.amazon.com/ecr/">ECR</a> (eu-west-2)</td>
+<td>UK data residency; integrated scanning; immutable tags</td>
+</tr>
+<tr>
+<td>api-service</td>
+<td>API routing, rate limiting, request orchestration</td>
+<td><a href="https://aws.amazon.com/fargate/">ECS Fargate</a> (Node.js)</td>
+<td>Serverless containers; hardened base images</td>
+</tr>
+<tr>
+<td>Auth Service</td>
+<td>Authentication, JWT tokens, MFA</td>
+<td><a href="https://aws.amazon.com/cognito/">Cognito</a></td>
+<td>Managed auth with built-in MFA, federation support, compliance certifications</td>
+</tr>
+<tr>
+<td>asset-service</td>
+<td>Asset lifecycle management</td>
+<td><a href="https://aws.amazon.com/fargate/">ECS Fargate</a> (Node.js)</td>
+<td>Stateless containers; independent scaling</td>
+</tr>
+<tr>
+<td>audit-service</td>
+<td>Immutable audit log creation</td>
+<td><a href="https://aws.amazon.com/fargate/">ECS Fargate</a> (Node.js)</td>
+<td>Dedicated service ensures audit writes are never blocked</td>
+</tr>
+<tr>
+<td>certificate-service</td>
+<td>Certificate generation, PDF</td>
+<td><a href="https://aws.amazon.com/fargate/">ECS Fargate</a> (Node.js)</td>
+<td>PDF generation with Lambda burst capacity</td>
+</tr>
+<tr>
+<td>esg-service</td>
+<td>Environmental impact calculations</td>
+<td><a href="https://aws.amazon.com/fargate/">ECS Fargate</a> (Node.js)</td>
+<td>Complex calculations benefit from dedicated compute</td>
+</tr>
+<tr>
+<td>ai-identification</td>
+<td>Image classification + barcode decoding</td>
+<td><a href="https://aws.amazon.com/fargate/">ECS Fargate</a> (Python)</td>
+<td>Rekognition for images; separate barcode library</td>
+</tr>
+<tr>
+<td>Primary Database</td>
+<td>Transactional data, tenant isolation</td>
+<td><a href="https://aws.amazon.com/rds/postgresql/">RDS PostgreSQL</a></td>
+<td>ACID compliance, RLS for tenant isolation, JSON support</td>
+</tr>
+<tr>
+<td>Cache</td>
+<td>Session data, frequent queries</td>
+<td><a href="https://aws.amazon.com/elasticache/redis/">ElastiCache Redis</a></td>
+<td>Sub-millisecond latency; reduces database load</td>
+</tr>
+<tr>
+<td>Object Storage</td>
+<td>Asset images, PDFs, audit archives</td>
+<td><a href="https://aws.amazon.com/s3/">S3</a></td>
+<td>Unlimited scale; lifecycle policies for retention management</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="4-multi-tenant-architecture">4. Multi-Tenant Architecture<a class="headerlink" href="#4-multi-tenant-architecture" title="Permanent link">¶</a></h2>
+<h3 id="41-tenant-isolation-diagram">4.1 Tenant Isolation Diagram<a class="headerlink" href="#41-tenant-isolation-diagram" title="Permanent link">¶</a></h3>
+<div class="mermaid">graph LR
+    subgraph ISOLATION["🔐 Tenant Isolation Strategy"]
+        API[🌐 API Layer] --&gt; TID{🎫 Tenant ID<br/>from JWT}
+        TID --&gt; RLS[🛡️ Row-Level Security<br/>PostgreSQL]
+        TID --&gt; S3P[📁 S3 Prefix<br/>per Tenant]
+        TID --&gt; CACHE[💨 Redis Namespace<br/>per Tenant]
+    end
+
+    %% Styling
+    classDef apiStyle fill:#e3f2fd,stroke:#1565c0,stroke-width:2px,color:#1565c0
+    classDef decisionStyle fill:#fff3e0,stroke:#e65100,stroke-width:3px,color:#e65100
+    classDef securityStyle fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px,color:#2e7d32
+    classDef storageStyle fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px,color:#7b1fa2
+    classDef cacheStyle fill:#fce4ec,stroke:#c2185b,stroke-width:2px,color:#c2185b
+
+    class API apiStyle
+    class TID decisionStyle
+    class RLS securityStyle
+    class S3P storageStyle
+    class CACHE cacheStyle
+</div>
+<h3 id="42-isolation-strategy">4.2 Isolation Strategy<a class="headerlink" href="#42-isolation-strategy" title="Permanent link">¶</a></h3>
+<p>Multi-tenancy is a core architectural decision that enables infrastructure sharing while maintaining strict data isolation between client organisations. The isolation strategy operates at multiple levels:</p>
+<p><strong>Authentication Level</strong>: When a user authenticates via Cognito, their JWT token includes an <code>organisation_id</code> claim. This claim is extracted and validated on every API request, ensuring users can only access data belonging to their organisation.</p>
+<p><strong>Database Level</strong>: PostgreSQL Row-Level Security (RLS) policies automatically filter all queries by <code>organisation_id</code>. Even if application code contains a bug that omits tenant filtering, the database layer enforces isolation. This defence-in-depth approach is critical for regulated environments.</p>
+<p><strong>Storage Level</strong>: S3 objects are stored with a tenant-specific prefix structure (<code>s3://bucket/{organisation_id}/...</code>). IAM policies and bucket policies restrict access to tenant-specific prefixes based on the authenticated user's organisation.</p>
+<p><strong>Cache Level</strong>: Redis keys are namespaced per tenant (<code>{organisation_id}:cache_key</code>), preventing cache pollution between organisations.</p>
+<p>This multi-layered approach ensures that a failure at any single layer does not result in cross-tenant data exposure.</p>
+<hr/>
+<h2 id="5-design-assumptions">5. Design Assumptions<a class="headerlink" href="#5-design-assumptions" title="Permanent link">¶</a></h2>
+<p>This section documents assumptions made during architecture definition. Assumptions are categorised by confidence level and validation status.</p>
+<h3 id="51-confirmed-assumptions">5.1 Confirmed Assumptions<a class="headerlink" href="#51-confirmed-assumptions" title="Permanent link">¶</a></h3>
+<p>These assumptions are based on explicit requirements or stakeholder decisions:</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Assumption</th>
+<th>Source</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A1</td>
+<td>Platform will be web-only for MVP</td>
+<td>Stakeholder decision</td>
+<td>Native mobile apps deferred to future phase</td>
+</tr>
+<tr>
+<td>A2</td>
+<td>AWS is the cloud provider</td>
+<td>Stakeholder decision</td>
+<td>Selected over Azure/GCP</td>
+</tr>
+<tr>
+<td>A3</td>
+<td>All data must reside in UK</td>
+<td>Compliance requirement</td>
+<td>NHS, financial services, public sector mandate</td>
+</tr>
+<tr>
+<td>A4</td>
+<td>Multi-tenant architecture</td>
+<td>Stakeholder decision</td>
+<td>Isolation via RLS</td>
+</tr>
+</tbody>
+</table>
+<h3 id="52-technical-assumptions">5.2 Technical Assumptions<a class="headerlink" href="#52-technical-assumptions" title="Permanent link">¶</a></h3>
+<p>These assumptions are based on technical analysis and require validation:</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Assumption</th>
+<th>Confidence</th>
+<th>Validation Approach</th>
+<th>Risk if Invalid</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>T1</td>
+<td>AWS Cognito meets authentication requirements including MFA and potential SSO</td>
+<td>High</td>
+<td>Review Cognito capabilities against NHS/enterprise SSO requirements</td>
+<td>May need custom auth implementation</td>
+</tr>
+<tr>
+<td>T2</td>
+<td>PostgreSQL RLS provides sufficient tenant isolation</td>
+<td>High</td>
+<td>Security review during Phase 1</td>
+<td>May need schema-per-tenant approach</td>
+</tr>
+<tr>
+<td>T3</td>
+<td>PostgreSQL handles audit write volume</td>
+<td>Medium</td>
+<td>Load testing with projected volumes</td>
+<td>May need separate audit database or time-series DB</td>
+</tr>
+<tr>
+<td>T4</td>
+<td>AWS Rekognition recognises IT equipment (laptops, servers, monitors)</td>
+<td>Low</td>
+<td><strong>Requires PoC</strong> with sample IT asset images</td>
+<td>May need custom ML model training</td>
+</tr>
+<tr>
+<td>T5</td>
+<td>Synchronous AI identification completes within 5 seconds</td>
+<td>Medium</td>
+<td>Performance testing during Phase 1</td>
+<td>May need async pattern with webhooks/polling</td>
+</tr>
+<tr>
+<td>T6</td>
+<td>ECS Fargate provides adequate compute flexibility</td>
+<td>High</td>
+<td>Standard AWS pattern</td>
+<td>Unlikely to be invalid</td>
+</tr>
+</tbody>
+</table>
+<h3 id="53-business-assumptions">5.3 Business Assumptions<a class="headerlink" href="#53-business-assumptions" title="Permanent link">¶</a></h3>
+<p>These assumptions relate to user requirements and workflows:</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Assumption</th>
+<th>Confidence</th>
+<th>Validation Approach</th>
+<th>Risk if Invalid</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>B1</td>
+<td>Recycling operators can use same portal as clients (with different permissions)</td>
+<td><strong>Unknown</strong></td>
+<td>User research / stakeholder interview</td>
+<td>May need separate operator portal</td>
+</tr>
+<tr>
+<td>B2</td>
+<td>Responsive web design is acceptable for warehouse/field use</td>
+<td>Medium</td>
+<td>User testing with target devices</td>
+<td>May need PWA with offline capability</td>
+</tr>
+<tr>
+<td>B3</td>
+<td>99.9% availability SLA meets customer expectations</td>
+<td>High</td>
+<td>Confirm in sales process</td>
+<td>Higher SLA requires multi-region architecture</td>
+</tr>
+<tr>
+<td>B4</td>
+<td>English-only interface is acceptable for MVP</td>
+<td>High</td>
+<td>Confirm with stakeholders</td>
+<td>Internationalisation adds complexity</td>
+</tr>
+</tbody>
+</table>
+<h3 id="54-assumptions-requiring-immediate-validation">5.4 Assumptions Requiring Immediate Validation<a class="headerlink" href="#54-assumptions-requiring-immediate-validation" title="Permanent link">¶</a></h3>
+<p>The following assumptions are high-risk and should be validated before Phase 1 development begins:</p>
+<table>
+<thead>
+<tr>
+<th>Priority</th>
+<th>ID</th>
+<th>Assumption</th>
+<th>Recommended Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🔴 Critical</td>
+<td>T4</td>
+<td>Rekognition recognises IT equipment</td>
+<td>Run PoC with 50+ sample images of typical IT assets</td>
+</tr>
+<tr>
+<td>🟠 High</td>
+<td>B1</td>
+<td>Operators use same portal</td>
+<td>Interview 2-3 recycling operators about their workflow</td>
+</tr>
+<tr>
+<td>🟡 Medium</td>
+<td>T3</td>
+<td>PostgreSQL audit performance</td>
+<td>Estimate audit event volume; compare to PostgreSQL benchmarks</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="6-scalability-considerations">6. Scalability Considerations<a class="headerlink" href="#6-scalability-considerations" title="Permanent link">¶</a></h2>
+<h3 id="61-growth-path">6.1 Growth Path<a class="headerlink" href="#61-growth-path" title="Permanent link">¶</a></h3>
+<p>The architecture is designed to scale through three phases without fundamental redesign:</p>
+<div class="mermaid">graph LR
+    PILOT[🚀 Pilot<br/>1-10 orgs] --&gt; GROWTH[📈 Growth<br/>10-50 orgs]
+    GROWTH --&gt; SCALE[🏢 Scale<br/>50+ orgs]
+
+    PILOT -.- P1[Single RDS<br/>Fargate min]
+    GROWTH -.- G1[RDS read replicas<br/>Fargate scaling]
+    SCALE -.- S1[Aurora Serverless<br/>Multiple AZs]
+
+    %% Styling
+    classDef pilotStyle fill:#e8f5e9,stroke:#2e7d32,stroke-width:3px,color:#1b5e20
+    classDef growthStyle fill:#fff3e0,stroke:#e65100,stroke-width:3px,color:#bf360c
+    classDef scaleStyle fill:#e3f2fd,stroke:#1565c0,stroke-width:3px,color:#0d47a1
+    classDef specStyle fill:#fafafa,stroke:#757575,stroke-width:1px,color:#616161
+
+    class PILOT pilotStyle
+    class GROWTH growthStyle
+    class SCALE scaleStyle
+    class P1,G1,S1 specStyle
+</div>
+<h3 id="62-phase-specifications">6.2 Phase Specifications<a class="headerlink" href="#62-phase-specifications" title="Permanent link">¶</a></h3>
+<p><strong>Pilot Phase (1-10 Organisations)</strong></p>
+<p>The pilot phase establishes the foundation for growth. Infrastructure is sized for minimal viable capacity with auto-scaling headroom.</p>
+<table>
+<thead>
+<tr>
+<th>Resource</th>
+<th>Sizing</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>API Compute</td>
+<td>ECS Fargate 0.5 vCPU / 1GB, 1-4 tasks</td>
+</tr>
+<tr>
+<td>Database</td>
+<td>RDS db.t3.medium, Single-AZ</td>
+</tr>
+<tr>
+<td>Cache</td>
+<td>ElastiCache cache.t3.micro</td>
+</tr>
+<tr>
+<td>Storage</td>
+<td>S3 Standard</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Growth Phase (10-50 Organisations)</strong></p>
+<p>As user base grows, the focus shifts to resilience and read performance. Database read replicas offload reporting queries from the primary instance.</p>
+<table>
+<thead>
+<tr>
+<th>Resource</th>
+<th>Sizing</th>
+<th>Changes from Pilot</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>API Compute</td>
+<td>Fargate 2-10 tasks</td>
+<td>Increased min capacity</td>
+</tr>
+<tr>
+<td>Database</td>
+<td>RDS Multi-AZ + Read Replica</td>
+<td>Add failover and read scaling</td>
+</tr>
+<tr>
+<td>Cache</td>
+<td>ElastiCache cluster mode</td>
+<td>Add cache redundancy</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Scale Phase (50+ Organisations)</strong></p>
+<p>At national scale, <a href="https://aws.amazon.com/rds/aurora/serverless/">Aurora Serverless</a> provides automatic scaling based on demand, and services may be split into independently deployable microservices.</p>
+<table>
+<thead>
+<tr>
+<th>Resource</th>
+<th>Sizing</th>
+<th>Changes from Growth</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Database</td>
+<td>Aurora Serverless v2</td>
+<td>Auto-scaling, higher IOPS</td>
+</tr>
+<tr>
+<td>Compute</td>
+<td>Fargate with service mesh</td>
+<td>Independent service scaling</td>
+</tr>
+<tr>
+<td>Observability</td>
+<td>Enhanced CloudWatch, X-Ray</td>
+<td>Distributed tracing</td>
+</tr>
+</tbody>
+</table>
+<h3 id="63-performance-targets">6.3 Performance Targets<a class="headerlink" href="#63-performance-targets" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Target</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>API response time</td>
+<td>Fast (sub-second)</td>
+</tr>
+<tr>
+<td>AI identification</td>
+<td>Under 5 seconds</td>
+</tr>
+<tr>
+<td>Platform availability</td>
+<td>99.9% uptime</td>
+</tr>
+</tbody>
+</table>
+<p><em>Detailed performance benchmarks and monitoring approach to be defined in Phase 1.</em></p>
+<hr/>
+<h2 id="7-security-architecture">7. Security Architecture<a class="headerlink" href="#7-security-architecture" title="Permanent link">¶</a></h2>
+<p>Security is addressed in detail in <code>04-compliance-security/README.md</code>. This section summarises the key architectural security controls:</p>
+<h3 id="71-network-security">7.1 Network Security<a class="headerlink" href="#71-network-security" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>VPC isolation</strong>: All backend services run in private subnets with no direct internet access</li>
+<li><strong>Security groups</strong>: Least-privilege network access between components</li>
+<li><strong>NAT Gateway</strong>: Controlled outbound internet access for services requiring external APIs</li>
+</ul>
+<h3 id="72-data-security">7.2 Data Security<a class="headerlink" href="#72-data-security" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Encryption in transit</strong>: TLS 1.3 enforced on all connections</li>
+<li><strong>Encryption at rest</strong>: <a href="https://aws.amazon.com/kms/">AWS KMS</a>-managed keys for RDS, S3, and ElastiCache</li>
+<li><strong>Key rotation</strong>: Automatic annual key rotation via <a href="https://aws.amazon.com/kms/">KMS</a></li>
+</ul>
+<h3 id="73-application-security">7.3 Application Security<a class="headerlink" href="#73-application-security" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>WAF rules</strong>: OWASP Top 10 protection, rate limiting, bot detection</li>
+<li><strong>Input validation</strong>: All API inputs validated against schemas</li>
+<li><strong>Output encoding</strong>: Prevent XSS via content security policies</li>
+</ul>
+<h3 id="74-access-control">7.4 Access Control<a class="headerlink" href="#74-access-control" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>IAM roles</strong>: Service-specific roles with least-privilege policies</li>
+<li><strong>Cognito MFA</strong>: Multi-factor authentication required for privileged users</li>
+<li><strong>Audit logging</strong>: All access and changes logged to <a href="https://aws.amazon.com/cloudtrail/">CloudTrail</a> and application audit log</li>
+</ul>
+<hr/>
+<h2 id="8-uk-data-residency">8. UK Data Residency<a class="headerlink" href="#8-uk-data-residency" title="Permanent link">¶</a></h2>
+<p>Compliance with UK data protection requirements is a non-negotiable architectural constraint. The following measures ensure all data remains within UK jurisdiction:</p>
+<table>
+<thead>
+<tr>
+<th>Requirement</th>
+<th>Implementation</th>
+<th>Verification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>All data stored in UK</td>
+<td>AWS eu-west-2 (London) region exclusively</td>
+<td><a href="https://aws.amazon.com/config/">AWS Config</a> rules</td>
+</tr>
+<tr>
+<td>No cross-region replication</td>
+<td>Replication disabled by IAM policy</td>
+<td>IAM policy audit</td>
+</tr>
+<tr>
+<td>Backups in UK</td>
+<td>RDS automated backups in eu-west-2</td>
+<td>Backup configuration audit</td>
+</tr>
+<tr>
+<td>Processing in UK</td>
+<td>All compute resources in eu-west-2</td>
+<td>Resource tagging audit</td>
+</tr>
+<tr>
+<td>CDN edge locations</td>
+<td>CloudFront geo-restriction (optional)</td>
+<td>Distribution configuration</td>
+</tr>
+</tbody>
+</table>
+<h3 id="81-compliance-certifications">8.1 Compliance Certifications<a class="headerlink" href="#81-compliance-certifications" title="Permanent link">¶</a></h3>
+<p>AWS eu-west-2 maintains security certifications that support compliance efforts:
+- ISO 27001, 27017, 27018
+- SOC 1, 2, 3</p>
+<p><strong>Note:</strong> Cyber Essentials Plus and NHS DSPT are organisation-level certifications that remain the responsibility of A to Z IT Recycling Ltd. AWS infrastructure supports achieving these certifications, but the organisation must implement appropriate controls and complete the certification process.</p>
+<hr/>
+<h2 id="9-decision-log">9. Decision Log<a class="headerlink" href="#9-decision-log" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Decision</th>
+<th>Rationale</th>
+<th>Alternatives Considered</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>D1</td>
+<td>AWS as cloud provider</td>
+<td>UK region availability, NHS compliance, managed services</td>
+<td>Azure (strong NHS presence), GCP</td>
+</tr>
+<tr>
+<td>D2</td>
+<td>PostgreSQL as primary database</td>
+<td>RLS for multi-tenancy, ACID for audit, team familiarity</td>
+<td>MongoDB (flexible schema), DynamoDB (serverless)</td>
+</tr>
+<tr>
+<td>D3</td>
+<td>Multi-tenant shared infrastructure</td>
+<td>Shared infrastructure with isolation via RLS</td>
+<td>Single-tenant (simpler isolation)</td>
+</tr>
+<tr>
+<td>D4</td>
+<td>Web-only MVP</td>
+<td>Faster time-to-market; responsive design covers tablets</td>
+<td>Native mobile apps (better offline support)</td>
+</tr>
+<tr>
+<td>D5</td>
+<td>Mermaid for diagrams</td>
+<td>Version-controllable, renders in GitHub/IDEs</td>
+<td>Draw.io (richer visuals), Lucidchart (collaboration)</td>
+</tr>
+<tr>
+<td>D6</td>
+<td>Hardened base images</td>
+<td>Minimal CVE footprint; regular vulnerability scanning</td>
+<td>Standard Docker images (higher CVE risk)</td>
+</tr>
+<tr>
+<td>D7</td>
+<td>Microservices on ECS Fargate</td>
+<td>Independent scaling; fault isolation; serverless ops</td>
+<td>Monolith (simpler), EKS (more complex)</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="10-open-questions">10. Open Questions<a class="headerlink" href="#10-open-questions" title="Permanent link">¶</a></h2>
+<p>The following questions require resolution before or during Phase 1:</p>
+<ol>
+<li>
+<p><strong>Operator portal scope</strong>: Do recycling operators require a separate portal with different workflows, or can role-based access within the same portal suffice?</p>
+</li>
+<li>
+<p><strong>AI model training</strong>: Will AWS Rekognition recognise IT assets (laptops, servers, monitors) out-of-the-box, or will custom model training be required?</p>
+</li>
+<li>
+<p><strong>Offline capability</strong>: Do field staff require offline data entry capability, and if so, what sync strategy should be used?</p>
+</li>
+<li>
+<p><strong>Integration requirements</strong>: What existing systems (ERP, ticketing, logistics) do target customers need to integrate with?</p>
+</li>
+<li>
+<p><strong>Certificate legal requirements</strong>: What specific content and format is required for destruction certificates to be legally valid in UK jurisdictions?</p>
+</li>
+</ol>
+</article>
+</div>
+<script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+</main>
+<footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: Executive Summary" class="md-footer__link md-footer__link--prev" href="../EXECUTIVE-SUMMARY/">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</div>
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                Previous
+              </span>
+<div class="md-ellipsis">
+                Executive Summary
+              </div>
+</div>
+</a>
+<a aria-label="Next: Core Data Model" class="md-footer__link md-footer__link--next" href="../02-data-model/">
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                Next
+              </span>
+<div class="md-ellipsis">
+                Core Data Model
+              </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      © 2026 A to Z IT Recycling Ltd. All rights reserved.
+    </div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.footer", "navigation.indexes", "toc.integrate", "search.suggest", "search.highlight", "content.tabs.link", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+<script src="../javascripts/auth.js"></script>
+<script type="module">import mermaid from "https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs";
+mermaid.initialize({});</script></body>
+</html>
