@@ -1,7 +1,7 @@
 # Milestone 0 — Delivery Roadmap
 
 **Start Date:** 13 Jan 2026
-**End Date:** 24 Jan 2026
+**End Date:** 23 Jan 2026
 **Duration:** 2 weeks
 
 ---
@@ -15,7 +15,7 @@
 | Create architecture diagram (Mermaid) | ✅ | 15 Jan |
 | Document design assumptions | ✅ | 15 Jan |
 | Define scalability considerations | ✅ | 16 Jan |
-| Review & refine | ⬜ | 17 Jan |
+| Review & refine | ✅ | 17 Jan |
 
 ### 02 — Core Data Model
 | Task | Status | Due |
@@ -34,7 +34,7 @@
 
 ---
 
-## Week 2 (20–24 Jan)
+## Week 2 (20–23 Jan)
 
 ### 04 — Compliance, Security & Audit Logging
 | Task | Status | Due |
@@ -56,8 +56,8 @@
 |------|--------|-----|
 | Identify technical risks | ✅ | 23 Jan |
 | Identify compliance risks | ✅ | 23 Jan |
-| Define mitigation strategies | ✅ | 24 Jan |
-| Final review & sign-off prep | ✅ | 24 Jan |
+| Define mitigation strategies | ✅ | 23 Jan |
+| Final review & sign-off prep | ✅ | 23 Jan |
 
 ---
 

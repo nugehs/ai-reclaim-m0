@@ -151,7 +151,7 @@ M1 Foundation → M2 Auth → M3 Assets → M4 Processing → M5 Certificates �
 # System Architecture
 
 **Document Version:** 1.0
-**Last Updated:** 13 January 2026
+**Last Updated:** 23 January 2026
 **Status:** Complete
 **Author:** AI-Reclaim Development Team
 
@@ -576,7 +576,7 @@ The following questions require resolution before or during Phase 1:
 # Core Data Model
 
 **Document Version:** 1.0
-**Last Updated:** 13 January 2026
+**Last Updated:** 23 January 2026
 **Status:** Complete
 
 ---
@@ -1066,7 +1066,7 @@ All tenant-scoped entities include `organisation_id` as a foreign key. Row-Level
 # API & Integration Outline
 
 **Document Version:** 1.0
-**Last Updated:** January 2026
+**Last Updated:** 23 January 2026
 **Status:** Complete
 
 ---
@@ -1339,7 +1339,7 @@ Potential external integrations identified for future phases:
 # Compliance, Security & Audit Logging
 
 **Document Version:** 1.0
-**Last Updated:** January 2026
+**Last Updated:** 23 January 2026
 **Status:** Complete
 
 ---
@@ -1778,7 +1778,7 @@ Audit log immutability is critical for compliance. Logs are protected at multipl
 # Phase 1 Delivery Roadmap
 
 **Document Version:** 1.0
-**Last Updated:** January 2026
+**Last Updated:** 23 January 2026
 **Status:** Complete
 
 ---
@@ -2143,7 +2143,7 @@ No milestone can start until the previous is complete due to technical dependenc
 # Risks & Unknowns Register
 
 **Document Version:** 1.0
-**Last Updated:** January 2026
+**Last Updated:** 23 January 2026
 **Status:** Complete
 
 ---

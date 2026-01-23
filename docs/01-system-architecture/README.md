@@ -1,7 +1,7 @@
 # System Architecture
 
 **Document Version:** 1.0
-**Last Updated:** 24 January 2026
+**Last Updated:** 23 January 2026
 **Status:** Draft for Review
 **Author:** Oluwasegun Olumbe
 
