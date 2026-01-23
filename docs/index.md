@@ -19,12 +19,12 @@
 
 | # | Document | Description | Status |
 |:-:|----------|-------------|:------:|
-| 01 | [:material-server-network: System Architecture](./01-system-architecture/README.md) | AWS design, multi-tenant architecture, scalability | :material-file-search: Review |
-| 02 | [:material-database: Core Data Model](./02-data-model/README.md) | Entities, relationships, ER diagrams | :material-file-search: Review |
-| 03 | [:material-api: API & Integration](./03-api-integration/README.md) | REST API structure, auth, integrations | :material-file-search: Review |
-| 04 | [:material-shield-check: Compliance & Security](./04-compliance-security/README.md) | GDPR, NHS DSPT, audit logging | :material-file-search: Review |
-| 05 | [:material-road-variant: Delivery Roadmap](./05-delivery-roadmap/README.md) | Phase 1 scope, milestones | :material-file-search: Review |
-| 06 | [:material-alert-circle: Risks Register](./06-risks-register/README.md) | Risks, unknowns, mitigations | :material-file-search: Review |
+| 01 | [:material-server-network: System Architecture](./01-system-architecture/README.md) | AWS design, multi-tenant architecture, scalability | :material-check-circle: Complete |
+| 02 | [:material-database: Core Data Model](./02-data-model/README.md) | Entities, relationships, ER diagrams | :material-check-circle: Complete |
+| 03 | [:material-api: API & Integration](./03-api-integration/README.md) | REST API structure, auth, integrations | :material-check-circle: Complete |
+| 04 | [:material-shield-check: Compliance & Security](./04-compliance-security/README.md) | GDPR, NHS DSPT, audit logging | :material-check-circle: Complete |
+| 05 | [:material-road-variant: Delivery Roadmap](./05-delivery-roadmap/README.md) | Phase 1 scope, milestones | :material-check-circle: Complete |
+| 06 | [:material-alert-circle: Risks Register](./06-risks-register/README.md) | Risks, unknowns, mitigations | :material-check-circle: Complete |
 
 ---
 
@@ -35,8 +35,8 @@
 
 | Document | Description | Status |
 |----------|-------------|:------:|
-| [:material-account-arrow-right: User Flows (Scenarios)](./USER-FLOWS.md) | Proposed user journeys — requires validation | :material-file-search: Review |
-| [:material-book-alphabet: Glossary](./GLOSSARY.md) | Acronyms and terminology reference | :material-file-search: Review |
+| [:material-account-arrow-right: User Flows (Scenarios)](./USER-FLOWS.md) | Proposed user journeys — requires validation | :material-check-circle: Complete |
+| [:material-book-alphabet: Glossary](./GLOSSARY.md) | Acronyms and terminology reference | :material-check-circle: Complete |
 
 ---
 
