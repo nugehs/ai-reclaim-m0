@@ -3,6 +3,35 @@
   const PASSWORD = 'AtoZR2026';  // Change this password as needed
   const STORAGE_KEY = 'ai_reclaim_auth';
   const TERMS_ACCEPTED_KEY = 'ai_reclaim_terms';
+  const LOGIN_TIME_KEY = 'ai_reclaim_login_time';
+  const SESSION_DURATION = 45 * 60 * 1000; // 45 minutes in milliseconds
+
+  // Check if session has expired
+  function isSessionExpired() {
+    const loginTime = sessionStorage.getItem(LOGIN_TIME_KEY);
+    if (!loginTime) return true;
+    return (Date.now() - parseInt(loginTime)) > SESSION_DURATION;
+  }
+
+  // Clear session and reload
+  function logout() {
+    sessionStorage.removeItem(STORAGE_KEY);
+    sessionStorage.removeItem(TERMS_ACCEPTED_KEY);
+    sessionStorage.removeItem(LOGIN_TIME_KEY);
+    window.location.reload();
+  }
+
+  // Set up auto-logout timer
+  function setupAutoLogout() {
+    const loginTime = parseInt(sessionStorage.getItem(LOGIN_TIME_KEY));
+    const timeRemaining = SESSION_DURATION - (Date.now() - loginTime);
+    if (timeRemaining > 0) {
+      setTimeout(function() {
+        alert('Your session has expired after 45 minutes. Please log in again.');
+        logout();
+      }, timeRemaining);
+    }
+  }
 
   // Add logout button if authenticated
   function addLogoutButton() {
@@ -37,17 +66,18 @@
     document.head.appendChild(logoutStyles);
     document.body.appendChild(logoutBtn);
 
-    logoutBtn.addEventListener('click', function() {
-      sessionStorage.removeItem(STORAGE_KEY);
-      sessionStorage.removeItem(TERMS_ACCEPTED_KEY);
-      window.location.reload();
-    });
+    logoutBtn.addEventListener('click', logout);
   }
 
-  // Check if already authenticated
+  // Check if already authenticated and session not expired
   if (sessionStorage.getItem(STORAGE_KEY) === 'true' &&
       sessionStorage.getItem(TERMS_ACCEPTED_KEY) === 'true') {
+    if (isSessionExpired()) {
+      logout();
+      return;
+    }
     addLogoutButton();
+    setupAutoLogout();
     return; // Already authenticated
   }
 
@@ -243,9 +273,14 @@
     if (enteredPassword === PASSWORD) {
       sessionStorage.setItem(STORAGE_KEY, 'true');
       sessionStorage.setItem(TERMS_ACCEPTED_KEY, 'true');
+      sessionStorage.setItem(LOGIN_TIME_KEY, Date.now().toString());
       overlay.style.opacity = '0';
       overlay.style.transition = 'opacity 0.3s';
-      setTimeout(() => overlay.remove(), 300);
+      setTimeout(() => {
+        overlay.remove();
+        addLogoutButton();
+        setupAutoLogout();
+      }, 300);
     } else {
       errorDiv.textContent = 'Invalid access code';
       passwordInput.value = '';
