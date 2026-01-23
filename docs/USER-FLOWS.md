@@ -4,7 +4,7 @@
 
 **Author:** Oluwasegun Olumbe
 **Client:** A to Z IT Recycling Ltd
-**Status:** Draft for Review
+**Status:** Complete
 
 ---
 
