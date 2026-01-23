@@ -15,7 +15,6 @@
 | Create architecture diagram (Mermaid) | ✅ | 15 Jan |
 | Document design assumptions | ✅ | 15 Jan |
 | Define scalability considerations | ✅ | 16 Jan |
-| Review & refine | ✅ | 17 Jan |
 
 ### 02 — Core Data Model
 | Task | Status | Due |
@@ -57,7 +56,6 @@
 | Identify technical risks | ✅ | 23 Jan |
 | Identify compliance risks | ✅ | 23 Jan |
 | Define mitigation strategies | ✅ | 23 Jan |
-| Final review & sign-off prep | ✅ | 23 Jan |
 
 ---
 
